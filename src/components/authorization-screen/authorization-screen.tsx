@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 
+import { Content } from './content/content';
 import { Header } from './header/header';
-import { Content } from './styles';
+import { Container } from './styles';
 
 export const AuthorizationScreen: FC = () => (
-  <Content>
+  <Container>
     <Header />
-  </Content>
+    <Content />
+  </Container>
 );
