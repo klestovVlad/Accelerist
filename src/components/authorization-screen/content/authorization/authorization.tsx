@@ -1,14 +1,26 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
+import { Redirect, Route, Switch } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
-import { Tabs } from '../../../../ui/tubs/tubs';
-import { H1 } from './styled';
+import { SignIn } from './sign-in/sign-in';
+import { SignUp } from './sign-up/sign-up';
 
-export const Authorization: FC = () => {
-  const [tabNum, settabNum] = useState(1);
+interface AuthorizationProps {
+  tabNum: number;
+}
+
+export const Authorization: FC<AuthorizationProps> = ({ tabNum }) => {
+  const history = useHistory();
+  if (tabNum === 0) {
+    history.push('/signup');
+  } else {
+    history.push('/login');
+  }
   return (
-    <>
-      <H1>Welcome to Accelerist</H1>
-      <Tabs tabNum={tabNum} settabNum={settabNum} TabList={['Register', 'Login']} />
-    </>
+    <Switch>
+      <Route exact path="/" render={() => <Redirect to="/login" />} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/login" component={SignIn} />
+    </Switch>
   );
 };
