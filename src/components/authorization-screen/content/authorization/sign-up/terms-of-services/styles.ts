@@ -20,6 +20,7 @@ export const P = styled.p`
 export const A = styled.a`
   cursor: pointer;
   color: ${(props) => props.theme.colors.black};
+  text-decoration: none;
 `;
 
 export const Bold = styled.span`

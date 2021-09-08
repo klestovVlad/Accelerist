@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Field, Form, FormProps } from 'react-final-form';
 
+import { validateEmail, validateInput } from '../../../../../functions/validation';
 import { Button } from '../../../../../ui/buttons/button';
 import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn';
 import { InputField } from '../../../../../ui/form/input-field';
@@ -20,16 +21,21 @@ export const SignUp: FC = () => {
             name="email"
             label="Email"
             placeholder="Write your email..."
+            inputType="text"
             value={values.email}
             component={InputField}
+            validate={validateEmail}
           />
           <Field
             name="password"
             label="Password"
+            inputType="password"
             placeholder="Write your password..."
             value={values.email}
             component={InputField}
+            validate={validateInput}
             secureTextEntry
+            validateOnBlur
           />
           <TermsOfServices />
           <Button label="Registration" type="submit" onClick={handleSubmit} typeNum={0}>
