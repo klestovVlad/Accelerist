@@ -108,6 +108,7 @@ section {
 }
 body {
   line-height: 1;
+  overflow: hidden;
 }
 ol,
 ul {
@@ -135,4 +136,5 @@ button {
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+  line-height: 0;
 }
