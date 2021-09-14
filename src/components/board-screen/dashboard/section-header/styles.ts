@@ -1,16 +1,11 @@
 import styled from 'styled-components';
 
-interface ContentProps {
-  numberOfColumns: number;
-}
-
-export const Content = styled.div<ContentProps>`
-  grid-column-start: 1;
-  grid-column-end: ${(props) => props.numberOfColumns};
+export const Content = styled.div`
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
-  margin-bottom: 8px;
+  align-items: center;
 `;
 
 export const Header = styled.h2`
@@ -22,4 +17,11 @@ export const Header = styled.h2`
   color: ${(props) => props.theme.colors.black};
 `;
 
-export const DetailButton = styled.button``;
+export const DetailButton = styled.button`
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 150%;
+  color: ${(props) => props.theme.colors.blue};
+`;

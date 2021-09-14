@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
+export const BackgroundContainer = styled.div`
+  background-color: ${(props) => props.theme.colors.secondary_blue2};
+  width: 100%;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 80px;
-  background-color: ${(props) => props.theme.colors.secondary_blue2};
   align-items: center;
   padding: 0 66px 0 60px;
   justify-content: space-between;
   position: relative;
   z-index: 9999;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 export const RightSide = styled.div`

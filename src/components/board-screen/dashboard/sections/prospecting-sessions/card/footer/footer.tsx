@@ -9,11 +9,14 @@ import {
   LastActivityContainer,
   LastActivityHeader,
   LastActivityTime,
+  UserIcon,
 } from './styles';
 
 export const Footer: FC = () => (
   <Content>
-    <AuthorImage />
+    <AuthorImage>
+      <UserIcon />
+    </AuthorImage>
     <AuthorContainer>
       <AuthorName>Jenny Wilson</AuthorName>
       <AuthorPosition>Owner</AuthorPosition>

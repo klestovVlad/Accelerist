@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ReactComponent as UserSvg } from '../../../../../../../ui/icons/svg/user.svg';
+
 export const Content = styled.div`
   margin-top: 24px;
   display: flex;
@@ -17,6 +19,7 @@ export const AuthorImage = styled.div`
   width: 40px;
   padding-top: 40px;
   border-radius: 50%;
+  position: relative;
 `;
 
 export const AuthorName = styled.p`
@@ -42,6 +45,7 @@ export const LastActivityContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: end;
 `;
 
 export const LastActivityHeader = styled.p`
@@ -60,4 +64,11 @@ export const LastActivityTime = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.black};
+`;
+
+export const UserIcon = styled(UserSvg)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
