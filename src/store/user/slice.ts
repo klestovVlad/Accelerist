@@ -11,6 +11,7 @@ const UserSlice = createSlice({
       return state;
     },
     signIn(state, { payload }: PayloadAction<UserData>) {
+      console.log('signIn', payload);
       return { ...payload, loading: false };
     },
   },

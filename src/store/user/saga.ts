@@ -1,12 +1,11 @@
-import { call, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { signInQuery } from './axios';
 import { UserAction } from './slice';
 
 function* signIn(action: any) {
-  console.log('hi!');
   const { data } = yield call(() => signInQuery(action.payload));
-  console.log(data);
+  yield put(UserAction.signIn(data));
 }
 
 export function* userWatcher() {
