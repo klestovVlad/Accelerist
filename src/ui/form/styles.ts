@@ -38,6 +38,6 @@ export const Label = styled.span`
 export const ErrorSignature = styled(Label)`
   color: ${(props) => props.theme.colors.red};
   position: absolute;
-  bottom: -22px;
+  bottom: -19px;
   left: 0;
 `;

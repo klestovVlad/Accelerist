@@ -21,3 +21,10 @@ export const H2 = styled.h2`
   text-align: left;
   margin-left: 16px;
 `;
+
+export const Link = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+`;

@@ -6,7 +6,7 @@ import { AuthorizationScreen } from './components/authorization-screen/authoriza
 import { BoardScreen } from './components/board-screen/board-screen';
 
 function App() {
-  const Token = 'temporary token';
+  const Token = false;
   return Token ? <BoardScreen /> : <AuthorizationScreen />;
 }
 

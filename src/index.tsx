@@ -2,20 +2,27 @@ import './style/style-sheets/common.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from 'styled-components';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from './store/root-reducer';
 import { theme } from './style/theme/theme';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BrowserRouter>
+    <Provider store={state.store}>
+      <PersistGate loading={null} persistor={state.persist}>
+        <BrowserRouter>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </ThemeProvider>,
   document.getElementById('root'),
 );
