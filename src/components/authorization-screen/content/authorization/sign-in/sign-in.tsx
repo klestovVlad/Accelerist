@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Field, Form, FormProps } from 'react-final-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { validateEmail, validateInput } from '../../../../../functions/validation';
-import { UserAction } from '../../../../../store/user/index';
+import { UserAction, UserSelector } from '../../../../../store/user/index';
 import { Button } from '../../../../../ui/buttons/button';
 import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn';
 import { InputField } from '../../../../../ui/form/input-field';
@@ -12,6 +12,7 @@ import { Container } from './styles';
 
 export const SignIn: FC = () => {
   const dispatch = useDispatch();
+  const loadState = useSelector(UserSelector.selectLoadState);
   const onSubmitForm = (values: FormProps) => {
     console.log(values);
     dispatch(
@@ -47,7 +48,7 @@ export const SignIn: FC = () => {
             validateOnBlur
           />
           <PasswordOptions />
-          <Button label="Login" type="submit" onClick={handleSubmit} typeNum={0} />
+          <Button label="Login" type="submit" onClick={handleSubmit} typeNum={0} isLoading={loadState} />
           <LinkedIn />
         </Container>
       )}

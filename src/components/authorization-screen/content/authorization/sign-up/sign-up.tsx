@@ -38,7 +38,7 @@ export const SignUp: FC = () => {
             validateOnBlur
           />
           <TermsOfServices />
-          <Button label="Registration" type="submit" onClick={handleSubmit} typeNum={0}>
+          <Button label="Registration" type="submit" onClick={handleSubmit} typeNum={0} isLoading={false}>
             apply
           </Button>
           <LinkedIn />

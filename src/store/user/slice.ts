@@ -8,10 +8,10 @@ const UserSlice = createSlice({
   reducers: {
     signInRequest(state, { payload }: PayloadAction<SignRequest>) {
       console.log(payload);
-      return state;
+      state.isLoading = true;
     },
     signIn(state, { payload }: PayloadAction<UserData>) {
-      return { ...payload, loading: false };
+      return { ...payload, isLoading: false };
     },
     logout(state) {
       state.accessToken = '';

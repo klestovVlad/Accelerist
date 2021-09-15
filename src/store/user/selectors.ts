@@ -8,4 +8,6 @@ const selectUserData = createSelector(selectUser, (data) => data.user);
 
 const selectToken = createSelector(selectUser, (data) => data.accessToken);
 
-export const UserSelector = {selectUserData, selectToken}
+const selectLoadState = createSelector(selectUser, (data) => data.isLoading);
+
+export const UserSelector = { selectUserData, selectToken, selectLoadState };

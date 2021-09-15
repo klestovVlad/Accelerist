@@ -17,6 +17,7 @@ export interface UserData {
     updatedAt: string;
     deletedAt: string;
   };
+  isLoading: boolean;
 }
 
 export const initialState: UserData = {
@@ -38,6 +39,7 @@ export const initialState: UserData = {
     updatedAt: '',
     deletedAt: '',
   },
+  isLoading: false,
 };
 
 export interface SignRequest {
