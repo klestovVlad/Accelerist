@@ -13,6 +13,14 @@ const UserSlice = createSlice({
     signIn(state, { payload }: PayloadAction<UserData>) {
       return { ...payload, isLoading: false };
     },
+    signError(state, { payload }: PayloadAction<any>) {
+      state.isLoading = false;
+      if (payload.toString().includes('status code 401')) {
+        alert('The username or password that you have entered is invalid.');
+      } else {
+        alert('Unknown error');
+      }
+    },
     logout(state) {
       state.accessToken = '';
     },

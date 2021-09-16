@@ -14,7 +14,6 @@ export const SignIn: FC = () => {
   const dispatch = useDispatch();
   const loadState = useSelector(UserSelector.selectLoadState);
   const onSubmitForm = (values: FormProps) => {
-    console.log(values);
     dispatch(
       UserAction.signInRequest({
         email: values.email,
