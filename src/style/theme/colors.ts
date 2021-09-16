@@ -3,6 +3,7 @@ export const colors = {
   light_red: '#FFF2F2',
   blue: '#2BAEE0',
   light_blue: '#F3FCFF',
+  light_blue2: '#CEEDF9',
   light_blue_line: '#CAF0FF',
   secondary_blue: '#CAF0FF',
   secondary_blue2: '#D4F3FF',

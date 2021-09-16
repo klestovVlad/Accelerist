@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { LoadingIcon, LoadingIconContainer, StyledButton } from './styles';
+import { ButtonText, LoadingIcon, LoadingIconContainer, StyledButton } from './styles';
 
 interface BlueButtonProps {
   label: string | undefined;
@@ -8,10 +8,17 @@ interface BlueButtonProps {
   typeNum: number;
   type: 'button' | 'submit' | 'reset' | undefined;
   isLoading: boolean;
+  validate: boolean;
 }
 
-export const Button: FC<BlueButtonProps> = ({ label, typeNum, onClick, type, isLoading }) => (
-  <StyledButton typeNum={typeNum} type={type} onClick={() => (isLoading ? onClick() : onClick())} isLoading={isLoading}>
+export const Button: FC<BlueButtonProps> = ({ label, typeNum, onClick, type, isLoading, validate }) => (
+  <StyledButton
+    typeNum={typeNum}
+    type={type}
+    onClick={() => (!isLoading && validate ? onClick() : null)}
+    isLoading={isLoading}
+    validate={validate}
+  >
     {isLoading ? (
       <>
         <p>&#160;</p>
@@ -20,7 +27,7 @@ export const Button: FC<BlueButtonProps> = ({ label, typeNum, onClick, type, isL
         </LoadingIconContainer>
       </>
     ) : (
-      label
+      <ButtonText validate={validate}>{label}</ButtonText>
     )}
   </StyledButton>
 );

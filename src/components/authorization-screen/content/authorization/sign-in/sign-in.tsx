@@ -40,14 +40,21 @@ export const SignIn: FC = () => {
             label="Password"
             inputType="password"
             placeholder="Write your password..."
-            value={values.email}
+            value={values.password}
             component={InputField}
             validate={validateInput}
             secureTextEntry
             validateOnBlur
           />
           <PasswordOptions />
-          <Button label="Login" type="submit" onClick={handleSubmit} typeNum={0} isLoading={loadState} />
+          <Button
+            label="Login"
+            type="submit"
+            onClick={handleSubmit}
+            typeNum={0}
+            isLoading={loadState}
+            validate={validateEmail(values.email) === undefined && validateInput(values.password) === undefined}
+          />
           <LinkedIn />
         </Container>
       )}
