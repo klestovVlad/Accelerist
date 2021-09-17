@@ -42,7 +42,7 @@ export const SignUp: FC = () => {
             label="Registration"
             type="submit"
             onClick={handleSubmit}
-            typeNum={0}
+            colorScheme="blue"
             isLoading={false}
             validate={false}
           >

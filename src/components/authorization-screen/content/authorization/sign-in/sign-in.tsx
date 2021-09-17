@@ -51,7 +51,7 @@ export const SignIn: FC = () => {
             label="Login"
             type="submit"
             onClick={handleSubmit}
-            typeNum={0}
+            colorScheme="blue"
             isLoading={loadState}
             validate={validateEmail(values.email) === undefined && validateInput(values.password) === undefined}
           />

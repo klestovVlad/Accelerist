@@ -2,18 +2,18 @@ import React, { FC } from 'react';
 
 import { ButtonText, LoadingIcon, LoadingIconContainer, StyledButton } from './styles';
 
-interface BlueButtonProps {
+interface ButtonProps {
   label: string | undefined;
   onClick(): void;
-  typeNum: number;
+  colorScheme: 'blue' | 'darkTransparent';
   type: 'button' | 'submit' | 'reset' | undefined;
   isLoading: boolean;
   validate: boolean;
 }
 
-export const Button: FC<BlueButtonProps> = ({ label, typeNum, onClick, type, isLoading, validate }) => (
+export const Button: FC<ButtonProps> = ({ label, colorScheme, onClick, type, isLoading, validate }) => (
   <StyledButton
-    typeNum={typeNum}
+    colorScheme={colorScheme}
     type={type}
     onClick={() => (!isLoading && validate ? onClick() : null)}
     isLoading={isLoading}
@@ -33,4 +33,5 @@ export const Button: FC<BlueButtonProps> = ({ label, typeNum, onClick, type, isL
 );
 
 // **** explication ****
-// type 0 - blue button
+// typeNum 0 - blue button
+// typeNum 1 - dark transparent button

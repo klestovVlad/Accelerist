@@ -35,7 +35,7 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
               label="Reset"
               type="submit"
               onClick={handleSubmit}
-              typeNum={0}
+              colorScheme="blue"
               isLoading={false}
               validate={validateEmail(values.email) === undefined}
             />

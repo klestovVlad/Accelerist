@@ -49,6 +49,8 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     'import/prefer-default-export': 'off',
     'no-param-reassign': [2, { props: false }],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
     'import/extensions': [
       'error',
       'ignorePackages',

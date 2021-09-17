@@ -20,7 +20,7 @@ export const ResentForm: FC<ResentFormProps> = ({ seconds, setSeconds }) => {
         <Button
           label={ButtonText}
           onClick={onButtonClick}
-          typeNum={0}
+          colorScheme="blue"
           type="button"
           isLoading={false}
           validate={seconds === 0}
