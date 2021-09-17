@@ -31,7 +31,3 @@ export const Button: FC<ButtonProps> = ({ label, colorScheme, onClick, type, isL
     )}
   </StyledButton>
 );
-
-// **** explication ****
-// typeNum 0 - blue button
-// typeNum 1 - dark transparent button

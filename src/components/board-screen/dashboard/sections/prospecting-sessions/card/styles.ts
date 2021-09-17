@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   padding: 24px;
   background-color: ${(props) => props.theme.colors.white};
   border-radius: 6px;
-  margin-top: 16px;
+  margin: 12px;
+  width: 536px;
 `;
 
 export const Header = styled.h3`

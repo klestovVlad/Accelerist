@@ -4,12 +4,10 @@ import { SectionHeader } from '../../section-header/section-header';
 import { Card } from './card/card';
 import { Content, SectionContainer } from './styles';
 
-export const Favorites: FC = () => (
+export const ProspectingSession: FC = () => (
   <Content>
-    <SectionHeader text="Favorites" isButtonShow />
+    <SectionHeader text="Prospecting Sessions" isButtonShow />
     <SectionContainer>
-      <Card />
-      <Card />
       <Card />
       <Card />
     </SectionContainer>

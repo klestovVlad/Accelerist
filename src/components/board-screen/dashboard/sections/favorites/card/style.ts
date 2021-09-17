@@ -4,6 +4,8 @@ export const Content = styled.div`
   padding: 24px;
   background-color: ${(props) => props.theme.colors.white};
   border-radius: 6px;
+  width: 256px;
+  margin: 12px;
 `;
 
 export const CompanyContainer = styled.div`

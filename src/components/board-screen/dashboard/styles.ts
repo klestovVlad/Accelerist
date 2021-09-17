@@ -4,6 +4,13 @@ export const BackgroundContainer = styled.div`
   width: 100%;
 `;
 
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 export const Content = styled.div`
   position: relative;
   width: 100%;
@@ -31,10 +38,6 @@ export const Header = styled.h1`
 
 export const SectionsContainer = styled.div`
   padding: 0px 284px 25px 60px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  grid-column-gap: 24px;
-  grid-row-gap: 8px;
   margin: 0 auto;
   width: 1440px;
 
@@ -42,6 +45,5 @@ export const SectionsContainer = styled.div`
     min-width: 100%;
     padding: 0px 60px 25px 60px;
     width: auto;
-    grid-template-columns: 1fr;
   }
 `;

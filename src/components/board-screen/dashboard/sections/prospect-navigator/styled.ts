@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   margin-top: 40px;
-  grid-column: 1 / -1;
 `;
 
 export const CardContainer = styled.div`

@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
-export const Column = styled.div``;
+export const Column = styled.div`
+  width: calc(50% - 9px);
+`;
 
 export const Header = styled.p`
   font-family: 'Rubik';

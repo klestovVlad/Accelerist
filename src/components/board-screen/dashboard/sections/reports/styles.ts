@@ -8,4 +8,5 @@ export const ReportsContainer = styled.div`
   padding: 24px;
   margin-top: 15px;
   border-radius: 6px;
+  width: 536px;
 `;

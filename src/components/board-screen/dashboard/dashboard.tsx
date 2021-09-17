@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
 
-import { SectionHeader } from './section-header/section-header';
 import { Favorites } from './sections/favorites/favorites';
 import { ProspectNavigator } from './sections/prospect-navigator/prospect-navigator';
-import { Card } from './sections/prospecting-sessions/card/card';
+import { ProspectingSession } from './sections/prospecting-sessions/prospecting-session';
 import { Reports } from './sections/reports/reports';
-import { BackgroundContainer, BackgroundHeaderContainer, Content, Header, SectionsContainer } from './styles';
+import { BackgroundContainer, BackgroundHeaderContainer, Content, Header, Row, SectionsContainer } from './styles';
 
 export const Dashboard: FC = () => (
   <Content>
@@ -15,11 +14,11 @@ export const Dashboard: FC = () => (
 
     <BackgroundContainer>
       <SectionsContainer>
-        <SectionHeader text="Prospecting Sessions" isButtonShow />
-        <Card />
-        <Card />
-        <Favorites />
-        <Reports />
+        <ProspectingSession />
+        <Row>
+          <Favorites />
+          <Reports />
+        </Row>
         <ProspectNavigator />
       </SectionsContainer>
     </BackgroundContainer>
