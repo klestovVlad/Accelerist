@@ -5,6 +5,10 @@ import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 
+// eslint-disable-next-line import/no-cycle
+import { SavedListWatcher } from './saved-list/saga';
+import SavedListReducer from './saved-list/slice';
+// eslint-disable-next-line import/no-cycle
 import { userWatcher } from './user/saga';
 import userReducer from './user/slice';
 
@@ -14,6 +18,7 @@ export type RootState = ReturnType<typeof rootReducer>;
 
 export const rootReducer = combineReducers({
   userReducer,
+  SavedListReducer,
 });
 
 const persistConfig = {
@@ -28,7 +33,7 @@ const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(
 const persist = persistStore(store);
 
 function* rootWatcher() {
-  yield all([userWatcher()]);
+  yield all([userWatcher(), SavedListWatcher()]);
 }
 
 sagaMiddleware.run(rootWatcher);

@@ -30,6 +30,8 @@ export const FilterItem = styled.div`
   line-height: 150%;
   margin-left: 8px;
   margin-top: 8px;
+  flex-wrap: wrap;
+  text-transform: capitalize;
 
   &:first-child {
     margin-left: 4.5px;

@@ -2,16 +2,20 @@ import React, { FC } from 'react';
 
 import { Content, QualityItem, QualityItemHeader, QualityItemText } from './styles';
 
-export const PeculiaritiesRow: FC = () => (
+interface PeculiaritiesRowProps {
+  prospectsAvailable: number;
+}
+
+export const PeculiaritiesRow: FC<PeculiaritiesRowProps> = ({ prospectsAvailable }) => (
   <Content>
     <QualityItem>
       <QualityItemHeader>№ of Prospects Available</QualityItemHeader>
-      <QualityItemText>230</QualityItemText>
+      <QualityItemText>{prospectsAvailable}</QualityItemText>
     </QualityItem>
 
     <QualityItem>
       <QualityItemHeader>№ of Contacts Pursued</QualityItemHeader>
-      <QualityItemText>72</QualityItemText>
+      <QualityItemText>--</QualityItemText>
     </QualityItem>
   </Content>
 );

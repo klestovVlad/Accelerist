@@ -1,5 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
+// eslint-disable-next-line import/no-cycle
 import { signInQuery } from './axios';
 import { UserAction } from './slice';
 

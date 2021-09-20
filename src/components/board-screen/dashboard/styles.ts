@@ -15,6 +15,10 @@ export const Content = styled.div`
   position: relative;
   width: 100%;
   margin: 0 auto;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const BackgroundHeaderContainer = styled.div`

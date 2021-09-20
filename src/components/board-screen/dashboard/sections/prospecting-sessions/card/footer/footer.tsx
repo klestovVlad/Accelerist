@@ -12,18 +12,51 @@ import {
   UserIcon,
 } from './styles';
 
-export const Footer: FC = () => (
-  <Content>
-    <AuthorImage>
-      <UserIcon />
-    </AuthorImage>
-    <AuthorContainer>
-      <AuthorName>Jenny Wilson</AuthorName>
-      <AuthorPosition>Owner</AuthorPosition>
-    </AuthorContainer>
-    <LastActivityContainer>
-      <LastActivityHeader>Last Activity</LastActivityHeader>
-      <LastActivityTime>1 Jul 2020</LastActivityTime>
-    </LastActivityContainer>
-  </Content>
-);
+interface FooterProps {
+  lastAuthor: {
+    id: string;
+    email: string | null;
+    firstName: string | null;
+    lastName: string | null;
+    isAuthorized: boolean;
+    imported: boolean;
+    teamId: string | null;
+    role: string | null;
+    linkedinLink: string | null;
+    isReceivingNotifications: boolean;
+    avatarKey: string | null;
+    loggedInAt: string;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string | null;
+  };
+}
+
+import { ReturnFormattedDate } from '../../../../../../../functions/return-formatted-date';
+
+export const Footer: FC<FooterProps> = ({ lastAuthor }) => {
+  const ReturnAuthorName = () => {
+    const firstName = lastAuthor.firstName === null ? '' : lastAuthor.firstName;
+    const lastName = lastAuthor.lastName === null ? '' : lastAuthor.lastName;
+    if (firstName.length + lastName.length === 0) {
+      return 'No Name';
+    }
+    return `${firstName} ${lastName}`;
+  };
+
+  return (
+    <Content>
+      <AuthorImage>
+        <UserIcon />
+      </AuthorImage>
+      <AuthorContainer>
+        <AuthorName>{ReturnAuthorName()}</AuthorName>
+        <AuthorPosition>{lastAuthor.role}</AuthorPosition>
+      </AuthorContainer>
+      <LastActivityContainer>
+        <LastActivityHeader>Last Activity</LastActivityHeader>
+        <LastActivityTime>{ReturnFormattedDate(lastAuthor.updatedAt)}</LastActivityTime>
+      </LastActivityContainer>
+    </Content>
+  );
+};

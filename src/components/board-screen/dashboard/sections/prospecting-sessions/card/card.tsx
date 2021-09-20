@@ -5,12 +5,43 @@ import { Footer } from './footer/footer';
 import { PeculiaritiesRow } from './peculiarities-row/peculiarities-row';
 import { Container, Header, Underline } from './styles';
 
-export const Card: FC = () => (
+interface CardProps {
+  data: {
+    id: string;
+    name: string;
+    filters: {
+      q: string;
+      gender: string;
+    };
+    prospectsAvailable: number;
+    createdAt: string;
+    updatedAt: string;
+    lastAuthor: {
+      id: string;
+      email: string | null;
+      firstName: string | null;
+      lastName: string | null;
+      isAuthorized: boolean;
+      imported: boolean;
+      teamId: string | null;
+      role: string | null;
+      linkedinLink: string | null;
+      isReceivingNotifications: boolean;
+      avatarKey: string | null;
+      loggedInAt: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: string | null;
+    };
+  };
+}
+
+export const Card: FC<CardProps> = ({ data }) => (
   <Container>
-    <Header>Race for the Cure</Header>
+    <Header>{data.name}</Header>
     <Underline />
-    <FilterRow />
-    <PeculiaritiesRow />
-    <Footer />
+    <FilterRow filters={data.filters} id={data.id} />
+    <PeculiaritiesRow prospectsAvailable={data.prospectsAvailable} />
+    <Footer lastAuthor={data.lastAuthor} />
   </Container>
 );

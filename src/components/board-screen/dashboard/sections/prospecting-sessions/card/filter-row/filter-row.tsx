@@ -2,13 +2,22 @@ import React, { FC } from 'react';
 
 import { Content, FilterItem, FilterItemsContainer, Header } from './styles';
 
-export const FilterRow: FC = () => (
+interface FilterRowProps {
+  filters: {
+    [key: string]: string;
+  };
+  id: string;
+}
+
+export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
   <Content>
     <Header>Filters</Header>
     <FilterItemsContainer>
-      <FilterItem>Travel Industry</FilterItem>
-      <FilterItem>$500-$1B</FilterItem>
-      <FilterItem>National</FilterItem>
+      {Object.keys(filters).map((item, index) => (
+        <FilterItem key={id + index.toString + item}>
+          {item === 'q' ? '' : `${item}: `} {filters[item]}
+        </FilterItem>
+      ))}
     </FilterItemsContainer>
   </Content>
 );

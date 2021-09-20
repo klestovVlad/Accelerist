@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { ApiMap } from '../../api';
 
 const { AuthorizationApi } = ApiMap;

@@ -1,9 +1,11 @@
 import axios, { AxiosInstance } from 'axios';
 
-export const baseUrl = 'https://accelerist.herokuapp.com';
-// import store from '../store/root-reducer';
+// eslint-disable-next-line import/no-cycle
+import store from '../store/root-reducer';
 
-class ApiWithoutToken {
+export const baseUrl = 'https://accelerist.herokuapp.com';
+
+class Api {
   private api: AxiosInstance;
 
   constructor() {
@@ -12,6 +14,14 @@ class ApiWithoutToken {
       headers: {
         'Content-Type': 'application/json',
       },
+    });
+
+    this.api.interceptors.request.use((config) => {
+      const { accessToken } = store.store.getState().userReducer;
+      if (accessToken !== null) {
+        config.headers.Authorization = `Bearer ${accessToken}`;
+      }
+      return config;
     });
   }
 
@@ -36,4 +46,4 @@ class ApiWithoutToken {
   }
 }
 
-export const ApiAuthorization = new ApiWithoutToken();
+export default new Api();
