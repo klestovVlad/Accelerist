@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Route, Switch } from 'react-router';
 
-import { Tabs } from '../../../ui/tubs/tubs';
+import { Tabs } from '../../../ui/tabs/tabs';
 import { Authorization } from './authorization/authorization';
 import { NewPassword } from './new-password/new-password';
 import { ResetPassword } from './reset-password/reset-password';

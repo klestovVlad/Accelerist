@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { ReactComponent as Loading } from '../icons/svg/loading-button.svg';
 
 interface StyledButtonProps {
-  colorScheme: 'blue' | 'darkTransparent';
+  colorScheme: 'blue' | 'darkTransparent' | 'white';
   isLoading: boolean;
   validate: boolean;
 }
@@ -13,6 +13,8 @@ export enum BUTTON_COLOR_SCHEME {
   blue = 'blue',
   // eslint-disable-next-line no-unused-vars
   darkTransparent = 'darkTransparent',
+  // eslint-disable-next-line no-unused-vars
+  white = 'white',
 }
 
 const BACKGROUND_COLOR = {
@@ -25,6 +27,14 @@ const BACKGROUND_COLOR = {
     background-color: ${(props) => props.theme.colors.dark_transparent};
     padding: 9px 24px;
     font-size: 12px;
+  `,
+
+  [BUTTON_COLOR_SCHEME.white]: css<StyledButtonProps>`
+    background-color: ${(props) => props.theme.colors.white};
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 1px solid;
+    border-color: ${(props) => props.theme.colors.line};
   `,
 };
 
@@ -64,10 +74,24 @@ export const LoadingIcon = styled(Loading)`
 
 interface ButtonTextProps {
   validate: boolean;
+  colorScheme: 'blue' | 'darkTransparent' | 'white';
 }
 
+const BUTTON_TEXT_COLOR = {
+  [BUTTON_COLOR_SCHEME.blue]: css<ButtonTextProps>`
+    color: ${(props) => (props.validate ? props.theme.colors.white : props.theme.colors.blue)};
+  `,
+  [BUTTON_COLOR_SCHEME.darkTransparent]: css<ButtonTextProps>`
+    color: ${(props) => (props.validate ? props.theme.colors.white : props.theme.colors.blue)};
+  `,
+
+  [BUTTON_COLOR_SCHEME.white]: css<ButtonTextProps>`
+    color: ${(props) => (props.validate ? props.theme.colors.black : props.theme.colors.dark_grey)};
+  `,
+};
+
 export const ButtonText = styled.span<ButtonTextProps>`
-  color: ${(props) => (props.validate ? props.theme.colors.white : props.theme.colors.blue)};
+  ${({ colorScheme }) => BUTTON_TEXT_COLOR[colorScheme]};
   opacity: ${(props) => (props.validate ? 1 : 0.3)};
   transition: all 0.3s;
 `;

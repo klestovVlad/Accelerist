@@ -5,7 +5,7 @@ import { ButtonText, LoadingIcon, LoadingIconContainer, StyledButton } from './s
 interface ButtonProps {
   label: string | undefined;
   onClick(): void;
-  colorScheme: 'blue' | 'darkTransparent';
+  colorScheme: 'blue' | 'darkTransparent' | 'white';
   type: 'button' | 'submit' | 'reset' | undefined;
   isLoading: boolean;
   validate: boolean;
@@ -27,7 +27,9 @@ export const Button: FC<ButtonProps> = ({ label, colorScheme, onClick, type, isL
         </LoadingIconContainer>
       </>
     ) : (
-      <ButtonText validate={validate}>{label}</ButtonText>
+      <ButtonText validate={validate} colorScheme={colorScheme}>
+        {label}
+      </ButtonText>
     )}
   </StyledButton>
 );
