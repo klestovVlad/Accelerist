@@ -6,10 +6,10 @@ export const Navigation: FC = () => (
   <Container>
     <List>
       <ListItem>
-        <Link to="/">Dashboard</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </ListItem>
       <ListItem>
-        <Link to="/">Audience</Link>
+        <Link to="/search">Search</Link>
       </ListItem>
       <ListItem>
         <Link to="/">Pricing</Link>

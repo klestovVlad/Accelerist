@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { Form } from 'react-final-form';
 
 import { Tabs } from '../../../../ui/tabs/tabs';
@@ -8,10 +8,15 @@ import { Demographics } from './demographics/demographics';
 import { Priority } from './priority/priority';
 import { Container, Content, Header } from './styles';
 
-export const Filters: FC = () => {
+interface FilterProps {
+  setShowFilter: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
   const [tabNum, setTabNum] = useState(0);
+  const [rangeValue, setRangeValue] = useState<Array<number>>([0, 50]);
   const onSubmitForm = (values: any) => {
-    console.log(values);
+    console.log(values, 'range', rangeValue);
   };
   return (
     <Content>
@@ -20,12 +25,17 @@ export const Filters: FC = () => {
 
       <Form
         onSubmit={onSubmitForm}
-        render={({ values, handleSubmit }) => (
+        mutators={{
+          setValue: ([field, value], state, { changeValue }) => {
+            changeValue(state, field, () => value);
+          },
+        }}
+        render={({ form, values, handleSubmit }) => (
           <Container>
             {tabNum === 1 && <Priority />}
-            <Company onSubmit={onSubmitForm} values={values} />
-            <Demographics />
-            <ButtonRow handleSubmit={handleSubmit} />
+            <Company onSubmit={onSubmitForm} values={values} rangeValue={rangeValue} setRangeValue={setRangeValue} form={form} />
+            <Demographics onSubmit={onSubmitForm} form={form} />
+            <ButtonRow handleSubmit={handleSubmit} setShowFilter={setShowFilter} />
           </Container>
         )}
       />

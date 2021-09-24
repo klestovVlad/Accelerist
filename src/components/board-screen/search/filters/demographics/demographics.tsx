@@ -1,12 +1,12 @@
 import React, { FC, useState } from 'react';
-import { Field } from 'react-final-form';
+import { Field, FormProps } from 'react-final-form';
 
 import { Input } from '../../../../../ui/input/input';
 import { Tabs } from '../../../../../ui/tabs/tabs';
 import { Content, Header, InputContainer, TabContainer, TabHeader } from './styles';
 
-export const Demographics: FC = () => {
-  const [gender, setGender] = useState(0);
+export const Demographics: FC<FormProps> = ({ form }) => {
+  const [gender, setGender] = useState(2);
   const [relations, setRelations] = useState(0);
   return (
     <Content>
@@ -23,14 +23,23 @@ export const Demographics: FC = () => {
         <Field
           name="Household Income"
           label="Household Income"
+          form={form}
           predefined
           component={Input}
           predefinedList={['a', 'b', 'c']}
         />
-        <Field name="Ethnicity" label="Ethnicity" predefined component={Input} predefinedList={['a', 'b', 'c', 'd']} />
+        <Field
+          name="Ethnicity"
+          label="Ethnicity"
+          form={form}
+          predefined
+          component={Input}
+          predefinedList={['a', 'b', 'c', 'd']}
+        />
         <Field
           name="Age"
           label="Age"
+          form={form}
           predefined
           component={Input}
           predefinedList={[

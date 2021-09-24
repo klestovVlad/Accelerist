@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { initialState, SavedListData } from './state';
 
-const SavedListSlice = createSlice({
+const savedListSlice = createSlice({
   name: 'SavedListSlice',
   initialState,
   reducers: {
@@ -15,5 +15,5 @@ const SavedListSlice = createSlice({
   },
 });
 
-export default SavedListSlice.reducer;
-export const SavedListAction = SavedListSlice.actions;
+export default savedListSlice.reducer;
+export const SavedListAction = savedListSlice.actions;

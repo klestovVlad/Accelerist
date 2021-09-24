@@ -11,6 +11,7 @@ export const colors = {
   purple: '#681B51',
   gray: '#BFBFBF',
   gray2: '#C4C4C4',
+  gray3: '#F1F4F5',
   dark_gray: '#737373',
   light_gray: '#F8F8F8',
   white: '#FFFFFF',

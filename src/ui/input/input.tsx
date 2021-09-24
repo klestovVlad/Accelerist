@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Field, FieldRenderProps } from 'react-final-form';
+import { Field, FieldRenderProps, Form } from 'react-final-form';
 
 import { Checkbox } from '../check-box/check-box';
 import { VerticalChevron } from '../icons/vertical-chevron/vertical-chevron';
@@ -23,10 +23,17 @@ interface InputProps extends FieldRenderProps<string> {
   predefinedList?: string[];
 }
 
-export const Input: FC<InputProps> = ({ label, input, placeholder, predefined, predefinedList }) => {
+export const Input: FC<InputProps> = ({ label, input, placeholder, predefined, predefinedList, form }) => {
   const [showList, setShowList] = useState(false);
 
-  const ClearInput = () => console.log(predefinedList);
+  const ClearInput = () => form.mutators.setValue(label, '');
+
+  const addListItemsToInput = (values: { [key: string]: string }) => {
+    const arr: string[] = [];
+    Object.keys(values).map((item) => (values[item] ? arr.push(item) : null));
+    Array.from(new Set(arr));
+    console.log(arr);
+  };
 
   const paramList = predefinedList === undefined ? [''] : predefinedList;
 
@@ -34,7 +41,7 @@ export const Input: FC<InputProps> = ({ label, input, placeholder, predefined, p
     <Content>
       <InputLabel>{label}</InputLabel>
       <InputField onChange={input.onChange} value={input.value} placeholder={placeholder} disabled={predefined} />
-      {predefined && <CheckedParamList>123,123,123</CheckedParamList>}
+      {predefined && <CheckedParamList>123</CheckedParamList>}
       <ButtonsRow>
         <Button onClick={ClearInput}>{input.value.length > 0 && <CLoseIcon />}</Button>
         {predefined && (
@@ -44,14 +51,19 @@ export const Input: FC<InputProps> = ({ label, input, placeholder, predefined, p
         )}
       </ButtonsRow>
       {predefined && showList && (
-        <ListContent>
-          {paramList.map((item, index) => (
-            <ListRow key={item + index.toString}>
-              <ListItemName>{item}</ListItemName>
-              <Field name={item} type="checkbox" component={Checkbox} />
-            </ListRow>
-          ))}
-        </ListContent>
+        <Form
+          onSubmit={(values) => addListItemsToInput(values)}
+          render={({ values }) => (
+            <ListContent>
+              {paramList.map((item, index) => (
+                <ListRow key={item + index.toString}>
+                  <ListItemName>{item}</ListItemName>
+                  <Field name={item} type="checkbox" component={Checkbox} onChange={addListItemsToInput(values)} />
+                </ListRow>
+              ))}
+            </ListContent>
+          )}
+        />
       )}
     </Content>
   );

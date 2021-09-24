@@ -9,6 +9,6 @@ function* getSavedList() {
   yield put(SavedListAction.getSavedList(data));
 }
 
-export function* SavedListWatcher() {
+export function* savedListWatcher() {
   yield takeLatest(SavedListAction.savedListRequest.type, getSavedList);
 }

@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 import { RootState } from '../root-reducer';
 
-const selectSavedList = (state: RootState) => state.SavedListReducer;
+const selectSavedList = (state: RootState) => state.savedListReducer;
 
 const selectItems = createSelector(selectSavedList, (data) => data.items);
 
