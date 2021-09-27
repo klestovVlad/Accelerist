@@ -19,6 +19,10 @@ export const Logo = styled.div`
   border: 1px solid;
   border-radius: 6px;
   border-color: ${(props) => props.theme.colors.line};
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const Info = styled.div`
@@ -28,13 +32,18 @@ export const Info = styled.div`
   justify-content: space-around;
 `
 
-export const CompanyName = styled.p`
+export const CompanyName = styled.button`
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 150%;
+  text-align: left;
   color: ${(props) => props.theme.colors.black};
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 export const PriorityRanking = styled.p`

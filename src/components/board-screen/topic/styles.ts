@@ -64,3 +64,7 @@ export const IconsContainer = styled.div`
 export const ButtonContainer = styled.button`
   margin-left: 12px;
 `
+
+export const BackButton = styled.button`
+  margin-right: 17px;
+`

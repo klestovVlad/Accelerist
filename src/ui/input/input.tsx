@@ -39,7 +39,6 @@ export const Input: FC<InputProps> = ({
     const arr: string[] = []
     Object.keys(values).map((item) => (values[item] ? arr.push(item) : null))
     Array.from(new Set(arr))
-    console.log(arr)
   }
 
   const paramList = predefinedList === undefined ? [''] : predefinedList

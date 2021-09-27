@@ -7,7 +7,6 @@ const UserSlice = createSlice({
   initialState,
   reducers: {
     signInRequest(state, { payload }: PayloadAction<SignRequest>) {
-      console.log(payload)
       state.isLoading = true
     },
     signIn(state, { payload }: PayloadAction<UserData>) {

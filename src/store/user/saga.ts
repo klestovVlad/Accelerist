@@ -1,11 +1,11 @@
+import { PayloadAction } from '@reduxjs/toolkit'
 import { call, put, takeLatest } from 'redux-saga/effects'
 
-// eslint-disable-next-line import/no-cycle
 import { signInQuery } from './axios'
 import { UserAction } from './slice'
+import { SignRequest } from './state'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function* signIn(action: any) {
+function* signIn(action: PayloadAction<SignRequest>) {
   const { data } = yield call(() =>
     signInQuery(action.payload).catch((e) => ({ data: { error: e } }))
   )

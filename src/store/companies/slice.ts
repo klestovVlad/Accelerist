@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { FavoriteListData, initialState } from './state'
+import { FavoriteListData, initialState, FavoritesRequest } from './state'
 
 const favoriteListSlice = createSlice({
   name: 'FavoriteListSlice',
   initialState,
   reducers: {
-    favoritesRequest(state) {
+    favoritesRequest(state, props: PayloadAction<FavoritesRequest>) {
       state.isLoading = true
     },
     getFavorites(state, { payload }: PayloadAction<FavoriteListData>) {

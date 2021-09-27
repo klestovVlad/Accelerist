@@ -1,7 +1,6 @@
 import React, { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { FavoriteListSelector } from '../../../store/companies'
 import { SavedListAction, SavedListSelector } from '../../../store/saved-list'
 import { Topic } from '../topic/topic'
 import { LoadPopup } from './load-popup/load-popup'
@@ -17,8 +16,7 @@ export const Dashboard: FC = () => {
     dispatch(SavedListAction.savedListRequest())
   }, [dispatch])
   const loadSavedList = useSelector(SavedListSelector.selectLoadState)
-  const loadFavoriteList = useSelector(FavoriteListSelector.selectLoadState)
-  const loadState = loadSavedList || loadFavoriteList
+  const loadState = loadSavedList
   return (
     <Content>
       <Topic header="Dashboard" />
