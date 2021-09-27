@@ -29,7 +29,13 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { GetSubscriptionTeamDto } from '../models'
 // @ts-ignore
@@ -42,7 +48,9 @@ import { UserEmailDto } from '../models'
  * TeamApi - axios parameter creator
  * @export
  */
-export const TeamApiAxiosParamCreator = function (configuration?: Configuration) {
+export const TeamApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -51,7 +59,10 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    inviteControllerAcceptInvite: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    inviteControllerAcceptInvite: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('inviteControllerAcceptInvite', 'id', id)
       const localVarPath = `/api/v1/team/{id}/invites/accept`.replace(
@@ -65,7 +76,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -74,7 +89,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -98,7 +114,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'userEmailDto' is not null or undefined
-      assertParamExists('teamsControllerAddMembers', 'userEmailDto', userEmailDto)
+      assertParamExists(
+        'teamsControllerAddMembers',
+        'userEmailDto',
+        userEmailDto
+      )
       const localVarPath = `/api/v1/team/members`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -107,7 +127,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -118,7 +142,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -142,7 +167,10 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerDeleteMembers: async (id: string, options: any = {}): Promise<RequestArgs> => {
+    teamsControllerDeleteMembers: async (
+      id: string,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('teamsControllerDeleteMembers', 'id', id)
       const localVarPath = `/api/v1/team/members/{id}`.replace(
@@ -156,7 +184,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -165,7 +197,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -183,7 +216,9 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerGetLastLogins: async (options: any = {}): Promise<RequestArgs> => {
+    teamsControllerGetLastLogins: async (
+      options: any = {}
+    ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/last_logins`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -192,7 +227,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -201,7 +240,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -234,7 +274,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -251,7 +295,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -269,7 +314,9 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerGetSubscriptionTeam: async (options: any = {}): Promise<RequestArgs> => {
+    teamsControllerGetSubscriptionTeam: async (
+      options: any = {}
+    ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/subscription`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -278,7 +325,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -287,7 +338,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -314,7 +366,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -323,7 +379,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -341,7 +398,9 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerInviteLink: async (options: any = {}): Promise<RequestArgs> => {
+    teamsControllerInviteLink: async (
+      options: any = {}
+    ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/invite_link`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -350,7 +409,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -359,7 +422,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -378,7 +442,10 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerLogoUpload: async (file: any, options: any = {}): Promise<RequestArgs> => {
+    teamsControllerLogoUpload: async (
+      file: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'file' is not null or undefined
       assertParamExists('teamsControllerLogoUpload', 'file', file)
       const localVarPath = `/api/v1/team/logo_upload`
@@ -389,10 +456,16 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PUT',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
-      const localVarFormParams = new ((configuration && configuration.formDataCtor) || FormData)()
+      const localVarFormParams = new ((configuration &&
+        configuration.formDataCtor) ||
+        FormData)()
 
       // authentication bearer required
       // http bearer authentication required
@@ -405,7 +478,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -430,7 +504,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'updateTeamDto' is not null or undefined
-      assertParamExists('teamsControllerUpdateTeam', 'updateTeamDto', updateTeamDto)
+      assertParamExists(
+        'teamsControllerUpdateTeam',
+        'updateTeamDto',
+        updateTeamDto
+      )
       const localVarPath = `/api/v1/team`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -439,7 +517,11 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -450,7 +532,8 @@ export const TeamApiAxiosParamCreator = function (configuration?: Configuration)
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -487,12 +570,20 @@ export const TeamApiFp = function (configuration?: Configuration) {
     async inviteControllerAcceptInvite(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.inviteControllerAcceptInvite(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.inviteControllerAcceptInvite(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -504,12 +595,20 @@ export const TeamApiFp = function (configuration?: Configuration) {
     async teamsControllerAddMembers(
       userEmailDto: UserEmailDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerAddMembers(
-        userEmailDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerAddMembers(
+          userEmailDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -521,12 +620,20 @@ export const TeamApiFp = function (configuration?: Configuration) {
     async teamsControllerDeleteMembers(
       id: string,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerDeleteMembers(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerDeleteMembers(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -536,11 +643,20 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerGetLastLogins(
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<LoginHistoryDto>>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerGetLastLogins(
-        options
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<Array<LoginHistoryDto>>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerGetLastLogins(options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -554,13 +670,21 @@ export const TeamApiFp = function (configuration?: Configuration) {
       orderingDirection?: 'ASC' | 'DESC',
       orderingKey?: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerGetMembers(
-        orderingDirection,
-        orderingKey,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerGetMembers(
+          orderingDirection,
+          orderingKey,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -570,11 +694,22 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerGetSubscriptionTeam(
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionTeamDto>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerGetSubscriptionTeam(
-        options
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<GetSubscriptionTeamDto>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerGetSubscriptionTeam(
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -584,9 +719,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerGetTeam(
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerGetTeam(options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerGetTeam(options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -596,9 +739,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerInviteLink(
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerInviteLink(options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerInviteLink(options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -610,12 +761,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
     async teamsControllerLogoUpload(
       file: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerLogoUpload(
-        file,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerLogoUpload(file, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -627,12 +783,20 @@ export const TeamApiFp = function (configuration?: Configuration) {
     async teamsControllerUpdateTeam(
       updateTeamDto: UpdateTeamDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerUpdateTeam(
-        updateTeamDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsControllerUpdateTeam(
+          updateTeamDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -667,7 +831,10 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerAddMembers(userEmailDto: UserEmailDto, options?: any): AxiosPromise<void> {
+    teamsControllerAddMembers(
+      userEmailDto: UserEmailDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .teamsControllerAddMembers(userEmailDto, options)
         .then((request) => request(axios, basePath))
@@ -679,7 +846,10 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerDeleteMembers(id: string, options?: any): AxiosPromise<void> {
+    teamsControllerDeleteMembers(
+      id: string,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .teamsControllerDeleteMembers(id, options)
         .then((request) => request(axios, basePath))
@@ -690,7 +860,9 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerGetLastLogins(options?: any): AxiosPromise<Array<LoginHistoryDto>> {
+    teamsControllerGetLastLogins(
+      options?: any
+    ): AxiosPromise<Array<LoginHistoryDto>> {
       return localVarFp
         .teamsControllerGetLastLogins(options)
         .then((request) => request(axios, basePath))
@@ -718,7 +890,9 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerGetSubscriptionTeam(options?: any): AxiosPromise<GetSubscriptionTeamDto> {
+    teamsControllerGetSubscriptionTeam(
+      options?: any
+    ): AxiosPromise<GetSubscriptionTeamDto> {
       return localVarFp
         .teamsControllerGetSubscriptionTeam(options)
         .then((request) => request(axios, basePath))
@@ -730,7 +904,9 @@ export const TeamApiFactory = function (
      * @throws {RequiredError}
      */
     teamsControllerGetTeam(options?: any): AxiosPromise<void> {
-      return localVarFp.teamsControllerGetTeam(options).then((request) => request(axios, basePath))
+      return localVarFp
+        .teamsControllerGetTeam(options)
+        .then((request) => request(axios, basePath))
     },
     /**
      *
@@ -762,7 +938,10 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerUpdateTeam(updateTeamDto: UpdateTeamDto, options?: any): AxiosPromise<void> {
+    teamsControllerUpdateTeam(
+      updateTeamDto: UpdateTeamDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .teamsControllerUpdateTeam(updateTeamDto, options)
         .then((request) => request(axios, basePath))

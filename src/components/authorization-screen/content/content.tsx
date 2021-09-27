@@ -20,7 +20,11 @@ export const Content: FC = () => {
         </Route>
         <Route path="/">
           <H1>Welcome to Accelerist</H1>
-          <Tabs tabNum={tabNum} setTabNum={setTabNum} TabList={['Register', 'Login']} />
+          <Tabs
+            tabNum={tabNum}
+            setTabNum={setTabNum}
+            TabList={['Register', 'Login']}
+          />
           <Authorization tabNum={tabNum} />
         </Route>
       </Switch>

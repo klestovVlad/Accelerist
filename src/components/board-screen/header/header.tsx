@@ -5,7 +5,13 @@ import { AuthorizedUser } from './authorized-user/authorized-user'
 import { Logo } from './logo/logo'
 import { Navigation } from './navigation/navigation'
 import { Search } from './search/search'
-import { AdaptiveContainer, BackgroundContainer, Container, NavShadow, RightSide } from './styles'
+import {
+  AdaptiveContainer,
+  BackgroundContainer,
+  Container,
+  NavShadow,
+  RightSide,
+} from './styles'
 
 export const Header: FC = () => {
   const [state, setState] = useState(false)

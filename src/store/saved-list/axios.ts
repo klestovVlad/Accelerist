@@ -3,4 +3,5 @@ import { ApiMap } from '../../api'
 
 const { SavedListApi } = ApiMap
 
-export const savedListQuery = () => SavedListApi.savedListControllerProspects({ page: 1, limit: 2 })
+export const savedListQuery = () =>
+  SavedListApi.savedListControllerProspects({ page: 1, limit: 2 })

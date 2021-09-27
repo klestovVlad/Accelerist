@@ -20,7 +20,10 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
       onSubmit={onSubmitForm}
       render={({ values, handleSubmit }) => (
         <Container>
-          <P>Enter your email to receive instructions on how to reset your password.</P>
+          <P>
+            Enter your email to receive instructions on how to reset your
+            password.
+          </P>
           <Field
             name="email"
             label="Email"

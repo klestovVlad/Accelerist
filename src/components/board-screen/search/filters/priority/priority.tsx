@@ -7,9 +7,9 @@ export const Priority: FC = () => (
   <Content>
     <Header>Priority</Header>
     <P>
-      Customize how important each of the following indicators are to your organization, and
-      generate your own custom lead score. On a scale 1 ( least important) - 10 (most important),
-      rank each attribute bellow
+      Customize how important each of the following indicators are to your
+      organization, and generate your own custom lead score. On a scale 1 (
+      least important) - 10 (most important), rank each attribute bellow
     </P>
     <PriorityRadioButtons
       indicatorsList={[

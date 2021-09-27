@@ -3,7 +3,13 @@ import { Field, FormProps } from 'react-final-form'
 
 import { Input } from '../../../../../ui/input/input'
 import { Tabs } from '../../../../../ui/tabs/tabs'
-import { Content, Header, InputContainer, TabContainer, TabHeader } from './styles'
+import {
+  Content,
+  Header,
+  InputContainer,
+  TabContainer,
+  TabHeader,
+} from './styles'
 
 export const Demographics: FC<FormProps> = ({ form }) => {
   const [gender, setGender] = useState(2)
@@ -14,11 +20,19 @@ export const Demographics: FC<FormProps> = ({ form }) => {
       <InputContainer>
         <TabContainer>
           <TabHeader>Gender</TabHeader>
-          <Tabs tabNum={gender} setTabNum={setGender} TabList={['Male', 'Female', 'Both']} />
+          <Tabs
+            tabNum={gender}
+            setTabNum={setGender}
+            TabList={['Male', 'Female', 'Both']}
+          />
         </TabContainer>
         <TabContainer>
           <TabHeader>Relations</TabHeader>
-          <Tabs tabNum={relations} setTabNum={setRelations} TabList={['Single', 'Married']} />
+          <Tabs
+            tabNum={relations}
+            setTabNum={setRelations}
+            TabList={['Single', 'Married']}
+          />
         </TabContainer>
         <Field
           name="Household Income"

@@ -8,7 +8,12 @@ export const Search: FC = () => {
   const [showFilter, setShowFilter] = useState(false)
   return (
     <Content>
-      <Topic header="Search" showSearch settingState={showFilter} onSettingClick={setShowFilter} />
+      <Topic
+        header="Search"
+        showSearch
+        settingState={showFilter}
+        onSettingClick={setShowFilter}
+      />
       <Body>{showFilter && <Filters setShowFilter={setShowFilter} />}</Body>
     </Content>
   )

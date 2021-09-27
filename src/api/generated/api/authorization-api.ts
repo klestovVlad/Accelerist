@@ -29,7 +29,13 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { AwsKeyDto } from '../models'
 // @ts-ignore
@@ -44,7 +50,9 @@ import { SignUpDto } from '../models'
  * AuthorizationApi - axios parameter creator
  * @export
  */
-export const AuthorizationApiAxiosParamCreator = function (configuration?: Configuration) {
+export const AuthorizationApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -58,7 +66,11 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'passwordChangeDto' is not null or undefined
-      assertParamExists('authControllerChangePassword', 'passwordChangeDto', passwordChangeDto)
+      assertParamExists(
+        'authControllerChangePassword',
+        'passwordChangeDto',
+        passwordChangeDto
+      )
       const localVarPath = `/api/v1/auth/change_password`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -67,14 +79,19 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -116,14 +133,19 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -160,7 +182,11 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -171,7 +197,8 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -200,7 +227,11 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'passwordResetDto' is not null or undefined
-      assertParamExists('authControllerResetPassword', 'passwordResetDto', passwordResetDto)
+      assertParamExists(
+        'authControllerResetPassword',
+        'passwordResetDto',
+        passwordResetDto
+      )
       const localVarPath = `/api/v1/auth/change_password/send_mail`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -209,14 +240,19 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -240,7 +276,10 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignIn: async (signInDto: SignInDto, options: any = {}): Promise<RequestArgs> => {
+    authControllerSignIn: async (
+      signInDto: SignInDto,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'signInDto' is not null or undefined
       assertParamExists('authControllerSignIn', 'signInDto', signInDto)
       const localVarPath = `/api/v1/auth/sign_in`
@@ -251,14 +290,19 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -282,7 +326,10 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignUp: async (signUpDto: SignUpDto, options: any = {}): Promise<RequestArgs> => {
+    authControllerSignUp: async (
+      signUpDto: SignUpDto,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'signUpDto' is not null or undefined
       assertParamExists('authControllerSignUp', 'signUpDto', signUpDto)
       const localVarPath = `/api/v1/auth/sign_up`
@@ -293,14 +340,19 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -325,7 +377,8 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
  * @export
  */
 export const AuthorizationApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = AuthorizationApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator =
+    AuthorizationApiAxiosParamCreator(configuration)
   return {
     /**
      *
@@ -337,12 +390,20 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
     async authControllerChangePassword(
       passwordChangeDto: PasswordChangeDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerChangePassword(
-        passwordChangeDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerChangePassword(
+          passwordChangeDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -354,13 +415,20 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
     async authControllerChangePasswordCallback(
       passwordChangeDto: PasswordChangeDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.authControllerChangePasswordCallback(
           passwordChangeDto,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -371,12 +439,20 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
     async authControllerGetSignedUrl(
       awsKeyDto: AwsKeyDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerGetSignedUrl(
-        awsKeyDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerGetSignedUrl(
+          awsKeyDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -388,12 +464,20 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
     async authControllerResetPassword(
       passwordResetDto: PasswordResetDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerResetPassword(
-        passwordResetDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerResetPassword(
+          passwordResetDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -405,12 +489,17 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
     async authControllerSignIn(
       signInDto: SignInDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerSignIn(
-        signInDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerSignIn(signInDto, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -422,12 +511,17 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
     async authControllerSignUp(
       signUpDto: SignUpDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerSignUp(
-        signUpDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerSignUp(signUpDto, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -479,7 +573,10 @@ export const AuthorizationApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerGetSignedUrl(awsKeyDto: AwsKeyDto, options?: any): AxiosPromise<void> {
+    authControllerGetSignedUrl(
+      awsKeyDto: AwsKeyDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .authControllerGetSignedUrl(awsKeyDto, options)
         .then((request) => request(axios, basePath))
@@ -506,7 +603,10 @@ export const AuthorizationApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignIn(signInDto: SignInDto, options?: any): AxiosPromise<void> {
+    authControllerSignIn(
+      signInDto: SignInDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .authControllerSignIn(signInDto, options)
         .then((request) => request(axios, basePath))
@@ -518,7 +618,10 @@ export const AuthorizationApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignUp(signUpDto: SignUpDto, options?: any): AxiosPromise<void> {
+    authControllerSignUp(
+      signUpDto: SignUpDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .authControllerSignUp(signUpDto, options)
         .then((request) => request(axios, basePath))
@@ -630,7 +733,10 @@ export class AuthorizationApi extends BaseAPI {
     options?: any
   ) {
     return AuthorizationApiFp(this.configuration)
-      .authControllerChangePassword(requestParameters.passwordChangeDto, options)
+      .authControllerChangePassword(
+        requestParameters.passwordChangeDto,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 
@@ -647,7 +753,10 @@ export class AuthorizationApi extends BaseAPI {
     options?: any
   ) {
     return AuthorizationApiFp(this.configuration)
-      .authControllerChangePasswordCallback(requestParameters.passwordChangeDto, options)
+      .authControllerChangePasswordCallback(
+        requestParameters.passwordChangeDto,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 

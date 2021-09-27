@@ -19,7 +19,12 @@ interface TopicProps {
   onSettingClick?: Dispatch<SetStateAction<boolean>>
 }
 
-export const Topic: FC<TopicProps> = ({ header, onSettingClick, settingState, showSearch }) => (
+export const Topic: FC<TopicProps> = ({
+  header,
+  onSettingClick,
+  settingState,
+  showSearch,
+}) => (
   <BackgroundContent>
     <Content>
       <Header>{header}</Header>

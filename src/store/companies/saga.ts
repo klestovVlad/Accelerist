@@ -5,7 +5,9 @@ import { favoritesListQuery } from './axios'
 import { FavoriteListAction } from './slice'
 
 function* getFavoriteLis() {
-  const { data } = yield call(() => favoritesListQuery().catch((e) => ({ data: { error: e } })))
+  const { data } = yield call(() =>
+    favoritesListQuery().catch((e) => ({ data: { error: e } }))
+  )
   yield put(FavoriteListAction.getFavorites(data))
 }
 

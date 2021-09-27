@@ -29,7 +29,13 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { GetManyUserResponseDto } from '../models'
 // @ts-ignore
@@ -38,7 +44,9 @@ import { PasswordChangeDto } from '../models'
  * AdminUserApi - axios parameter creator
  * @export
  */
-export const AdminUserApiAxiosParamCreator = function (configuration?: Configuration) {
+export const AdminUserApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -61,7 +69,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -72,7 +84,8 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -126,7 +139,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -175,7 +192,8 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -217,7 +235,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -238,7 +260,8 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -278,7 +301,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -289,7 +316,8 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -322,7 +350,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       // verify required parameter 'id' is not null or undefined
       assertParamExists('usersCrudControllerChangePassword', 'id', id)
       // verify required parameter 'passwordChangeDto' is not null or undefined
-      assertParamExists('usersCrudControllerChangePassword', 'passwordChangeDto', passwordChangeDto)
+      assertParamExists(
+        'usersCrudControllerChangePassword',
+        'passwordChangeDto',
+        passwordChangeDto
+      )
       const localVarPath = `/api/v1/admin/users/{id}/change_password`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
@@ -334,7 +366,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -345,7 +381,8 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -389,7 +426,11 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -410,7 +451,8 @@ export const AdminUserApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -442,10 +484,20 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
     async createOneBaseUsersCrudControllerUser(
       body: object,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.createOneBaseUsersCrudControllerUser(body, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.createOneBaseUsersCrudControllerUser(
+          body,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -481,20 +533,26 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
         basePath?: string
       ) => AxiosPromise<GetManyUserResponseDto | Array<object>>
     > {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.getManyBaseUsersCrudControllerUser(
-        fields,
-        s,
-        filter,
-        or,
-        sort,
-        join,
-        limit,
-        offset,
-        page,
-        cache,
-        options
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.getManyBaseUsersCrudControllerUser(
+          fields,
+          s,
+          filter,
+          or,
+          sort,
+          join,
+          limit,
+          offset,
+          page,
+          cache,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -512,15 +570,23 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       join?: Array<string>,
       cache?: number,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.getOneBaseUsersCrudControllerUser(
-        id,
-        fields,
-        join,
-        cache,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.getOneBaseUsersCrudControllerUser(
+          id,
+          fields,
+          join,
+          cache,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -534,10 +600,21 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       id: string,
       body: object,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.updateOneBaseUsersCrudControllerUser(id, body, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.updateOneBaseUsersCrudControllerUser(
+          id,
+          body,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -551,13 +628,21 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       id: any,
       passwordChangeDto: PasswordChangeDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.usersCrudControllerChangePassword(
-        id,
-        passwordChangeDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.usersCrudControllerChangePassword(
+          id,
+          passwordChangeDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -573,14 +658,22 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       limit: any,
       q?: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.usersCrudControllerGetSuggested(
-        page,
-        limit,
-        q,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.usersCrudControllerGetSuggested(
+          page,
+          limit,
+          q,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -603,7 +696,10 @@ export const AdminUserApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createOneBaseUsersCrudControllerUser(body: object, options?: any): AxiosPromise<object> {
+    createOneBaseUsersCrudControllerUser(
+      body: object,
+      options?: any
+    ): AxiosPromise<object> {
       return localVarFp
         .createOneBaseUsersCrudControllerUser(body, options)
         .then((request) => request(axios, basePath))
@@ -1015,7 +1111,11 @@ export class AdminUserApi extends BaseAPI {
     options?: any
   ) {
     return AdminUserApiFp(this.configuration)
-      .updateOneBaseUsersCrudControllerUser(requestParameters.id, requestParameters.body, options)
+      .updateOneBaseUsersCrudControllerUser(
+        requestParameters.id,
+        requestParameters.body,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 

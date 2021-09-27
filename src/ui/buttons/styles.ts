@@ -8,6 +8,7 @@ interface StyledButtonProps {
   validate: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export enum BUTTON_COLOR_SCHEME {
   blue = 'blue',
   darkTransparent = 'darkTransparent',
@@ -17,7 +18,9 @@ export enum BUTTON_COLOR_SCHEME {
 const BACKGROUND_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<StyledButtonProps>`
     background-color: ${(props) =>
-      props.validate ? props.theme.colors.blue : props.theme.colors.light_blue2};
+      props.validate
+        ? props.theme.colors.blue
+        : props.theme.colors.light_blue2};
     padding: 12px 24px;
     font-size: 16px;
   `,
@@ -45,7 +48,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   text-align: center;
   border-radius: 6px;
   position: relative;
-  cursor: ${(props) => (props.isLoading || props.validate ? 'pointer' : 'not-allowed')};
+  cursor: ${(props) =>
+    props.isLoading || props.validate ? 'pointer' : 'not-allowed'};
   transition: all 0.3s;
 `
 
@@ -77,14 +81,17 @@ interface ButtonTextProps {
 
 const BUTTON_TEXT_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<ButtonTextProps>`
-    color: ${(props) => (props.validate ? props.theme.colors.white : props.theme.colors.blue)};
+    color: ${(props) =>
+      props.validate ? props.theme.colors.white : props.theme.colors.blue};
   `,
   [BUTTON_COLOR_SCHEME.darkTransparent]: css<ButtonTextProps>`
-    color: ${(props) => (props.validate ? props.theme.colors.white : props.theme.colors.blue)};
+    color: ${(props) =>
+      props.validate ? props.theme.colors.white : props.theme.colors.blue};
   `,
 
   [BUTTON_COLOR_SCHEME.white]: css<ButtonTextProps>`
-    color: ${(props) => (props.validate ? props.theme.colors.black : props.theme.colors.dark_grey)};
+    color: ${(props) =>
+      props.validate ? props.theme.colors.black : props.theme.colors.dark_grey};
   `,
 }
 

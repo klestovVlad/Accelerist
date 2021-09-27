@@ -29,7 +29,13 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { ContactGetDto } from '../models'
 // @ts-ignore
@@ -46,7 +52,9 @@ import { UpdateContactDto } from '../models'
  * AdminCompaniesApi - axios parameter creator
  * @export
  */
-export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Configuration) {
+export const AdminCompaniesApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -75,7 +83,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -96,7 +108,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -121,10 +134,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesCrudControllerUpdateCompany', 'id', id)
-      const localVarPath = `/api/v1/admin/companies/{id}/update-company`.replace(
-        `{${'id'}}`,
-        encodeURIComponent(String(id))
-      )
+      const localVarPath =
+        `/api/v1/admin/companies/{id}/update-company`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(id))
+        )
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
       let baseOptions
@@ -132,7 +146,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -141,7 +159,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -181,10 +200,16 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
-      const localVarFormParams = new ((configuration && configuration.formDataCtor) || FormData)()
+      const localVarFormParams = new ((configuration &&
+        configuration.formDataCtor) ||
+        FormData)()
 
       // authentication bearer required
       // http bearer authentication required
@@ -197,7 +222,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -224,17 +250,22 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'companyId' is not null or undefined
-      assertParamExists('createOneBaseAdminContactsContrrolerContact', 'companyId', companyId)
+      assertParamExists(
+        'createOneBaseAdminContactsContrrolerContact',
+        'companyId',
+        companyId
+      )
       // verify required parameter 'createContactDto' is not null or undefined
       assertParamExists(
         'createOneBaseAdminContactsContrrolerContact',
         'createContactDto',
         createContactDto
       )
-      const localVarPath = `/api/v1/admin/companies/{companyId}/contacts`.replace(
-        `{${'companyId'}}`,
-        encodeURIComponent(String(companyId))
-      )
+      const localVarPath =
+        `/api/v1/admin/companies/{companyId}/contacts`.replace(
+          `{${'companyId'}}`,
+          encodeURIComponent(String(companyId))
+        )
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
       let baseOptions
@@ -242,7 +273,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -253,7 +288,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -295,7 +331,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -306,7 +346,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -337,7 +378,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'companyId' is not null or undefined
-      assertParamExists('deleteOneBaseAdminContactsContrrolerContact', 'companyId', companyId)
+      assertParamExists(
+        'deleteOneBaseAdminContactsContrrolerContact',
+        'companyId',
+        companyId
+      )
       // verify required parameter 'id' is not null or undefined
       assertParamExists('deleteOneBaseAdminContactsContrrolerContact', 'id', id)
       const localVarPath = `/api/v1/admin/companies/{companyId}/contacts/{id}`
@@ -350,7 +395,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -359,7 +408,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -395,7 +445,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -404,7 +458,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -448,11 +503,16 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'companyId' is not null or undefined
-      assertParamExists('getManyBaseAdminContactsContrrolerContact', 'companyId', companyId)
-      const localVarPath = `/api/v1/admin/companies/{companyId}/contacts`.replace(
-        `{${'companyId'}}`,
-        encodeURIComponent(String(companyId))
+      assertParamExists(
+        'getManyBaseAdminContactsContrrolerContact',
+        'companyId',
+        companyId
       )
+      const localVarPath =
+        `/api/v1/admin/companies/{companyId}/contacts`.replace(
+          `{${'companyId'}}`,
+          encodeURIComponent(String(companyId))
+        )
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
       let baseOptions
@@ -460,7 +520,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -509,7 +573,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -558,7 +623,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -607,7 +676,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -649,7 +719,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -670,7 +744,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -698,7 +773,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'companyId' is not null or undefined
-      assertParamExists('updateOneBaseAdminContactsContrrolerContact', 'companyId', companyId)
+      assertParamExists(
+        'updateOneBaseAdminContactsContrrolerContact',
+        'companyId',
+        companyId
+      )
       // verify required parameter 'id' is not null or undefined
       assertParamExists('updateOneBaseAdminContactsContrrolerContact', 'id', id)
       // verify required parameter 'updateContactDto' is not null or undefined
@@ -717,7 +796,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -728,7 +811,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -777,7 +861,11 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -788,7 +876,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -813,7 +902,8 @@ export const AdminCompaniesApiAxiosParamCreator = function (configuration?: Conf
  * @export
  */
 export const AdminCompaniesApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = AdminCompaniesApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator =
+    AdminCompaniesApiAxiosParamCreator(configuration)
   return {
     /**
      *
@@ -829,14 +919,22 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       limit: any,
       q?: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesCrudControllerGetSuggested(
-        page,
-        limit,
-        q,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesCrudControllerGetSuggested(
+          page,
+          limit,
+          q,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -848,10 +946,20 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
     async companiesCrudControllerUpdateCompany(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesCrudControllerUpdateCompany(id, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.companiesCrudControllerUpdateCompany(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -865,13 +973,21 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       id: any,
       file: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesCrudControllerUploadExcel(
-        id,
-        file,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesCrudControllerUploadExcel(
+          id,
+          file,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -885,14 +1001,21 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       companyId: string,
       createContactDto: CreateContactDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContactGetDto>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContactGetDto>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.createOneBaseAdminContactsContrrolerContact(
           companyId,
           createContactDto,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -904,13 +1027,20 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
     async createOneBaseCompaniesCrudControllerCompany(
       createCompanyDto: CreateCompanyDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.createOneBaseCompaniesCrudControllerCompany(
           createCompanyDto,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -924,14 +1054,21 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       companyId: string,
       id: string,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.deleteOneBaseAdminContactsContrrolerContact(
           companyId,
           id,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -943,10 +1080,20 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
     async deleteOneBaseCompaniesCrudControllerCompany(
       id: string,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.deleteOneBaseCompaniesCrudControllerCompany(id, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.deleteOneBaseCompaniesCrudControllerCompany(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -978,7 +1125,12 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       page?: number,
       cache?: number,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ContactGetDto>>> {
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<Array<ContactGetDto>>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.getManyBaseAdminContactsContrrolerContact(
           companyId,
@@ -994,7 +1146,12 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           cache,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -1044,7 +1201,12 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           cache,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -1062,7 +1224,9 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       join?: Array<string>,
       cache?: number,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.getOneBaseCompaniesCrudControllerCompany(
           id,
@@ -1071,7 +1235,12 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           cache,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -1087,7 +1256,9 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       id: string,
       updateContactDto: UpdateContactDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContactGetDto>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContactGetDto>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.updateOneBaseAdminContactsContrrolerContact(
           companyId,
@@ -1095,7 +1266,12 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           updateContactDto,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -1109,14 +1285,21 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
       id: string,
       updateCompanyDto: UpdateCompanyDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.updateOneBaseCompaniesCrudControllerCompany(
           id,
           updateCompanyDto,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
   }
 }
@@ -1158,7 +1341,10 @@ export const AdminCompaniesApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesCrudControllerUpdateCompany(id: any, options?: any): AxiosPromise<void> {
+    companiesCrudControllerUpdateCompany(
+      id: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .companiesCrudControllerUpdateCompany(id, options)
         .then((request) => request(axios, basePath))
@@ -1171,7 +1357,11 @@ export const AdminCompaniesApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesCrudControllerUploadExcel(id: any, file: any, options?: any): AxiosPromise<void> {
+    companiesCrudControllerUploadExcel(
+      id: any,
+      file: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .companiesCrudControllerUploadExcel(id, file, options)
         .then((request) => request(axios, basePath))
@@ -1190,7 +1380,11 @@ export const AdminCompaniesApiFactory = function (
       options?: any
     ): AxiosPromise<ContactGetDto> {
       return localVarFp
-        .createOneBaseAdminContactsContrrolerContact(companyId, createContactDto, options)
+        .createOneBaseAdminContactsContrrolerContact(
+          companyId,
+          createContactDto,
+          options
+        )
         .then((request) => request(axios, basePath))
     },
     /**
@@ -1232,7 +1426,10 @@ export const AdminCompaniesApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteOneBaseCompaniesCrudControllerCompany(id: string, options?: any): AxiosPromise<void> {
+    deleteOneBaseCompaniesCrudControllerCompany(
+      id: string,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .deleteOneBaseCompaniesCrudControllerCompany(id, options)
         .then((request) => request(axios, basePath))
@@ -1348,7 +1545,13 @@ export const AdminCompaniesApiFactory = function (
       options?: any
     ): AxiosPromise<object> {
       return localVarFp
-        .getOneBaseCompaniesCrudControllerCompany(id, fields, join, cache, options)
+        .getOneBaseCompaniesCrudControllerCompany(
+          id,
+          fields,
+          join,
+          cache,
+          options
+        )
         .then((request) => request(axios, basePath))
     },
     /**
@@ -1367,7 +1570,12 @@ export const AdminCompaniesApiFactory = function (
       options?: any
     ): AxiosPromise<ContactGetDto> {
       return localVarFp
-        .updateOneBaseAdminContactsContrrolerContact(companyId, id, updateContactDto, options)
+        .updateOneBaseAdminContactsContrrolerContact(
+          companyId,
+          id,
+          updateContactDto,
+          options
+        )
         .then((request) => request(axios, basePath))
     },
     /**
@@ -1384,7 +1592,11 @@ export const AdminCompaniesApiFactory = function (
       options?: any
     ): AxiosPromise<object> {
       return localVarFp
-        .updateOneBaseCompaniesCrudControllerCompany(id, updateCompanyDto, options)
+        .updateOneBaseCompaniesCrudControllerCompany(
+          id,
+          updateCompanyDto,
+          options
+        )
         .then((request) => request(axios, basePath))
     },
   }
@@ -1827,7 +2039,11 @@ export class AdminCompaniesApi extends BaseAPI {
     options?: any
   ) {
     return AdminCompaniesApiFp(this.configuration)
-      .companiesCrudControllerUploadExcel(requestParameters.id, requestParameters.file, options)
+      .companiesCrudControllerUploadExcel(
+        requestParameters.id,
+        requestParameters.file,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 
@@ -1865,7 +2081,10 @@ export class AdminCompaniesApi extends BaseAPI {
     options?: any
   ) {
     return AdminCompaniesApiFp(this.configuration)
-      .createOneBaseCompaniesCrudControllerCompany(requestParameters.createCompanyDto, options)
+      .createOneBaseCompaniesCrudControllerCompany(
+        requestParameters.createCompanyDto,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 
@@ -1903,7 +2122,10 @@ export class AdminCompaniesApi extends BaseAPI {
     options?: any
   ) {
     return AdminCompaniesApiFp(this.configuration)
-      .deleteOneBaseCompaniesCrudControllerCompany(requestParameters.id, options)
+      .deleteOneBaseCompaniesCrudControllerCompany(
+        requestParameters.id,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 

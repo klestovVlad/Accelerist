@@ -15,7 +15,7 @@ export const Dashboard: FC = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(SavedListAction.savedListRequest())
-  }, [])
+  }, [dispatch])
   const loadSavedList = useSelector(SavedListSelector.selectLoadState)
   const loadFavoriteList = useSelector(FavoriteListSelector.selectLoadState)
   const loadState = loadSavedList || loadFavoriteList

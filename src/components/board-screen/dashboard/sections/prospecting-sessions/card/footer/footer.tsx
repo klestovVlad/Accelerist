@@ -55,7 +55,9 @@ export const Footer: FC<FooterProps> = ({ lastAuthor }) => {
       </AuthorContainer>
       <LastActivityContainer>
         <LastActivityHeader>Last Activity</LastActivityHeader>
-        <LastActivityTime>{ReturnFormattedDate(lastAuthor.updatedAt)}</LastActivityTime>
+        <LastActivityTime>
+          {ReturnFormattedDate(lastAuthor.updatedAt)}
+        </LastActivityTime>
       </LastActivityContainer>
     </Content>
   )

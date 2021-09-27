@@ -29,7 +29,13 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { CreateSavedListDto } from '../models'
 // @ts-ignore
@@ -42,7 +48,9 @@ import { UpdateSavedListDto } from '../models'
  * SavedListApi - axios parameter creator
  * @export
  */
-export const SavedListApiAxiosParamCreator = function (configuration?: Configuration) {
+export const SavedListApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -69,7 +77,11 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -80,7 +92,8 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -104,7 +117,10 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerDeleteProspect: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    savedListControllerDeleteProspect: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerDeleteProspect', 'id', id)
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
@@ -118,7 +134,11 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -127,7 +147,8 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -146,7 +167,10 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerGetExcel: async (id: string, options: any = {}): Promise<RequestArgs> => {
+    savedListControllerGetExcel: async (
+      id: string,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerGetExcel', 'id', id)
       const localVarPath = `/api/v1/saved-list/{id}/excel`.replace(
@@ -160,7 +184,11 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -169,7 +197,8 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -188,7 +217,10 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerProspect: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    savedListControllerProspect: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerProspect', 'id', id)
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
@@ -202,7 +234,11 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -211,7 +247,8 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -250,7 +287,11 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -271,7 +312,8 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -315,7 +357,11 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -326,7 +372,8 @@ export const SavedListApiAxiosParamCreator = function (configuration?: Configura
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -363,12 +410,20 @@ export const SavedListApiFp = function (configuration?: Configuration) {
     async savedListControllerCreateProspect(
       createSavedListDto: CreateSavedListDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.savedListControllerCreateProspect(
-        createSavedListDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.savedListControllerCreateProspect(
+          createSavedListDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -380,12 +435,20 @@ export const SavedListApiFp = function (configuration?: Configuration) {
     async savedListControllerDeleteProspect(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.savedListControllerDeleteProspect(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.savedListControllerDeleteProspect(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -397,12 +460,17 @@ export const SavedListApiFp = function (configuration?: Configuration) {
     async savedListControllerGetExcel(
       id: string,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.savedListControllerGetExcel(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.savedListControllerGetExcel(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -414,12 +482,20 @@ export const SavedListApiFp = function (configuration?: Configuration) {
     async savedListControllerProspect(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSavedListDto>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.savedListControllerProspect(
-        id,
-        options
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<GetSavedListDto>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.savedListControllerProspect(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -435,14 +511,25 @@ export const SavedListApiFp = function (configuration?: Configuration) {
       limit: any,
       sort?: 'alphabet' | 'last-activity' | 'available',
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GetSavedListDto>>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.savedListControllerProspects(
-        page,
-        limit,
-        sort,
-        options
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<Array<GetSavedListDto>>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.savedListControllerProspects(
+          page,
+          limit,
+          sort,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -456,13 +543,21 @@ export const SavedListApiFp = function (configuration?: Configuration) {
       id: any,
       updateSavedListDto: UpdateSavedListDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.savedListControllerUpdateProspect(
-        id,
-        updateSavedListDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.savedListControllerUpdateProspect(
+          id,
+          updateSavedListDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -500,7 +595,10 @@ export const SavedListApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerDeleteProspect(id: any, options?: any): AxiosPromise<void> {
+    savedListControllerDeleteProspect(
+      id: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .savedListControllerDeleteProspect(id, options)
         .then((request) => request(axios, basePath))
@@ -512,7 +610,10 @@ export const SavedListApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerGetExcel(id: string, options?: any): AxiosPromise<GetExcelDto> {
+    savedListControllerGetExcel(
+      id: string,
+      options?: any
+    ): AxiosPromise<GetExcelDto> {
       return localVarFp
         .savedListControllerGetExcel(id, options)
         .then((request) => request(axios, basePath))
@@ -524,7 +625,10 @@ export const SavedListApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerProspect(id: any, options?: any): AxiosPromise<GetSavedListDto> {
+    savedListControllerProspect(
+      id: any,
+      options?: any
+    ): AxiosPromise<GetSavedListDto> {
       return localVarFp
         .savedListControllerProspect(id, options)
         .then((request) => request(axios, basePath))
@@ -693,7 +797,10 @@ export class SavedListApi extends BaseAPI {
     options?: any
   ) {
     return SavedListApiFp(this.configuration)
-      .savedListControllerCreateProspect(requestParameters.createSavedListDto, options)
+      .savedListControllerCreateProspect(
+        requestParameters.createSavedListDto,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 

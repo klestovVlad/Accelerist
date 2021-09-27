@@ -8,7 +8,10 @@ interface ButtonRowProps {
   setShowFilter: Dispatch<SetStateAction<boolean>>
 }
 
-export const ButtonRow: FC<ButtonRowProps> = ({ handleSubmit, setShowFilter }) => (
+export const ButtonRow: FC<ButtonRowProps> = ({
+  handleSubmit,
+  setShowFilter,
+}) => (
   <Content>
     <ButtonContainer>
       <Button

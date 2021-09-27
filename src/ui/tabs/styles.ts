@@ -20,7 +20,9 @@ export const Selection = styled.div<SelectionProps>`
   position: absolute;
   display: block;
   width: calc(100% / ${(props) => props.arrLength} - 7px);
-  left: calc(100% * (${(props) => props.selectedNum}) / ${(props) => props.arrLength});
+  left: calc(
+    100% * (${(props) => props.selectedNum}) / ${(props) => props.arrLength}
+  );
   height: calc(100% - 4px);
   background-color: ${(props) => props.theme.colors.secondary_blue};
   transition: all 0.5s;
@@ -47,6 +49,7 @@ export const Tab = styled.div<TabProps>`
   font-size: 12px;
   line-height: 150%;
   transition: all 0.5s;
-  color: ${(props) => (props.isSelected ? props.theme.colors.black : props.theme.colors.gray)};
+  color: ${(props) =>
+    props.isSelected ? props.theme.colors.black : props.theme.colors.gray};
   cursor: ${(props) => (props.isSelected ? 'default' : 'pointer')};
 `

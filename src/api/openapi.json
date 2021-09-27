@@ -9,36 +9,66 @@
   "tags": [],
   "servers": [],
   "components": {
-    "securitySchemes": { "bearer": { "scheme": "bearer", "bearerFormat": "JWT", "type": "http" } },
+    "securitySchemes": {
+      "bearer": { "scheme": "bearer", "bearerFormat": "JWT", "type": "http" }
+    },
     "schemas": {
       "SignInDto": {
         "type": "object",
         "properties": {
-          "email": { "type": "string", "example": "user@example.com", "maxLength": 100 },
-          "password": { "type": "string", "example": "123456", "maxLength": 100 }
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "maxLength": 100
+          },
+          "password": {
+            "type": "string",
+            "example": "123456",
+            "maxLength": 100
+          }
         },
         "required": ["email", "password"]
       },
       "SignUpDto": {
         "type": "object",
         "properties": {
-          "email": { "type": "string", "example": "user@example.com", "maxLength": 100 },
-          "password": { "type": "string", "example": "123456", "maxLength": 100 }
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "maxLength": 100
+          },
+          "password": {
+            "type": "string",
+            "example": "123456",
+            "maxLength": 100
+          }
         },
         "required": ["email", "password"]
       },
       "PasswordChangeDto": {
         "type": "object",
         "properties": {
-          "password": { "type": "string", "example": "123456", "maxLength": 100 },
-          "passwordConfirmation": { "type": "string", "example": "123456", "maxLength": 100 }
+          "password": {
+            "type": "string",
+            "example": "123456",
+            "maxLength": 100
+          },
+          "passwordConfirmation": {
+            "type": "string",
+            "example": "123456",
+            "maxLength": 100
+          }
         },
         "required": ["password", "passwordConfirmation"]
       },
       "PasswordResetDto": {
         "type": "object",
         "properties": {
-          "email": { "type": "string", "example": "user@example.com", "maxLength": 100 }
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "maxLength": 100
+          }
         },
         "required": ["email"]
       },
@@ -50,9 +80,17 @@
       "UpdateUserDto": {
         "type": "object",
         "properties": {
-          "firstName": { "type": "string", "example": "Jhon", "maxLength": 100 },
+          "firstName": {
+            "type": "string",
+            "example": "Jhon",
+            "maxLength": 100
+          },
           "lastName": { "type": "string", "example": "Doe", "maxLength": 100 },
-          "email": { "type": "string", "example": "user@example.com", "maxLength": 100 },
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "maxLength": 100
+          },
           "linkedinLink": {
             "type": "string",
             "example": "https://www.linkedin.com/company/apple",
@@ -77,12 +115,22 @@
           "isRoi": { "type": "boolean" },
           "isPrices": { "type": "boolean" }
         },
-        "required": ["id", "name", "isProspecting", "isAudience", "isRoi", "isPrices"]
+        "required": [
+          "id",
+          "name",
+          "isProspecting",
+          "isAudience",
+          "isRoi",
+          "isPrices"
+        ]
       },
       "GetManyUserResponseDto": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/User" } },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/User" }
+          },
           "count": { "type": "number" },
           "total": { "type": "number" },
           "page": { "type": "number" },
@@ -111,7 +159,10 @@
       },
       "MissionFocusDto": {
         "type": "object",
-        "properties": { "label": { "type": "string" }, "value": { "type": "string" } },
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" }
+        },
         "required": ["label", "value"]
       },
       "OpportunitiesDto": {
@@ -137,25 +188,61 @@
       "UpdateTeamDto": {
         "type": "object",
         "properties": {
-          "organizationName": { "type": "string", "example": "United Nations", "maxLength": 100 },
-          "numberConstituents": { "type": "string", "example": "< 10 000", "maxLength": 100 },
-          "email": { "type": "string", "example": "test@example.com", "maxLength": 100 },
+          "organizationName": {
+            "type": "string",
+            "example": "United Nations",
+            "maxLength": 100
+          },
+          "numberConstituents": {
+            "type": "string",
+            "example": "< 10 000",
+            "maxLength": 100
+          },
+          "email": {
+            "type": "string",
+            "example": "test@example.com",
+            "maxLength": 100
+          },
           "twitterLink": {
             "type": "string",
             "example": "https://twitter.com/apple",
             "maxLength": 100
           },
-          "twitterHandle": { "type": "string", "example": "apple", "maxLength": 100 },
+          "twitterHandle": {
+            "type": "string",
+            "example": "apple",
+            "maxLength": 100
+          },
           "linkedinLink": {
             "type": "string",
             "example": "https://www.linkedin.com/company/apple",
             "maxLength": 100
           },
-          "aieldActivity": { "type": "string", "example": "Сharity", "maxLength": 100 },
-          "annualTotalContributions": { "type": "string", "example": "456", "maxLength": 100 },
-          "contactName": { "type": "string", "example": "Frank Lampard", "maxLength": 100 },
-          "contactPhone": { "type": "string", "example": "(555) 555-1234", "maxLength": 100 },
-          "contactWebsite": { "type": "string", "example": "chelseafccfc.com", "maxLength": 100 },
+          "aieldActivity": {
+            "type": "string",
+            "example": "Сharity",
+            "maxLength": 100
+          },
+          "annualTotalContributions": {
+            "type": "string",
+            "example": "456",
+            "maxLength": 100
+          },
+          "contactName": {
+            "type": "string",
+            "example": "Frank Lampard",
+            "maxLength": 100
+          },
+          "contactPhone": {
+            "type": "string",
+            "example": "(555) 555-1234",
+            "maxLength": 100
+          },
+          "contactWebsite": {
+            "type": "string",
+            "example": "chelseafccfc.com",
+            "maxLength": 100
+          },
           "goalAlignment": {
             "type": "array",
             "items": {
@@ -185,15 +272,25 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/TypesOfInvestmentDto" }
           },
-          "address": { "type": "string", "example": "Stamford Bridge", "maxLength": 100 },
+          "address": {
+            "type": "string",
+            "example": "Stamford Bridge",
+            "maxLength": 100
+          },
           "zip": { "type": "string", "example": "SW6 1HS", "maxLength": 100 },
-          "primaryMissionFocus": { "$ref": "#/components/schemas/MissionFocusDto" },
+          "primaryMissionFocus": {
+            "$ref": "#/components/schemas/MissionFocusDto"
+          },
           "secondaryMissionFocus": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/MissionFocusDto" }
           },
           "employeeEngagementOpportunities": { "type": "boolean" },
-          "charitablePartners": { "example": [], "type": "array", "items": { "type": "string" } },
+          "charitablePartners": {
+            "example": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
           "opportunities": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/OpportunitiesDto" }
@@ -221,14 +318,19 @@
       },
       "UserEmailDto": {
         "type": "object",
-        "properties": { "email": { "type": "string", "example": "test@example.com" } },
+        "properties": {
+          "email": { "type": "string", "example": "test@example.com" }
+        },
         "required": ["email"]
       },
       "GetExcelDto": {
         "type": "object",
         "properties": {
           "name": { "type": "string", "description": "Name of the file" },
-          "file": { "type": "string", "description": "A base64 string containing excel data" }
+          "file": {
+            "type": "string",
+            "description": "A base64 string containing excel data"
+          }
         },
         "required": ["name", "file"]
       },
@@ -247,7 +349,10 @@
       "GetManyTeamResponseDto": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Team" } },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Team" }
+          },
           "count": { "type": "number" },
           "total": { "type": "number" },
           "page": { "type": "number" },
@@ -259,7 +364,10 @@
       "GetManyCompanyResponseDto": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Company" } },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Company" }
+          },
           "count": { "type": "number" },
           "total": { "type": "number" },
           "page": { "type": "number" },
@@ -283,8 +391,16 @@
         "type": "object",
         "properties": {
           "type": { "type": "string", "example": "FACEBOOK", "maxLength": 100 },
-          "url": { "type": "string", "example": "http://www.facebook.com/ucsf", "maxLength": 100 },
-          "followerCount": { "type": "string", "example": "76971", "maxLength": 100 }
+          "url": {
+            "type": "string",
+            "example": "http://www.facebook.com/ucsf",
+            "maxLength": 100
+          },
+          "followerCount": {
+            "type": "string",
+            "example": "76971",
+            "maxLength": 100
+          }
         },
         "required": ["type", "url", "followerCount"]
       },
@@ -293,19 +409,63 @@
         "properties": {
           "name": { "type": "string", "example": "Apple", "maxLength": 100 },
           "logo": { "type": "string", "example": "", "maxLength": 100 },
-          "twitterHandle": { "type": "string", "example": "", "maxLength": 100 },
+          "twitterHandle": {
+            "type": "string",
+            "example": "",
+            "maxLength": 100
+          },
           "ticker": { "type": "string", "example": "", "maxLength": 100 },
-          "phone": { "type": "string", "example": "(415) 476-9000", "maxLength": 100 },
-          "fax": { "type": "string", "example": "(415) 476-9000", "maxLength": 100 },
-          "website": { "type": "string", "example": "https://apple.com", "maxLength": 100 },
-          "street": { "type": "string", "example": "505 Parnassus Ave", "maxLength": 100 },
-          "city": { "type": "string", "example": "San Francisco", "maxLength": 100 },
-          "state": { "type": "string", "example": "California", "maxLength": 100 },
-          "country": { "type": "string", "example": "United States", "maxLength": 100 },
-          "continent": { "type": "string", "example": "North America", "maxLength": 100 },
+          "phone": {
+            "type": "string",
+            "example": "(415) 476-9000",
+            "maxLength": 100
+          },
+          "fax": {
+            "type": "string",
+            "example": "(415) 476-9000",
+            "maxLength": 100
+          },
+          "website": {
+            "type": "string",
+            "example": "https://apple.com",
+            "maxLength": 100
+          },
+          "street": {
+            "type": "string",
+            "example": "505 Parnassus Ave",
+            "maxLength": 100
+          },
+          "city": {
+            "type": "string",
+            "example": "San Francisco",
+            "maxLength": 100
+          },
+          "state": {
+            "type": "string",
+            "example": "California",
+            "maxLength": 100
+          },
+          "country": {
+            "type": "string",
+            "example": "United States",
+            "maxLength": 100
+          },
+          "continent": {
+            "type": "string",
+            "example": "North America",
+            "maxLength": 100
+          },
           "zipCode": { "type": "string", "example": "94143", "maxLength": 100 },
-          "revenueRange": { "type": "string", "example": "Over $5 bil.", "maxLength": 100 },
-          "employeeRange": { "type": "string", "example": "Over 10,000", "maxLength": 100 },
+          "revenueRange": {
+            "type": "string",
+            "example": "Over $5 bil.",
+            "maxLength": 100
+          },
+          "employeeRange": {
+            "type": "string",
+            "example": "Over 10,000",
+            "maxLength": 100
+          },
           "descriptionList": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/CompanyDescriptionDto" }
@@ -329,10 +489,26 @@
             "type": "array",
             "items": { "type": "string" }
           },
-          "annualContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
-          "cashContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
-          "inKindContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
-          "employeeContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
+          "annualContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
+          "cashContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
+          "inKindContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
+          "employeeContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
           "sdgGoals": {
             "type": "array",
             "items": {
@@ -374,7 +550,10 @@
             "type": "array",
             "items": { "type": "string" }
           },
-          "partnershipLink": { "type": "string", "example": "https://google.com" },
+          "partnershipLink": {
+            "type": "string",
+            "example": "https://google.com"
+          },
           "employeeEngagementOpportunities": { "type": "boolean" }
         },
         "required": ["name"]
@@ -384,19 +563,63 @@
         "properties": {
           "name": { "type": "string", "example": "Apple", "maxLength": 100 },
           "logo": { "type": "string", "example": "", "maxLength": 100 },
-          "twitterHandle": { "type": "string", "example": "", "maxLength": 100 },
+          "twitterHandle": {
+            "type": "string",
+            "example": "",
+            "maxLength": 100
+          },
           "ticker": { "type": "string", "example": "", "maxLength": 100 },
-          "phone": { "type": "string", "example": "(415) 476-9000", "maxLength": 100 },
-          "fax": { "type": "string", "example": "(415) 476-9000", "maxLength": 100 },
-          "website": { "type": "string", "example": "https://apple.com", "maxLength": 100 },
-          "street": { "type": "string", "example": "505 Parnassus Ave", "maxLength": 100 },
-          "city": { "type": "string", "example": "San Francisco", "maxLength": 100 },
-          "state": { "type": "string", "example": "California", "maxLength": 100 },
-          "country": { "type": "string", "example": "United States", "maxLength": 100 },
-          "continent": { "type": "string", "example": "North America", "maxLength": 100 },
+          "phone": {
+            "type": "string",
+            "example": "(415) 476-9000",
+            "maxLength": 100
+          },
+          "fax": {
+            "type": "string",
+            "example": "(415) 476-9000",
+            "maxLength": 100
+          },
+          "website": {
+            "type": "string",
+            "example": "https://apple.com",
+            "maxLength": 100
+          },
+          "street": {
+            "type": "string",
+            "example": "505 Parnassus Ave",
+            "maxLength": 100
+          },
+          "city": {
+            "type": "string",
+            "example": "San Francisco",
+            "maxLength": 100
+          },
+          "state": {
+            "type": "string",
+            "example": "California",
+            "maxLength": 100
+          },
+          "country": {
+            "type": "string",
+            "example": "United States",
+            "maxLength": 100
+          },
+          "continent": {
+            "type": "string",
+            "example": "North America",
+            "maxLength": 100
+          },
           "zipCode": { "type": "string", "example": "94143", "maxLength": 100 },
-          "revenueRange": { "type": "string", "example": "Over $5 bil.", "maxLength": 100 },
-          "employeeRange": { "type": "string", "example": "Over 10,000", "maxLength": 100 },
+          "revenueRange": {
+            "type": "string",
+            "example": "Over $5 bil.",
+            "maxLength": 100
+          },
+          "employeeRange": {
+            "type": "string",
+            "example": "Over 10,000",
+            "maxLength": 100
+          },
           "descriptionList": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/CompanyDescriptionDto" }
@@ -420,10 +643,26 @@
             "type": "array",
             "items": { "type": "string" }
           },
-          "annualContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
-          "cashContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
-          "inKindContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
-          "employeeContributions": { "type": "string", "example": "21000000", "maxLength": 100 },
+          "annualContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
+          "cashContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
+          "inKindContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
+          "employeeContributions": {
+            "type": "string",
+            "example": "21000000",
+            "maxLength": 100
+          },
           "sdgGoals": {
             "type": "array",
             "items": {
@@ -465,7 +704,10 @@
             "type": "array",
             "items": { "type": "string" }
           },
-          "partnershipLink": { "type": "string", "example": "https://google.com" },
+          "partnershipLink": {
+            "type": "string",
+            "example": "https://google.com"
+          },
           "employeeEngagementOpportunities": { "type": "boolean" }
         },
         "required": ["name"]
@@ -549,7 +791,10 @@
       "GetManyContactResponseDto": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Contact" }
+          },
           "count": { "type": "number" },
           "total": { "type": "number" },
           "page": { "type": "number" },
@@ -621,7 +866,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/SignInDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SignInDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -636,7 +883,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/SignUpDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SignUpDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -651,7 +900,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/PasswordChangeDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PasswordChangeDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -666,7 +917,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/PasswordResetDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PasswordResetDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -681,7 +934,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/PasswordChangeDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PasswordChangeDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -695,7 +950,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/AwsKeyDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AwsKeyDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -719,7 +976,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UpdateUserDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateUserDto" }
+            }
           }
         },
         "responses": { "200": { "description": "" } },
@@ -735,7 +994,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "multipart/form-data": { "schema": { "$ref": "#/components/schemas/FileUploadDto" } }
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/FileUploadDto" }
+            }
           }
         },
         "responses": { "200": { "description": "" } },
@@ -759,7 +1020,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UpdateTeamDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateTeamDto" }
+            }
           }
         },
         "responses": { "200": { "description": "" } },
@@ -777,7 +1040,9 @@
             "description": "Returns subscription team",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/GetSubscriptionTeamDto" }
+                "schema": {
+                  "$ref": "#/components/schemas/GetSubscriptionTeamDto"
+                }
               }
             }
           }
@@ -839,7 +1104,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UserEmailDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserEmailDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -852,7 +1119,12 @@
         "operationId": "TeamsController_deleteMembers",
         "summary": "Remove team member",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Team"],
@@ -877,7 +1149,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "multipart/form-data": { "schema": { "$ref": "#/components/schemas/FileUploadDto" } }
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/FileUploadDto" }
+            }
           }
         },
         "responses": { "200": { "description": "" } },
@@ -890,7 +1164,13 @@
         "operationId": "InviteController_acceptInvite",
         "summary": "Callback after add team member",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "team", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "team",
+            "schema": {}
+          }
         ],
         "responses": { "201": { "description": "" } },
         "tags": ["Team"],
@@ -1257,7 +1537,9 @@
           "200": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/GetExcelDto" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GetExcelDto" }
+              }
             }
           }
         },
@@ -1270,7 +1552,13 @@
         "operationId": "CompaniesController_findById",
         "summary": "Get company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Companies"],
@@ -1282,7 +1570,13 @@
         "operationId": "CompaniesController_contacts",
         "summary": "Get company contacts",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Companies"],
@@ -1294,7 +1588,13 @@
         "operationId": "CompaniesController_news",
         "summary": "Get company news",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Companies"],
@@ -1306,7 +1606,13 @@
         "operationId": "CompaniesController_scoops",
         "summary": "Get company scoops",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Companies"],
@@ -1318,7 +1624,13 @@
         "operationId": "CompaniesController_like",
         "summary": "Like company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Companies"],
@@ -1330,7 +1642,13 @@
         "operationId": "CompaniesController_dislike",
         "summary": "Dislike company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["Companies"],
@@ -1345,7 +1663,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/SignInDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SignInDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -1367,12 +1687,20 @@
         "operationId": "UsersCrudController_changePassword",
         "summary": "Password change",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "user", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "user",
+            "schema": {}
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/PasswordChangeDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PasswordChangeDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -1417,7 +1745,12 @@
         "operationId": "getOneBaseUsersCrudControllerUser",
         "summary": "Retrieve one User",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
           {
             "name": "fields",
             "description": "Selects resource fields. <a href=\"https://github.com/nestjsx/crud/wiki/Requests#select\" target=\"_blank\">Docs</a>",
@@ -1447,7 +1780,11 @@
         "responses": {
           "200": {
             "description": "Get one base response",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/User" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/User" }
+              }
+            }
           }
         },
         "tags": ["[admin] User"],
@@ -1457,18 +1794,29 @@
         "operationId": "updateOneBaseUsersCrudControllerUser",
         "summary": "Update one User",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UpdateUsersDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateUsersDto" }
+            }
           }
         },
         "responses": {
           "200": {
             "description": "Response",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/User" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/User" }
+              }
+            }
           }
         },
         "tags": ["[admin] User"],
@@ -1569,7 +1917,10 @@
                 "schema": {
                   "oneOf": [
                     { "$ref": "#/components/schemas/GetManyUserResponseDto" },
-                    { "type": "array", "items": { "$ref": "#/components/schemas/User" } }
+                    {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/User" }
+                    }
                   ]
                 }
               }
@@ -1586,13 +1937,19 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/CreateUserDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateUserDto" }
+            }
           }
         },
         "responses": {
           "201": {
             "description": "Get create one base response",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/User" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/User" }
+              }
+            }
           }
         },
         "tags": ["[admin] User"],
@@ -1636,7 +1993,13 @@
         "operationId": "TeamsCrudController_getSubscriptionTeam",
         "summary": "Get team subscription",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "team", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "team",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["[admin] Teams"],
@@ -1646,13 +2009,21 @@
         "operationId": "TeamsCrudController_updateSubscriptionTeam",
         "summary": "Update team subscription",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "team", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "team",
+            "schema": {}
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdateSubscriptionTeamsDto" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSubscriptionTeamsDto"
+              }
             }
           }
         },
@@ -1664,7 +2035,13 @@
         "operationId": "TeamsCrudController_deleteSubscriptionTeam",
         "summary": "Delete team subscription",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "team", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "team",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["[admin] Teams"],
@@ -1676,12 +2053,20 @@
         "operationId": "TeamsCrudController_uploadExcel",
         "summary": "Upload excel to team",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "team", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "team",
+            "schema": {}
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "multipart/form-data": { "schema": { "$ref": "#/components/schemas/FileUploadDto" } }
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/FileUploadDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -1694,7 +2079,12 @@
         "operationId": "getOneBaseTeamsCrudControllerTeam",
         "summary": "Retrieve one Team",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
           {
             "name": "fields",
             "description": "Selects resource fields. <a href=\"https://github.com/nestjsx/crud/wiki/Requests#select\" target=\"_blank\">Docs</a>",
@@ -1724,7 +2114,11 @@
         "responses": {
           "200": {
             "description": "Get one base response",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Team" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Team" }
+              }
+            }
           }
         },
         "tags": ["[admin] Teams"],
@@ -1734,16 +2128,29 @@
         "operationId": "updateOneBaseTeamsCrudControllerTeam",
         "summary": "Update one Team",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "requestBody": {
           "required": true,
-          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Team" } } }
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Team" }
+            }
+          }
         },
         "responses": {
           "200": {
             "description": "Response",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Team" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Team" }
+              }
+            }
           }
         },
         "tags": ["[admin] Teams"],
@@ -1844,7 +2251,10 @@
                 "schema": {
                   "oneOf": [
                     { "$ref": "#/components/schemas/GetManyTeamResponseDto" },
-                    { "type": "array", "items": { "$ref": "#/components/schemas/Team" } }
+                    {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Team" }
+                    }
                   ]
                 }
               }
@@ -1860,12 +2270,20 @@
         "parameters": [],
         "requestBody": {
           "required": true,
-          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Team" } } }
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Team" }
+            }
+          }
         },
         "responses": {
           "201": {
             "description": "Get create one base response",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Team" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Team" }
+              }
+            }
           }
         },
         "tags": ["[admin] Teams"],
@@ -1877,7 +2295,13 @@
         "operationId": "CompaniesCrudController_updateCompany",
         "summary": "Update company through ZoomInfo",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "responses": { "200": { "description": "" } },
         "tags": ["[admin] Companies"],
@@ -1889,12 +2313,20 @@
         "operationId": "CompaniesCrudController_uploadExcel",
         "summary": "Upload excel to company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "description": "company", "schema": {} }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "company",
+            "schema": {}
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "multipart/form-data": { "schema": { "$ref": "#/components/schemas/FileUploadDto" } }
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/FileUploadDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -1939,7 +2371,12 @@
         "operationId": "getOneBaseCompaniesCrudControllerCompany",
         "summary": "Retrieve one Company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
           {
             "name": "fields",
             "description": "Selects resource fields. <a href=\"https://github.com/nestjsx/crud/wiki/Requests#select\" target=\"_blank\">Docs</a>",
@@ -1970,7 +2407,9 @@
           "200": {
             "description": "Get one base response",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Company" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Company" }
+              }
             }
           }
         },
@@ -1981,19 +2420,28 @@
         "operationId": "updateOneBaseCompaniesCrudControllerCompany",
         "summary": "Update one Company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UpdateCompanyDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateCompanyDto" }
+            }
           }
         },
         "responses": {
           "200": {
             "description": "Response",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Company" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Company" }
+              }
             }
           }
         },
@@ -2004,7 +2452,12 @@
         "operationId": "deleteOneBaseCompaniesCrudControllerCompany",
         "summary": "Delete one Company",
         "parameters": [
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "responses": { "200": { "description": "Delete one base response" } },
         "tags": ["[admin] Companies"],
@@ -2104,8 +2557,13 @@
               "application/json": {
                 "schema": {
                   "oneOf": [
-                    { "$ref": "#/components/schemas/GetManyCompanyResponseDto" },
-                    { "type": "array", "items": { "$ref": "#/components/schemas/Company" } }
+                    {
+                      "$ref": "#/components/schemas/GetManyCompanyResponseDto"
+                    },
+                    {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Company" }
+                    }
                   ]
                 }
               }
@@ -2122,14 +2580,18 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/CreateCompanyDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateCompanyDto" }
+            }
           }
         },
         "responses": {
           "201": {
             "description": "Get create one base response",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Company" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Company" }
+              }
             }
           }
         },
@@ -2162,7 +2624,10 @@
             "in": "query",
             "description": "Sort saved list",
             "isArray": true,
-            "schema": { "enum": ["alphabet", "last-activity", "available"], "type": "string" }
+            "schema": {
+              "enum": ["alphabet", "last-activity", "available"],
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2188,7 +2653,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/CreateSavedListDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateSavedListDto" }
+            }
           }
         },
         "responses": { "201": { "description": "" } },
@@ -2213,7 +2680,9 @@
           "200": {
             "description": "Returns prospect",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/GetSavedListDto" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GetSavedListDto" }
+              }
             }
           }
         },
@@ -2235,7 +2704,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UpdateSavedListDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateSavedListDto" }
+            }
           }
         },
         "responses": { "200": { "description": "" } },
@@ -2276,7 +2747,9 @@
           "200": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/GetExcelDto" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GetExcelDto" }
+              }
             }
           }
         },
@@ -2289,7 +2762,12 @@
         "operationId": "getManyBaseAdminContactsContrrolerContact",
         "summary": "Retrieve many Contact",
         "parameters": [
-          { "name": "companyId", "required": true, "in": "path", "schema": { "type": "string" } },
+          {
+            "name": "companyId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
           {
             "name": "fields",
             "description": "Selects resource fields. <a href=\"https://github.com/nestjsx/crud/wiki/Requests#select\" target=\"_blank\">Docs</a>",
@@ -2391,25 +2869,36 @@
         "operationId": "createOneBaseAdminContactsContrrolerContact",
         "summary": "Create one Contact",
         "parameters": [
-          { "name": "companyId", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "companyId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/CreateContactDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateContactDto" }
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/ContactGetDto" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ContactGetDto" }
+              }
             }
           },
           "201": {
             "description": "Get create one base response",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Contact" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Contact" }
+              }
             }
           }
         },
@@ -2422,20 +2911,34 @@
         "operationId": "updateOneBaseAdminContactsContrrolerContact",
         "summary": "Update one Contact",
         "parameters": [
-          { "name": "companyId", "required": true, "in": "path", "schema": { "type": "string" } },
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "companyId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": { "schema": { "$ref": "#/components/schemas/UpdateContactDto" } }
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateContactDto" }
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/ContactGetDto" } }
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ContactGetDto" }
+              }
             }
           }
         },
@@ -2446,8 +2949,18 @@
         "operationId": "deleteOneBaseAdminContactsContrrolerContact",
         "summary": "Delete one Contact",
         "parameters": [
-          { "name": "companyId", "required": true, "in": "path", "schema": { "type": "string" } },
-          { "name": "id", "required": true, "in": "path", "schema": { "type": "string" } }
+          {
+            "name": "companyId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
         ],
         "responses": { "200": { "description": "Delete one base response" } },
         "tags": ["[admin] Companies"],

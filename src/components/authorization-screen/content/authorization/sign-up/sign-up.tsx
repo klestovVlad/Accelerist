@@ -1,7 +1,10 @@
 import React, { FC } from 'react'
 import { Field, Form, FormProps } from 'react-final-form'
 
-import { validateEmail, validateInput } from '../../../../../functions/validation'
+import {
+  validateEmail,
+  validateInput,
+} from '../../../../../functions/validation'
 import { Button } from '../../../../../ui/buttons/button'
 import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn'
 import { InputField } from '../../../../../ui/form/input-field'

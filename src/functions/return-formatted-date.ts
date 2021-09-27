@@ -14,5 +14,7 @@ export function ReturnFormattedDate(date: string) {
     'Nov',
     'Dec',
   ]
-  return `${DateFormat.getDate()} ${Months[DateFormat.getMonth()]} ${DateFormat.getFullYear()}`
+  return `${DateFormat.getDate()} ${
+    Months[DateFormat.getMonth()]
+  } ${DateFormat.getFullYear()}`
 }

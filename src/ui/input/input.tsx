@@ -55,7 +55,9 @@ export const Input: FC<InputProps> = ({
       />
       {predefined && <CheckedParamList>123</CheckedParamList>}
       <ButtonsRow>
-        <Button onClick={ClearInput}>{input.value.length > 0 && <CLoseIcon />}</Button>
+        <Button onClick={ClearInput}>
+          {input.value.length > 0 && <CLoseIcon />}
+        </Button>
         {predefined && (
           <Button onClick={() => setShowList(!showList)}>
             <VerticalChevron inverted={showList} />

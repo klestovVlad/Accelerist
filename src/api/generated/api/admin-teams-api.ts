@@ -29,7 +29,13 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { GetManyTeamResponseDto } from '../models'
 // @ts-ignore
@@ -38,7 +44,9 @@ import { UpdateSubscriptionTeamsDto } from '../models'
  * AdminTeamsApi - axios parameter creator
  * @export
  */
-export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configuration) {
+export const AdminTeamsApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -61,7 +69,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -72,7 +84,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -126,7 +139,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -175,7 +192,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -217,7 +235,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -238,7 +260,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -274,7 +297,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -283,7 +310,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -319,7 +347,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -328,7 +360,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -367,7 +400,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -388,7 +425,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -432,7 +470,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -443,7 +485,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -488,10 +531,16 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
-      const localVarFormParams = new ((configuration && configuration.formDataCtor) || FormData)()
+      const localVarFormParams = new ((configuration &&
+        configuration.formDataCtor) ||
+        FormData)()
 
       // authentication bearer required
       // http bearer authentication required
@@ -504,7 +553,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -545,7 +595,11 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -556,7 +610,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -581,7 +636,8 @@ export const AdminTeamsApiAxiosParamCreator = function (configuration?: Configur
  * @export
  */
 export const AdminTeamsApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = AdminTeamsApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator =
+    AdminTeamsApiAxiosParamCreator(configuration)
   return {
     /**
      *
@@ -593,10 +649,20 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
     async createOneBaseTeamsCrudControllerTeam(
       body: object,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.createOneBaseTeamsCrudControllerTeam(body, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.createOneBaseTeamsCrudControllerTeam(
+          body,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -632,20 +698,26 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
         basePath?: string
       ) => AxiosPromise<GetManyTeamResponseDto | Array<object>>
     > {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.getManyBaseTeamsCrudControllerTeam(
-        fields,
-        s,
-        filter,
-        or,
-        sort,
-        join,
-        limit,
-        offset,
-        page,
-        cache,
-        options
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.getManyBaseTeamsCrudControllerTeam(
+          fields,
+          s,
+          filter,
+          or,
+          sort,
+          join,
+          limit,
+          offset,
+          page,
+          cache,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -663,15 +735,23 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
       join?: Array<string>,
       cache?: number,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.getOneBaseTeamsCrudControllerTeam(
-        id,
-        fields,
-        join,
-        cache,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.getOneBaseTeamsCrudControllerTeam(
+          id,
+          fields,
+          join,
+          cache,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -683,10 +763,20 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
     async teamsCrudControllerDeleteSubscriptionTeam(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsCrudControllerDeleteSubscriptionTeam(id, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.teamsCrudControllerDeleteSubscriptionTeam(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -698,10 +788,20 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
     async teamsCrudControllerGetSubscriptionTeam(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsCrudControllerGetSubscriptionTeam(id, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.teamsCrudControllerGetSubscriptionTeam(
+          id,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -717,14 +817,22 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
       limit: any,
       q?: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsCrudControllerGetSuggested(
-        page,
-        limit,
-        q,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsCrudControllerGetSuggested(
+          page,
+          limit,
+          q,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -738,14 +846,21 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
       id: any,
       updateSubscriptionTeamsDto: UpdateSubscriptionTeamsDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.teamsCrudControllerUpdateSubscriptionTeam(
           id,
           updateSubscriptionTeamsDto,
           options
         )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -759,13 +874,21 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
       id: any,
       file: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsCrudControllerUploadExcel(
-        id,
-        file,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.teamsCrudControllerUploadExcel(
+          id,
+          file,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -779,10 +902,21 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
       id: string,
       body: object,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
+    > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.updateOneBaseTeamsCrudControllerTeam(id, body, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+        await localVarAxiosParamCreator.updateOneBaseTeamsCrudControllerTeam(
+          id,
+          body,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
   }
 }
@@ -805,7 +939,10 @@ export const AdminTeamsApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createOneBaseTeamsCrudControllerTeam(body: object, options?: any): AxiosPromise<object> {
+    createOneBaseTeamsCrudControllerTeam(
+      body: object,
+      options?: any
+    ): AxiosPromise<object> {
       return localVarFp
         .createOneBaseTeamsCrudControllerTeam(body, options)
         .then((request) => request(axios, basePath))
@@ -883,7 +1020,10 @@ export const AdminTeamsApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsCrudControllerDeleteSubscriptionTeam(id: any, options?: any): AxiosPromise<void> {
+    teamsCrudControllerDeleteSubscriptionTeam(
+      id: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerDeleteSubscriptionTeam(id, options)
         .then((request) => request(axios, basePath))
@@ -895,7 +1035,10 @@ export const AdminTeamsApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsCrudControllerGetSubscriptionTeam(id: any, options?: any): AxiosPromise<void> {
+    teamsCrudControllerGetSubscriptionTeam(
+      id: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerGetSubscriptionTeam(id, options)
         .then((request) => request(axios, basePath))
@@ -933,7 +1076,11 @@ export const AdminTeamsApiFactory = function (
       options?: any
     ): AxiosPromise<void> {
       return localVarFp
-        .teamsCrudControllerUpdateSubscriptionTeam(id, updateSubscriptionTeamsDto, options)
+        .teamsCrudControllerUpdateSubscriptionTeam(
+          id,
+          updateSubscriptionTeamsDto,
+          options
+        )
         .then((request) => request(axios, basePath))
     },
     /**
@@ -944,7 +1091,11 @@ export const AdminTeamsApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsCrudControllerUploadExcel(id: any, file: any, options?: any): AxiosPromise<void> {
+    teamsCrudControllerUploadExcel(
+      id: any,
+      file: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerUploadExcel(id, file, options)
         .then((request) => request(axios, basePath))
@@ -1380,7 +1531,11 @@ export class AdminTeamsApi extends BaseAPI {
     options?: any
   ) {
     return AdminTeamsApiFp(this.configuration)
-      .teamsCrudControllerUploadExcel(requestParameters.id, requestParameters.file, options)
+      .teamsCrudControllerUploadExcel(
+        requestParameters.id,
+        requestParameters.file,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 
@@ -1397,7 +1552,11 @@ export class AdminTeamsApi extends BaseAPI {
     options?: any
   ) {
     return AdminTeamsApiFp(this.configuration)
-      .updateOneBaseTeamsCrudControllerTeam(requestParameters.id, requestParameters.body, options)
+      .updateOneBaseTeamsCrudControllerTeam(
+        requestParameters.id,
+        requestParameters.body,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 }

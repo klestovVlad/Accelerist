@@ -16,7 +16,10 @@ export const RangeSlider: FC<InputRangeProps> = ({
   rangeValue,
   setRangeValue,
 }) => {
-  const handleChange = (evt: ChangeEvent<unknown>, value: Array<number> | number) => {
+  const handleChange = (
+    evt: ChangeEvent<unknown>,
+    value: Array<number> | number
+  ) => {
     if (Array.isArray(value)) {
       setRangeValue(value)
     }

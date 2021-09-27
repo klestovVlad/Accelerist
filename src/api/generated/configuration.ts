@@ -115,7 +115,9 @@ export class Configuration {
       'i'
     )
     return (
-      mime !== null && (jsonMime.test(mime) || mime.toLowerCase() === 'application/json-patch+json')
+      mime !== null &&
+      (jsonMime.test(mime) ||
+        mime.toLowerCase() === 'application/json-patch+json')
     )
   }
 }

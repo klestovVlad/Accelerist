@@ -29,14 +29,22 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { UpdateUserDto } from '../models'
 /**
  * UserApi - axios parameter creator
  * @export
  */
-export const UserApiAxiosParamCreator = function (configuration?: Configuration) {
+export const UserApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -45,7 +53,10 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    usersControllerAvatarUpload: async (file: any, options: any = {}): Promise<RequestArgs> => {
+    usersControllerAvatarUpload: async (
+      file: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'file' is not null or undefined
       assertParamExists('usersControllerAvatarUpload', 'file', file)
       const localVarPath = `/api/v1/user/avatar_upload`
@@ -56,10 +67,16 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PUT',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
-      const localVarFormParams = new ((configuration && configuration.formDataCtor) || FormData)()
+      const localVarFormParams = new ((configuration &&
+        configuration.formDataCtor) ||
+        FormData)()
 
       // authentication bearer required
       // http bearer authentication required
@@ -72,7 +89,8 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
       localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -91,7 +109,9 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    usersControllerFindById: async (options: any = {}): Promise<RequestArgs> => {
+    usersControllerFindById: async (
+      options: any = {}
+    ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/user`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -100,7 +120,11 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -109,7 +133,8 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -133,7 +158,11 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'updateUserDto' is not null or undefined
-      assertParamExists('usersControllerUpdateProfile', 'updateUserDto', updateUserDto)
+      assertParamExists(
+        'usersControllerUpdateProfile',
+        'updateUserDto',
+        updateUserDto
+      )
       const localVarPath = `/api/v1/user`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
@@ -142,7 +171,11 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'PATCH',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -153,7 +186,8 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -190,12 +224,20 @@ export const UserApiFp = function (configuration?: Configuration) {
     async usersControllerAvatarUpload(
       file: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerAvatarUpload(
-        file,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.usersControllerAvatarUpload(
+          file,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -205,9 +247,17 @@ export const UserApiFp = function (configuration?: Configuration) {
      */
     async usersControllerFindById(
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerFindById(options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.usersControllerFindById(options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -219,12 +269,20 @@ export const UserApiFp = function (configuration?: Configuration) {
     async usersControllerUpdateProfile(
       updateUserDto: UpdateUserDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerUpdateProfile(
-        updateUserDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.usersControllerUpdateProfile(
+          updateUserDto,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -259,7 +317,9 @@ export const UserApiFactory = function (
      * @throws {RequiredError}
      */
     usersControllerFindById(options?: any): AxiosPromise<void> {
-      return localVarFp.usersControllerFindById(options).then((request) => request(axios, basePath))
+      return localVarFp
+        .usersControllerFindById(options)
+        .then((request) => request(axios, basePath))
     },
     /**
      *
@@ -268,7 +328,10 @@ export const UserApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    usersControllerUpdateProfile(updateUserDto: UpdateUserDto, options?: any): AxiosPromise<void> {
+    usersControllerUpdateProfile(
+      updateUserDto: UpdateUserDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .usersControllerUpdateProfile(updateUserDto, options)
         .then((request) => request(axios, basePath))

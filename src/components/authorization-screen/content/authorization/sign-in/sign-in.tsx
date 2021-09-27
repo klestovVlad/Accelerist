@@ -2,7 +2,10 @@ import React, { FC } from 'react'
 import { Field, Form, FormProps } from 'react-final-form'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { validateEmail, validateInput } from '../../../../../functions/validation'
+import {
+  validateEmail,
+  validateInput,
+} from '../../../../../functions/validation'
 import { UserAction, UserSelector } from '../../../../../store/user/index'
 import { Button } from '../../../../../ui/buttons/button'
 import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn'

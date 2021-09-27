@@ -1,6 +1,11 @@
 import React, { FC } from 'react'
 
-import { ButtonText, LoadingIcon, LoadingIconContainer, StyledButton } from './styles'
+import {
+  ButtonText,
+  LoadingIcon,
+  LoadingIconContainer,
+  StyledButton,
+} from './styles'
 
 interface ButtonProps {
   label: string | undefined

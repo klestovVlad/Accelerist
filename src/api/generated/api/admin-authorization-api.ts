@@ -29,14 +29,22 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { SignInDto } from '../models'
 /**
  * AdminAuthorizationApi - axios parameter creator
  * @export
  */
-export const AdminAuthorizationApiAxiosParamCreator = function (configuration?: Configuration) {
+export const AdminAuthorizationApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -53,7 +61,11 @@ export const AdminAuthorizationApiAxiosParamCreator = function (configuration?: 
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -62,7 +74,8 @@ export const AdminAuthorizationApiAxiosParamCreator = function (configuration?: 
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -81,7 +94,10 @@ export const AdminAuthorizationApiAxiosParamCreator = function (configuration?: 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignIn: async (signInDto: SignInDto, options: any = {}): Promise<RequestArgs> => {
+    authControllerSignIn: async (
+      signInDto: SignInDto,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'signInDto' is not null or undefined
       assertParamExists('authControllerSignIn', 'signInDto', signInDto)
       const localVarPath = `/api/v1/admin/sign_in`
@@ -92,14 +108,19 @@ export const AdminAuthorizationApiAxiosParamCreator = function (configuration?: 
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
       localVarHeaderParameter['Content-Type'] = 'application/json'
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -123,8 +144,11 @@ export const AdminAuthorizationApiAxiosParamCreator = function (configuration?: 
  * AdminAuthorizationApi - functional programming interface
  * @export
  */
-export const AdminAuthorizationApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = AdminAuthorizationApiAxiosParamCreator(configuration)
+export const AdminAuthorizationApiFp = function (
+  configuration?: Configuration
+) {
+  const localVarAxiosParamCreator =
+    AdminAuthorizationApiAxiosParamCreator(configuration)
   return {
     /**
      *
@@ -134,9 +158,17 @@ export const AdminAuthorizationApiFp = function (configuration?: Configuration) 
      */
     async authControllerFindById(
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerFindById(options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerFindById(options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -148,12 +180,17 @@ export const AdminAuthorizationApiFp = function (configuration?: Configuration) 
     async authControllerSignIn(
       signInDto: SignInDto,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerSignIn(
-        signInDto,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.authControllerSignIn(signInDto, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -176,7 +213,9 @@ export const AdminAuthorizationApiFactory = function (
      * @throws {RequiredError}
      */
     authControllerFindById(options?: any): AxiosPromise<void> {
-      return localVarFp.authControllerFindById(options).then((request) => request(axios, basePath))
+      return localVarFp
+        .authControllerFindById(options)
+        .then((request) => request(axios, basePath))
     },
     /**
      *
@@ -185,7 +224,10 @@ export const AdminAuthorizationApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignIn(signInDto: SignInDto, options?: any): AxiosPromise<void> {
+    authControllerSignIn(
+      signInDto: SignInDto,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .authControllerSignIn(signInDto, options)
         .then((request) => request(axios, basePath))

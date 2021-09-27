@@ -16,7 +16,8 @@ export const Input = styled.input<InputProps>`
   border-color: ${(props) =>
     props.validateError ? props.theme.colors.red : props.theme.colors.line};
   border-radius: 6px;
-  background-color: ${(props) => (props.validateError ? props.theme.colors.light_red : 'none')};
+  background-color: ${(props) =>
+    props.validateError ? props.theme.colors.light_red : 'none'};
   padding: 11px 31px 10px 16px;
   font-family: Rubik;
   font-style: normal;

@@ -20,7 +20,9 @@ export const ResetPassword: FC = () => {
     <Content>
       <H1>Password Reset</H1>
       {seconds === -1 && <InputForm setSeconds={setSeconds} />}
-      {seconds !== -1 && <ResentForm seconds={seconds} setSeconds={setSeconds} />}
+      {seconds !== -1 && (
+        <ResentForm seconds={seconds} setSeconds={setSeconds} />
+      )}
       <ButtonContainer>
         <Button
           label="Return to Login"

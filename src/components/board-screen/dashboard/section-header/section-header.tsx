@@ -7,7 +7,10 @@ interface SectionHeaderProps {
   isButtonShow: boolean
 }
 
-export const SectionHeader: FC<SectionHeaderProps> = ({ text, isButtonShow }) => (
+export const SectionHeader: FC<SectionHeaderProps> = ({
+  text,
+  isButtonShow,
+}) => (
   <Content>
     <Header>{text}</Header>
     {isButtonShow ? <DetailButton>see more</DetailButton> : null}

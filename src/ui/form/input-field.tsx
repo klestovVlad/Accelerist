@@ -10,7 +10,13 @@ interface InputFieldProps extends FieldRenderProps<string> {
   inputType: string
 }
 
-export const InputField: FC<InputFieldProps> = ({ input, meta, placeholder, label, inputType }) => {
+export const InputField: FC<InputFieldProps> = ({
+  input,
+  meta,
+  placeholder,
+  label,
+  inputType,
+}) => {
   const [hidePassword, setHidePassword] = useState(false)
   return (
     <Container>
@@ -22,9 +28,14 @@ export const InputField: FC<InputFieldProps> = ({ input, meta, placeholder, labe
         placeholder={placeholder}
         type={hidePassword ? 'text' : inputType}
       />
-      {meta.error && meta.touched && <ErrorSignature>{meta.error}</ErrorSignature>}
+      {meta.error && meta.touched && (
+        <ErrorSignature>{meta.error}</ErrorSignature>
+      )}
       {inputType === 'password' && (
-        <PasswordEye hidePassword={hidePassword} setHidePassword={setHidePassword} />
+        <PasswordEye
+          hidePassword={hidePassword}
+          setHidePassword={setHidePassword}
+        />
       )}
     </Container>
   )

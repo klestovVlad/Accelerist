@@ -12,10 +12,14 @@ export const ResentForm: FC<ResentFormProps> = ({ seconds, setSeconds }) => {
   const onButtonClick = () => {
     setSeconds(40)
   }
-  const ButtonText = seconds > 0 ? `00:${`0${seconds.toString()}`.slice(-2)}` : 'Resend'
+  const ButtonText =
+    seconds > 0 ? `00:${`0${seconds.toString()}`.slice(-2)}` : 'Resend'
   return (
     <Content>
-      <P>A link was sent to your email to confirm password reset and create a new one</P>
+      <P>
+        A link was sent to your email to confirm password reset and create a new
+        one
+      </P>
       <ButtonContainer>
         <Button
           label={ButtonText}

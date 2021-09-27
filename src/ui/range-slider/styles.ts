@@ -55,7 +55,9 @@ export const StyledSlider = styled(Slider)`
     transform: unset;
   }
 
-  & .PrivateValueLabel-thumb-1.PrivateValueLabel-open-2 .PrivateValueLabel-offset-3 {
+  &
+    .PrivateValueLabel-thumb-1.PrivateValueLabel-open-2
+    .PrivateValueLabel-offset-3 {
     transform: unset;
   }
 

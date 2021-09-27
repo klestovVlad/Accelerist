@@ -10,12 +10,21 @@ interface CompanyProps extends FormProps {
   setRangeValue: Dispatch<SetStateAction<number[]>>
 }
 
-export const Company: FC<CompanyProps> = ({ rangeValue, setRangeValue, form }) => (
+export const Company: FC<CompanyProps> = ({
+  rangeValue,
+  setRangeValue,
+  form,
+}) => (
   <Content>
     <Header>Company</Header>
     <InputContainer>
       <Field name="Industry" label="Industry" component={Input} form={form} />
-      <Field name="Geographic Location" label="Geographic Location" component={Input} form={form} />
+      <Field
+        name="Geographic Location"
+        label="Geographic Location"
+        component={Input}
+        form={form}
+      />
       <Field name="CSR Focus" label="CSR Focus" component={Input} />
       <Field
         name="Total Annual Contributions"

@@ -16,7 +16,9 @@ interface PriorityRadioButtonsProps {
   indicatorsList: Array<string>
 }
 
-export const PriorityRadioButtons: FC<PriorityRadioButtonsProps> = ({ indicatorsList }) => (
+export const PriorityRadioButtons: FC<PriorityRadioButtonsProps> = ({
+  indicatorsList,
+}) => (
   <Content>
     {indicatorsList.map((indicator, index) => (
       <IndicatorRow key={index}>

@@ -22,7 +22,11 @@ export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
   return (
     <Content>
       <Header>Filters</Header>
-      <Tabs tabNum={tabNum} setTabNum={setTabNum} TabList={['Advanced', 'Customize']} />
+      <Tabs
+        tabNum={tabNum}
+        setTabNum={setTabNum}
+        TabList={['Advanced', 'Customize']}
+      />
 
       <Form
         onSubmit={onSubmitForm}
@@ -42,7 +46,10 @@ export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
               form={form}
             />
             <Demographics onSubmit={onSubmitForm} form={form} />
-            <ButtonRow handleSubmit={handleSubmit} setShowFilter={setShowFilter} />
+            <ButtonRow
+              handleSubmit={handleSubmit}
+              setShowFilter={setShowFilter}
+            />
           </Container>
         )}
       />

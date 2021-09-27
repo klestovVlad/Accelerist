@@ -8,6 +8,9 @@ const selectItems = createSelector(selectFavoriteList, (data) => data.items)
 
 const selectMeta = createSelector(selectFavoriteList, (data) => data.meta)
 
-const selectLoadState = createSelector(selectFavoriteList, (data) => data.isLoading)
+const selectLoadState = createSelector(
+  selectFavoriteList,
+  (data) => data.isLoading
+)
 
 export const FavoriteListSelector = { selectItems, selectMeta, selectLoadState }

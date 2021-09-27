@@ -7,7 +7,10 @@ interface PasswordEyeProps {
   setHidePassword: Dispatch<SetStateAction<boolean>>
 }
 
-export const PasswordEye: FC<PasswordEyeProps> = ({ hidePassword, setHidePassword }) =>
+export const PasswordEye: FC<PasswordEyeProps> = ({
+  hidePassword,
+  setHidePassword,
+}) =>
   hidePassword ? (
     <Button type="button" onClick={() => setHidePassword(!hidePassword)}>
       <svg

@@ -29,14 +29,22 @@ import {
   createRequestFunction,
 } from '../common'
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base'
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base'
 // @ts-ignore
 import { GetExcelDto } from '../models'
 /**
  * CompaniesApi - axios parameter creator
  * @export
  */
-export const CompaniesApiAxiosParamCreator = function (configuration?: Configuration) {
+export const CompaniesApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
   return {
     /**
      *
@@ -45,7 +53,10 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerContacts: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    companiesControllerContacts: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerContacts', 'id', id)
       const localVarPath = `/api/v1/companies/{id}/contacts`.replace(
@@ -59,7 +70,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -68,7 +83,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -87,7 +103,10 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerDislike: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    companiesControllerDislike: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerDislike', 'id', id)
       const localVarPath = `/api/v1/companies/{id}/dislike`.replace(
@@ -101,7 +120,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -110,7 +133,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -129,7 +153,10 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerFindById: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    companiesControllerFindById: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerFindById', 'id', id)
       const localVarPath = `/api/v1/companies/{id}`.replace(
@@ -143,7 +170,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -152,7 +183,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -240,7 +272,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -301,7 +337,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       }
 
       if (totalAnnualContributors !== undefined) {
-        localVarQueryParameter['totalAnnualContributors'] = totalAnnualContributors
+        localVarQueryParameter['totalAnnualContributors'] =
+          totalAnnualContributors
       }
 
       if (revenueMin !== undefined) {
@@ -313,7 +350,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -401,7 +439,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -462,7 +504,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       }
 
       if (totalAnnualContributors !== undefined) {
-        localVarQueryParameter['totalAnnualContributors'] = totalAnnualContributors
+        localVarQueryParameter['totalAnnualContributors'] =
+          totalAnnualContributors
       }
 
       if (revenueMin !== undefined) {
@@ -474,7 +517,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -511,7 +555,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -528,7 +576,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -559,7 +608,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -572,7 +625,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -591,7 +645,10 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerLike: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    companiesControllerLike: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerLike', 'id', id)
       const localVarPath = `/api/v1/companies/{id}/like`.replace(
@@ -605,7 +662,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -614,7 +675,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -633,7 +695,10 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerNews: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    companiesControllerNews: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerNews', 'id', id)
       const localVarPath = `/api/v1/companies/{id}/news`.replace(
@@ -647,7 +712,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -656,7 +725,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -675,7 +745,10 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerScoops: async (id: any, options: any = {}): Promise<RequestArgs> => {
+    companiesControllerScoops: async (
+      id: any,
+      options: any = {}
+    ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerScoops', 'id', id)
       const localVarPath = `/api/v1/companies/{id}/scoops`.replace(
@@ -689,7 +762,11 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
         baseOptions = configuration.baseOptions
       }
 
-      const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options }
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      }
       const localVarHeaderParameter = {} as any
       const localVarQueryParameter = {} as any
 
@@ -698,7 +775,8 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
       await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
       setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
-      let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {}
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {}
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
@@ -730,12 +808,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerContacts(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerContacts(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerContacts(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -747,12 +830,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerDislike(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerDislike(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerDislike(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -764,12 +852,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerFindById(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerFindById(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerFindById(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -834,27 +927,35 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       revenueMin?: any,
       revenueMax?: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerGetCompanies(
-        page,
-        limit,
-        sdgGoals,
-        ethnicities,
-        income,
-        ageRanges,
-        gender,
-        q,
-        industry,
-        deleteIds,
-        csrFocusIds,
-        affinities,
-        location,
-        totalAnnualContributors,
-        revenueMin,
-        revenueMax,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerGetCompanies(
+          page,
+          limit,
+          sdgGoals,
+          ethnicities,
+          income,
+          ageRanges,
+          gender,
+          q,
+          industry,
+          deleteIds,
+          csrFocusIds,
+          affinities,
+          location,
+          totalAnnualContributors,
+          revenueMin,
+          revenueMax,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -919,27 +1020,35 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       revenueMin?: any,
       revenueMax?: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerGetExcel(
-        page,
-        limit,
-        sdgGoals,
-        ethnicities,
-        income,
-        ageRanges,
-        gender,
-        q,
-        industry,
-        deleteIds,
-        csrFocusIds,
-        affinities,
-        location,
-        totalAnnualContributors,
-        revenueMin,
-        revenueMax,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerGetExcel(
+          page,
+          limit,
+          sdgGoals,
+          ethnicities,
+          income,
+          ageRanges,
+          gender,
+          q,
+          industry,
+          deleteIds,
+          csrFocusIds,
+          affinities,
+          location,
+          totalAnnualContributors,
+          revenueMin,
+          revenueMax,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -953,13 +1062,21 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       page: any,
       limit: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerGetFavorites(
-        page,
-        limit,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerGetFavorites(
+          page,
+          limit,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -971,12 +1088,20 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerGetSuggested(
       q?: string,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerGetSuggested(
-        q,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerGetSuggested(
+          q,
+          options
+        )
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
     /**
      *
@@ -988,9 +1113,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerLike(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerLike(id, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerLike(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -1002,9 +1135,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerNews(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerNews(id, options)
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerNews(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      )
     },
     /**
      *
@@ -1016,12 +1157,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerScoops(
       id: any,
       options?: any
-    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerScoops(
-        id,
-        options
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.companiesControllerScoops(id, options)
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
       )
-      return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)
     },
   }
 }
@@ -1253,7 +1399,11 @@ export const CompaniesApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerGetFavorites(page: any, limit: any, options?: any): AxiosPromise<void> {
+    companiesControllerGetFavorites(
+      page: any,
+      limit: any,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetFavorites(page, limit, options)
         .then((request) => request(axios, basePath))
@@ -1265,7 +1415,10 @@ export const CompaniesApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerGetSuggested(q?: string, options?: any): AxiosPromise<void> {
+    companiesControllerGetSuggested(
+      q?: string,
+      options?: any
+    ): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetSuggested(q, options)
         .then((request) => request(axios, basePath))
@@ -1853,7 +2006,11 @@ export class CompaniesApi extends BaseAPI {
     options?: any
   ) {
     return CompaniesApiFp(this.configuration)
-      .companiesControllerGetFavorites(requestParameters.page, requestParameters.limit, options)
+      .companiesControllerGetFavorites(
+        requestParameters.page,
+        requestParameters.limit,
+        options
+      )
       .then((request) => request(this.axios, this.basePath))
   }
 

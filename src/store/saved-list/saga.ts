@@ -5,7 +5,9 @@ import { savedListQuery } from './axios'
 import { SavedListAction } from './slice'
 
 function* getSavedList() {
-  const { data } = yield call(() => savedListQuery().catch((e) => ({ data: { error: e } })))
+  const { data } = yield call(() =>
+    savedListQuery().catch((e) => ({ data: { error: e } }))
+  )
   yield put(SavedListAction.getSavedList(data))
 }
 
