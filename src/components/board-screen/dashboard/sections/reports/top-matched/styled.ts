@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
   margin-top: 24px;
-`;
+`
 
 export const Header = styled.div`
   font-family: Rubik;
@@ -11,13 +11,13 @@ export const Header = styled.div`
   font-size: 16px;
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
-`;
+`
 
 export const CompanyLogoContainer = styled.div`
   margin-top: 16px;
   display: flex;
   flex-direction: row;
-`;
+`
 
 export const CompanyLogo = styled.div`
   width: 83px;
@@ -31,4 +31,4 @@ export const CompanyLogo = styled.div`
   &:first-child {
     margin-left: 0;
   }
-`;
+`

@@ -1,20 +1,20 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.button`
   display: flex;
   align-items: center;
   position: relative;
-`;
+`
 
 export const UserIcon = styled.div`
   width: 36px;
   height: 36px;
   border-radius: 6px;
   background-color: ${(props) => props.theme.colors.white};
-`;
+`
 
 interface UserNameProps {
-  sidebarLocation: boolean;
+  sidebarLocation: boolean
 }
 
 export const UserName = styled.p<UserNameProps>`
@@ -25,7 +25,7 @@ export const UserName = styled.p<UserNameProps>`
   line-height: 150%;
   margin-left: 12px;
   color: ${(props) => props.theme.colors.black};
-`;
+`
 
 export const OptionPopup = styled.div`
   display: flex;
@@ -38,11 +38,11 @@ export const OptionPopup = styled.div`
   border-radius: 6px;
   padding: 24px;
   z-index: 9;
-`;
+`
 
 export const LogoutButton = styled.button`
   font-family: Rubik;
   font-size: 12px;
   color: ${(props) => props.theme.colors.red};
   line-height: normal;
-`;
+`

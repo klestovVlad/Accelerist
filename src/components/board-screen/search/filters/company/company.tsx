@@ -1,13 +1,13 @@
-import React, { Dispatch, FC, SetStateAction } from 'react';
-import { Field, FormProps } from 'react-final-form';
+import React, { Dispatch, FC, SetStateAction } from 'react'
+import { Field, FormProps } from 'react-final-form'
 
-import { Input } from '../../../../../ui/input/input';
-import { RangeSlider } from '../../../../../ui/range-slider/range-slider';
-import { Content, Header, InputContainer } from './styles';
+import { Input } from '../../../../../ui/input/input'
+import { RangeSlider } from '../../../../../ui/range-slider/range-slider'
+import { Content, Header, InputContainer } from './styles'
 
 interface CompanyProps extends FormProps {
-  rangeValue: number[];
-  setRangeValue: Dispatch<SetStateAction<number[]>>;
+  rangeValue: number[]
+  setRangeValue: Dispatch<SetStateAction<number[]>>
 }
 
 export const Company: FC<CompanyProps> = ({ rangeValue, setRangeValue, form }) => (
@@ -17,7 +17,12 @@ export const Company: FC<CompanyProps> = ({ rangeValue, setRangeValue, form }) =
       <Field name="Industry" label="Industry" component={Input} form={form} />
       <Field name="Geographic Location" label="Geographic Location" component={Input} form={form} />
       <Field name="CSR Focus" label="CSR Focus" component={Input} />
-      <Field name="Total Annual Contributions" label="Total Annual Contributions" component={Input} form={form} />
+      <Field
+        name="Total Annual Contributions"
+        label="Total Annual Contributions"
+        component={Input}
+        form={form}
+      />
       <Field name="SDG Goals" label="SDG Goals" component={Input} form={form} />
       <Field
         form={form}
@@ -32,4 +37,4 @@ export const Company: FC<CompanyProps> = ({ rangeValue, setRangeValue, form }) =
       />
     </InputContainer>
   </Content>
-);
+)

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
-import { Content, QualityItem, QualityItemHeader, QualityItemText } from './styles';
+import { Content, QualityItem, QualityItemHeader, QualityItemText } from './styles'
 
 interface PeculiaritiesRowProps {
-  prospectsAvailable: number;
+  prospectsAvailable: number
 }
 
 export const PeculiaritiesRow: FC<PeculiaritiesRowProps> = ({ prospectsAvailable }) => (
@@ -18,4 +18,4 @@ export const PeculiaritiesRow: FC<PeculiaritiesRowProps> = ({ prospectsAvailable
       <QualityItemText>--</QualityItemText>
     </QualityItem>
   </Content>
-);
+)

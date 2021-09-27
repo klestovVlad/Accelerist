@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { ReactComponent as UserSvg } from '../../../../../../ui/icons/svg/user.svg';
+import { ReactComponent as UserSvg } from '../../../../../../ui/icons/svg/user.svg'
 
 export const Content = styled.div`
   margin-top: 24px;
-`;
+`
 
 export const Header = styled.p`
   font-family: Rubik;
@@ -14,7 +14,7 @@ export const Header = styled.p`
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
   margin-bottom: 23px;
-`;
+`
 
 export const UserDataContainer = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const UserDataContainer = styled.div`
   align-items: center;
   margin-left: 10px;
   flex-grow: 1;
-`;
+`
 
 export const UserRow = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ export const UserRow = styled.div`
   &:nth-child(2) div${UserDataContainer} {
     border: none;
   }
-`;
+`
 
 export const UserImage = styled.div`
   position: relative;
@@ -44,14 +44,14 @@ export const UserImage = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.secondary_blue};
   margin: 8px 0 8px 0;
-`;
+`
 
 export const UserIcon = styled(UserSvg)`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
+`
 
 export const UserName = styled.p`
   font-family: Rubik;
@@ -60,7 +60,7 @@ export const UserName = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.black};
-`;
+`
 
 export const DateOfVisit = styled.p`
   font-family: Rubik;
@@ -69,4 +69,4 @@ export const DateOfVisit = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_grey};
-`;
+`

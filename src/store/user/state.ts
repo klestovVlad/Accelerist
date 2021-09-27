@@ -1,23 +1,23 @@
 export interface UserData {
-  accessToken: string;
+  accessToken: string
   user: {
-    id: number;
-    email: string;
-    firstName: string;
-    lastName: string;
-    isAuthorized: boolean;
-    imported: boolean;
-    teamId: string;
-    role: string;
-    linkedinLink: boolean;
-    isReceivingNotifications: boolean;
-    avatarKey: string;
-    loggedInAt: string;
-    createdAt: string;
-    updatedAt: string;
-    deletedAt: string;
-  };
-  isLoading: boolean;
+    id: number
+    email: string
+    firstName: string
+    lastName: string
+    isAuthorized: boolean
+    imported: boolean
+    teamId: string
+    role: string
+    linkedinLink: boolean
+    isReceivingNotifications: boolean
+    avatarKey: string
+    loggedInAt: string
+    createdAt: string
+    updatedAt: string
+    deletedAt: string
+  }
+  isLoading: boolean
 }
 
 export const initialState: UserData = {
@@ -40,9 +40,9 @@ export const initialState: UserData = {
     deletedAt: '',
   },
   isLoading: false,
-};
+}
 
 export interface SignRequest {
-  email: string;
-  password: string;
+  email: string
+  password: string
 }

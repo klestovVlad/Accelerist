@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.button`
   display: none;
@@ -6,7 +6,7 @@ export const Container = styled.button`
   @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
     display: block;
   }
-`;
+`
 
 export const Label = styled.label`
   display: flex;
@@ -18,10 +18,10 @@ export const Label = styled.label`
 
   z-index: 1;
   position: relative;
-`;
+`
 
 interface SpanProps {
-  checked: boolean;
+  checked: boolean
 }
 
 export const Span = styled.span<SpanProps>`
@@ -61,4 +61,4 @@ export const Span = styled.span<SpanProps>`
     width: 100%;
     height: 2px;
   }
-`;
+`

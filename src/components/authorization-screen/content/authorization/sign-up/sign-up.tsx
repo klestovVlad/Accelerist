@@ -1,17 +1,17 @@
-import React, { FC } from 'react';
-import { Field, Form, FormProps } from 'react-final-form';
+import React, { FC } from 'react'
+import { Field, Form, FormProps } from 'react-final-form'
 
-import { validateEmail, validateInput } from '../../../../../functions/validation';
-import { Button } from '../../../../../ui/buttons/button';
-import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn';
-import { InputField } from '../../../../../ui/form/input-field';
-import { Container } from './styles';
-import { TermsOfServices } from './terms-of-services/terms_of_services';
+import { validateEmail, validateInput } from '../../../../../functions/validation'
+import { Button } from '../../../../../ui/buttons/button'
+import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn'
+import { InputField } from '../../../../../ui/form/input-field'
+import { Container } from './styles'
+import { TermsOfServices } from './terms-of-services/terms_of_services'
 
 export const SignUp: FC = () => {
   const onSubmitForm = (values: FormProps) => {
-    console.log(values);
-  };
+    console.log(values)
+  }
   return (
     <Form
       onSubmit={onSubmitForm}
@@ -52,5 +52,5 @@ export const SignUp: FC = () => {
         </Container>
       )}
     />
-  );
-};
+  )
+}

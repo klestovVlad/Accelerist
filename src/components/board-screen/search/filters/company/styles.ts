@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const Header = styled.h3`
   font-family: Rubik;
@@ -14,11 +14,11 @@ export const Header = styled.h3`
   color: ${(props) => props.theme.colors.black};
   margin-top: 34px;
   margin-bottom: 38px;
-`;
+`
 
 export const InputContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 23px;
   grid-row-gap: 46px;
-`;
+`

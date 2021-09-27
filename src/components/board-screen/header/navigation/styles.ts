@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const Container = styled.nav`
   margin-left: 22px;
@@ -7,7 +7,7 @@ export const Container = styled.nav`
     margin-left: 0px;
   }
   position: relative;
-`;
+`
 
 export const List = styled.ul`
   display: flex;
@@ -15,13 +15,13 @@ export const List = styled.ul`
   @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
     flex-direction: column;
   }
-`;
+`
 
 export const ListItem = styled.li`
   @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
     margin-bottom: 32px;
   }
-`;
+`
 
 export const Link = styled(NavLink)`
   font-family: Rubik;
@@ -42,4 +42,4 @@ export const Link = styled(NavLink)`
     line-height: 155%;
     margin-left: 0;
   }
-`;
+`

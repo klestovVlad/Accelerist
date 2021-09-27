@@ -1,6 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
-import { Content, DateOfVisit, Header, UserDataContainer, UserIcon, UserImage, UserName, UserRow } from './styled';
+import {
+  Content,
+  DateOfVisit,
+  Header,
+  UserDataContainer,
+  UserIcon,
+  UserImage,
+  UserName,
+  UserRow,
+} from './styled'
 
 export const LastLogin: FC = () => (
   <Content>
@@ -35,4 +44,4 @@ export const LastLogin: FC = () => (
       </UserDataContainer>
     </UserRow>
   </Content>
-);
+)

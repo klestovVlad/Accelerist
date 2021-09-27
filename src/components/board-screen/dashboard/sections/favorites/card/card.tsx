@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
 import {
   CompanyContainer,
@@ -10,7 +10,7 @@ import {
   Info,
   Logo,
   PriorityRanking,
-} from './style';
+} from './style'
 
 export const Card: FC = () => (
   <Content>
@@ -28,4 +28,4 @@ export const Card: FC = () => (
       <CRSItems>Education</CRSItems>
     </CRSContainer>
   </Content>
-);
+)

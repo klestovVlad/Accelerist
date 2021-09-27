@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
-import { Path } from './styles';
+import { Path } from './styles'
 
 interface VerticalChevronProp {
-  inverted: boolean;
+  inverted: boolean
 }
 
 export const VerticalChevron: FC<VerticalChevronProp> = ({ inverted }) => {
-  const path = inverted ? 'M18 15 12 9 6 15' : 'M6 9L12 15 18 9';
+  const path = inverted ? 'M18 15 12 9 6 15' : 'M6 9L12 15 18 9'
   return (
     <svg
       width="24"
@@ -19,5 +19,5 @@ export const VerticalChevron: FC<VerticalChevronProp> = ({ inverted }) => {
     >
       <Path d={path} />
     </svg>
-  );
-};
+  )
+}

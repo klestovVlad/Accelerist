@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { ReactComponent as CLoseSvg } from '../icons/svg/close-icon.svg';
+import { ReactComponent as CLoseSvg } from '../icons/svg/close-icon.svg'
 
 export const Content = styled.div`
   position: relative;
   width: 100%;
-`;
+`
 
 export const InputField = styled.input`
   width: 100%;
@@ -20,7 +20,7 @@ export const InputField = styled.input`
   border-color: ${(props) => props.theme.colors.line};
   border-radius: 6px;
   background-color: ${(props) => props.theme.colors.white};
-`;
+`
 
 export const InputLabel = styled.span`
   font-family: Rubik;
@@ -32,7 +32,7 @@ export const InputLabel = styled.span`
   position: absolute;
   top: -4px;
   transform: translateY(-100%);
-`;
+`
 
 export const ButtonsRow = styled.div`
   position: absolute;
@@ -40,11 +40,11 @@ export const ButtonsRow = styled.div`
   top: 50%;
   transform: translateY(-50%);
   line-height: 0;
-`;
+`
 
-export const Button = styled.button``;
+export const Button = styled.button``
 
-export const CLoseIcon = styled(CLoseSvg)``;
+export const CLoseIcon = styled(CLoseSvg)``
 
 export const ListContent = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ export const ListContent = styled.div`
   max-height: 150px;
   overflow-y: scroll;
   z-index: 99;
-`;
+`
 
 export const ListRow = styled.div`
   display: flex;
@@ -71,7 +71,7 @@ export const ListRow = styled.div`
   justify-content: space-between;
   margin-top: 21px;
   align-items: center;
-`;
+`
 
 export const ListItemName = styled.p`
   font-family: Rubik;
@@ -80,7 +80,7 @@ export const ListItemName = styled.p`
   font-size: 16px;
   line-height: 155%;
   color: ${(props) => props.theme.colors.black};
-`;
+`
 
 export const CheckedParamList = styled.p`
   position: absolute;
@@ -93,4 +93,4 @@ export const CheckedParamList = styled.p`
   font-size: 16px;
   line-height: 155%;
   color: ${(prop) => prop.theme.colors.black};
-`;
+`

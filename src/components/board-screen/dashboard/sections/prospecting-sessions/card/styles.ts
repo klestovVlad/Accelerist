@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.section`
   padding: 24px;
@@ -6,7 +6,7 @@ export const Container = styled.section`
   border-radius: 6px;
   margin: 12px;
   width: 536px;
-`;
+`
 
 export const Header = styled.h3`
   font-family: 'Rubik';
@@ -14,7 +14,7 @@ export const Header = styled.h3`
   font-weight: 500;
   font-size: 16px;
   line-height: 145%;
-`;
+`
 
 export const Underline = styled.br`
   background-color: ${(props) => props.theme.colors.line};
@@ -22,4 +22,4 @@ export const Underline = styled.br`
   display: block;
   content: '';
   margin-top: 9px;
-`;
+`

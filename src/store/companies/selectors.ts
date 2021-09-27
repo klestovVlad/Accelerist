@@ -1,13 +1,13 @@
-import { createSelector } from 'reselect';
+import { createSelector } from 'reselect'
 
-import { RootState } from '../root-reducer';
+import { RootState } from '../root-reducer'
 
-const selectFavoriteList = (state: RootState) => state.favoriteListSlice;
+const selectFavoriteList = (state: RootState) => state.favoriteListSlice
 
-const selectItems = createSelector(selectFavoriteList, (data) => data.items);
+const selectItems = createSelector(selectFavoriteList, (data) => data.items)
 
-const selectMeta = createSelector(selectFavoriteList, (data) => data.meta);
+const selectMeta = createSelector(selectFavoriteList, (data) => data.meta)
 
-const selectLoadState = createSelector(selectFavoriteList, (data) => data.isLoading);
+const selectLoadState = createSelector(selectFavoriteList, (data) => data.isLoading)
 
-export const FavoriteListSelector = { selectItems, selectMeta, selectLoadState };
+export const FavoriteListSelector = { selectItems, selectMeta, selectLoadState }

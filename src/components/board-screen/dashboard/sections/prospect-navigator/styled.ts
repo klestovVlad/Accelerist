@@ -1,21 +1,21 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
   margin-top: 40px;
-`;
+`
 
 export const CardContainer = styled.div`
   display: flex;
   margin: 0 -24px;
   flex-wrap: wrap;
-`;
+`
 
 export const Card = styled.div`
   margin-left: 24px;
   width: 256px;
   margin-left: 24px;
   margin-top: 16px;
-`;
+`
 
 export const Image = styled.div`
   width: 100%;
@@ -23,7 +23,7 @@ export const Image = styled.div`
   padding-bottom: 100%;
   border-radius: 6px;
   background-color: ${(props) => props.theme.colors.blue};
-`;
+`
 
 export const CardHeader = styled.p`
   font-family: 'Rubik';
@@ -33,7 +33,7 @@ export const CardHeader = styled.p`
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
   margin-top: 16px;
-`;
+`
 
 export const CardText = styled.p`
   font-family: 'Rubik';
@@ -43,7 +43,7 @@ export const CardText = styled.p`
   line-height: 150%;
   color: ${(props) => props.theme.colors.black};
   margin-top: 4px;
-`;
+`
 
 export const CardDate = styled.p`
   font-family: Rubik;
@@ -53,4 +53,4 @@ export const CardDate = styled.p`
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
   margin-top: 8px;
-`;
+`

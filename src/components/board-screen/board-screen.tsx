@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
+import React, { FC } from 'react'
+import { Redirect, Route, Switch } from 'react-router'
 
-import { Dashboard } from './dashboard/dashboard';
-import { Header } from './header/header';
-import { Search } from './search/search';
-import { Container } from './styled';
+import { Dashboard } from './dashboard/dashboard'
+import { Header } from './header/header'
+import { Search } from './search/search'
+import { Container } from './styled'
 
 export const BoardScreen: FC = () => (
   <Container>
@@ -15,4 +15,4 @@ export const BoardScreen: FC = () => (
       <Redirect to="/dashboard" />
     </Switch>
   </Container>
-);
+)

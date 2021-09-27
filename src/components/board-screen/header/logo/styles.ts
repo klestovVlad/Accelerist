@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { ReactComponent as Logo } from '../../../../ui/icons/svg/logo-board.svg';
+import { ReactComponent as Logo } from '../../../../ui/icons/svg/logo-board.svg'
 
 export const Container = styled.a`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.a`
   background-color: ${(props) => props.theme.colors.secondary_blue2};
   align-items: center;
   text-decoration: none;
-`;
+`
 
 export const LogoLabel = styled.p`
   margin-left: 12px;
@@ -18,6 +18,6 @@ export const LogoLabel = styled.p`
   font-size: 16px;
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
-`;
+`
 
-export const LogoIcon = styled(Logo)``;
+export const LogoIcon = styled(Logo)``

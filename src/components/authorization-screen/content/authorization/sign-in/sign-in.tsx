@@ -1,26 +1,26 @@
-import React, { FC } from 'react';
-import { Field, Form, FormProps } from 'react-final-form';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { FC } from 'react'
+import { Field, Form, FormProps } from 'react-final-form'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { validateEmail, validateInput } from '../../../../../functions/validation';
-import { UserAction, UserSelector } from '../../../../../store/user/index';
-import { Button } from '../../../../../ui/buttons/button';
-import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn';
-import { InputField } from '../../../../../ui/form/input-field';
-import { PasswordOptions } from './password-options/password-options';
-import { Container } from './styles';
+import { validateEmail, validateInput } from '../../../../../functions/validation'
+import { UserAction, UserSelector } from '../../../../../store/user/index'
+import { Button } from '../../../../../ui/buttons/button'
+import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn'
+import { InputField } from '../../../../../ui/form/input-field'
+import { PasswordOptions } from './password-options/password-options'
+import { Container } from './styles'
 
 export const SignIn: FC = () => {
-  const dispatch = useDispatch();
-  const loadState = useSelector(UserSelector.selectLoadState);
+  const dispatch = useDispatch()
+  const loadState = useSelector(UserSelector.selectLoadState)
   const onSubmitForm = (values: FormProps) => {
     dispatch(
       UserAction.signInRequest({
         email: values.email,
         password: values.password,
-      }),
-    );
-  };
+      })
+    )
+  }
   return (
     <Form
       onSubmit={onSubmitForm}
@@ -53,11 +53,14 @@ export const SignIn: FC = () => {
             onClick={handleSubmit}
             colorScheme="blue"
             isLoading={loadState}
-            validate={validateEmail(values.email) === undefined && validateInput(values.password) === undefined}
+            validate={
+              validateEmail(values.email) === undefined &&
+              validateInput(values.password) === undefined
+            }
           />
           <LinkedIn />
         </Container>
       )}
     />
-  );
-};
+  )
+}

@@ -1,20 +1,20 @@
-import React, { Dispatch, FC, SetStateAction } from 'react';
-import { Field, Form, FormProps } from 'react-final-form';
+import React, { Dispatch, FC, SetStateAction } from 'react'
+import { Field, Form, FormProps } from 'react-final-form'
 
-import { validateEmail } from '../../../../../functions/validation';
-import { Button } from '../../../../../ui/buttons/button';
-import { InputField } from '../../../../../ui/form/input-field';
-import { ButtonContainer, Container, P } from './styles';
+import { validateEmail } from '../../../../../functions/validation'
+import { Button } from '../../../../../ui/buttons/button'
+import { InputField } from '../../../../../ui/form/input-field'
+import { ButtonContainer, Container, P } from './styles'
 
 interface InputFormProps {
-  setSeconds: Dispatch<SetStateAction<number>>;
+  setSeconds: Dispatch<SetStateAction<number>>
 }
 
 export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
   const onSubmitForm = (values: FormProps) => {
-    setSeconds(40);
-    console.log(values);
-  };
+    setSeconds(40)
+    console.log(values)
+  }
   return (
     <Form
       onSubmit={onSubmitForm}
@@ -43,5 +43,5 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
         </Container>
       )}
     />
-  );
-};
+  )
+}

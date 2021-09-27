@@ -1,20 +1,20 @@
-import React, { FC } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
-import { useHistory } from 'react-router-dom';
+import React, { FC } from 'react'
+import { Redirect, Route, Switch } from 'react-router'
+import { useHistory } from 'react-router-dom'
 
-import { SignIn } from './sign-in/sign-in';
-import { SignUp } from './sign-up/sign-up';
+import { SignIn } from './sign-in/sign-in'
+import { SignUp } from './sign-up/sign-up'
 
 interface AuthorizationProps {
-  tabNum: number;
+  tabNum: number
 }
 
 export const Authorization: FC<AuthorizationProps> = ({ tabNum }) => {
-  const history = useHistory();
+  const history = useHistory()
   if (tabNum === 0) {
-    history.push('/signup');
+    history.push('/signup')
   } else {
-    history.push('/login');
+    history.push('/login')
   }
   return (
     <Switch>
@@ -22,5 +22,5 @@ export const Authorization: FC<AuthorizationProps> = ({ tabNum }) => {
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={SignIn} />
     </Switch>
-  );
-};
+  )
+}

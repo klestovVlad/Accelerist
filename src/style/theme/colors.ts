@@ -18,4 +18,4 @@ export const colors = {
   line: '#E8E8E8',
   background: '#F9F9F9',
   dark_transparent: 'rgba(18, 36, 52, 0.15)',
-};
+}

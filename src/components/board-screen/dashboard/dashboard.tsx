@@ -1,24 +1,24 @@
-import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { FavoriteListSelector } from '../../../store/companies';
-import { SavedListAction, SavedListSelector } from '../../../store/saved-list';
-import { Topic } from '../topic/topic';
-import { LoadPopup } from './load-popup/load-popup';
-import { Favorites } from './sections/favorites/favorites';
-import { ProspectNavigator } from './sections/prospect-navigator/prospect-navigator';
-import { ProspectingSession } from './sections/prospecting-sessions/prospecting-session';
-import { Reports } from './sections/reports/reports';
-import { BackgroundContainer, Content, Row, SectionsContainer } from './styles';
+import { FavoriteListSelector } from '../../../store/companies'
+import { SavedListAction, SavedListSelector } from '../../../store/saved-list'
+import { Topic } from '../topic/topic'
+import { LoadPopup } from './load-popup/load-popup'
+import { Favorites } from './sections/favorites/favorites'
+import { ProspectNavigator } from './sections/prospect-navigator/prospect-navigator'
+import { ProspectingSession } from './sections/prospecting-sessions/prospecting-session'
+import { Reports } from './sections/reports/reports'
+import { BackgroundContainer, Content, Row, SectionsContainer } from './styles'
 
 export const Dashboard: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(SavedListAction.savedListRequest());
-  }, []);
-  const loadSavedList = useSelector(SavedListSelector.selectLoadState);
-  const loadFavoriteList = useSelector(FavoriteListSelector.selectLoadState);
-  const loadState = loadSavedList || loadFavoriteList;
+    dispatch(SavedListAction.savedListRequest())
+  }, [])
+  const loadSavedList = useSelector(SavedListSelector.selectLoadState)
+  const loadFavoriteList = useSelector(FavoriteListSelector.selectLoadState)
+  const loadState = loadSavedList || loadFavoriteList
   return (
     <Content>
       <Topic header="Dashboard" />
@@ -36,5 +36,5 @@ export const Dashboard: FC = () => {
         </BackgroundContainer>
       )}
     </Content>
-  );
-};
+  )
+}

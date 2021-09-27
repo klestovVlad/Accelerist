@@ -1,17 +1,24 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
-import { ButtonText, LoadingIcon, LoadingIconContainer, StyledButton } from './styles';
+import { ButtonText, LoadingIcon, LoadingIconContainer, StyledButton } from './styles'
 
 interface ButtonProps {
-  label: string | undefined;
-  onClick(): void;
-  colorScheme: 'blue' | 'darkTransparent' | 'white';
-  type: 'button' | 'submit' | 'reset' | undefined;
-  isLoading: boolean;
-  validate: boolean;
+  label: string | undefined
+  onClick(): void
+  colorScheme: 'blue' | 'darkTransparent' | 'white'
+  type: 'button' | 'submit' | 'reset' | undefined
+  isLoading: boolean
+  validate: boolean
 }
 
-export const Button: FC<ButtonProps> = ({ label, colorScheme, onClick, type, isLoading, validate }) => (
+export const Button: FC<ButtonProps> = ({
+  label,
+  colorScheme,
+  onClick,
+  type,
+  isLoading,
+  validate,
+}) => (
   <StyledButton
     colorScheme={colorScheme}
     type={type}
@@ -32,4 +39,4 @@ export const Button: FC<ButtonProps> = ({ label, colorScheme, onClick, type, isL
       </ButtonText>
     )}
   </StyledButton>
-);
+)

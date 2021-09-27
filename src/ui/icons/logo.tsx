@@ -1,8 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
 export const Logo: FC = () => (
   <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1.01408" height="10.8" transform="matrix(1 0 0 -1 17.2402 10.7998)" fill="#FFDA00" />
+    <rect
+      width="1.01408"
+      height="10.8"
+      transform="matrix(1 0 0 -1 17.2402 10.7998)"
+      fill="#FFDA00"
+    />
     <rect width="1.01408" height="10.8" transform="matrix(1 0 0 -1 17.2402 36)" fill="#F6921E" />
     <rect
       width="1.02135"
@@ -29,4 +34,4 @@ export const Logo: FC = () => (
       fill="white"
     />
   </svg>
-);
+)

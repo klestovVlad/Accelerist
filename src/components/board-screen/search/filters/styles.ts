@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
   background: ${(props) => props.theme.colors.white};
   padding: 40px 40px 32px;
   width: 100%;
   max-width: 1095px;
-`;
+`
 
 export const Header = styled.h2`
   font-family: Rubik;
@@ -14,6 +14,6 @@ export const Header = styled.h2`
   font-size: 24px;
   line-height: 148%;
   margin-bottom: 18px;
-`;
+`
 
-export const Container = styled.div``;
+export const Container = styled.div``

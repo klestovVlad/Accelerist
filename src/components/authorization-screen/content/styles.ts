@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   border-radius: 6px;
   margin-top: 5%;
   width: 454px;
-`;
+`
 
 export const H1 = styled.h1`
   font-family: 'Rubik';
@@ -19,4 +19,4 @@ export const H1 = styled.h1`
   text-align: center;
   color: ${(props) => props.theme.colors.black};
   margin-bottom: 25px;
-`;
+`

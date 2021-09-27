@@ -1,11 +1,11 @@
-import React, { Dispatch, FC, SetStateAction } from 'react';
+import React, { Dispatch, FC, SetStateAction } from 'react'
 
-import { Button } from '../../../../../ui/buttons/button';
-import { ButtonContainer, Content } from './styles';
+import { Button } from '../../../../../ui/buttons/button'
+import { ButtonContainer, Content } from './styles'
 
 interface ButtonRowProps {
-  handleSubmit(): void;
-  setShowFilter: Dispatch<SetStateAction<boolean>>;
+  handleSubmit(): void
+  setShowFilter: Dispatch<SetStateAction<boolean>>
 }
 
 export const ButtonRow: FC<ButtonRowProps> = ({ handleSubmit, setShowFilter }) => (
@@ -21,7 +21,14 @@ export const ButtonRow: FC<ButtonRowProps> = ({ handleSubmit, setShowFilter }) =
       />
     </ButtonContainer>
     <ButtonContainer>
-      <Button label="Search" onClick={handleSubmit} type="button" colorScheme="blue" isLoading={false} validate />
+      <Button
+        label="Search"
+        onClick={handleSubmit}
+        type="button"
+        colorScheme="blue"
+        isLoading={false}
+        validate
+      />
     </ButtonContainer>
   </Content>
-);
+)

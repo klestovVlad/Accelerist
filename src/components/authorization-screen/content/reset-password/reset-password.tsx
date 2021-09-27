@@ -1,20 +1,20 @@
-import React, { FC, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { FC, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { Button } from '../../../../ui/buttons/button';
-import { InputForm } from './input-form/input-form';
-import { ResentForm } from './resend-form/resend-form';
-import { ButtonContainer, Content, H1 } from './styles';
+import { Button } from '../../../../ui/buttons/button'
+import { InputForm } from './input-form/input-form'
+import { ResentForm } from './resend-form/resend-form'
+import { ButtonContainer, Content, H1 } from './styles'
 
 export const ResetPassword: FC = () => {
-  const [seconds, setSeconds] = useState(-1);
-  const history = useHistory();
+  const [seconds, setSeconds] = useState(-1)
+  const history = useHistory()
 
   React.useEffect(() => {
     if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 1000);
+      setTimeout(() => setSeconds(seconds - 1), 1000)
     }
-  });
+  })
 
   return (
     <Content>
@@ -32,5 +32,5 @@ export const ResetPassword: FC = () => {
         />
       </ButtonContainer>
     </Content>
-  );
-};
+  )
+}

@@ -1,14 +1,14 @@
-import React, { FC, useState } from 'react';
-import { Route, Switch } from 'react-router';
+import React, { FC, useState } from 'react'
+import { Route, Switch } from 'react-router'
 
-import { Tabs } from '../../../ui/tabs/tabs';
-import { Authorization } from './authorization/authorization';
-import { NewPassword } from './new-password/new-password';
-import { ResetPassword } from './reset-password/reset-password';
-import { Container, H1 } from './styles';
+import { Tabs } from '../../../ui/tabs/tabs'
+import { Authorization } from './authorization/authorization'
+import { NewPassword } from './new-password/new-password'
+import { ResetPassword } from './reset-password/reset-password'
+import { Container, H1 } from './styles'
 
 export const Content: FC = () => {
-  const [tabNum, setTabNum] = useState(1);
+  const [tabNum, setTabNum] = useState(1)
   return (
     <Container>
       <Switch>
@@ -25,5 +25,5 @@ export const Content: FC = () => {
         </Route>
       </Switch>
     </Container>
-  );
-};
+  )
+}

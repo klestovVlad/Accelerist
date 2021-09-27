@@ -1,16 +1,16 @@
-import React, { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { FC, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
-import { FavoriteListAction } from '../../../../../store/companies/index';
-import { SectionHeader } from '../../section-header/section-header';
-import { Card } from './card/card';
-import { Content, SectionContainer } from './styles';
+import { FavoriteListAction } from '../../../../../store/companies/index'
+import { SectionHeader } from '../../section-header/section-header'
+import { Card } from './card/card'
+import { Content, SectionContainer } from './styles'
 
 export const Favorites: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(FavoriteListAction.favoritesRequest());
-  }, []);
+    dispatch(FavoriteListAction.favoritesRequest())
+  }, [dispatch])
   return (
     <Content>
       <SectionHeader text="Favorites" isButtonShow />
@@ -21,5 +21,5 @@ export const Favorites: FC = () => {
         <Card />
       </SectionContainer>
     </Content>
-  );
-};
+  )
+}

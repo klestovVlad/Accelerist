@@ -1,20 +1,26 @@
-import React, { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
-import { FieldRenderProps } from 'react-final-form';
+import React, { ChangeEvent, Dispatch, FC, SetStateAction } from 'react'
+import { FieldRenderProps } from 'react-final-form'
 
-import { Content, Label, StyledSlider } from './styles';
+import { Content, Label, StyledSlider } from './styles'
 
 interface InputRangeProps extends FieldRenderProps<Array<number>> {
-  label: string;
-  rangeValue: number[];
-  setRangeValue: Dispatch<SetStateAction<number[]>>; 
+  label: string
+  rangeValue: number[]
+  setRangeValue: Dispatch<SetStateAction<number[]>>
 }
 
-export const RangeSlider: FC<InputRangeProps> = ({ label = '', max, min, rangeValue, setRangeValue }) => {
+export const RangeSlider: FC<InputRangeProps> = ({
+  label = '',
+  max,
+  min,
+  rangeValue,
+  setRangeValue,
+}) => {
   const handleChange = (evt: ChangeEvent<unknown>, value: Array<number> | number) => {
     if (Array.isArray(value)) {
-      setRangeValue(value);
+      setRangeValue(value)
     }
-  };
+  }
 
   return (
     <Content>
@@ -29,5 +35,5 @@ export const RangeSlider: FC<InputRangeProps> = ({ label = '', max, min, rangeVa
         valueLabelFormat={(str: number) => `$${str}M`}
       />
     </Content>
-  );
-};
+  )
+}

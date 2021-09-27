@@ -1,25 +1,23 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
-import { ReactComponent as Loading } from '../icons/svg/loading-button.svg';
+import { ReactComponent as Loading } from '../icons/svg/loading-button.svg'
 
 interface StyledButtonProps {
-  colorScheme: 'blue' | 'darkTransparent' | 'white';
-  isLoading: boolean;
-  validate: boolean;
+  colorScheme: 'blue' | 'darkTransparent' | 'white'
+  isLoading: boolean
+  validate: boolean
 }
 
 export enum BUTTON_COLOR_SCHEME {
-  // eslint-disable-next-line no-unused-vars
   blue = 'blue',
-  // eslint-disable-next-line no-unused-vars
   darkTransparent = 'darkTransparent',
-  // eslint-disable-next-line no-unused-vars
   white = 'white',
 }
 
 const BACKGROUND_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<StyledButtonProps>`
-    background-color: ${(props) => (props.validate ? props.theme.colors.blue : props.theme.colors.light_blue2)};
+    background-color: ${(props) =>
+      props.validate ? props.theme.colors.blue : props.theme.colors.light_blue2};
     padding: 12px 24px;
     font-size: 16px;
   `,
@@ -36,7 +34,7 @@ const BACKGROUND_COLOR = {
     border: 1px solid;
     border-color: ${(props) => props.theme.colors.line};
   `,
-};
+}
 
 export const StyledButton = styled.button<StyledButtonProps>`
   ${({ colorScheme }) => BACKGROUND_COLOR[colorScheme]};
@@ -49,7 +47,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   position: relative;
   cursor: ${(props) => (props.isLoading || props.validate ? 'pointer' : 'not-allowed')};
   transition: all 0.3s;
-`;
+`
 
 export const LoadingIconContainer = styled.div`
   position: absolute;
@@ -58,7 +56,7 @@ export const LoadingIconContainer = styled.div`
   transform: translate(-50%, -50%);
   width: 22px;
   height: 22px;
-`;
+`
 
 export const LoadingIcon = styled(Loading)`
   @keyframes rotate-center {
@@ -70,11 +68,11 @@ export const LoadingIcon = styled(Loading)`
     }
   }
   animation: rotate-center 0.6s linear infinite both;
-`;
+`
 
 interface ButtonTextProps {
-  validate: boolean;
-  colorScheme: 'blue' | 'darkTransparent' | 'white';
+  validate: boolean
+  colorScheme: 'blue' | 'darkTransparent' | 'white'
 }
 
 const BUTTON_TEXT_COLOR = {
@@ -88,10 +86,10 @@ const BUTTON_TEXT_COLOR = {
   [BUTTON_COLOR_SCHEME.white]: css<ButtonTextProps>`
     color: ${(props) => (props.validate ? props.theme.colors.black : props.theme.colors.dark_grey)};
   `,
-};
+}
 
 export const ButtonText = styled.span<ButtonTextProps>`
   ${({ colorScheme }) => BUTTON_TEXT_COLOR[colorScheme]};
   opacity: ${(props) => (props.validate ? 1 : 0.3)};
   transition: all 0.3s;
-`;
+`

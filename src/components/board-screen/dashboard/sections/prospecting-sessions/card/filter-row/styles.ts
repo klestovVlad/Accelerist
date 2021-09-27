@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
   margin-top: 16px;
-`;
+`
 
 export const Header = styled.p`
   font-family: 'Rubik';
@@ -11,12 +11,12 @@ export const Header = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-`;
+`
 
 export const FilterItemsContainer = styled.div`
   display: flex;
   flex-direction: row;
-`;
+`
 
 export const FilterItem = styled.div`
   border: 1px solid;
@@ -36,4 +36,4 @@ export const FilterItem = styled.div`
   &:first-child {
     margin-left: 4.5px;
   }
-`;
+`

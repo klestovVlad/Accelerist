@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
   position: relative;
@@ -9,7 +9,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-`;
+`
 
 export const Body = styled.div`
   max-width: 1440px;
@@ -22,4 +22,4 @@ export const Body = styled.div`
     padding: 32px 60px 25px 60px;
     width: auto;
   }
-`;
+`
