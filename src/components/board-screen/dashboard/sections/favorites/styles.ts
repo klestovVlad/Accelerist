@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Content = styled.div`
+export const Content = styled.section`
   max-width: 536px;
   width: 100%;
 `;

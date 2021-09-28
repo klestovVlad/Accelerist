@@ -1,13 +1,21 @@
 import { Card, CardText, CardTitle, Column, Content, Header } from './styles';
 import React, { FC } from 'react';
 
-export const HeaderInfo: FC = () => (
+interface HeaderInfoProps {
+  searchCount: number;
+  pitchCount: number;
+}
+
+export const HeaderInfo: FC<HeaderInfoProps> = ({
+  searchCount,
+  pitchCount,
+}) => (
   <Content>
     <Column>
       <Header>Search Sessions</Header>
       <Card>
         <CardTitle>Total</CardTitle>
-        <CardText>43</CardText>
+        <CardText>{searchCount}</CardText>
       </Card>
     </Column>
 
@@ -15,7 +23,7 @@ export const HeaderInfo: FC = () => (
       <Header>Sent Pitches</Header>
       <Card>
         <CardTitle>Company</CardTitle>
-        <CardText>44</CardText>
+        <CardText>{pitchCount}</CardText>
       </Card>
     </Column>
   </Content>

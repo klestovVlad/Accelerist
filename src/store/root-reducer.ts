@@ -1,7 +1,11 @@
 import { favoriteListWatcher } from './companies/saga';
 import favoriteListSlice from './companies/slice';
+import { LastLoginWatcher } from './last-logins/saga';
+import lastLoginsSlice from './last-logins/slice';
 import { savedListWatcher } from './saved-list/saga';
 import savedListReducer from './saved-list/slice';
+import { teamDataWatcher } from './team/saga';
+import teamSlice from './team/slice';
 import { userWatcher } from './user/saga';
 import userReducer from './user/slice';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
@@ -19,6 +23,8 @@ export const rootReducer = combineReducers({
   userReducer,
   savedListReducer,
   favoriteListSlice,
+  teamSlice,
+  lastLoginsSlice,
 });
 
 const persistConfig = {
@@ -36,7 +42,13 @@ const store = createStore(
 const persist = persistStore(store);
 
 function* rootWatcher() {
-  yield all([userWatcher(), savedListWatcher(), favoriteListWatcher()]);
+  yield all([
+    userWatcher(),
+    savedListWatcher(),
+    favoriteListWatcher(),
+    teamDataWatcher(),
+    LastLoginWatcher(),
+  ]);
 }
 
 sagaMiddleware.run(rootWatcher);

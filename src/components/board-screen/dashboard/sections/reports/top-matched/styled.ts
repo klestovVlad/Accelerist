@@ -19,16 +19,23 @@ export const CompanyLogoContainer = styled.div`
   flex-direction: row;
 `;
 
-export const CompanyLogo = styled.div`
-  width: 83px;
-  height: 83px;
-  background-color: ${(props) => props.theme.colors.light_blue};
-  border: 1px solid;
-  border-color: ${(props) => props.theme.colors.line};
-  border-radius: 8px;
-  margin-left: 12px;
+export const LinkContainer = styled.a`
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  height: 71px;
+  background: ${(props) => props.theme.colors.background};
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+`;
 
-  &:first-child {
-    margin-left: 0;
-  }
+export const LinkText = styled.div`
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 155%;
+  color: ${(props) => props.theme.colors.black};
 `;

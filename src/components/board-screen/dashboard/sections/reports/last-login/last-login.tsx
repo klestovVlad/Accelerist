@@ -1,3 +1,8 @@
+import { ReturnFormattedDate } from '../../../../../../functions/return-formatted-date';
+import {
+  getLastLoginsAction,
+  LastLoginsSelector,
+} from '../../../../../../store/last-logins/index';
 import {
   Content,
   DateOfVisit,
@@ -8,39 +13,48 @@ import {
   UserName,
   UserRow,
 } from './styled';
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const LastLogin: FC = () => (
-  <Content>
-    <Header>Last Login</Header>
-    <UserRow>
-      <UserImage>
-        <UserIcon />
-      </UserImage>
-      <UserDataContainer>
-        <UserName>Frank Lampard</UserName>
-        <DateOfVisit>12 Aug 2020</DateOfVisit>
-      </UserDataContainer>
-    </UserRow>
+export const LastLogin: FC = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getLastLoginsAction());
+  }, [dispatch]);
 
-    <UserRow>
-      <UserImage>
-        <UserIcon />
-      </UserImage>
-      <UserDataContainer>
-        <UserName>Frank Lampard</UserName>
-        <DateOfVisit>12 Aug 2020</DateOfVisit>
-      </UserDataContainer>
-    </UserRow>
+  const lastLogins = useSelector(LastLoginsSelector.selectData);
 
-    <UserRow>
-      <UserImage>
-        <UserIcon />
-      </UserImage>
-      <UserDataContainer>
-        <UserName>Frank Lampard</UserName>
-        <DateOfVisit>12 Aug 2020</DateOfVisit>
-      </UserDataContainer>
-    </UserRow>
-  </Content>
-);
+  const ReturnAuthorName = (
+    firstName: string | null,
+    lastName: string | null
+  ) => {
+    const firstNameResult = firstName === null ? '' : firstName;
+    const lastNameResult = lastName === null ? '' : lastName;
+    if (firstNameResult.length + lastNameResult.length === 0) {
+      return 'No Name';
+    }
+    return `${firstNameResult} ${lastNameResult}`;
+  };
+
+  console.log('lastLogins', lastLogins);
+  return (
+    <Content>
+      <Header>Last Login</Header>
+      {lastLogins.map((item) => (
+        <UserRow key={item.id}>
+          <UserImage>
+            <UserIcon />
+          </UserImage>
+          <UserDataContainer>
+            <UserName>
+              {ReturnAuthorName(item.user.firstName, item.user.lastName)}
+            </UserName>
+            <DateOfVisit>
+              {ReturnFormattedDate(item.loggedInAt ? item.loggedInAt : '')}
+            </DateOfVisit>
+          </UserDataContainer>
+        </UserRow>
+      ))}
+    </Content>
+  );
+};

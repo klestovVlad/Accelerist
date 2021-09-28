@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Content = styled.div``;
+export const Content = styled.section``;
 
 export const ReportsContainer = styled.div`
   width: 100%;
@@ -9,4 +9,5 @@ export const ReportsContainer = styled.div`
   margin-top: 15px;
   border-radius: 6px;
   width: 536px;
+  min-height: 511px;
 `;
