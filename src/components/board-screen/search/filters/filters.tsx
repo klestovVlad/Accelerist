@@ -1,24 +1,23 @@
-import React, { Dispatch, FC, SetStateAction, useState } from 'react'
-import { Form } from 'react-final-form'
-
-import { Tabs } from '../../../../ui/tabs/tabs'
-import { ButtonRow } from './buttons-row/button-row'
-import { Company } from './company/company'
-import { Demographics } from './demographics/demographics'
-import { Priority } from './priority/priority'
-import { Container, Content, Header } from './styles'
+import { Tabs } from '../../../../ui/tabs/tabs';
+import { ButtonRow } from './buttons-row/button-row';
+import { Company } from './company/company';
+import { Demographics } from './demographics/demographics';
+import { Priority } from './priority/priority';
+import { Container, Content, Header } from './styles';
+import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import { Form } from 'react-final-form';
 
 interface FilterProps {
-  setShowFilter: Dispatch<SetStateAction<boolean>>
+  setShowFilter: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
-  const [tabNum, setTabNum] = useState(0)
-  const [rangeValue, setRangeValue] = useState<Array<number>>([0, 50])
+  const [tabNum, setTabNum] = useState(0);
+  const [rangeValue, setRangeValue] = useState<Array<number>>([0, 50]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmitForm = (values: any) => {
-    console.log(values, 'range', rangeValue)
-  }
+    console.log(values, 'range', rangeValue);
+  };
   return (
     <Content>
       <Header>Filters</Header>
@@ -32,7 +31,7 @@ export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
         onSubmit={onSubmitForm}
         mutators={{
           setValue: ([field, value], state, { changeValue }) => {
-            changeValue(state, field, () => value)
+            changeValue(state, field, () => value);
           },
         }}
         render={({ form, values, handleSubmit }) => (
@@ -54,5 +53,5 @@ export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
         )}
       />
     </Content>
-  )
-}
+  );
+};

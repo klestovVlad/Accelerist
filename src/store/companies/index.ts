@@ -1,3 +1,5 @@
-export { FavoriteListAction } from './slice'
+export { FavoriteListAction } from './slice';
 
-export { FavoriteListSelector } from './selectors'
+export { FavoriteListSelector } from './selectors';
+
+export { getFavoritesAction } from './actions';

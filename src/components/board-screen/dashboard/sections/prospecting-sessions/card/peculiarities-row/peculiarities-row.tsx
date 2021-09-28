@@ -1,14 +1,13 @@
-import React, { FC } from 'react'
-
 import {
   Content,
   QualityItem,
   QualityItemHeader,
   QualityItemText,
-} from './styles'
+} from './styles';
+import React, { FC } from 'react';
 
 interface PeculiaritiesRowProps {
-  prospectsAvailable: number
+  prospectsAvailable: number;
 }
 
 export const PeculiaritiesRow: FC<PeculiaritiesRowProps> = ({
@@ -25,4 +24,4 @@ export const PeculiaritiesRow: FC<PeculiaritiesRowProps> = ({
       <QualityItemText>--</QualityItemText>
     </QualityItem>
   </Content>
-)
+);

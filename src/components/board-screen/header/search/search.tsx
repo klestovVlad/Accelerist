@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { Container, Input, SearchButton, SearchIcon } from './styles'
+import { Container, Input, SearchButton, SearchIcon } from './styles';
+import React, { FC } from 'react';
 
 export const Search: FC = () => (
   <Container>
@@ -9,4 +8,4 @@ export const Search: FC = () => (
       <SearchIcon />
     </SearchButton>
   </Container>
-)
+);

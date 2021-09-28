@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,11 +13,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import { ImpactStatementsDto } from './impact-statements-dto'
-import { MissionFocusDto } from './mission-focus-dto'
-import { OpportunitiesDto } from './opportunities-dto'
-import { TypesOfInvestmentDto } from './types-of-investment-dto'
+import { ImpactStatementsDto } from './impact-statements-dto';
+import { MissionFocusDto } from './mission-focus-dto';
+import { OpportunitiesDto } from './opportunities-dto';
+import { TypesOfInvestmentDto } from './types-of-investment-dto';
 
 /**
  *
@@ -28,127 +29,127 @@ export interface UpdateTeamDto {
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  organizationName: string
+  organizationName: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  numberConstituents: string
+  numberConstituents: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  email: string
+  email: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  twitterLink: string
+  twitterLink: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  twitterHandle: string
+  twitterHandle: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  linkedinLink: string
+  linkedinLink: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  aieldActivity: string
+  aieldActivity: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  annualTotalContributions: string
+  annualTotalContributions: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  contactName: string
+  contactName: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  contactPhone: string
+  contactPhone: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  contactWebsite: string
+  contactWebsite: string;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateTeamDto
    */
-  goalAlignment?: Array<UpdateTeamDtoGoalAlignmentEnum>
+  goalAlignment?: Array<UpdateTeamDtoGoalAlignmentEnum>;
   /**
    *
    * @type {Array<TypesOfInvestmentDto>}
    * @memberof UpdateTeamDto
    */
-  typesOfInvestment?: Array<TypesOfInvestmentDto>
+  typesOfInvestment?: Array<TypesOfInvestmentDto>;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  address: string
+  address: string;
   /**
    *
    * @type {string}
    * @memberof UpdateTeamDto
    */
-  zip: string
+  zip: string;
   /**
    *
    * @type {MissionFocusDto}
    * @memberof UpdateTeamDto
    */
-  primaryMissionFocus?: MissionFocusDto
+  primaryMissionFocus?: MissionFocusDto;
   /**
    *
    * @type {Array<MissionFocusDto>}
    * @memberof UpdateTeamDto
    */
-  secondaryMissionFocus?: Array<MissionFocusDto>
+  secondaryMissionFocus?: Array<MissionFocusDto>;
   /**
    *
    * @type {boolean}
    * @memberof UpdateTeamDto
    */
-  employeeEngagementOpportunities?: boolean
+  employeeEngagementOpportunities?: boolean;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateTeamDto
    */
-  charitablePartners?: Array<string>
+  charitablePartners?: Array<string>;
   /**
    *
    * @type {Array<OpportunitiesDto>}
    * @memberof UpdateTeamDto
    */
-  opportunities?: Array<OpportunitiesDto>
+  opportunities?: Array<OpportunitiesDto>;
   /**
    *
    * @type {Array<ImpactStatementsDto>}
    * @memberof UpdateTeamDto
    */
-  impactStatements?: Array<ImpactStatementsDto>
+  impactStatements?: Array<ImpactStatementsDto>;
 }
 
 /**

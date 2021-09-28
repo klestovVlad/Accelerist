@@ -1,8 +1,6 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
-import { useHistory } from 'react-router-dom'
-import { ReactComponent as SearchIcon } from '../../../ui/icons/svg/search-icon.svg'
-import { ReactComponent as SettingIcon } from '../../../ui/icons/svg/sliders.svg'
-import { ReactComponent as BackIcon } from '../../../ui/icons/svg/back.svg'
+import { ReactComponent as BackIcon } from '../../../ui/icons/svg/back.svg';
+import { ReactComponent as SearchIcon } from '../../../ui/icons/svg/search-icon.svg';
+import { ReactComponent as SettingIcon } from '../../../ui/icons/svg/sliders.svg';
 import {
   BackgroundContent,
   ButtonContainer,
@@ -12,14 +10,16 @@ import {
   Input,
   InputContainer,
   BackButton,
-} from './styles'
+} from './styles';
+import React, { Dispatch, FC, SetStateAction } from 'react';
+import { useHistory } from 'react-router-dom';
 
 interface TopicProps {
-  header: string
-  showSearch?: boolean
-  settingState?: boolean
-  showBackButton?: boolean
-  onSettingClick?: Dispatch<SetStateAction<boolean>>
+  header: string;
+  showSearch?: boolean;
+  settingState?: boolean;
+  showBackButton?: boolean;
+  onSettingClick?: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Topic: FC<TopicProps> = ({
@@ -29,7 +29,7 @@ export const Topic: FC<TopicProps> = ({
   showSearch,
   showBackButton,
 }) => {
-  const history = useHistory()
+  const history = useHistory();
   return (
     <BackgroundContent>
       <Content>
@@ -54,5 +54,5 @@ export const Topic: FC<TopicProps> = ({
         )}
       </Content>
     </BackgroundContent>
-  )
-}
+  );
+};

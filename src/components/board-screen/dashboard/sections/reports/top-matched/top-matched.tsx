@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-import { CompanyLogo, CompanyLogoContainer, Content, Header } from './styled'
+import { CompanyLogo, CompanyLogoContainer, Content, Header } from './styled';
 
 export const TopMatched: FC = () => (
   <Content>
@@ -12,4 +12,4 @@ export const TopMatched: FC = () => (
       <CompanyLogo />
     </CompanyLogoContainer>
   </Content>
-)
+);

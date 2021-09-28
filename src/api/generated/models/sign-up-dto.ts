@@ -23,11 +23,11 @@ export interface SignUpDto {
    * @type {string}
    * @memberof SignUpDto
    */
-  email: string
+  email: string;
   /**
    *
    * @type {string}
    * @memberof SignUpDto
    */
-  password: string
+  password: string;
 }

@@ -23,29 +23,29 @@ export interface UpdateUserDto {
    * @type {string}
    * @memberof UpdateUserDto
    */
-  firstName: string
+  firstName: string;
   /**
    *
    * @type {string}
    * @memberof UpdateUserDto
    */
-  lastName: string
+  lastName: string;
   /**
    *
    * @type {string}
    * @memberof UpdateUserDto
    */
-  email: string
+  email: string;
   /**
    *
    * @type {string}
    * @memberof UpdateUserDto
    */
-  linkedinLink: string
+  linkedinLink: string;
   /**
    *
    * @type {boolean}
    * @memberof UpdateUserDto
    */
-  isReceivingNotifications?: boolean
+  isReceivingNotifications?: boolean;
 }

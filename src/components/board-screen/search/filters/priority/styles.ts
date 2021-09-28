@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Content = styled.section``
+export const Content = styled.section``;
 
 export const Header = styled.h3`
   font-family: Rubik;
@@ -9,7 +9,7 @@ export const Header = styled.h3`
   font-size: 16px;
   line-height: 145%;
   margin-top: 32px;
-`
+`;
 
 export const P = styled.p`
   font-family: Rubik;
@@ -19,4 +19,4 @@ export const P = styled.p`
   line-height: 150%;
   margin-top: 12px;
   margin-bottom: 12px;
-`
+`;

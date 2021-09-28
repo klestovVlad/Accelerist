@@ -1,24 +1,23 @@
-import React, { FC, useState } from 'react'
-import { useDispatch } from 'react-redux'
-
-import { UserAction } from '../../../../store/user/index'
+import { UserAction } from '../../../../store/user/index';
 import {
   Container,
   LogoutButton,
   OptionPopup,
   UserIcon,
   UserName,
-} from './styles'
+} from './styles';
+import React, { FC, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 interface AuthorizedUserProps {
-  sidebarLocation: boolean
+  sidebarLocation: boolean;
 }
 
 export const AuthorizedUser: FC<AuthorizedUserProps> = ({
   sidebarLocation,
 }) => {
-  const [showUserOption, setShowUserOption] = useState(false)
-  const dispatch = useDispatch()
+  const [showUserOption, setShowUserOption] = useState(false);
+  const dispatch = useDispatch();
   return (
     <Container onClick={() => setShowUserOption(!showUserOption)}>
       <UserIcon />
@@ -31,5 +30,5 @@ export const AuthorizedUser: FC<AuthorizedUserProps> = ({
         </OptionPopup>
       )}
     </Container>
-  )
-}
+  );
+};

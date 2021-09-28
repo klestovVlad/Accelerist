@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,17 +34,12 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
-// @ts-ignore
-import { GetExcelDto } from '../models'
+import { GetExcelDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * CompaniesApi - axios parameter creator
  * @export
@@ -58,43 +60,43 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesControllerContacts', 'id', id)
+      assertParamExists('companiesControllerContacts', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/contacts`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -108,43 +110,43 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesControllerDislike', 'id', id)
+      assertParamExists('companiesControllerDislike', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/dislike`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -158,43 +160,43 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesControllerFindById', 'id', id)
+      assertParamExists('companiesControllerFindById', 'id', id);
       const localVarPath = `/api/v1/companies/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -261,107 +263,107 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('companiesControllerGetCompanies', 'page', page)
+      assertParamExists('companiesControllerGetCompanies', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('companiesControllerGetCompanies', 'limit', limit)
-      const localVarPath = `/api/v1/companies`
+      assertParamExists('companiesControllerGetCompanies', 'limit', limit);
+      const localVarPath = `/api/v1/companies`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (sdgGoals) {
-        localVarQueryParameter['sdgGoals'] = sdgGoals
+        localVarQueryParameter['sdgGoals'] = sdgGoals;
       }
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (ethnicities) {
-        localVarQueryParameter['ethnicities'] = ethnicities
+        localVarQueryParameter['ethnicities'] = ethnicities;
       }
 
       if (income) {
-        localVarQueryParameter['income'] = income
+        localVarQueryParameter['income'] = income;
       }
 
       if (ageRanges) {
-        localVarQueryParameter['ageRanges'] = ageRanges
+        localVarQueryParameter['ageRanges'] = ageRanges;
       }
 
       if (gender !== undefined) {
-        localVarQueryParameter['gender'] = gender
+        localVarQueryParameter['gender'] = gender;
       }
 
       if (q !== undefined) {
-        localVarQueryParameter['q'] = q
+        localVarQueryParameter['q'] = q;
       }
 
       if (industry) {
-        localVarQueryParameter['industry'] = industry
+        localVarQueryParameter['industry'] = industry;
       }
 
       if (deleteIds) {
-        localVarQueryParameter['deleteIds'] = deleteIds
+        localVarQueryParameter['deleteIds'] = deleteIds;
       }
 
       if (csrFocusIds) {
-        localVarQueryParameter['csrFocusIds'] = csrFocusIds
+        localVarQueryParameter['csrFocusIds'] = csrFocusIds;
       }
 
       if (affinities) {
-        localVarQueryParameter['affinities'] = affinities
+        localVarQueryParameter['affinities'] = affinities;
       }
 
       if (location) {
-        localVarQueryParameter['location'] = location
+        localVarQueryParameter['location'] = location;
       }
 
       if (totalAnnualContributors !== undefined) {
         localVarQueryParameter['totalAnnualContributors'] =
-          totalAnnualContributors
+          totalAnnualContributors;
       }
 
       if (revenueMin !== undefined) {
-        localVarQueryParameter['revenueMin'] = revenueMin
+        localVarQueryParameter['revenueMin'] = revenueMin;
       }
 
       if (revenueMax !== undefined) {
-        localVarQueryParameter['revenueMax'] = revenueMax
+        localVarQueryParameter['revenueMax'] = revenueMax;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -428,107 +430,107 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('companiesControllerGetExcel', 'page', page)
+      assertParamExists('companiesControllerGetExcel', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('companiesControllerGetExcel', 'limit', limit)
-      const localVarPath = `/api/v1/companies/excel`
+      assertParamExists('companiesControllerGetExcel', 'limit', limit);
+      const localVarPath = `/api/v1/companies/excel`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (sdgGoals) {
-        localVarQueryParameter['sdgGoals'] = sdgGoals
+        localVarQueryParameter['sdgGoals'] = sdgGoals;
       }
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (ethnicities) {
-        localVarQueryParameter['ethnicities'] = ethnicities
+        localVarQueryParameter['ethnicities'] = ethnicities;
       }
 
       if (income) {
-        localVarQueryParameter['income'] = income
+        localVarQueryParameter['income'] = income;
       }
 
       if (ageRanges) {
-        localVarQueryParameter['ageRanges'] = ageRanges
+        localVarQueryParameter['ageRanges'] = ageRanges;
       }
 
       if (gender !== undefined) {
-        localVarQueryParameter['gender'] = gender
+        localVarQueryParameter['gender'] = gender;
       }
 
       if (q !== undefined) {
-        localVarQueryParameter['q'] = q
+        localVarQueryParameter['q'] = q;
       }
 
       if (industry) {
-        localVarQueryParameter['industry'] = industry
+        localVarQueryParameter['industry'] = industry;
       }
 
       if (deleteIds) {
-        localVarQueryParameter['deleteIds'] = deleteIds
+        localVarQueryParameter['deleteIds'] = deleteIds;
       }
 
       if (csrFocusIds) {
-        localVarQueryParameter['csrFocusIds'] = csrFocusIds
+        localVarQueryParameter['csrFocusIds'] = csrFocusIds;
       }
 
       if (affinities) {
-        localVarQueryParameter['affinities'] = affinities
+        localVarQueryParameter['affinities'] = affinities;
       }
 
       if (location) {
-        localVarQueryParameter['location'] = location
+        localVarQueryParameter['location'] = location;
       }
 
       if (totalAnnualContributors !== undefined) {
         localVarQueryParameter['totalAnnualContributors'] =
-          totalAnnualContributors
+          totalAnnualContributors;
       }
 
       if (revenueMin !== undefined) {
-        localVarQueryParameter['revenueMin'] = revenueMin
+        localVarQueryParameter['revenueMin'] = revenueMin;
       }
 
       if (revenueMax !== undefined) {
-        localVarQueryParameter['revenueMax'] = revenueMax
+        localVarQueryParameter['revenueMax'] = revenueMax;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -544,50 +546,50 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('companiesControllerGetFavorites', 'page', page)
+      assertParamExists('companiesControllerGetFavorites', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('companiesControllerGetFavorites', 'limit', limit)
-      const localVarPath = `/api/v1/companies/favorites`
+      assertParamExists('companiesControllerGetFavorites', 'limit', limit);
+      const localVarPath = `/api/v1/companies/favorites`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -600,43 +602,43 @@ export const CompaniesApiAxiosParamCreator = function (
       q?: string,
       options: any = {}
     ): Promise<RequestArgs> => {
-      const localVarPath = `/api/v1/companies/suggested`
+      const localVarPath = `/api/v1/companies/suggested`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (q !== undefined) {
-        localVarQueryParameter['q'] = q
+        localVarQueryParameter['q'] = q;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -650,43 +652,43 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesControllerLike', 'id', id)
+      assertParamExists('companiesControllerLike', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/like`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -700,43 +702,43 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesControllerNews', 'id', id)
+      assertParamExists('companiesControllerNews', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/news`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -750,53 +752,54 @@ export const CompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesControllerScoops', 'id', id)
+      assertParamExists('companiesControllerScoops', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/scoops`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * CompaniesApi - functional programming interface
  * @export
  */
 export const CompaniesApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = CompaniesApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator =
+    CompaniesApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -812,13 +815,16 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerContacts(id, options)
+        await localVarAxiosParamCreator.companiesControllerContacts(
+          id,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -834,13 +840,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerDislike(id, options)
+        await localVarAxiosParamCreator.companiesControllerDislike(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -856,13 +862,16 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerFindById(id, options)
+        await localVarAxiosParamCreator.companiesControllerFindById(
+          id,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -949,13 +958,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
           revenueMin,
           revenueMax,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1042,13 +1051,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
           revenueMin,
           revenueMax,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1070,13 +1079,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
           page,
           limit,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1095,13 +1104,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.companiesControllerGetSuggested(
           q,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1117,13 +1126,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerLike(id, options)
+        await localVarAxiosParamCreator.companiesControllerLike(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1139,13 +1148,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerNews(id, options)
+        await localVarAxiosParamCreator.companiesControllerNews(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1161,16 +1170,16 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerScoops(id, options)
+        await localVarAxiosParamCreator.companiesControllerScoops(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * CompaniesApi - factory interface
@@ -1181,7 +1190,7 @@ export const CompaniesApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = CompaniesApiFp(configuration)
+  const localVarFp = CompaniesApiFp(configuration);
   return {
     /**
      *
@@ -1193,7 +1202,7 @@ export const CompaniesApiFactory = function (
     companiesControllerContacts(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerContacts(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1205,7 +1214,7 @@ export const CompaniesApiFactory = function (
     companiesControllerDislike(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerDislike(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1217,7 +1226,7 @@ export const CompaniesApiFactory = function (
     companiesControllerFindById(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerFindById(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1303,7 +1312,7 @@ export const CompaniesApiFactory = function (
           revenueMax,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1389,7 +1398,7 @@ export const CompaniesApiFactory = function (
           revenueMax,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1406,7 +1415,7 @@ export const CompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetFavorites(page, limit, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1421,7 +1430,7 @@ export const CompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetSuggested(q, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1433,7 +1442,7 @@ export const CompaniesApiFactory = function (
     companiesControllerLike(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerLike(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1445,7 +1454,7 @@ export const CompaniesApiFactory = function (
     companiesControllerNews(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerNews(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1457,10 +1466,10 @@ export const CompaniesApiFactory = function (
     companiesControllerScoops(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerScoops(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for companiesControllerContacts operation in CompaniesApi.
@@ -1473,7 +1482,7 @@ export interface CompaniesApiCompaniesControllerContactsRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerContacts
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1487,7 +1496,7 @@ export interface CompaniesApiCompaniesControllerDislikeRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerDislike
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1501,7 +1510,7 @@ export interface CompaniesApiCompaniesControllerFindByIdRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerFindById
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1515,28 +1524,28 @@ export interface CompaniesApiCompaniesControllerGetCompaniesRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly limit: any
+  readonly limit: any;
 
   /**
    * SDG goals filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly sdgGoals?: Array<any>
+  readonly sdgGoals?: Array<any>;
 
   /**
    * Array of ethnicities, all lowercase
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly ethnicities?: Array<any>
+  readonly ethnicities?: Array<any>;
 
   /**
    * Household income filter
@@ -1552,7 +1561,7 @@ export interface CompaniesApiCompaniesControllerGetCompaniesRequest {
     | '$50K - $74K'
     | '$75K - $99K'
     | 'Less than $20K'
-  >
+  >;
 
   /**
    * Age ranges filter
@@ -1573,77 +1582,77 @@ export interface CompaniesApiCompaniesControllerGetCompaniesRequest {
     | '66-70'
     | '71-75'
     | '75 +'
-  >
+  >;
 
   /**
    * Gender filter
    * @type {'male' | 'female' | 'both'}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly gender?: 'male' | 'female' | 'both'
+  readonly gender?: 'male' | 'female' | 'both';
 
   /**
    * Starting from which page you want to search
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly q?: any
+  readonly q?: any;
 
   /**
    * Indusrty filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly industry?: Array<any>
+  readonly industry?: Array<any>;
 
   /**
    *
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly deleteIds?: Array<any>
+  readonly deleteIds?: Array<any>;
 
   /**
    * CSR Focus ids
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly csrFocusIds?: Array<any>
+  readonly csrFocusIds?: Array<any>;
 
   /**
    * Affinities filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly affinities?: Array<any>
+  readonly affinities?: Array<any>;
 
   /**
    * State/province location filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly location?: Array<any>
+  readonly location?: Array<any>;
 
   /**
    * Total Annual Contributors filter
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly totalAnnualContributors?: any
+  readonly totalAnnualContributors?: any;
 
   /**
    * Revenue min filter
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly revenueMin?: any
+  readonly revenueMin?: any;
 
   /**
    * Revenue max filter
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetCompanies
    */
-  readonly revenueMax?: any
+  readonly revenueMax?: any;
 }
 
 /**
@@ -1657,28 +1666,28 @@ export interface CompaniesApiCompaniesControllerGetExcelRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly limit: any
+  readonly limit: any;
 
   /**
    * SDG goals filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly sdgGoals?: Array<any>
+  readonly sdgGoals?: Array<any>;
 
   /**
    * Array of ethnicities, all lowercase
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly ethnicities?: Array<any>
+  readonly ethnicities?: Array<any>;
 
   /**
    * Household income filter
@@ -1694,7 +1703,7 @@ export interface CompaniesApiCompaniesControllerGetExcelRequest {
     | '$50K - $74K'
     | '$75K - $99K'
     | 'Less than $20K'
-  >
+  >;
 
   /**
    * Age ranges filter
@@ -1715,77 +1724,77 @@ export interface CompaniesApiCompaniesControllerGetExcelRequest {
     | '66-70'
     | '71-75'
     | '75 +'
-  >
+  >;
 
   /**
    * Gender filter
    * @type {'male' | 'female' | 'both'}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly gender?: 'male' | 'female' | 'both'
+  readonly gender?: 'male' | 'female' | 'both';
 
   /**
    * Starting from which page you want to search
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly q?: any
+  readonly q?: any;
 
   /**
    * Indusrty filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly industry?: Array<any>
+  readonly industry?: Array<any>;
 
   /**
    *
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly deleteIds?: Array<any>
+  readonly deleteIds?: Array<any>;
 
   /**
    * CSR Focus ids
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly csrFocusIds?: Array<any>
+  readonly csrFocusIds?: Array<any>;
 
   /**
    * Affinities filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly affinities?: Array<any>
+  readonly affinities?: Array<any>;
 
   /**
    * State/province location filter
    * @type {Array<any>}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly location?: Array<any>
+  readonly location?: Array<any>;
 
   /**
    * Total Annual Contributors filter
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly totalAnnualContributors?: any
+  readonly totalAnnualContributors?: any;
 
   /**
    * Revenue min filter
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly revenueMin?: any
+  readonly revenueMin?: any;
 
   /**
    * Revenue max filter
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetExcel
    */
-  readonly revenueMax?: any
+  readonly revenueMax?: any;
 }
 
 /**
@@ -1799,14 +1808,14 @@ export interface CompaniesApiCompaniesControllerGetFavoritesRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetFavorites
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerGetFavorites
    */
-  readonly limit: any
+  readonly limit: any;
 }
 
 /**
@@ -1820,7 +1829,7 @@ export interface CompaniesApiCompaniesControllerGetSuggestedRequest {
    * @type {string}
    * @memberof CompaniesApiCompaniesControllerGetSuggested
    */
-  readonly q?: string
+  readonly q?: string;
 }
 
 /**
@@ -1834,7 +1843,7 @@ export interface CompaniesApiCompaniesControllerLikeRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerLike
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1848,7 +1857,7 @@ export interface CompaniesApiCompaniesControllerNewsRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerNews
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1862,7 +1871,7 @@ export interface CompaniesApiCompaniesControllerScoopsRequest {
    * @type {any}
    * @memberof CompaniesApiCompaniesControllerScoops
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1886,7 +1895,7 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerContacts(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1903,7 +1912,7 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerDislike(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1920,7 +1929,7 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerFindById(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1955,7 +1964,7 @@ export class CompaniesApi extends BaseAPI {
         requestParameters.revenueMax,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1990,7 +1999,7 @@ export class CompaniesApi extends BaseAPI {
         requestParameters.revenueMax,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2011,7 +2020,7 @@ export class CompaniesApi extends BaseAPI {
         requestParameters.limit,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2028,7 +2037,7 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerGetSuggested(requestParameters.q, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2045,7 +2054,7 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerLike(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2062,7 +2071,7 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerNews(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2079,6 +2088,6 @@ export class CompaniesApi extends BaseAPI {
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerScoops(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

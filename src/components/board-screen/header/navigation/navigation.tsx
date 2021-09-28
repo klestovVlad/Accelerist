@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { Container, Link, List, ListItem } from './styles'
+import { Container, Link, List, ListItem } from './styles';
+import React, { FC } from 'react';
 
 export const Navigation: FC = () => (
   <Container>
@@ -25,4 +24,4 @@ export const Navigation: FC = () => (
       </ListItem>
     </List>
   </Container>
-)
+);

@@ -23,11 +23,11 @@ export interface TypesOfInvestmentDto {
    * @type {string}
    * @memberof TypesOfInvestmentDto
    */
-  id: string
+  id: string;
   /**
    *
    * @type {string}
    * @memberof TypesOfInvestmentDto
    */
-  title: string
+  title: string;
 }

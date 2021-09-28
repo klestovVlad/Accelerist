@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`
+`;
 
 export const CompanyName = styled.label`
   font-family: Rubik;
@@ -14,14 +14,14 @@ export const CompanyName = styled.label`
   line-height: 150%;
   margin-right: 104px;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
   justify-content: space-between;
   position: relative;
-`
+`;
 
 export const RadioContainer = styled.label`
   display: flex;
@@ -29,7 +29,7 @@ export const RadioContainer = styled.label`
   position: relative;
   cursor: pointer;
   height: 18px;
-`
+`;
 
 export const RadioNumber = styled.span`
   position: absolute;
@@ -43,7 +43,7 @@ export const RadioNumber = styled.span`
   line-height: 150%;
   text-align: center;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const BackgroundLine = styled.div`
   position: absolute;
@@ -52,11 +52,11 @@ export const BackgroundLine = styled.div`
   width: 100%;
   height: 2px;
   background-color: ${(props) => props.theme.colors.line};
-`
+`;
 
 export const IndicatorRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   width: 100%;
   margin-top: 36px;
-`
+`;

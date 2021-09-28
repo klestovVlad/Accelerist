@@ -23,17 +23,17 @@ export interface UpdateSavedListDto {
    * @type {object}
    * @memberof UpdateSavedListDto
    */
-  filters: object
+  filters: object;
   /**
    *
    * @type {number}
    * @memberof UpdateSavedListDto
    */
-  prospectsAvailable: number
+  prospectsAvailable: number;
   /**
    *
    * @type {string}
    * @memberof UpdateSavedListDto
    */
-  name: string
+  name: string;
 }

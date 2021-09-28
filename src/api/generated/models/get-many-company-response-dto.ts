@@ -23,29 +23,29 @@ export interface GetManyCompanyResponseDto {
    * @type {Array<object>}
    * @memberof GetManyCompanyResponseDto
    */
-  data: Array<object>
+  data: Array<object>;
   /**
    *
    * @type {number}
    * @memberof GetManyCompanyResponseDto
    */
-  count: number
+  count: number;
   /**
    *
    * @type {number}
    * @memberof GetManyCompanyResponseDto
    */
-  total: number
+  total: number;
   /**
    *
    * @type {number}
    * @memberof GetManyCompanyResponseDto
    */
-  page: number
+  page: number;
   /**
    *
    * @type {number}
    * @memberof GetManyCompanyResponseDto
    */
-  pageCount: number
+  pageCount: number;
 }

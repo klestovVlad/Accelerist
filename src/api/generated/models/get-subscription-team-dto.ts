@@ -23,35 +23,35 @@ export interface GetSubscriptionTeamDto {
    * @type {string}
    * @memberof GetSubscriptionTeamDto
    */
-  id: string
+  id: string;
   /**
    *
    * @type {string}
    * @memberof GetSubscriptionTeamDto
    */
-  name: string
+  name: string;
   /**
    *
    * @type {boolean}
    * @memberof GetSubscriptionTeamDto
    */
-  isProspecting: boolean
+  isProspecting: boolean;
   /**
    *
    * @type {boolean}
    * @memberof GetSubscriptionTeamDto
    */
-  isAudience: boolean
+  isAudience: boolean;
   /**
    *
    * @type {boolean}
    * @memberof GetSubscriptionTeamDto
    */
-  isRoi: boolean
+  isRoi: boolean;
   /**
    *
    * @type {boolean}
    * @memberof GetSubscriptionTeamDto
    */
-  isPrices: boolean
+  isPrices: boolean;
 }

@@ -1,3 +1,3 @@
-export { UserAction } from './slice'
+export { UserAction } from './slice';
 
-export { UserSelector } from './selectors'
+export { UserSelector } from './selectors';

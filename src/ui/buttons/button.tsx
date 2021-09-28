@@ -1,19 +1,18 @@
-import React, { FC } from 'react'
-
 import {
   ButtonText,
   LoadingIcon,
   LoadingIconContainer,
   StyledButton,
-} from './styles'
+} from './styles';
+import React, { FC } from 'react';
 
 interface ButtonProps {
-  label: string | undefined
-  onClick(): void
-  colorScheme: 'blue' | 'darkTransparent' | 'white'
-  type: 'button' | 'submit' | 'reset' | undefined
-  isLoading: boolean
-  validate: boolean
+  label: string | undefined;
+  onClick(): void;
+  colorScheme: 'blue' | 'darkTransparent' | 'white';
+  type: 'button' | 'submit' | 'reset' | undefined;
+  isLoading: boolean;
+  validate: boolean;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -44,4 +43,4 @@ export const Button: FC<ButtonProps> = ({
       </ButtonText>
     )}
   </StyledButton>
-)
+);

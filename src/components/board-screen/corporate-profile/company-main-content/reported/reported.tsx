@@ -1,5 +1,3 @@
-import React, { FC } from 'react'
-
 import {
   Content,
   Header,
@@ -7,11 +5,12 @@ import {
   TableCell,
   TableCellCaption,
   TableCellInfo,
-} from './styles'
+} from './styles';
+import React, { FC } from 'react';
 
 interface ReportedProps {
-  revenue: string
-  employees: number
+  revenue: string;
+  employees: number;
 }
 
 export const Reported: FC<ReportedProps> = ({ revenue, employees }) => (
@@ -37,4 +36,4 @@ export const Reported: FC<ReportedProps> = ({ revenue, employees }) => (
       </TableCell>
     </Table>
   </Content>
-)
+);

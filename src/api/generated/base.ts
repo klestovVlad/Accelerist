@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,13 +13,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import { Configuration } from './configuration'
+import { Configuration } from './configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 
-export const BASE_PATH = 'http://localhost'.replace(/\/+$/, '')
+export const BASE_PATH = 'http://localhost'.replace(/\/+$/, '');
 
 /**
  *
@@ -28,7 +29,7 @@ export const COLLECTION_FORMATS = {
   ssv: ' ',
   tsv: '\t',
   pipes: '|',
-}
+};
 
 /**
  *
@@ -36,8 +37,8 @@ export const COLLECTION_FORMATS = {
  * @interface RequestArgs
  */
 export interface RequestArgs {
-  url: string
-  options: any
+  url: string;
+  options: any;
 }
 
 /**
@@ -46,7 +47,7 @@ export interface RequestArgs {
  * @class BaseAPI
  */
 export class BaseAPI {
-  protected configuration: Configuration | undefined
+  protected configuration: Configuration | undefined;
 
   constructor(
     configuration?: Configuration,
@@ -54,8 +55,8 @@ export class BaseAPI {
     protected axios: AxiosInstance = globalAxios
   ) {
     if (configuration) {
-      this.configuration = configuration
-      this.basePath = configuration.basePath || this.basePath
+      this.configuration = configuration;
+      this.basePath = configuration.basePath || this.basePath;
     }
   }
 }
@@ -67,8 +68,8 @@ export class BaseAPI {
  * @extends {Error}
  */
 export class RequiredError extends Error {
-  name: 'RequiredError' = 'RequiredError'
+  name: 'RequiredError' = 'RequiredError';
   constructor(public field: string, msg?: string) {
-    super(msg)
+    super(msg);
   }
 }

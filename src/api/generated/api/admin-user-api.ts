@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,19 +34,14 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
+import { GetManyUserResponseDto } from '../models';
 // @ts-ignore
-import { GetManyUserResponseDto } from '../models'
-// @ts-ignore
-import { PasswordChangeDto } from '../models'
+import { PasswordChangeDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * AdminUserApi - axios parameter creator
  * @export
@@ -60,47 +62,47 @@ export const AdminUserApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'body' is not null or undefined
-      assertParamExists('createOneBaseUsersCrudControllerUser', 'body', body)
-      const localVarPath = `/api/v1/admin/users`
+      assertParamExists('createOneBaseUsersCrudControllerUser', 'body', body);
+      const localVarPath = `/api/v1/admin/users`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         body,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -131,79 +133,79 @@ export const AdminUserApiAxiosParamCreator = function (
       cache?: number,
       options: any = {}
     ): Promise<RequestArgs> => {
-      const localVarPath = `/api/v1/admin/users`
+      const localVarPath = `/api/v1/admin/users`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (s !== undefined) {
-        localVarQueryParameter['s'] = s
+        localVarQueryParameter['s'] = s;
       }
 
       if (filter) {
-        localVarQueryParameter['filter'] = filter
+        localVarQueryParameter['filter'] = filter;
       }
 
       if (or) {
-        localVarQueryParameter['or'] = or
+        localVarQueryParameter['or'] = or;
       }
 
       if (sort) {
-        localVarQueryParameter['sort'] = sort
+        localVarQueryParameter['sort'] = sort;
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (offset !== undefined) {
-        localVarQueryParameter['offset'] = offset
+        localVarQueryParameter['offset'] = offset;
       }
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -223,55 +225,55 @@ export const AdminUserApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('getOneBaseUsersCrudControllerUser', 'id', id)
+      assertParamExists('getOneBaseUsersCrudControllerUser', 'id', id);
       const localVarPath = `/api/v1/admin/users/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -287,52 +289,52 @@ export const AdminUserApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('updateOneBaseUsersCrudControllerUser', 'id', id)
+      assertParamExists('updateOneBaseUsersCrudControllerUser', 'id', id);
       // verify required parameter 'body' is not null or undefined
-      assertParamExists('updateOneBaseUsersCrudControllerUser', 'body', body)
+      assertParamExists('updateOneBaseUsersCrudControllerUser', 'body', body);
       const localVarPath = `/api/v1/admin/users/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         body,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -348,56 +350,56 @@ export const AdminUserApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('usersCrudControllerChangePassword', 'id', id)
+      assertParamExists('usersCrudControllerChangePassword', 'id', id);
       // verify required parameter 'passwordChangeDto' is not null or undefined
       assertParamExists(
         'usersCrudControllerChangePassword',
         'passwordChangeDto',
         passwordChangeDto
-      )
+      );
       const localVarPath = `/api/v1/admin/users/{id}/change_password`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         passwordChangeDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -415,64 +417,65 @@ export const AdminUserApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('usersCrudControllerGetSuggested', 'page', page)
+      assertParamExists('usersCrudControllerGetSuggested', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('usersCrudControllerGetSuggested', 'limit', limit)
-      const localVarPath = `/api/v1/admin/users/suggested`
+      assertParamExists('usersCrudControllerGetSuggested', 'limit', limit);
+      const localVarPath = `/api/v1/admin/users/suggested`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (q !== undefined) {
-        localVarQueryParameter['q'] = q
+        localVarQueryParameter['q'] = q;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * AdminUserApi - functional programming interface
  * @export
  */
 export const AdminUserApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = AdminUserApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator =
+    AdminUserApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -491,13 +494,13 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.createOneBaseUsersCrudControllerUser(
           body,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -546,13 +549,13 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
           page,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -580,13 +583,13 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
           join,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -608,13 +611,13 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
           id,
           body,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -636,13 +639,13 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
           id,
           passwordChangeDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -667,16 +670,16 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
           limit,
           q,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * AdminUserApi - factory interface
@@ -687,7 +690,7 @@ export const AdminUserApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = AdminUserApiFp(configuration)
+  const localVarFp = AdminUserApiFp(configuration);
   return {
     /**
      *
@@ -702,7 +705,7 @@ export const AdminUserApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .createOneBaseUsersCrudControllerUser(body, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -747,7 +750,7 @@ export const AdminUserApiFactory = function (
           cache,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -768,7 +771,7 @@ export const AdminUserApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .getOneBaseUsersCrudControllerUser(id, fields, join, cache, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -785,7 +788,7 @@ export const AdminUserApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .updateOneBaseUsersCrudControllerUser(id, body, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -802,7 +805,7 @@ export const AdminUserApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .usersCrudControllerChangePassword(id, passwordChangeDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -821,10 +824,10 @@ export const AdminUserApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .usersCrudControllerGetSuggested(page, limit, q, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for createOneBaseUsersCrudControllerUser operation in AdminUserApi.
@@ -837,7 +840,7 @@ export interface AdminUserApiCreateOneBaseUsersCrudControllerUserRequest {
    * @type {object}
    * @memberof AdminUserApiCreateOneBaseUsersCrudControllerUser
    */
-  readonly body: object
+  readonly body: object;
 }
 
 /**
@@ -851,70 +854,70 @@ export interface AdminUserApiGetManyBaseUsersCrudControllerUserRequest {
    * @type {Array<string>}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds search condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#search\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {string}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly s?: string
+  readonly s?: string;
 
   /**
    * Adds filter condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#filter\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly filter?: Array<string>
+  readonly filter?: Array<string>;
 
   /**
    * Adds OR condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#or\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly or?: Array<string>
+  readonly or?: Array<string>;
 
   /**
    * Adds sort by field. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#sort\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly sort?: Array<string>
+  readonly sort?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Limit amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#limit\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly limit?: number
+  readonly limit?: number;
 
   /**
    * Offset amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#offset\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly offset?: number
+  readonly offset?: number;
 
   /**
    * Page portion of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#page\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly page?: number
+  readonly page?: number;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminUserApiGetManyBaseUsersCrudControllerUser
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -928,28 +931,28 @@ export interface AdminUserApiGetOneBaseUsersCrudControllerUserRequest {
    * @type {string}
    * @memberof AdminUserApiGetOneBaseUsersCrudControllerUser
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    * Selects resource fields. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#select\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminUserApiGetOneBaseUsersCrudControllerUser
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminUserApiGetOneBaseUsersCrudControllerUser
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminUserApiGetOneBaseUsersCrudControllerUser
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -963,14 +966,14 @@ export interface AdminUserApiUpdateOneBaseUsersCrudControllerUserRequest {
    * @type {string}
    * @memberof AdminUserApiUpdateOneBaseUsersCrudControllerUser
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    *
    * @type {object}
    * @memberof AdminUserApiUpdateOneBaseUsersCrudControllerUser
    */
-  readonly body: object
+  readonly body: object;
 }
 
 /**
@@ -984,14 +987,14 @@ export interface AdminUserApiUsersCrudControllerChangePasswordRequest {
    * @type {any}
    * @memberof AdminUserApiUsersCrudControllerChangePassword
    */
-  readonly id: any
+  readonly id: any;
 
   /**
    *
    * @type {PasswordChangeDto}
    * @memberof AdminUserApiUsersCrudControllerChangePassword
    */
-  readonly passwordChangeDto: PasswordChangeDto
+  readonly passwordChangeDto: PasswordChangeDto;
 }
 
 /**
@@ -1005,21 +1008,21 @@ export interface AdminUserApiUsersCrudControllerGetSuggestedRequest {
    * @type {any}
    * @memberof AdminUserApiUsersCrudControllerGetSuggested
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof AdminUserApiUsersCrudControllerGetSuggested
    */
-  readonly limit: any
+  readonly limit: any;
 
   /**
    * Starting from which page you want to search
    * @type {any}
    * @memberof AdminUserApiUsersCrudControllerGetSuggested
    */
-  readonly q?: any
+  readonly q?: any;
 }
 
 /**
@@ -1043,7 +1046,7 @@ export class AdminUserApi extends BaseAPI {
   ) {
     return AdminUserApiFp(this.configuration)
       .createOneBaseUsersCrudControllerUser(requestParameters.body, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1072,7 +1075,7 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1095,7 +1098,7 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1116,7 +1119,7 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.body,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1137,7 +1140,7 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.passwordChangeDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1159,6 +1162,6 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.q,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

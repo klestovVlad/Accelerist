@@ -23,29 +23,29 @@ export interface GetManyTeamResponseDto {
    * @type {Array<object>}
    * @memberof GetManyTeamResponseDto
    */
-  data: Array<object>
+  data: Array<object>;
   /**
    *
    * @type {number}
    * @memberof GetManyTeamResponseDto
    */
-  count: number
+  count: number;
   /**
    *
    * @type {number}
    * @memberof GetManyTeamResponseDto
    */
-  total: number
+  total: number;
   /**
    *
    * @type {number}
    * @memberof GetManyTeamResponseDto
    */
-  page: number
+  page: number;
   /**
    *
    * @type {number}
    * @memberof GetManyTeamResponseDto
    */
-  pageCount: number
+  pageCount: number;
 }

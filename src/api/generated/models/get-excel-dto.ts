@@ -23,11 +23,11 @@ export interface GetExcelDto {
    * @type {string}
    * @memberof GetExcelDto
    */
-  name: string
+  name: string;
   /**
    * A base64 string containing excel data
    * @type {string}
    * @memberof GetExcelDto
    */
-  file: string
+  file: string;
 }

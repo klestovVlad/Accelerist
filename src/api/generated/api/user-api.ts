@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,17 +34,12 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
-// @ts-ignore
-import { UpdateUserDto } from '../models'
+import { UpdateUserDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * UserApi - axios parameter creator
  * @export
@@ -58,50 +60,50 @@ export const UserApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'file' is not null or undefined
-      assertParamExists('usersControllerAvatarUpload', 'file', file)
-      const localVarPath = `/api/v1/user/avatar_upload`
+      assertParamExists('usersControllerAvatarUpload', 'file', file);
+      const localVarPath = `/api/v1/user/avatar_upload`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PUT',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
       const localVarFormParams = new ((configuration &&
         configuration.formDataCtor) ||
-        FormData)()
+        FormData)();
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (file !== undefined) {
-        localVarFormParams.append('file', file as any)
+        localVarFormParams.append('file', file as any);
       }
 
-      localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
+      localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
-      localVarRequestOptions.data = localVarFormParams
+      };
+      localVarRequestOptions.data = localVarFormParams;
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -112,39 +114,39 @@ export const UserApiAxiosParamCreator = function (
     usersControllerFindById: async (
       options: any = {}
     ): Promise<RequestArgs> => {
-      const localVarPath = `/api/v1/user`
+      const localVarPath = `/api/v1/user`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -162,57 +164,57 @@ export const UserApiAxiosParamCreator = function (
         'usersControllerUpdateProfile',
         'updateUserDto',
         updateUserDto
-      )
-      const localVarPath = `/api/v1/user`
+      );
+      const localVarPath = `/api/v1/user`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateUserDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * UserApi - functional programming interface
  * @export
  */
 export const UserApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = UserApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator = UserApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -231,13 +233,13 @@ export const UserApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.usersControllerAvatarUpload(
           file,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -251,13 +253,13 @@ export const UserApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.usersControllerFindById(options)
+        await localVarAxiosParamCreator.usersControllerFindById(options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -276,16 +278,16 @@ export const UserApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.usersControllerUpdateProfile(
           updateUserDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * UserApi - factory interface
@@ -296,7 +298,7 @@ export const UserApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = UserApiFp(configuration)
+  const localVarFp = UserApiFp(configuration);
   return {
     /**
      *
@@ -308,7 +310,7 @@ export const UserApiFactory = function (
     usersControllerAvatarUpload(file: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .usersControllerAvatarUpload(file, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -319,7 +321,7 @@ export const UserApiFactory = function (
     usersControllerFindById(options?: any): AxiosPromise<void> {
       return localVarFp
         .usersControllerFindById(options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -334,10 +336,10 @@ export const UserApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .usersControllerUpdateProfile(updateUserDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for usersControllerAvatarUpload operation in UserApi.
@@ -350,7 +352,7 @@ export interface UserApiUsersControllerAvatarUploadRequest {
    * @type {any}
    * @memberof UserApiUsersControllerAvatarUpload
    */
-  readonly file: any
+  readonly file: any;
 }
 
 /**
@@ -364,7 +366,7 @@ export interface UserApiUsersControllerUpdateProfileRequest {
    * @type {UpdateUserDto}
    * @memberof UserApiUsersControllerUpdateProfile
    */
-  readonly updateUserDto: UpdateUserDto
+  readonly updateUserDto: UpdateUserDto;
 }
 
 /**
@@ -388,7 +390,7 @@ export class UserApi extends BaseAPI {
   ) {
     return UserApiFp(this.configuration)
       .usersControllerAvatarUpload(requestParameters.file, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -401,7 +403,7 @@ export class UserApi extends BaseAPI {
   public usersControllerFindById(options?: any) {
     return UserApiFp(this.configuration)
       .usersControllerFindById(options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -418,6 +420,6 @@ export class UserApi extends BaseAPI {
   ) {
     return UserApiFp(this.configuration)
       .usersControllerUpdateProfile(requestParameters.updateUserDto, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

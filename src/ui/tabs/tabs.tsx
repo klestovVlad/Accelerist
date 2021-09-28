@@ -1,11 +1,11 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
+import React, { Dispatch, FC, SetStateAction } from 'react';
 
-import { Container, Selection, Tab } from './styles'
+import { Container, Selection, Tab } from './styles';
 
 interface TabsProps {
-  tabNum: number
-  setTabNum: Dispatch<SetStateAction<number>>
-  TabList: Array<string>
+  tabNum: number;
+  setTabNum: Dispatch<SetStateAction<number>>;
+  TabList: Array<string>;
 }
 
 export const Tabs: FC<TabsProps> = ({ tabNum, setTabNum, TabList }) => (
@@ -22,4 +22,4 @@ export const Tabs: FC<TabsProps> = ({ tabNum, setTabNum, TabList }) => (
       </Tab>
     ))}
   </Container>
-)
+);

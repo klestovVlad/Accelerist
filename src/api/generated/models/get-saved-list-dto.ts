@@ -23,41 +23,41 @@ export interface GetSavedListDto {
    * @type {string}
    * @memberof GetSavedListDto
    */
-  id: string
+  id: string;
   /**
    *
    * @type {string}
    * @memberof GetSavedListDto
    */
-  name: string
+  name: string;
   /**
    *
    * @type {object}
    * @memberof GetSavedListDto
    */
-  filters: object
+  filters: object;
   /**
    *
    * @type {number}
    * @memberof GetSavedListDto
    */
-  prospectsAvailable: number
+  prospectsAvailable: number;
   /**
    *
    * @type {object}
    * @memberof GetSavedListDto
    */
-  lastAuthor: object
+  lastAuthor: object;
   /**
    *
    * @type {string}
    * @memberof GetSavedListDto
    */
-  createdAt: string
+  createdAt: string;
   /**
    *
    * @type {string}
    * @memberof GetSavedListDto
    */
-  updatedAt: string
+  updatedAt: string;
 }

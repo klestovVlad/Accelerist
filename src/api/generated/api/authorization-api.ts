@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,25 +34,20 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
+import { AwsKeyDto } from '../models';
 // @ts-ignore
-import { AwsKeyDto } from '../models'
+import { PasswordChangeDto } from '../models';
 // @ts-ignore
-import { PasswordChangeDto } from '../models'
+import { PasswordResetDto } from '../models';
 // @ts-ignore
-import { PasswordResetDto } from '../models'
+import { SignInDto } from '../models';
 // @ts-ignore
-import { SignInDto } from '../models'
-// @ts-ignore
-import { SignUpDto } from '../models'
+import { SignUpDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * AuthorizationApi - axios parameter creator
  * @export
@@ -70,43 +72,43 @@ export const AuthorizationApiAxiosParamCreator = function (
         'authControllerChangePassword',
         'passwordChangeDto',
         passwordChangeDto
-      )
-      const localVarPath = `/api/v1/auth/change_password`
+      );
+      const localVarPath = `/api/v1/auth/change_password`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         passwordChangeDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -124,43 +126,43 @@ export const AuthorizationApiAxiosParamCreator = function (
         'authControllerChangePasswordCallback',
         'passwordChangeDto',
         passwordChangeDto
-      )
-      const localVarPath = `/api/v1/auth/change_password/change`
+      );
+      const localVarPath = `/api/v1/auth/change_password/change`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         passwordChangeDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -173,47 +175,47 @@ export const AuthorizationApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'awsKeyDto' is not null or undefined
-      assertParamExists('authControllerGetSignedUrl', 'awsKeyDto', awsKeyDto)
-      const localVarPath = `/api/v1/auth/get_signed_url`
+      assertParamExists('authControllerGetSignedUrl', 'awsKeyDto', awsKeyDto);
+      const localVarPath = `/api/v1/auth/get_signed_url`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         awsKeyDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -231,43 +233,43 @@ export const AuthorizationApiAxiosParamCreator = function (
         'authControllerResetPassword',
         'passwordResetDto',
         passwordResetDto
-      )
-      const localVarPath = `/api/v1/auth/change_password/send_mail`
+      );
+      const localVarPath = `/api/v1/auth/change_password/send_mail`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         passwordResetDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -281,43 +283,43 @@ export const AuthorizationApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'signInDto' is not null or undefined
-      assertParamExists('authControllerSignIn', 'signInDto', signInDto)
-      const localVarPath = `/api/v1/auth/sign_in`
+      assertParamExists('authControllerSignIn', 'signInDto', signInDto);
+      const localVarPath = `/api/v1/auth/sign_in`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         signInDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -331,46 +333,46 @@ export const AuthorizationApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'signUpDto' is not null or undefined
-      assertParamExists('authControllerSignUp', 'signUpDto', signUpDto)
-      const localVarPath = `/api/v1/auth/sign_up`
+      assertParamExists('authControllerSignUp', 'signUpDto', signUpDto);
+      const localVarPath = `/api/v1/auth/sign_up`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         signUpDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * AuthorizationApi - functional programming interface
@@ -378,7 +380,7 @@ export const AuthorizationApiAxiosParamCreator = function (
  */
 export const AuthorizationApiFp = function (configuration?: Configuration) {
   const localVarAxiosParamCreator =
-    AuthorizationApiAxiosParamCreator(configuration)
+    AuthorizationApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -397,13 +399,13 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.authControllerChangePassword(
           passwordChangeDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -422,13 +424,13 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.authControllerChangePasswordCallback(
           passwordChangeDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -446,13 +448,13 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.authControllerGetSignedUrl(
           awsKeyDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -471,13 +473,13 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.authControllerResetPassword(
           passwordResetDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -493,13 +495,16 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.authControllerSignIn(signInDto, options)
+        await localVarAxiosParamCreator.authControllerSignIn(
+          signInDto,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -515,16 +520,19 @@ export const AuthorizationApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.authControllerSignUp(signUpDto, options)
+        await localVarAxiosParamCreator.authControllerSignUp(
+          signUpDto,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * AuthorizationApi - factory interface
@@ -535,7 +543,7 @@ export const AuthorizationApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = AuthorizationApiFp(configuration)
+  const localVarFp = AuthorizationApiFp(configuration);
   return {
     /**
      *
@@ -550,7 +558,7 @@ export const AuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerChangePassword(passwordChangeDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -565,7 +573,7 @@ export const AuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerChangePasswordCallback(passwordChangeDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -579,7 +587,7 @@ export const AuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerGetSignedUrl(awsKeyDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -594,7 +602,7 @@ export const AuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerResetPassword(passwordResetDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -609,7 +617,7 @@ export const AuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerSignIn(signInDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -624,10 +632,10 @@ export const AuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerSignUp(signUpDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for authControllerChangePassword operation in AuthorizationApi.
@@ -640,7 +648,7 @@ export interface AuthorizationApiAuthControllerChangePasswordRequest {
    * @type {PasswordChangeDto}
    * @memberof AuthorizationApiAuthControllerChangePassword
    */
-  readonly passwordChangeDto: PasswordChangeDto
+  readonly passwordChangeDto: PasswordChangeDto;
 }
 
 /**
@@ -654,7 +662,7 @@ export interface AuthorizationApiAuthControllerChangePasswordCallbackRequest {
    * @type {PasswordChangeDto}
    * @memberof AuthorizationApiAuthControllerChangePasswordCallback
    */
-  readonly passwordChangeDto: PasswordChangeDto
+  readonly passwordChangeDto: PasswordChangeDto;
 }
 
 /**
@@ -668,7 +676,7 @@ export interface AuthorizationApiAuthControllerGetSignedUrlRequest {
    * @type {AwsKeyDto}
    * @memberof AuthorizationApiAuthControllerGetSignedUrl
    */
-  readonly awsKeyDto: AwsKeyDto
+  readonly awsKeyDto: AwsKeyDto;
 }
 
 /**
@@ -682,7 +690,7 @@ export interface AuthorizationApiAuthControllerResetPasswordRequest {
    * @type {PasswordResetDto}
    * @memberof AuthorizationApiAuthControllerResetPassword
    */
-  readonly passwordResetDto: PasswordResetDto
+  readonly passwordResetDto: PasswordResetDto;
 }
 
 /**
@@ -696,7 +704,7 @@ export interface AuthorizationApiAuthControllerSignInRequest {
    * @type {SignInDto}
    * @memberof AuthorizationApiAuthControllerSignIn
    */
-  readonly signInDto: SignInDto
+  readonly signInDto: SignInDto;
 }
 
 /**
@@ -710,7 +718,7 @@ export interface AuthorizationApiAuthControllerSignUpRequest {
    * @type {SignUpDto}
    * @memberof AuthorizationApiAuthControllerSignUp
    */
-  readonly signUpDto: SignUpDto
+  readonly signUpDto: SignUpDto;
 }
 
 /**
@@ -737,7 +745,7 @@ export class AuthorizationApi extends BaseAPI {
         requestParameters.passwordChangeDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -757,7 +765,7 @@ export class AuthorizationApi extends BaseAPI {
         requestParameters.passwordChangeDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -773,7 +781,7 @@ export class AuthorizationApi extends BaseAPI {
   ) {
     return AuthorizationApiFp(this.configuration)
       .authControllerGetSignedUrl(requestParameters.awsKeyDto, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -790,7 +798,7 @@ export class AuthorizationApi extends BaseAPI {
   ) {
     return AuthorizationApiFp(this.configuration)
       .authControllerResetPassword(requestParameters.passwordResetDto, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -807,7 +815,7 @@ export class AuthorizationApi extends BaseAPI {
   ) {
     return AuthorizationApiFp(this.configuration)
       .authControllerSignIn(requestParameters.signInDto, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -824,6 +832,6 @@ export class AuthorizationApi extends BaseAPI {
   ) {
     return AuthorizationApiFp(this.configuration)
       .authControllerSignUp(requestParameters.signUpDto, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

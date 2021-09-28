@@ -1,19 +1,18 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-import { initialState, SavedListData } from './state'
+import { initialState, SavedListData } from './state';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const savedListSlice = createSlice({
   name: 'SavedListSlice',
   initialState,
   reducers: {
     savedListRequest(state) {
-      state.isLoading = true
+      state.isLoading = true;
     },
     getSavedList(state, { payload }: PayloadAction<SavedListData>) {
-      return { ...payload, isLoading: false }
+      return { ...payload, isLoading: false };
     },
   },
-})
+});
 
-export default savedListSlice.reducer
-export const SavedListAction = savedListSlice.actions
+export default savedListSlice.reducer;
+export const SavedListAction = savedListSlice.actions;

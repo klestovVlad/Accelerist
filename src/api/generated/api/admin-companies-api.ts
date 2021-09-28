@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,27 +34,22 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
+import { ContactGetDto } from '../models';
 // @ts-ignore
-import { ContactGetDto } from '../models'
+import { CreateCompanyDto } from '../models';
 // @ts-ignore
-import { CreateCompanyDto } from '../models'
+import { CreateContactDto } from '../models';
 // @ts-ignore
-import { CreateContactDto } from '../models'
+import { GetManyCompanyResponseDto } from '../models';
 // @ts-ignore
-import { GetManyCompanyResponseDto } from '../models'
+import { UpdateCompanyDto } from '../models';
 // @ts-ignore
-import { UpdateCompanyDto } from '../models'
-// @ts-ignore
-import { UpdateContactDto } from '../models'
+import { UpdateContactDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * AdminCompaniesApi - axios parameter creator
  * @export
@@ -72,54 +74,54 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('companiesCrudControllerGetSuggested', 'page', page)
+      assertParamExists('companiesCrudControllerGetSuggested', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('companiesCrudControllerGetSuggested', 'limit', limit)
-      const localVarPath = `/api/v1/admin/companies/suggested`
+      assertParamExists('companiesCrudControllerGetSuggested', 'limit', limit);
+      const localVarPath = `/api/v1/admin/companies/suggested`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (q !== undefined) {
-        localVarQueryParameter['q'] = q
+        localVarQueryParameter['q'] = q;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -133,44 +135,44 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesCrudControllerUpdateCompany', 'id', id)
+      assertParamExists('companiesCrudControllerUpdateCompany', 'id', id);
       const localVarPath =
         `/api/v1/admin/companies/{id}/update-company`.replace(
           `{${'id'}}`,
           encodeURIComponent(String(id))
-        )
+        );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -186,55 +188,55 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('companiesCrudControllerUploadExcel', 'id', id)
+      assertParamExists('companiesCrudControllerUploadExcel', 'id', id);
       // verify required parameter 'file' is not null or undefined
-      assertParamExists('companiesCrudControllerUploadExcel', 'file', file)
+      assertParamExists('companiesCrudControllerUploadExcel', 'file', file);
       const localVarPath = `/api/v1/admin/companies/{id}/upload-excel`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
       const localVarFormParams = new ((configuration &&
         configuration.formDataCtor) ||
-        FormData)()
+        FormData)();
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (file !== undefined) {
-        localVarFormParams.append('file', file as any)
+        localVarFormParams.append('file', file as any);
       }
 
-      localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
+      localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
-      localVarRequestOptions.data = localVarFormParams
+      };
+      localVarRequestOptions.data = localVarFormParams;
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -254,57 +256,57 @@ export const AdminCompaniesApiAxiosParamCreator = function (
         'createOneBaseAdminContactsContrrolerContact',
         'companyId',
         companyId
-      )
+      );
       // verify required parameter 'createContactDto' is not null or undefined
       assertParamExists(
         'createOneBaseAdminContactsContrrolerContact',
         'createContactDto',
         createContactDto
-      )
+      );
       const localVarPath =
         `/api/v1/admin/companies/{companyId}/contacts`.replace(
           `{${'companyId'}}`,
           encodeURIComponent(String(companyId))
-        )
+        );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         createContactDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -322,47 +324,47 @@ export const AdminCompaniesApiAxiosParamCreator = function (
         'createOneBaseCompaniesCrudControllerCompany',
         'createCompanyDto',
         createCompanyDto
-      )
-      const localVarPath = `/api/v1/admin/companies`
+      );
+      const localVarPath = `/api/v1/admin/companies`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         createCompanyDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -382,44 +384,48 @@ export const AdminCompaniesApiAxiosParamCreator = function (
         'deleteOneBaseAdminContactsContrrolerContact',
         'companyId',
         companyId
-      )
+      );
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('deleteOneBaseAdminContactsContrrolerContact', 'id', id)
+      assertParamExists(
+        'deleteOneBaseAdminContactsContrrolerContact',
+        'id',
+        id
+      );
       const localVarPath = `/api/v1/admin/companies/{companyId}/contacts/{id}`
         .replace(`{${'companyId'}}`, encodeURIComponent(String(companyId)))
-        .replace(`{${'id'}}`, encodeURIComponent(String(id)))
+        .replace(`{${'id'}}`, encodeURIComponent(String(id)));
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'DELETE',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -433,43 +439,47 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('deleteOneBaseCompaniesCrudControllerCompany', 'id', id)
+      assertParamExists(
+        'deleteOneBaseCompaniesCrudControllerCompany',
+        'id',
+        id
+      );
       const localVarPath = `/api/v1/admin/companies/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'DELETE',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -507,84 +517,84 @@ export const AdminCompaniesApiAxiosParamCreator = function (
         'getManyBaseAdminContactsContrrolerContact',
         'companyId',
         companyId
-      )
+      );
       const localVarPath =
         `/api/v1/admin/companies/{companyId}/contacts`.replace(
           `{${'companyId'}}`,
           encodeURIComponent(String(companyId))
-        )
+        );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (s !== undefined) {
-        localVarQueryParameter['s'] = s
+        localVarQueryParameter['s'] = s;
       }
 
       if (filter) {
-        localVarQueryParameter['filter'] = filter
+        localVarQueryParameter['filter'] = filter;
       }
 
       if (or) {
-        localVarQueryParameter['or'] = or
+        localVarQueryParameter['or'] = or;
       }
 
       if (sort) {
-        localVarQueryParameter['sort'] = sort
+        localVarQueryParameter['sort'] = sort;
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (offset !== undefined) {
-        localVarQueryParameter['offset'] = offset
+        localVarQueryParameter['offset'] = offset;
       }
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -615,79 +625,79 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       cache?: number,
       options: any = {}
     ): Promise<RequestArgs> => {
-      const localVarPath = `/api/v1/admin/companies`
+      const localVarPath = `/api/v1/admin/companies`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (s !== undefined) {
-        localVarQueryParameter['s'] = s
+        localVarQueryParameter['s'] = s;
       }
 
       if (filter) {
-        localVarQueryParameter['filter'] = filter
+        localVarQueryParameter['filter'] = filter;
       }
 
       if (or) {
-        localVarQueryParameter['or'] = or
+        localVarQueryParameter['or'] = or;
       }
 
       if (sort) {
-        localVarQueryParameter['sort'] = sort
+        localVarQueryParameter['sort'] = sort;
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (offset !== undefined) {
-        localVarQueryParameter['offset'] = offset
+        localVarQueryParameter['offset'] = offset;
       }
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -707,55 +717,55 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('getOneBaseCompaniesCrudControllerCompany', 'id', id)
+      assertParamExists('getOneBaseCompaniesCrudControllerCompany', 'id', id);
       const localVarPath = `/api/v1/admin/companies/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -777,57 +787,61 @@ export const AdminCompaniesApiAxiosParamCreator = function (
         'updateOneBaseAdminContactsContrrolerContact',
         'companyId',
         companyId
-      )
+      );
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('updateOneBaseAdminContactsContrrolerContact', 'id', id)
+      assertParamExists(
+        'updateOneBaseAdminContactsContrrolerContact',
+        'id',
+        id
+      );
       // verify required parameter 'updateContactDto' is not null or undefined
       assertParamExists(
         'updateOneBaseAdminContactsContrrolerContact',
         'updateContactDto',
         updateContactDto
-      )
+      );
       const localVarPath = `/api/v1/admin/companies/{companyId}/contacts/{id}`
         .replace(`{${'companyId'}}`, encodeURIComponent(String(companyId)))
-        .replace(`{${'id'}}`, encodeURIComponent(String(id)))
+        .replace(`{${'id'}}`, encodeURIComponent(String(id)));
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateContactDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -843,59 +857,63 @@ export const AdminCompaniesApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('updateOneBaseCompaniesCrudControllerCompany', 'id', id)
+      assertParamExists(
+        'updateOneBaseCompaniesCrudControllerCompany',
+        'id',
+        id
+      );
       // verify required parameter 'updateCompanyDto' is not null or undefined
       assertParamExists(
         'updateOneBaseCompaniesCrudControllerCompany',
         'updateCompanyDto',
         updateCompanyDto
-      )
+      );
       const localVarPath = `/api/v1/admin/companies/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateCompanyDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * AdminCompaniesApi - functional programming interface
@@ -903,7 +921,7 @@ export const AdminCompaniesApiAxiosParamCreator = function (
  */
 export const AdminCompaniesApiFp = function (configuration?: Configuration) {
   const localVarAxiosParamCreator =
-    AdminCompaniesApiAxiosParamCreator(configuration)
+    AdminCompaniesApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -928,13 +946,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           limit,
           q,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -953,13 +971,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.companiesCrudControllerUpdateCompany(
           id,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -981,13 +999,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           id,
           file,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1009,13 +1027,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           companyId,
           createContactDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1034,13 +1052,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.createOneBaseCompaniesCrudControllerCompany(
           createCompanyDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1062,13 +1080,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           companyId,
           id,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1087,13 +1105,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.deleteOneBaseCompaniesCrudControllerCompany(
           id,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1145,13 +1163,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           page,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1200,13 +1218,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           page,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1234,13 +1252,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           join,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1265,13 +1283,13 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           id,
           updateContactDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -1293,16 +1311,16 @@ export const AdminCompaniesApiFp = function (configuration?: Configuration) {
           id,
           updateCompanyDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * AdminCompaniesApi - factory interface
@@ -1313,7 +1331,7 @@ export const AdminCompaniesApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = AdminCompaniesApiFp(configuration)
+  const localVarFp = AdminCompaniesApiFp(configuration);
   return {
     /**
      *
@@ -1332,7 +1350,7 @@ export const AdminCompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .companiesCrudControllerGetSuggested(page, limit, q, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1347,7 +1365,7 @@ export const AdminCompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .companiesCrudControllerUpdateCompany(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1364,7 +1382,7 @@ export const AdminCompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .companiesCrudControllerUploadExcel(id, file, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1385,7 +1403,7 @@ export const AdminCompaniesApiFactory = function (
           createContactDto,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1400,7 +1418,7 @@ export const AdminCompaniesApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .createOneBaseCompaniesCrudControllerCompany(createCompanyDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1417,7 +1435,7 @@ export const AdminCompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .deleteOneBaseAdminContactsContrrolerContact(companyId, id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1432,7 +1450,7 @@ export const AdminCompaniesApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .deleteOneBaseCompaniesCrudControllerCompany(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1480,7 +1498,7 @@ export const AdminCompaniesApiFactory = function (
           cache,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1525,7 +1543,7 @@ export const AdminCompaniesApiFactory = function (
           cache,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1552,7 +1570,7 @@ export const AdminCompaniesApiFactory = function (
           cache,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1576,7 +1594,7 @@ export const AdminCompaniesApiFactory = function (
           updateContactDto,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1597,10 +1615,10 @@ export const AdminCompaniesApiFactory = function (
           updateCompanyDto,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for companiesCrudControllerGetSuggested operation in AdminCompaniesApi.
@@ -1613,21 +1631,21 @@ export interface AdminCompaniesApiCompaniesCrudControllerGetSuggestedRequest {
    * @type {any}
    * @memberof AdminCompaniesApiCompaniesCrudControllerGetSuggested
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof AdminCompaniesApiCompaniesCrudControllerGetSuggested
    */
-  readonly limit: any
+  readonly limit: any;
 
   /**
    * Starting from which page you want to search
    * @type {any}
    * @memberof AdminCompaniesApiCompaniesCrudControllerGetSuggested
    */
-  readonly q?: any
+  readonly q?: any;
 }
 
 /**
@@ -1641,7 +1659,7 @@ export interface AdminCompaniesApiCompaniesCrudControllerUpdateCompanyRequest {
    * @type {any}
    * @memberof AdminCompaniesApiCompaniesCrudControllerUpdateCompany
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1655,14 +1673,14 @@ export interface AdminCompaniesApiCompaniesCrudControllerUploadExcelRequest {
    * @type {any}
    * @memberof AdminCompaniesApiCompaniesCrudControllerUploadExcel
    */
-  readonly id: any
+  readonly id: any;
 
   /**
    *
    * @type {any}
    * @memberof AdminCompaniesApiCompaniesCrudControllerUploadExcel
    */
-  readonly file: any
+  readonly file: any;
 }
 
 /**
@@ -1676,14 +1694,14 @@ export interface AdminCompaniesApiCreateOneBaseAdminContactsContrrolerContactReq
    * @type {string}
    * @memberof AdminCompaniesApiCreateOneBaseAdminContactsContrrolerContact
    */
-  readonly companyId: string
+  readonly companyId: string;
 
   /**
    *
    * @type {CreateContactDto}
    * @memberof AdminCompaniesApiCreateOneBaseAdminContactsContrrolerContact
    */
-  readonly createContactDto: CreateContactDto
+  readonly createContactDto: CreateContactDto;
 }
 
 /**
@@ -1697,7 +1715,7 @@ export interface AdminCompaniesApiCreateOneBaseCompaniesCrudControllerCompanyReq
    * @type {CreateCompanyDto}
    * @memberof AdminCompaniesApiCreateOneBaseCompaniesCrudControllerCompany
    */
-  readonly createCompanyDto: CreateCompanyDto
+  readonly createCompanyDto: CreateCompanyDto;
 }
 
 /**
@@ -1711,14 +1729,14 @@ export interface AdminCompaniesApiDeleteOneBaseAdminContactsContrrolerContactReq
    * @type {string}
    * @memberof AdminCompaniesApiDeleteOneBaseAdminContactsContrrolerContact
    */
-  readonly companyId: string
+  readonly companyId: string;
 
   /**
    *
    * @type {string}
    * @memberof AdminCompaniesApiDeleteOneBaseAdminContactsContrrolerContact
    */
-  readonly id: string
+  readonly id: string;
 }
 
 /**
@@ -1732,7 +1750,7 @@ export interface AdminCompaniesApiDeleteOneBaseCompaniesCrudControllerCompanyReq
    * @type {string}
    * @memberof AdminCompaniesApiDeleteOneBaseCompaniesCrudControllerCompany
    */
-  readonly id: string
+  readonly id: string;
 }
 
 /**
@@ -1746,77 +1764,77 @@ export interface AdminCompaniesApiGetManyBaseAdminContactsContrrolerContactReque
    * @type {string}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly companyId: string
+  readonly companyId: string;
 
   /**
    * Selects resource fields. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#select\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds search condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#search\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {string}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly s?: string
+  readonly s?: string;
 
   /**
    * Adds filter condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#filter\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly filter?: Array<string>
+  readonly filter?: Array<string>;
 
   /**
    * Adds OR condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#or\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly or?: Array<string>
+  readonly or?: Array<string>;
 
   /**
    * Adds sort by field. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#sort\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly sort?: Array<string>
+  readonly sort?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Limit amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#limit\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly limit?: number
+  readonly limit?: number;
 
   /**
    * Offset amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#offset\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly offset?: number
+  readonly offset?: number;
 
   /**
    * Page portion of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#page\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly page?: number
+  readonly page?: number;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseAdminContactsContrrolerContact
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -1830,70 +1848,70 @@ export interface AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompanyReque
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds search condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#search\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {string}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly s?: string
+  readonly s?: string;
 
   /**
    * Adds filter condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#filter\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly filter?: Array<string>
+  readonly filter?: Array<string>;
 
   /**
    * Adds OR condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#or\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly or?: Array<string>
+  readonly or?: Array<string>;
 
   /**
    * Adds sort by field. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#sort\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly sort?: Array<string>
+  readonly sort?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Limit amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#limit\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly limit?: number
+  readonly limit?: number;
 
   /**
    * Offset amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#offset\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly offset?: number
+  readonly offset?: number;
 
   /**
    * Page portion of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#page\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly page?: number
+  readonly page?: number;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetManyBaseCompaniesCrudControllerCompany
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -1907,28 +1925,28 @@ export interface AdminCompaniesApiGetOneBaseCompaniesCrudControllerCompanyReques
    * @type {string}
    * @memberof AdminCompaniesApiGetOneBaseCompaniesCrudControllerCompany
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    * Selects resource fields. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#select\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetOneBaseCompaniesCrudControllerCompany
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminCompaniesApiGetOneBaseCompaniesCrudControllerCompany
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminCompaniesApiGetOneBaseCompaniesCrudControllerCompany
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -1942,21 +1960,21 @@ export interface AdminCompaniesApiUpdateOneBaseAdminContactsContrrolerContactReq
    * @type {string}
    * @memberof AdminCompaniesApiUpdateOneBaseAdminContactsContrrolerContact
    */
-  readonly companyId: string
+  readonly companyId: string;
 
   /**
    *
    * @type {string}
    * @memberof AdminCompaniesApiUpdateOneBaseAdminContactsContrrolerContact
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    *
    * @type {UpdateContactDto}
    * @memberof AdminCompaniesApiUpdateOneBaseAdminContactsContrrolerContact
    */
-  readonly updateContactDto: UpdateContactDto
+  readonly updateContactDto: UpdateContactDto;
 }
 
 /**
@@ -1970,14 +1988,14 @@ export interface AdminCompaniesApiUpdateOneBaseCompaniesCrudControllerCompanyReq
    * @type {string}
    * @memberof AdminCompaniesApiUpdateOneBaseCompaniesCrudControllerCompany
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    *
    * @type {UpdateCompanyDto}
    * @memberof AdminCompaniesApiUpdateOneBaseCompaniesCrudControllerCompany
    */
-  readonly updateCompanyDto: UpdateCompanyDto
+  readonly updateCompanyDto: UpdateCompanyDto;
 }
 
 /**
@@ -2006,7 +2024,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.q,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2023,7 +2041,7 @@ export class AdminCompaniesApi extends BaseAPI {
   ) {
     return AdminCompaniesApiFp(this.configuration)
       .companiesCrudControllerUpdateCompany(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2044,7 +2062,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.file,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2065,7 +2083,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.createContactDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2085,7 +2103,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.createCompanyDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2106,7 +2124,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.id,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2126,7 +2144,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.id,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2156,7 +2174,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2185,7 +2203,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2208,7 +2226,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2230,7 +2248,7 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.updateContactDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -2251,6 +2269,6 @@ export class AdminCompaniesApi extends BaseAPI {
         requestParameters.updateCompanyDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

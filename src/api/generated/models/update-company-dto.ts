@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,10 +13,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import { CompanyDescriptionDto } from './company-description-dto'
-import { CompanySocialMediaDto } from './company-social-media-dto'
-import { TypesOfInvestmentDto } from './types-of-investment-dto'
+import { CompanyDescriptionDto } from './company-description-dto';
+import { CompanySocialMediaDto } from './company-social-media-dto';
+import { TypesOfInvestmentDto } from './types-of-investment-dto';
 
 /**
  *
@@ -27,181 +28,181 @@ export interface UpdateCompanyDto {
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  name: string
+  name: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  logo?: string
+  logo?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  twitterHandle?: string
+  twitterHandle?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  ticker?: string
+  ticker?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  phone?: string
+  phone?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  fax?: string
+  fax?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  website?: string
+  website?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  street?: string
+  street?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  city?: string
+  city?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  state?: string
+  state?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  country?: string
+  country?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  continent?: string
+  continent?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  zipCode?: string
+  zipCode?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  revenueRange?: string
+  revenueRange?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  employeeRange?: string
+  employeeRange?: string;
   /**
    *
    * @type {Array<CompanyDescriptionDto>}
    * @memberof UpdateCompanyDto
    */
-  descriptionList?: Array<CompanyDescriptionDto>
+  descriptionList?: Array<CompanyDescriptionDto>;
   /**
    *
    * @type {Array<CompanySocialMediaDto>}
    * @memberof UpdateCompanyDto
    */
-  socialMediaUrls?: Array<CompanySocialMediaDto>
+  socialMediaUrls?: Array<CompanySocialMediaDto>;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateCompanyDto
    */
-  industries?: Array<string>
+  industries?: Array<string>;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateCompanyDto
    */
-  primaryIndustry?: Array<string>
+  primaryIndustry?: Array<string>;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateCompanyDto
    */
-  subUnitIndustries?: Array<string>
+  subUnitIndustries?: Array<string>;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  annualContributions?: string
+  annualContributions?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  cashContributions?: string
+  cashContributions?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  inKindContributions?: string
+  inKindContributions?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  employeeContributions?: string
+  employeeContributions?: string;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateCompanyDto
    */
-  sdgGoals?: Array<UpdateCompanyDtoSdgGoalsEnum>
+  sdgGoals?: Array<UpdateCompanyDtoSdgGoalsEnum>;
   /**
    *
    * @type {Array<TypesOfInvestmentDto>}
    * @memberof UpdateCompanyDto
    */
-  typesOfInvestment?: Array<TypesOfInvestmentDto>
+  typesOfInvestment?: Array<TypesOfInvestmentDto>;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateCompanyDto
    */
-  crsFocus?: Array<string>
+  crsFocus?: Array<string>;
   /**
    *
    * @type {Array<string>}
    * @memberof UpdateCompanyDto
    */
-  charitablePartners?: Array<string>
+  charitablePartners?: Array<string>;
   /**
    *
    * @type {string}
    * @memberof UpdateCompanyDto
    */
-  partnershipLink?: string
+  partnershipLink?: string;
   /**
    *
    * @type {boolean}
    * @memberof UpdateCompanyDto
    */
-  employeeEngagementOpportunities?: boolean
+  employeeEngagementOpportunities?: boolean;
 }
 
 /**

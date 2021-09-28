@@ -23,5 +23,5 @@ export interface ImpactStatementsDto {
    * @type {string}
    * @memberof ImpactStatementsDto
    */
-  text: string
+  text: string;
 }

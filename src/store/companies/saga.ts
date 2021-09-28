@@ -1,20 +1,26 @@
-import { PayloadAction } from '@reduxjs/toolkit'
-import { call, put, takeLatest } from 'redux-saga/effects'
+import { CompaniesActionTypes } from './action-types';
+import { favoritesListQuery } from './axios';
+import { FavoriteListAction } from './slice';
+import { FavoritesRequest } from './state';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { call, put, takeLatest } from 'redux-saga/effects';
 
-// eslint-disable-next-line import/no-cycle
-import { favoritesListQuery } from './axios'
-import { FavoriteListAction } from './slice'
-import { FavoritesRequest } from './state'
-
-function* getFavoriteLis(action: PayloadAction<FavoritesRequest>) {
-  const { data } = yield call(() =>
-    favoritesListQuery(action.payload.limit).catch((e) => ({
-      data: { error: e },
-    }))
-  )
-  yield put(FavoriteListAction.getFavorites(data))
+export function* getFavoritesList({
+  payload,
+}: PayloadAction<FavoritesRequest>) {
+  try {
+    yield put(FavoriteListAction.setFavoritesLoading(true));
+    const { data } = yield call(favoritesListQuery, payload.limit);
+    yield put(FavoriteListAction.setFavoritesData(data));
+  } catch (e) {
+    if (e instanceof Error) {
+      yield put(FavoriteListAction.setFavoritesError(e.message));
+    }
+  } finally {
+    yield put(FavoriteListAction.setFavoritesLoading(false));
+  }
 }
 
 export function* favoriteListWatcher() {
-  yield takeLatest(FavoriteListAction.favoritesRequest.type, getFavoriteLis)
+  yield takeLatest(CompaniesActionTypes.GET_FAVORITES, getFavoritesList);
 }

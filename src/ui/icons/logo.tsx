@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
 export const Logo: FC = () => (
   <svg
@@ -45,4 +45,4 @@ export const Logo: FC = () => (
       fill="white"
     />
   </svg>
-)
+);

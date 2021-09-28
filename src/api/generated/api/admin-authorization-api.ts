@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,17 +34,12 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
-// @ts-ignore
-import { SignInDto } from '../models'
+import { SignInDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * AdminAuthorizationApi - axios parameter creator
  * @export
@@ -53,39 +55,39 @@ export const AdminAuthorizationApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     authControllerFindById: async (options: any = {}): Promise<RequestArgs> => {
-      const localVarPath = `/api/v1/admin`
+      const localVarPath = `/api/v1/admin`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -99,46 +101,46 @@ export const AdminAuthorizationApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'signInDto' is not null or undefined
-      assertParamExists('authControllerSignIn', 'signInDto', signInDto)
-      const localVarPath = `/api/v1/admin/sign_in`
+      assertParamExists('authControllerSignIn', 'signInDto', signInDto);
+      const localVarPath = `/api/v1/admin/sign_in`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         signInDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * AdminAuthorizationApi - functional programming interface
@@ -148,7 +150,7 @@ export const AdminAuthorizationApiFp = function (
   configuration?: Configuration
 ) {
   const localVarAxiosParamCreator =
-    AdminAuthorizationApiAxiosParamCreator(configuration)
+    AdminAuthorizationApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -162,13 +164,13 @@ export const AdminAuthorizationApiFp = function (
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.authControllerFindById(options)
+        await localVarAxiosParamCreator.authControllerFindById(options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -184,16 +186,19 @@ export const AdminAuthorizationApiFp = function (
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.authControllerSignIn(signInDto, options)
+        await localVarAxiosParamCreator.authControllerSignIn(
+          signInDto,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * AdminAuthorizationApi - factory interface
@@ -204,7 +209,7 @@ export const AdminAuthorizationApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = AdminAuthorizationApiFp(configuration)
+  const localVarFp = AdminAuthorizationApiFp(configuration);
   return {
     /**
      *
@@ -215,7 +220,7 @@ export const AdminAuthorizationApiFactory = function (
     authControllerFindById(options?: any): AxiosPromise<void> {
       return localVarFp
         .authControllerFindById(options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -230,10 +235,10 @@ export const AdminAuthorizationApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .authControllerSignIn(signInDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for authControllerSignIn operation in AdminAuthorizationApi.
@@ -246,7 +251,7 @@ export interface AdminAuthorizationApiAuthControllerSignInRequest {
    * @type {SignInDto}
    * @memberof AdminAuthorizationApiAuthControllerSignIn
    */
-  readonly signInDto: SignInDto
+  readonly signInDto: SignInDto;
 }
 
 /**
@@ -266,7 +271,7 @@ export class AdminAuthorizationApi extends BaseAPI {
   public authControllerFindById(options?: any) {
     return AdminAuthorizationApiFp(this.configuration)
       .authControllerFindById(options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -283,6 +288,6 @@ export class AdminAuthorizationApi extends BaseAPI {
   ) {
     return AdminAuthorizationApiFp(this.configuration)
       .authControllerSignIn(requestParameters.signInDto, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

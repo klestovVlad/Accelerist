@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
 export const CheckedIcon: FC = () => (
   <svg
@@ -15,4 +15,4 @@ export const CheckedIcon: FC = () => (
       fill="#122434"
     />
   </svg>
-)
+);

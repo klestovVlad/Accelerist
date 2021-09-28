@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { FC } from 'react'
-import { Field } from 'react-final-form'
-
 import {
   BackgroundLine,
   ButtonsContainer,
@@ -10,10 +6,12 @@ import {
   IndicatorRow,
   RadioContainer,
   RadioNumber,
-} from './styles'
+} from './styles';
+import React, { FC } from 'react';
+import { Field } from 'react-final-form';
 
 interface PriorityRadioButtonsProps {
-  indicatorsList: Array<string>
+  indicatorsList: Array<string>;
 }
 
 export const PriorityRadioButtons: FC<PriorityRadioButtonsProps> = ({
@@ -36,4 +34,4 @@ export const PriorityRadioButtons: FC<PriorityRadioButtonsProps> = ({
       </IndicatorRow>
     ))}
   </Content>
-)
+);

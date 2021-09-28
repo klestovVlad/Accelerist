@@ -23,59 +23,59 @@ export interface ContactGetDto {
    * @type {string}
    * @memberof ContactGetDto
    */
-  id: string
+  id: string;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  zoomInfoId: string
+  zoomInfoId: string;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  firstName: string
+  firstName: string;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  middleName: string | null
+  middleName: string | null;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  lastName: string
+  lastName: string;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  jobTitle: string | null
+  jobTitle: string | null;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  email: string
+  email: string;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  phone: string | null
+  phone: string | null;
   /**
    *
    * @type {number}
    * @memberof ContactGetDto
    */
-  contactAccuracyScore: number
+  contactAccuracyScore: number;
   /**
    *
    * @type {string}
    * @memberof ContactGetDto
    */
-  linkedinUrl: string | null
+  linkedinUrl: string | null;
 }

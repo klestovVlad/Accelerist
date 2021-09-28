@@ -1,19 +1,18 @@
-import React, { FC, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-import { FavoriteListAction } from '../../../../../store/companies/index'
-import { SectionHeader } from '../../section-header/section-header'
-import { Card } from './card/card'
-import { Content, SectionContainer } from './styles'
-import { FavoriteListSelector } from '../../../../../store/companies/index'
+import { getFavoritesAction } from '../../../../../store/companies/index';
+import { FavoriteListSelector } from '../../../../../store/companies/index';
+import { SectionHeader } from '../../section-header/section-header';
+import { Card } from './card/card';
+import { Content, SectionContainer } from './styles';
+import React, { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Favorites: FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(FavoriteListAction.favoritesRequest({ limit: 6 }))
-  }, [dispatch])
-  const FavoriteListItems = useSelector(FavoriteListSelector.selectItems)
-  console.log(FavoriteListItems)
+    dispatch(getFavoritesAction({ limit: 6 }));
+  }, [dispatch]);
+  const FavoriteListItems = useSelector(FavoriteListSelector.selectItems);
+  console.log(FavoriteListItems);
   return (
     <Content>
       <SectionHeader text="Favorites" isButtonShow />
@@ -23,5 +22,5 @@ export const Favorites: FC = () => {
         ))}
       </SectionContainer>
     </Content>
-  )
-}
+  );
+};

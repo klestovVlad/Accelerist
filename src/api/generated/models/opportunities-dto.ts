@@ -23,5 +23,5 @@ export interface OpportunitiesDto {
    * @type {string}
    * @memberof OpportunitiesDto
    */
-  text: string
+  text: string;
 }

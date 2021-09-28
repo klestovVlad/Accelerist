@@ -1,5 +1,5 @@
 export function ReturnFormattedDate(date: string) {
-  const DateFormat = new Date(date)
+  const DateFormat = new Date(date);
   const Months = [
     'Jan',
     'Feb',
@@ -13,8 +13,8 @@ export function ReturnFormattedDate(date: string) {
     'Oct',
     'Nov',
     'Dec',
-  ]
+  ];
   return `${DateFormat.getDate()} ${
     Months[DateFormat.getMonth()]
-  } ${DateFormat.getFullYear()}`
+  } ${DateFormat.getFullYear()}`;
 }

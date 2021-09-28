@@ -1,42 +1,42 @@
 export interface SavedListData {
   items: [
     {
-      id: string
-      name: string
+      id: string;
+      name: string;
       filters: {
-        q: string
-        gender: string
-      }
-      prospectsAvailable: number
-      createdAt: string
-      updatedAt: string
+        q: string;
+        gender: string;
+      };
+      prospectsAvailable: number;
+      createdAt: string;
+      updatedAt: string;
       lastAuthor: {
-        id: string
-        email: string | null
-        firstName: string | null
-        lastName: string | null
-        isAuthorized: boolean
-        imported: boolean
-        teamId: string | null
-        role: string | null
-        linkedinLink: string | null
-        isReceivingNotifications: boolean
-        avatarKey: string | null
-        loggedInAt: string
-        createdAt: string
-        updatedAt: string
-        deletedAt: string | null
-      }
+        id: string;
+        email: string | null;
+        firstName: string | null;
+        lastName: string | null;
+        isAuthorized: boolean;
+        imported: boolean;
+        teamId: string | null;
+        role: string | null;
+        linkedinLink: string | null;
+        isReceivingNotifications: boolean;
+        avatarKey: string | null;
+        loggedInAt: string;
+        createdAt: string;
+        updatedAt: string;
+        deletedAt: string | null;
+      };
     }
-  ]
+  ];
   meta: {
-    totalItems: number
-    itemCount: number
-    itemsPerPage: string
-    totalPages: number
-    currentPage: string
-  }
-  isLoading: boolean
+    totalItems: number;
+    itemCount: number;
+    itemsPerPage: string;
+    totalPages: number;
+    currentPage: string;
+  };
+  isLoading: boolean;
 }
 
 export const initialState: SavedListData = {
@@ -78,4 +78,4 @@ export const initialState: SavedListData = {
     currentPage: '0',
   },
   isLoading: true,
-}
+};

@@ -23,17 +23,17 @@ export interface CompanySocialMediaDto {
    * @type {string}
    * @memberof CompanySocialMediaDto
    */
-  type: string
+  type: string;
   /**
    *
    * @type {string}
    * @memberof CompanySocialMediaDto
    */
-  url: string
+  url: string;
   /**
    *
    * @type {string}
    * @memberof CompanySocialMediaDto
    */
-  followerCount: string
+  followerCount: string;
 }

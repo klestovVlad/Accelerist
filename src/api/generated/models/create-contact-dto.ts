@@ -23,41 +23,41 @@ export interface CreateContactDto {
    * @type {string}
    * @memberof CreateContactDto
    */
-  firstName: string
+  firstName: string;
   /**
    *
    * @type {string}
    * @memberof CreateContactDto
    */
-  middleName?: string
+  middleName?: string;
   /**
    *
    * @type {string}
    * @memberof CreateContactDto
    */
-  lastName: string
+  lastName: string;
   /**
    *
    * @type {string}
    * @memberof CreateContactDto
    */
-  email: string
+  email: string;
   /**
    *
    * @type {string}
    * @memberof CreateContactDto
    */
-  phone?: string
+  phone?: string;
   /**
    *
    * @type {string}
    * @memberof CreateContactDto
    */
-  jobTitle?: string
+  jobTitle?: string;
   /**
    *
    * @type {string}
    * @memberof CreateContactDto
    */
-  linkedinUrl?: string
+  linkedinUrl?: string;
 }

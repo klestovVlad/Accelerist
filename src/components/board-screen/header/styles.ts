@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const BackgroundContainer = styled.div`
   background-color: ${(props) => props.theme.colors.secondary_blue2};
   width: 100%;
-`
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Container = styled.div`
   z-index: 9999;
   max-width: 1440px;
   margin: 0 auto;
-`
+`;
 
 export const RightSide = styled.div`
   display: flex;
@@ -32,10 +32,10 @@ export const RightSide = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
   }
-`
+`;
 
 interface AdaptiveContainerProps {
-  checked: boolean
+  checked: boolean;
 }
 
 export const AdaptiveContainer = styled.div<AdaptiveContainerProps>`
@@ -58,10 +58,10 @@ export const AdaptiveContainer = styled.div<AdaptiveContainerProps>`
     justify-content: space-between;
     align-items: flex-start;
   }
-`
+`;
 
 interface NavShadowProps {
-  checked: boolean
+  checked: boolean;
 }
 
 export const NavShadow = styled.div<NavShadowProps>`
@@ -78,4 +78,4 @@ export const NavShadow = styled.div<NavShadowProps>`
     height: 100vh;
     background: rgb(0, 0, 0);
   }
-`
+`;

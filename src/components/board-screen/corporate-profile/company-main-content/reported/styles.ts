@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   margin-top: 32px;
-`
+`;
 
 export const Header = styled.p`
   font-family: Rubik;
@@ -11,7 +11,7 @@ export const Header = styled.p`
   font-size: 16px;
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const Table = styled.div`
   width: 100%;
@@ -21,7 +21,7 @@ export const Table = styled.div`
   border-radius: 6px;
   border: 1px solid;
   border-color: ${(props) => props.theme.colors.line};
-`
+`;
 
 export const TableCell = styled.div`
   padding: 16px;
@@ -34,7 +34,7 @@ export const TableCell = styled.div`
     border-right: 1px solid;
     border-color: ${(props) => props.theme.colors.line};
   }
-`
+`;
 
 export const TableCellCaption = styled.p`
   font-family: Rubik;
@@ -43,7 +43,7 @@ export const TableCellCaption = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-`
+`;
 
 export const TableCellInfo = styled.p`
   font-family: Rubik;
@@ -53,4 +53,4 @@ export const TableCellInfo = styled.p`
   line-height: 145%;
   margin-top: 4px;
   color: ${(props) => props.theme.colors.black};
-`
+`;

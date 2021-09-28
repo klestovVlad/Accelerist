@@ -1,25 +1,23 @@
-import React, { FC } from 'react'
-
+import { ReactComponent as GlobeIcon } from '../../../../../ui/icons/svg/globe.svg';
+import { ReactComponent as PlaceIcon } from '../../../../../ui/icons/svg/map-pin.svg';
+import { ReactComponent as PhoneIcon } from '../../../../../ui/icons/svg/phone.svg';
 import {
   Content,
   Header,
   ContactsContainer,
   Contact,
   ContactInfo,
-} from './styles'
-
-import { ReactComponent as GlobeIcon } from '../../../../../ui/icons/svg/globe.svg'
-import { ReactComponent as PhoneIcon } from '../../../../../ui/icons/svg/phone.svg'
-import { ReactComponent as PlaceIcon } from '../../../../../ui/icons/svg/map-pin.svg'
+} from './styles';
+import React, { FC } from 'react';
 
 interface CompanyContactsProps {
-  website: string | null
-  phone: string | null
-  street: string | null
-  city: string | null
-  state: string | null
-  country: string | null
-  zipCode: string | null
+  website: string | null;
+  phone: string | null;
+  street: string | null;
+  city: string | null;
+  state: string | null;
+  country: string | null;
+  zipCode: string | null;
 }
 
 export const CompanyContacts: FC<CompanyContactsProps> = ({
@@ -54,4 +52,4 @@ export const CompanyContacts: FC<CompanyContactsProps> = ({
       )}
     </ContactsContainer>
   </Content>
-)
+);

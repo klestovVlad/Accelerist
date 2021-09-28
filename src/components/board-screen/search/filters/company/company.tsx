@@ -1,13 +1,12 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
-import { Field, FormProps } from 'react-final-form'
-
-import { Input } from '../../../../../ui/input/input'
-import { RangeSlider } from '../../../../../ui/range-slider/range-slider'
-import { Content, Header, InputContainer } from './styles'
+import { Input } from '../../../../../ui/input/input';
+import { RangeSlider } from '../../../../../ui/range-slider/range-slider';
+import { Content, Header, InputContainer } from './styles';
+import React, { Dispatch, FC, SetStateAction } from 'react';
+import { Field, FormProps } from 'react-final-form';
 
 interface CompanyProps extends FormProps {
-  rangeValue: number[]
-  setRangeValue: Dispatch<SetStateAction<number[]>>
+  rangeValue: number[];
+  setRangeValue: Dispatch<SetStateAction<number[]>>;
 }
 
 export const Company: FC<CompanyProps> = ({
@@ -46,4 +45,4 @@ export const Company: FC<CompanyProps> = ({
       />
     </InputContainer>
   </Content>
-)
+);

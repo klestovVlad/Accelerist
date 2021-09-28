@@ -23,11 +23,11 @@ export interface CreateSavedListDto {
    * @type {object}
    * @memberof CreateSavedListDto
    */
-  filters: object
+  filters: object;
   /**
    *
    * @type {number}
    * @memberof CreateSavedListDto
    */
-  prospectsAvailable: number
+  prospectsAvailable: number;
 }

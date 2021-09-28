@@ -1,8 +1,5 @@
-import React, { FC, useState } from 'react'
-import { Field, FieldRenderProps, Form } from 'react-final-form'
-
-import { Checkbox } from '../check-box/check-box'
-import { VerticalChevron } from '../icons/vertical-chevron/vertical-chevron'
+import { Checkbox } from '../check-box/check-box';
+import { VerticalChevron } from '../icons/vertical-chevron/vertical-chevron';
 import {
   Button,
   ButtonsRow,
@@ -14,13 +11,15 @@ import {
   ListContent,
   ListItemName,
   ListRow,
-} from './styles'
+} from './styles';
+import React, { FC, useState } from 'react';
+import { Field, FieldRenderProps, Form } from 'react-final-form';
 
 interface InputProps extends FieldRenderProps<string> {
-  label: string
-  placeholder: string
-  predefined: boolean
-  predefinedList?: string[]
+  label: string;
+  placeholder: string;
+  predefined: boolean;
+  predefinedList?: string[];
 }
 
 export const Input: FC<InputProps> = ({
@@ -31,17 +30,17 @@ export const Input: FC<InputProps> = ({
   predefinedList,
   form,
 }) => {
-  const [showList, setShowList] = useState(false)
+  const [showList, setShowList] = useState(false);
 
-  const ClearInput = () => form.mutators.setValue(label, '')
+  const ClearInput = () => form.mutators.setValue(label, '');
 
   const addListItemsToInput = (values: { [key: string]: string }) => {
-    const arr: string[] = []
-    Object.keys(values).map((item) => (values[item] ? arr.push(item) : null))
-    Array.from(new Set(arr))
-  }
+    const arr: string[] = [];
+    Object.keys(values).map((item) => (values[item] ? arr.push(item) : null));
+    Array.from(new Set(arr));
+  };
 
-  const paramList = predefinedList === undefined ? [''] : predefinedList
+  const paramList = predefinedList === undefined ? [''] : predefinedList;
 
   return (
     <Content>
@@ -84,9 +83,9 @@ export const Input: FC<InputProps> = ({
         />
       )}
     </Content>
-  )
-}
+  );
+};
 
 Input.defaultProps = {
   predefinedList: [],
-}
+};

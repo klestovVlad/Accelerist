@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { Content, LoadIcon, LoadIconContainer } from './styles'
+import { Content, LoadIcon, LoadIconContainer } from './styles';
+import React, { FC } from 'react';
 
 export const LoadPopup: FC = () => (
   <Content>
@@ -8,4 +7,4 @@ export const LoadPopup: FC = () => (
       <LoadIcon />
     </LoadIconContainer>
   </Content>
-)
+);

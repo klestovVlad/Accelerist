@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
   align-items: center;
-`
+`;
 
 export const Header = styled.h2`
   font-family: Rubik;
@@ -14,7 +14,7 @@ export const Header = styled.h2`
   font-size: 24px;
   line-height: 148%;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const DetailButton = styled.button`
   font-family: 'Rubik';
@@ -23,4 +23,4 @@ export const DetailButton = styled.button`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.blue};
-`
+`;

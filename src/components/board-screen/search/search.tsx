@@ -1,11 +1,10 @@
-import React, { FC, useState } from 'react'
-
-import { Topic } from '../topic/topic'
-import { Filters } from './filters/filters'
-import { Body, Content } from './styles'
+import { Topic } from '../topic/topic';
+import { Filters } from './filters/filters';
+import { Body, Content } from './styles';
+import React, { FC, useState } from 'react';
 
 export const Search: FC = () => {
-  const [showFilter, setShowFilter] = useState(false)
+  const [showFilter, setShowFilter] = useState(false);
   return (
     <Content>
       <Topic
@@ -16,5 +15,5 @@ export const Search: FC = () => {
       />
       <Body>{showFilter && <Filters setShowFilter={setShowFilter} />}</Body>
     </Content>
-  )
-}
+  );
+};

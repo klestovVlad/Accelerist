@@ -1,15 +1,13 @@
-import './App.css'
-
-import React from 'react'
-import { useSelector } from 'react-redux'
-
-import { AuthorizationScreen } from './components/authorization-screen/authorization-screen'
-import { BoardScreen } from './components/board-screen/board-screen'
-import { UserSelector } from './store/user/index'
+import './App.css';
+import { AuthorizationScreen } from './pages/authorization-screen/authorization-screen';
+import { BoardScreen } from './pages/board-screen/board-screen';
+import { UserSelector } from './store/user/index';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const Token = useSelector(UserSelector.selectToken)
-  return Token ? <BoardScreen /> : <AuthorizationScreen />
+  const Token = useSelector(UserSelector.selectToken);
+  return Token ? <BoardScreen /> : <AuthorizationScreen />;
 }
 
-export default App
+export default App;

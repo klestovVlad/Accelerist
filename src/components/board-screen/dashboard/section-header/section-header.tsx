@@ -1,10 +1,9 @@
-import React, { FC } from 'react'
-
-import { Content, DetailButton, Header } from './styles'
+import { Content, DetailButton, Header } from './styles';
+import React, { FC } from 'react';
 
 interface SectionHeaderProps {
-  text: string
-  isButtonShow: boolean
+  text: string;
+  isButtonShow: boolean;
 }
 
 export const SectionHeader: FC<SectionHeaderProps> = ({
@@ -15,4 +14,4 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
     <Header>{text}</Header>
     {isButtonShow ? <DetailButton>see more</DetailButton> : null}
   </Content>
-)
+);

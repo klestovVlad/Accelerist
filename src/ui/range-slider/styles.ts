@@ -1,12 +1,12 @@
-import { Slider } from '@material-ui/core'
-import styled from 'styled-components'
+import { Slider } from '@material-ui/core';
+import styled from 'styled-components';
 
 export const Content = styled.div`
   padding: 0 36px;
   position: relative;
   display: flex;
   align-items: center;
-`
+`;
 
 export const Label = styled.p`
   font-family: Rubik;
@@ -19,7 +19,7 @@ export const Label = styled.p`
   top: -4px;
   left: 0px;
   transform: translateY(-100%);
-`
+`;
 
 export const StyledSlider = styled(Slider)`
   & .MuiSlider-track {
@@ -77,4 +77,4 @@ export const StyledSlider = styled(Slider)`
     justify-content: unset;
     background-color: unset;
   }
-`
+`;

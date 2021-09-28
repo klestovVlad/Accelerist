@@ -23,41 +23,41 @@ export interface UpdateContactDto {
    * @type {string}
    * @memberof UpdateContactDto
    */
-  firstName?: string
+  firstName?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateContactDto
    */
-  middleName?: string
+  middleName?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateContactDto
    */
-  lastName?: string
+  lastName?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateContactDto
    */
-  email?: string
+  email?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateContactDto
    */
-  phone?: string
+  phone?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateContactDto
    */
-  jobTitle?: string
+  jobTitle?: string;
   /**
    *
    * @type {string}
    * @memberof UpdateContactDto
    */
-  linkedinUrl?: string
+  linkedinUrl?: string;
 }

@@ -1,3 +1,3 @@
-export { SavedListAction } from './slice'
+export { SavedListAction } from './slice';
 
-export { SavedListSelector } from './selectors'
+export { SavedListSelector } from './selectors';

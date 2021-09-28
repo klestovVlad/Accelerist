@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.section`
   width: 100%;
@@ -7,7 +7,7 @@ export const Content = styled.section`
   background-color: ${(props) => props.theme.colors.gray4};
   display: flex;
   flex-direction: row;
-`
+`;
 
 export const CompanyIcon = styled.div`
   background: ${(props) => props.theme.colors.white};
@@ -17,15 +17,15 @@ export const CompanyIcon = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 8px;
-`
+`;
 
 export const CompanyInformation = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 24px;
-`
+`;
 
-export const CompanyHeaderRow = styled.div``
+export const CompanyHeaderRow = styled.div``;
 
 export const CompanyName = styled.h2`
   font-family: Rubik;
@@ -34,7 +34,7 @@ export const CompanyName = styled.h2`
   font-size: 24px;
   line-height: 148%;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const CompanyCaption = styled.p`
   font-family: Rubik;
@@ -43,4 +43,4 @@ export const CompanyCaption = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-`
+`;

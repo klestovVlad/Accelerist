@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   margin-top: 32px;
-`
+`;
 
 export const Header = styled.p`
   font-family: Rubik;
@@ -11,7 +11,7 @@ export const Header = styled.p`
   font-size: 16px;
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const ContactsContainer = styled.div`
   margin-top: 16px;
@@ -24,7 +24,7 @@ export const ContactsContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-color: ${(props) => props.theme.colors.line};
-`
+`;
 
 export const Contact = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export const Contact = styled.div`
   margin-top: 14px;
   justify-content: center;
   margin-left: 25px;
-`
+`;
 
 export const ContactInfo = styled.a`
   font-family: Rubik;
@@ -44,4 +44,4 @@ export const ContactInfo = styled.a`
   color: ${(props) => props.theme.colors.black};
   text-decoration: none;
   margin-left: 10px;
-`
+`;

@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,19 +34,14 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
+import { GetManyTeamResponseDto } from '../models';
 // @ts-ignore
-import { GetManyTeamResponseDto } from '../models'
-// @ts-ignore
-import { UpdateSubscriptionTeamsDto } from '../models'
+import { UpdateSubscriptionTeamsDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * AdminTeamsApi - axios parameter creator
  * @export
@@ -60,47 +62,47 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'body' is not null or undefined
-      assertParamExists('createOneBaseTeamsCrudControllerTeam', 'body', body)
-      const localVarPath = `/api/v1/admin/teams`
+      assertParamExists('createOneBaseTeamsCrudControllerTeam', 'body', body);
+      const localVarPath = `/api/v1/admin/teams`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         body,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -131,79 +133,79 @@ export const AdminTeamsApiAxiosParamCreator = function (
       cache?: number,
       options: any = {}
     ): Promise<RequestArgs> => {
-      const localVarPath = `/api/v1/admin/teams`
+      const localVarPath = `/api/v1/admin/teams`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (s !== undefined) {
-        localVarQueryParameter['s'] = s
+        localVarQueryParameter['s'] = s;
       }
 
       if (filter) {
-        localVarQueryParameter['filter'] = filter
+        localVarQueryParameter['filter'] = filter;
       }
 
       if (or) {
-        localVarQueryParameter['or'] = or
+        localVarQueryParameter['or'] = or;
       }
 
       if (sort) {
-        localVarQueryParameter['sort'] = sort
+        localVarQueryParameter['sort'] = sort;
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (offset !== undefined) {
-        localVarQueryParameter['offset'] = offset
+        localVarQueryParameter['offset'] = offset;
       }
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -223,55 +225,55 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('getOneBaseTeamsCrudControllerTeam', 'id', id)
+      assertParamExists('getOneBaseTeamsCrudControllerTeam', 'id', id);
       const localVarPath = `/api/v1/admin/teams/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (fields) {
-        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv)
+        localVarQueryParameter['fields'] = fields.join(COLLECTION_FORMATS.csv);
       }
 
       if (join) {
-        localVarQueryParameter['join'] = join
+        localVarQueryParameter['join'] = join;
       }
 
       if (cache !== undefined) {
-        localVarQueryParameter['cache'] = cache
+        localVarQueryParameter['cache'] = cache;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -285,43 +287,43 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('teamsCrudControllerDeleteSubscriptionTeam', 'id', id)
+      assertParamExists('teamsCrudControllerDeleteSubscriptionTeam', 'id', id);
       const localVarPath = `/api/v1/admin/teams/{id}/subscription`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'DELETE',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -335,43 +337,43 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('teamsCrudControllerGetSubscriptionTeam', 'id', id)
+      assertParamExists('teamsCrudControllerGetSubscriptionTeam', 'id', id);
       const localVarPath = `/api/v1/admin/teams/{id}/subscription`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -389,54 +391,54 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('teamsCrudControllerGetSuggested', 'page', page)
+      assertParamExists('teamsCrudControllerGetSuggested', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('teamsCrudControllerGetSuggested', 'limit', limit)
-      const localVarPath = `/api/v1/admin/teams/suggested`
+      assertParamExists('teamsCrudControllerGetSuggested', 'limit', limit);
+      const localVarPath = `/api/v1/admin/teams/suggested`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (q !== undefined) {
-        localVarQueryParameter['q'] = q
+        localVarQueryParameter['q'] = q;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -452,56 +454,56 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('teamsCrudControllerUpdateSubscriptionTeam', 'id', id)
+      assertParamExists('teamsCrudControllerUpdateSubscriptionTeam', 'id', id);
       // verify required parameter 'updateSubscriptionTeamsDto' is not null or undefined
       assertParamExists(
         'teamsCrudControllerUpdateSubscriptionTeam',
         'updateSubscriptionTeamsDto',
         updateSubscriptionTeamsDto
-      )
+      );
       const localVarPath = `/api/v1/admin/teams/{id}/subscription`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateSubscriptionTeamsDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -517,55 +519,55 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('teamsCrudControllerUploadExcel', 'id', id)
+      assertParamExists('teamsCrudControllerUploadExcel', 'id', id);
       // verify required parameter 'file' is not null or undefined
-      assertParamExists('teamsCrudControllerUploadExcel', 'file', file)
+      assertParamExists('teamsCrudControllerUploadExcel', 'file', file);
       const localVarPath = `/api/v1/admin/teams/{id}/upload-excel`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
       const localVarFormParams = new ((configuration &&
         configuration.formDataCtor) ||
-        FormData)()
+        FormData)();
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (file !== undefined) {
-        localVarFormParams.append('file', file as any)
+        localVarFormParams.append('file', file as any);
       }
 
-      localVarHeaderParameter['Content-Type'] = 'multipart/form-data'
+      localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
-      localVarRequestOptions.data = localVarFormParams
+      };
+      localVarRequestOptions.data = localVarFormParams;
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -581,55 +583,55 @@ export const AdminTeamsApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('updateOneBaseTeamsCrudControllerTeam', 'id', id)
+      assertParamExists('updateOneBaseTeamsCrudControllerTeam', 'id', id);
       // verify required parameter 'body' is not null or undefined
-      assertParamExists('updateOneBaseTeamsCrudControllerTeam', 'body', body)
+      assertParamExists('updateOneBaseTeamsCrudControllerTeam', 'body', body);
       const localVarPath = `/api/v1/admin/teams/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         body,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * AdminTeamsApi - functional programming interface
@@ -637,7 +639,7 @@ export const AdminTeamsApiAxiosParamCreator = function (
  */
 export const AdminTeamsApiFp = function (configuration?: Configuration) {
   const localVarAxiosParamCreator =
-    AdminTeamsApiAxiosParamCreator(configuration)
+    AdminTeamsApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -656,13 +658,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.createOneBaseTeamsCrudControllerTeam(
           body,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -711,13 +713,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
           page,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -745,13 +747,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
           join,
           cache,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -770,13 +772,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.teamsCrudControllerDeleteSubscriptionTeam(
           id,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -795,13 +797,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.teamsCrudControllerGetSubscriptionTeam(
           id,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -826,13 +828,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
           limit,
           q,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -854,13 +856,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
           id,
           updateSubscriptionTeamsDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -882,13 +884,13 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
           id,
           file,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -910,16 +912,16 @@ export const AdminTeamsApiFp = function (configuration?: Configuration) {
           id,
           body,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * AdminTeamsApi - factory interface
@@ -930,7 +932,7 @@ export const AdminTeamsApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = AdminTeamsApiFp(configuration)
+  const localVarFp = AdminTeamsApiFp(configuration);
   return {
     /**
      *
@@ -945,7 +947,7 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .createOneBaseTeamsCrudControllerTeam(body, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -990,7 +992,7 @@ export const AdminTeamsApiFactory = function (
           cache,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1011,7 +1013,7 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .getOneBaseTeamsCrudControllerTeam(id, fields, join, cache, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1026,7 +1028,7 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerDeleteSubscriptionTeam(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1041,7 +1043,7 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerGetSubscriptionTeam(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1060,7 +1062,7 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerGetSuggested(page, limit, q, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1081,7 +1083,7 @@ export const AdminTeamsApiFactory = function (
           updateSubscriptionTeamsDto,
           options
         )
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1098,7 +1100,7 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .teamsCrudControllerUploadExcel(id, file, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -1115,10 +1117,10 @@ export const AdminTeamsApiFactory = function (
     ): AxiosPromise<object> {
       return localVarFp
         .updateOneBaseTeamsCrudControllerTeam(id, body, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for createOneBaseTeamsCrudControllerTeam operation in AdminTeamsApi.
@@ -1131,7 +1133,7 @@ export interface AdminTeamsApiCreateOneBaseTeamsCrudControllerTeamRequest {
    * @type {object}
    * @memberof AdminTeamsApiCreateOneBaseTeamsCrudControllerTeam
    */
-  readonly body: object
+  readonly body: object;
 }
 
 /**
@@ -1145,70 +1147,70 @@ export interface AdminTeamsApiGetManyBaseTeamsCrudControllerTeamRequest {
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds search condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#search\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {string}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly s?: string
+  readonly s?: string;
 
   /**
    * Adds filter condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#filter\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly filter?: Array<string>
+  readonly filter?: Array<string>;
 
   /**
    * Adds OR condition. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#or\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly or?: Array<string>
+  readonly or?: Array<string>;
 
   /**
    * Adds sort by field. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#sort\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly sort?: Array<string>
+  readonly sort?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Limit amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#limit\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly limit?: number
+  readonly limit?: number;
 
   /**
    * Offset amount of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#offset\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly offset?: number
+  readonly offset?: number;
 
   /**
    * Page portion of resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#page\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly page?: number
+  readonly page?: number;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminTeamsApiGetManyBaseTeamsCrudControllerTeam
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -1222,28 +1224,28 @@ export interface AdminTeamsApiGetOneBaseTeamsCrudControllerTeamRequest {
    * @type {string}
    * @memberof AdminTeamsApiGetOneBaseTeamsCrudControllerTeam
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    * Selects resource fields. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#select\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetOneBaseTeamsCrudControllerTeam
    */
-  readonly fields?: Array<string>
+  readonly fields?: Array<string>;
 
   /**
    * Adds relational resources. &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#join\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {Array<string>}
    * @memberof AdminTeamsApiGetOneBaseTeamsCrudControllerTeam
    */
-  readonly join?: Array<string>
+  readonly join?: Array<string>;
 
   /**
    * Reset cache (if was enabled). &lt;a href&#x3D;\&quot;https://github.com/nestjsx/crud/wiki/Requests#cache\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Docs&lt;/a&gt;
    * @type {number}
    * @memberof AdminTeamsApiGetOneBaseTeamsCrudControllerTeam
    */
-  readonly cache?: number
+  readonly cache?: number;
 }
 
 /**
@@ -1257,7 +1259,7 @@ export interface AdminTeamsApiTeamsCrudControllerDeleteSubscriptionTeamRequest {
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerDeleteSubscriptionTeam
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1271,7 +1273,7 @@ export interface AdminTeamsApiTeamsCrudControllerGetSubscriptionTeamRequest {
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerGetSubscriptionTeam
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -1285,21 +1287,21 @@ export interface AdminTeamsApiTeamsCrudControllerGetSuggestedRequest {
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerGetSuggested
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerGetSuggested
    */
-  readonly limit: any
+  readonly limit: any;
 
   /**
    * Starting from which page you want to search
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerGetSuggested
    */
-  readonly q?: any
+  readonly q?: any;
 }
 
 /**
@@ -1313,14 +1315,14 @@ export interface AdminTeamsApiTeamsCrudControllerUpdateSubscriptionTeamRequest {
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerUpdateSubscriptionTeam
    */
-  readonly id: any
+  readonly id: any;
 
   /**
    *
    * @type {UpdateSubscriptionTeamsDto}
    * @memberof AdminTeamsApiTeamsCrudControllerUpdateSubscriptionTeam
    */
-  readonly updateSubscriptionTeamsDto: UpdateSubscriptionTeamsDto
+  readonly updateSubscriptionTeamsDto: UpdateSubscriptionTeamsDto;
 }
 
 /**
@@ -1334,14 +1336,14 @@ export interface AdminTeamsApiTeamsCrudControllerUploadExcelRequest {
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerUploadExcel
    */
-  readonly id: any
+  readonly id: any;
 
   /**
    *
    * @type {any}
    * @memberof AdminTeamsApiTeamsCrudControllerUploadExcel
    */
-  readonly file: any
+  readonly file: any;
 }
 
 /**
@@ -1355,14 +1357,14 @@ export interface AdminTeamsApiUpdateOneBaseTeamsCrudControllerTeamRequest {
    * @type {string}
    * @memberof AdminTeamsApiUpdateOneBaseTeamsCrudControllerTeam
    */
-  readonly id: string
+  readonly id: string;
 
   /**
    *
    * @type {object}
    * @memberof AdminTeamsApiUpdateOneBaseTeamsCrudControllerTeam
    */
-  readonly body: object
+  readonly body: object;
 }
 
 /**
@@ -1386,7 +1388,7 @@ export class AdminTeamsApi extends BaseAPI {
   ) {
     return AdminTeamsApiFp(this.configuration)
       .createOneBaseTeamsCrudControllerTeam(requestParameters.body, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1415,7 +1417,7 @@ export class AdminTeamsApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1438,7 +1440,7 @@ export class AdminTeamsApi extends BaseAPI {
         requestParameters.cache,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1455,7 +1457,7 @@ export class AdminTeamsApi extends BaseAPI {
   ) {
     return AdminTeamsApiFp(this.configuration)
       .teamsCrudControllerDeleteSubscriptionTeam(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1472,7 +1474,7 @@ export class AdminTeamsApi extends BaseAPI {
   ) {
     return AdminTeamsApiFp(this.configuration)
       .teamsCrudControllerGetSubscriptionTeam(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1494,7 +1496,7 @@ export class AdminTeamsApi extends BaseAPI {
         requestParameters.q,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1515,7 +1517,7 @@ export class AdminTeamsApi extends BaseAPI {
         requestParameters.updateSubscriptionTeamsDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1536,7 +1538,7 @@ export class AdminTeamsApi extends BaseAPI {
         requestParameters.file,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -1557,6 +1559,6 @@ export class AdminTeamsApi extends BaseAPI {
         requestParameters.body,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

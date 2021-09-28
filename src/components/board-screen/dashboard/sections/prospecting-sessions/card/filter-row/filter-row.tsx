@@ -1,12 +1,11 @@
-import React, { FC } from 'react'
-
-import { Content, FilterItem, FilterItemsContainer, Header } from './styles'
+import { Content, FilterItem, FilterItemsContainer, Header } from './styles';
+import React, { FC } from 'react';
 
 interface FilterRowProps {
   filters: {
-    [key: string]: string
-  }
-  id: string
+    [key: string]: string;
+  };
+  id: string;
 }
 
 export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
@@ -20,4 +19,4 @@ export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
       ))}
     </FilterItemsContainer>
   </Content>
-)
+);

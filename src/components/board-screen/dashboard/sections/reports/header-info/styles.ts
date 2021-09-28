@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`
+`;
 
 export const Column = styled.div`
   width: calc(50% - 9px);
-`
+`;
 
 export const Header = styled.p`
   font-family: 'Rubik';
@@ -17,7 +17,7 @@ export const Header = styled.p`
   font-size: 16px;
   line-height: 145%;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const Card = styled.div`
   border-radius: 4px;
@@ -27,7 +27,7 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 6px;
-`
+`;
 
 export const CardTitle = styled.p`
   font-family: Rubik;
@@ -36,7 +36,7 @@ export const CardTitle = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-`
+`;
 
 export const CardText = styled.p`
   font-family: Rubik;
@@ -46,4 +46,4 @@ export const CardText = styled.p`
   line-height: 148%;
   margin-top: 8px;
   color: ${(props) => props.theme.colors.black};
-`
+`;

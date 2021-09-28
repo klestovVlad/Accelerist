@@ -1,7 +1,6 @@
-import React, { FC } from 'react'
-
-import { Logo } from '../../../ui/icons/logo'
-import { Container, H2, Link } from './styles'
+import { Logo } from '../../../ui/icons/logo';
+import { Container, H2, Link } from './styles';
+import React, { FC } from 'react';
 
 export const Header: FC = () => (
   <Container>
@@ -10,4 +9,4 @@ export const Header: FC = () => (
       <H2>ACCELERIST</H2>
     </Link>
   </Container>
-)
+);

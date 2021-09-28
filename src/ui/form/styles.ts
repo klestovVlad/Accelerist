@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
   position: relative;
-`
+`;
 
 interface InputProps {
-  validateError: boolean | undefined
+  validateError: boolean | undefined;
 }
 
 export const Input = styled.input<InputProps>`
@@ -25,7 +25,7 @@ export const Input = styled.input<InputProps>`
   font-size: 16px;
   line-height: 155%;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const Label = styled.span`
   font-family: 'Rubik';
@@ -35,11 +35,11 @@ export const Label = styled.span`
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
   margin-bottom: 4px;
-`
+`;
 
 export const ErrorSignature = styled(Label)`
   color: ${(props) => props.theme.colors.red};
   position: absolute;
   bottom: -19px;
   left: 0;
-`
+`;

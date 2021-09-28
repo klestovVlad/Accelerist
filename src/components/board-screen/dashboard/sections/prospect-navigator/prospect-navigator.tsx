@@ -1,6 +1,4 @@
-import React, { FC } from 'react'
-
-import { SectionHeader } from '../../section-header/section-header'
+import { SectionHeader } from '../../section-header/section-header';
 import {
   Card,
   CardContainer,
@@ -9,7 +7,8 @@ import {
   CardText,
   Content,
   Image,
-} from './styled'
+} from './styled';
+import React, { FC } from 'react';
 
 export const ProspectNavigator: FC = () => (
   <Content>
@@ -56,4 +55,4 @@ export const ProspectNavigator: FC = () => (
       </Card>
     </CardContainer>
   </Content>
-)
+);

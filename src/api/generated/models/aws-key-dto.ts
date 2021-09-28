@@ -23,5 +23,5 @@ export interface AwsKeyDto {
    * @type {string}
    * @memberof AwsKeyDto
    */
-  key: string
+  key: string;
 }

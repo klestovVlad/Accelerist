@@ -1,13 +1,12 @@
-import React, { FC, useState } from 'react'
-import { FieldRenderProps } from 'react-final-form'
-
-import { PasswordEye } from '../icons/password-eye/password-eye'
-import { Container, ErrorSignature, Input, Label } from './styles'
+import { PasswordEye } from '../icons/password-eye/password-eye';
+import { Container, ErrorSignature, Input, Label } from './styles';
+import React, { FC, useState } from 'react';
+import { FieldRenderProps } from 'react-final-form';
 
 interface InputFieldProps extends FieldRenderProps<string> {
-  label: string
-  placeholder: string
-  inputType: string
+  label: string;
+  placeholder: string;
+  inputType: string;
 }
 
 export const InputField: FC<InputFieldProps> = ({
@@ -17,7 +16,7 @@ export const InputField: FC<InputFieldProps> = ({
   label,
   inputType,
 }) => {
-  const [hidePassword, setHidePassword] = useState(false)
+  const [hidePassword, setHidePassword] = useState(false);
   return (
     <Container>
       <Label>{label}</Label>
@@ -38,5 +37,5 @@ export const InputField: FC<InputFieldProps> = ({
         />
       )}
     </Container>
-  )
-}
+  );
+};

@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { Container, P, SvgContainer } from './styled'
+import { Container, P, SvgContainer } from './styled';
+import React, { FC } from 'react';
 
 export const LinkedIn: FC = () => (
   <Container>
@@ -22,4 +21,4 @@ export const LinkedIn: FC = () => (
       </svg>
     </SvgContainer>
   </Container>
-)
+);

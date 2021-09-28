@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const BackgroundContent = styled.div`
   background-color: ${(props) => props.theme.colors.white};
   width: 100%;
-`
+`;
 
 export const Content = styled.div`
   padding: 24px 60px;
@@ -12,7 +12,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
+`;
 
 export const Header = styled.h1`
   font-family: 'Rubik';
@@ -23,7 +23,7 @@ export const Header = styled.h1`
   color: ${(props) => [props.theme.colors.black]};
   display: block;
   background-color: ${(props) => props.theme.colors.white};
-`
+`;
 
 export const InputContainer = styled.div`
   height: 36px;
@@ -33,7 +33,7 @@ export const InputContainer = styled.div`
   flex: 1;
   margin-left: 80px;
   align-items: center;
-`
+`;
 
 export const Input = styled.input`
   width: 100%;
@@ -50,7 +50,7 @@ export const Input = styled.input`
   font-weight: normal;
   font-size: 12px;
   line-height: 150%;
-`
+`;
 
 export const IconsContainer = styled.div`
   position: absolute;
@@ -59,12 +59,12 @@ export const IconsContainer = styled.div`
   transform: translateY(-50%);
   display: flex;
   flex-direction: row;
-`
+`;
 
 export const ButtonContainer = styled.button`
   margin-left: 12px;
-`
+`;
 
 export const BackButton = styled.button`
   margin-right: 17px;
-`
+`;

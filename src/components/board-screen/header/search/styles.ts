@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-
-import { ReactComponent as Icon } from '../../../../ui/icons/svg/search-icon.svg'
+import { ReactComponent as Icon } from '../../../../ui/icons/svg/search-icon.svg';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ export const Container = styled.div`
   @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
     margin: 0 0 32px 0;
   }
-`
+`;
 
 export const Input = styled.input`
   border-radius: 6px;
@@ -26,13 +25,13 @@ export const Input = styled.input`
   @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
     margin: 0;
   }
-`
+`;
 
 export const SearchButton = styled.button`
   position: absolute;
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-`
+`;
 
-export const SearchIcon = styled(Icon)``
+export const SearchIcon = styled(Icon)``;

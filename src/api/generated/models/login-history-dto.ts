@@ -23,23 +23,23 @@ export interface LoginHistoryDto {
    * @type {string}
    * @memberof LoginHistoryDto
    */
-  id: string
+  id: string;
   /**
    *
    * @type {string}
    * @memberof LoginHistoryDto
    */
-  userId: string
+  userId: string;
   /**
    *
    * @type {object}
    * @memberof LoginHistoryDto
    */
-  user: object
+  user: object;
   /**
    *
    * @type {string}
    * @memberof LoginHistoryDto
    */
-  loggedInAt: string
+  loggedInAt: string;
 }

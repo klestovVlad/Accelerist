@@ -23,11 +23,11 @@ export interface PasswordChangeDto {
    * @type {string}
    * @memberof PasswordChangeDto
    */
-  password: string
+  password: string;
   /**
    *
    * @type {string}
    * @memberof PasswordChangeDto
    */
-  passwordConfirmation: string
+  passwordConfirmation: string;
 }

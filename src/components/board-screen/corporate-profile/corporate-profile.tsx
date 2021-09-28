@@ -1,22 +1,22 @@
-import React, { FC } from 'react'
-import { useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
-import { getCompanyById } from '../../../store/companies/selectors'
-import { Topic } from '../topic/topic'
-import { Header } from './header/header'
-import { CompanyMainContent } from './company-main-content/company-main-content'
+import { getCompanyById } from '../../../store/companies/selectors';
+import { Topic } from '../topic/topic';
+import { CompanyMainContent } from './company-main-content/company-main-content';
+import { Header } from './header/header';
 import {
   Content,
   Container,
   ContentSection,
   CompanyNews,
   BackgroundContainer,
-} from './styles'
+} from './styles';
+import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 export const CorporateProfile: FC = () => {
-  const companyId = useLocation().pathname.replace('/company/', '')
-  const company = useSelector(getCompanyById(companyId))
-  console.log('company', company)
+  const companyId = useLocation().pathname.replace('/company/', '');
+  const company = useSelector(getCompanyById(companyId));
+  console.log('company', company);
   return (
     <Content>
       <Topic header="Corporate Profile" showBackButton />
@@ -36,11 +36,15 @@ export const CorporateProfile: FC = () => {
               state={company.state}
               country={company.country}
               zipCode={company.zipCode}
+              cashContributions={company.cashContributions}
+              annualContributions={company.annualContributions}
+              employeeContributions={company.employeeContributions}
+              inKindContributions={company.inKindContributions}
             />
             <CompanyNews />
           </ContentSection>
         </BackgroundContainer>
       </Container>
     </Content>
-  )
-}
+  );
+};

@@ -1,4 +1,3 @@
-import React, { FC } from 'react'
 import {
   Content,
   Header,
@@ -6,10 +5,11 @@ import {
   Card,
   CardName,
   CardCaption,
-} from './styled'
+} from './styled';
+import React, { FC } from 'react';
 
 interface CompanyTickerProps {
-  ticker: string | null
+  ticker: string | null;
 }
 export const CompanyTicker: FC<CompanyTickerProps> = ({ ticker }) => (
   <Content>
@@ -21,4 +21,4 @@ export const CompanyTicker: FC<CompanyTickerProps> = ({ ticker }) => (
       </Card>
     </CardContainer>
   </Content>
-)
+);

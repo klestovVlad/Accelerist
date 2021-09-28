@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-import { FavoriteListDataItems } from '../../../../../../store/companies/state'
-
+import { FavoriteListDataItems } from '../../../../../../store/companies/state';
+import { ReactComponent as CompanyIcon } from '../../../../../../ui/icons/svg/company-small.svg';
 import {
   CompanyContainer,
   CompanyName,
@@ -11,16 +10,16 @@ import {
   Info,
   Logo,
   PriorityRanking,
-} from './style'
+} from './style';
+import React, { FC } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { ReactComponent as CompanyIcon } from '../../../../../../ui/icons/svg/company-small.svg'
-import { useHistory } from 'react-router-dom'
 interface CardProps {
-  cardData: FavoriteListDataItems
+  cardData: FavoriteListDataItems;
 }
 
 export const Card: FC<CardProps> = ({ cardData }) => {
-  const history = useHistory()
+  const history = useHistory();
   return (
     <Content>
       <CompanyContainer>
@@ -42,5 +41,5 @@ export const Card: FC<CardProps> = ({ cardData }) => {
         {cardData.crsFocus.length === 0 && <CRSItems>No information</CRSItems>}
       </CRSContainer>
     </Content>
-  )
-}
+  );
+};

@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { A, Bold, Container, P } from './styles'
+import { A, Bold, Container, P } from './styles';
+import React, { FC } from 'react';
 
 export const TermsOfServices: FC = () => (
   <Container>
@@ -9,4 +8,4 @@ export const TermsOfServices: FC = () => (
       <A href="/">Terms Of Service</A> and <A href="/">Privacy Policy</A>
     </P>
   </Container>
-)
+);

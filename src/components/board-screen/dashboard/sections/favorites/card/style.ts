@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   padding: 24px;
@@ -6,12 +6,12 @@ export const Content = styled.div`
   border-radius: 6px;
   width: 256px;
   margin: 12px;
-`
+`;
 
 export const CompanyContainer = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
 export const Logo = styled.div`
   width: 48px;
@@ -23,14 +23,14 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const Info = styled.div`
   margin-left: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`
+`;
 
 export const CompanyName = styled.button`
   font-family: Rubik;
@@ -44,7 +44,7 @@ export const CompanyName = styled.button`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 
 export const PriorityRanking = styled.p`
   font-family: Rubik;
@@ -53,7 +53,7 @@ export const PriorityRanking = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-`
+`;
 
 export const CRSHeader = styled.p`
   margin-top: 20px;
@@ -63,12 +63,12 @@ export const CRSHeader = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-`
+`;
 
 export const CRSContainer = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
 export const CRSItems = styled.div`
   font-family: Rubik;
@@ -102,4 +102,4 @@ export const CRSItems = styled.div`
   &:first-child::before {
     display: none;
   }
-`
+`;

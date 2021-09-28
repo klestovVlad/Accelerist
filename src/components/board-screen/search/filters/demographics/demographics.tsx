@@ -1,19 +1,18 @@
-import React, { FC, useState } from 'react'
-import { Field, FormProps } from 'react-final-form'
-
-import { Input } from '../../../../../ui/input/input'
-import { Tabs } from '../../../../../ui/tabs/tabs'
+import { Input } from '../../../../../ui/input/input';
+import { Tabs } from '../../../../../ui/tabs/tabs';
 import {
   Content,
   Header,
   InputContainer,
   TabContainer,
   TabHeader,
-} from './styles'
+} from './styles';
+import React, { FC, useState } from 'react';
+import { Field, FormProps } from 'react-final-form';
 
 export const Demographics: FC<FormProps> = ({ form }) => {
-  const [gender, setGender] = useState(2)
-  const [relations, setRelations] = useState(0)
+  const [gender, setGender] = useState(2);
+  const [relations, setRelations] = useState(0);
   return (
     <Content>
       <Header>Customer Demographics</Header>
@@ -74,5 +73,5 @@ export const Demographics: FC<FormProps> = ({ form }) => {
         />
       </InputContainer>
     </Content>
-  )
-}
+  );
+};

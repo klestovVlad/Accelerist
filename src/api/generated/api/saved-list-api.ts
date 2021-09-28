@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,9 +13,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios'
-import { Configuration } from '../configuration'
+// @ts-ignore
+import {
+  BASE_PATH,
+  COLLECTION_FORMATS,
+  RequestArgs,
+  BaseAPI,
+  RequiredError,
+} from '../base';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
@@ -27,23 +34,18 @@ import {
   serializeDataIfNeeded,
   toPathString,
   createRequestFunction,
-} from '../common'
+} from '../common';
+import { Configuration } from '../configuration';
 // @ts-ignore
-import {
-  BASE_PATH,
-  COLLECTION_FORMATS,
-  RequestArgs,
-  BaseAPI,
-  RequiredError,
-} from '../base'
+import { CreateSavedListDto } from '../models';
 // @ts-ignore
-import { CreateSavedListDto } from '../models'
+import { GetExcelDto } from '../models';
 // @ts-ignore
-import { GetExcelDto } from '../models'
+import { GetSavedListDto } from '../models';
 // @ts-ignore
-import { GetSavedListDto } from '../models'
-// @ts-ignore
-import { UpdateSavedListDto } from '../models'
+import { UpdateSavedListDto } from '../models';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+
 /**
  * SavedListApi - axios parameter creator
  * @export
@@ -68,47 +70,47 @@ export const SavedListApiAxiosParamCreator = function (
         'savedListControllerCreateProspect',
         'createSavedListDto',
         createSavedListDto
-      )
-      const localVarPath = `/api/v1/saved-list`
+      );
+      const localVarPath = `/api/v1/saved-list`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'POST',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         createSavedListDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -122,43 +124,43 @@ export const SavedListApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('savedListControllerDeleteProspect', 'id', id)
+      assertParamExists('savedListControllerDeleteProspect', 'id', id);
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'DELETE',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -172,43 +174,43 @@ export const SavedListApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('savedListControllerGetExcel', 'id', id)
+      assertParamExists('savedListControllerGetExcel', 'id', id);
       const localVarPath = `/api/v1/saved-list/{id}/excel`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -222,43 +224,43 @@ export const SavedListApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('savedListControllerProspect', 'id', id)
+      assertParamExists('savedListControllerProspect', 'id', id);
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -276,54 +278,54 @@ export const SavedListApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
-      assertParamExists('savedListControllerProspects', 'page', page)
+      assertParamExists('savedListControllerProspects', 'page', page);
       // verify required parameter 'limit' is not null or undefined
-      assertParamExists('savedListControllerProspects', 'limit', limit)
-      const localVarPath = `/api/v1/saved-list`
+      assertParamExists('savedListControllerProspects', 'limit', limit);
+      const localVarPath = `/api/v1/saved-list`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'GET',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (page !== undefined) {
-        localVarQueryParameter['page'] = page
+        localVarQueryParameter['page'] = page;
       }
 
       if (limit !== undefined) {
-        localVarQueryParameter['limit'] = limit
+        localVarQueryParameter['limit'] = limit;
       }
 
       if (sort !== undefined) {
-        localVarQueryParameter['sort'] = sort
+        localVarQueryParameter['sort'] = sort;
       }
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
     /**
      *
@@ -339,66 +341,67 @@ export const SavedListApiAxiosParamCreator = function (
       options: any = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
-      assertParamExists('savedListControllerUpdateProspect', 'id', id)
+      assertParamExists('savedListControllerUpdateProspect', 'id', id);
       // verify required parameter 'updateSavedListDto' is not null or undefined
       assertParamExists(
         'savedListControllerUpdateProspect',
         'updateSavedListDto',
         updateSavedListDto
-      )
+      );
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id))
-      )
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
-      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
-      let baseOptions
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
       if (configuration) {
-        baseOptions = configuration.baseOptions
+        baseOptions = configuration.baseOptions;
       }
 
       const localVarRequestOptions = {
         method: 'PATCH',
         ...baseOptions,
         ...options,
-      }
-      const localVarHeaderParameter = {} as any
-      const localVarQueryParameter = {} as any
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       // authentication bearer required
       // http bearer authentication required
-      await setBearerAuthToObject(localVarHeaderParameter, configuration)
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
-      localVarHeaderParameter['Content-Type'] = 'application/json'
+      localVarHeaderParameter['Content-Type'] = 'application/json';
 
-      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query)
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
       let headersFromBaseOptions =
-        baseOptions && baseOptions.headers ? baseOptions.headers : {}
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
       localVarRequestOptions.headers = {
         ...localVarHeaderParameter,
         ...headersFromBaseOptions,
         ...options.headers,
-      }
+      };
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateSavedListDto,
         localVarRequestOptions,
         configuration
-      )
+      );
 
       return {
         url: toPathString(localVarUrlObj),
         options: localVarRequestOptions,
-      }
+      };
     },
-  }
-}
+  };
+};
 
 /**
  * SavedListApi - functional programming interface
  * @export
  */
 export const SavedListApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = SavedListApiAxiosParamCreator(configuration)
+  const localVarAxiosParamCreator =
+    SavedListApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -417,13 +420,13 @@ export const SavedListApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.savedListControllerCreateProspect(
           createSavedListDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -442,13 +445,13 @@ export const SavedListApiFp = function (configuration?: Configuration) {
         await localVarAxiosParamCreator.savedListControllerDeleteProspect(
           id,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -464,13 +467,16 @@ export const SavedListApiFp = function (configuration?: Configuration) {
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.savedListControllerGetExcel(id, options)
+        await localVarAxiosParamCreator.savedListControllerGetExcel(
+          id,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -489,13 +495,16 @@ export const SavedListApiFp = function (configuration?: Configuration) {
       ) => AxiosPromise<GetSavedListDto>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.savedListControllerProspect(id, options)
+        await localVarAxiosParamCreator.savedListControllerProspect(
+          id,
+          options
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -523,13 +532,13 @@ export const SavedListApiFp = function (configuration?: Configuration) {
           limit,
           sort,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
     /**
      *
@@ -551,16 +560,16 @@ export const SavedListApiFp = function (configuration?: Configuration) {
           id,
           updateSavedListDto,
           options
-        )
+        );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
         configuration
-      )
+      );
     },
-  }
-}
+  };
+};
 
 /**
  * SavedListApi - factory interface
@@ -571,7 +580,7 @@ export const SavedListApiFactory = function (
   basePath?: string,
   axios?: AxiosInstance
 ) {
-  const localVarFp = SavedListApiFp(configuration)
+  const localVarFp = SavedListApiFp(configuration);
   return {
     /**
      *
@@ -586,7 +595,7 @@ export const SavedListApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .savedListControllerCreateProspect(createSavedListDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -601,7 +610,7 @@ export const SavedListApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .savedListControllerDeleteProspect(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -616,7 +625,7 @@ export const SavedListApiFactory = function (
     ): AxiosPromise<GetExcelDto> {
       return localVarFp
         .savedListControllerGetExcel(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -631,7 +640,7 @@ export const SavedListApiFactory = function (
     ): AxiosPromise<GetSavedListDto> {
       return localVarFp
         .savedListControllerProspect(id, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -650,7 +659,7 @@ export const SavedListApiFactory = function (
     ): AxiosPromise<Array<GetSavedListDto>> {
       return localVarFp
         .savedListControllerProspects(page, limit, sort, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
     /**
      *
@@ -667,10 +676,10 @@ export const SavedListApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .savedListControllerUpdateProspect(id, updateSavedListDto, options)
-        .then((request) => request(axios, basePath))
+        .then((request) => request(axios, basePath));
     },
-  }
-}
+  };
+};
 
 /**
  * Request parameters for savedListControllerCreateProspect operation in SavedListApi.
@@ -683,7 +692,7 @@ export interface SavedListApiSavedListControllerCreateProspectRequest {
    * @type {CreateSavedListDto}
    * @memberof SavedListApiSavedListControllerCreateProspect
    */
-  readonly createSavedListDto: CreateSavedListDto
+  readonly createSavedListDto: CreateSavedListDto;
 }
 
 /**
@@ -697,7 +706,7 @@ export interface SavedListApiSavedListControllerDeleteProspectRequest {
    * @type {any}
    * @memberof SavedListApiSavedListControllerDeleteProspect
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -711,7 +720,7 @@ export interface SavedListApiSavedListControllerGetExcelRequest {
    * @type {string}
    * @memberof SavedListApiSavedListControllerGetExcel
    */
-  readonly id: string
+  readonly id: string;
 }
 
 /**
@@ -725,7 +734,7 @@ export interface SavedListApiSavedListControllerProspectRequest {
    * @type {any}
    * @memberof SavedListApiSavedListControllerProspect
    */
-  readonly id: any
+  readonly id: any;
 }
 
 /**
@@ -739,21 +748,21 @@ export interface SavedListApiSavedListControllerProspectsRequest {
    * @type {any}
    * @memberof SavedListApiSavedListControllerProspects
    */
-  readonly page: any
+  readonly page: any;
 
   /**
    * How many results need to be returned
    * @type {any}
    * @memberof SavedListApiSavedListControllerProspects
    */
-  readonly limit: any
+  readonly limit: any;
 
   /**
    * Sort saved list
    * @type {'alphabet' | 'last-activity' | 'available'}
    * @memberof SavedListApiSavedListControllerProspects
    */
-  readonly sort?: 'alphabet' | 'last-activity' | 'available'
+  readonly sort?: 'alphabet' | 'last-activity' | 'available';
 }
 
 /**
@@ -767,14 +776,14 @@ export interface SavedListApiSavedListControllerUpdateProspectRequest {
    * @type {any}
    * @memberof SavedListApiSavedListControllerUpdateProspect
    */
-  readonly id: any
+  readonly id: any;
 
   /**
    *
    * @type {UpdateSavedListDto}
    * @memberof SavedListApiSavedListControllerUpdateProspect
    */
-  readonly updateSavedListDto: UpdateSavedListDto
+  readonly updateSavedListDto: UpdateSavedListDto;
 }
 
 /**
@@ -801,7 +810,7 @@ export class SavedListApi extends BaseAPI {
         requestParameters.createSavedListDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -818,7 +827,7 @@ export class SavedListApi extends BaseAPI {
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerDeleteProspect(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -835,7 +844,7 @@ export class SavedListApi extends BaseAPI {
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerGetExcel(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -852,7 +861,7 @@ export class SavedListApi extends BaseAPI {
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerProspect(requestParameters.id, options)
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -874,7 +883,7 @@ export class SavedListApi extends BaseAPI {
         requestParameters.sort,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 
   /**
@@ -895,6 +904,6 @@ export class SavedListApi extends BaseAPI {
         requestParameters.updateSavedListDto,
         options
       )
-      .then((request) => request(this.axios, this.basePath))
+      .then((request) => request(this.axios, this.basePath));
   }
 }

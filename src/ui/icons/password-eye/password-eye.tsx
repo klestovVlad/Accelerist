@@ -1,10 +1,9 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
-
-import { Button } from './styles'
+import { Button } from './styles';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface PasswordEyeProps {
-  hidePassword: boolean
-  setHidePassword: Dispatch<SetStateAction<boolean>>
+  hidePassword: boolean;
+  setHidePassword: Dispatch<SetStateAction<boolean>>;
 }
 
 export const PasswordEye: FC<PasswordEyeProps> = ({
@@ -61,4 +60,4 @@ export const PasswordEye: FC<PasswordEyeProps> = ({
         />
       </svg>
     </Button>
-  )
+  );

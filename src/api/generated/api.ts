@@ -12,12 +12,12 @@
  * Do not edit the class manually.
  */
 
-export * from './api/admin-authorization-api'
-export * from './api/admin-companies-api'
-export * from './api/admin-teams-api'
-export * from './api/admin-user-api'
-export * from './api/authorization-api'
-export * from './api/companies-api'
-export * from './api/saved-list-api'
-export * from './api/team-api'
-export * from './api/user-api'
+export * from './api/admin-authorization-api';
+export * from './api/admin-companies-api';
+export * from './api/admin-teams-api';
+export * from './api/admin-user-api';
+export * from './api/authorization-api';
+export * from './api/companies-api';
+export * from './api/saved-list-api';
+export * from './api/team-api';
+export * from './api/user-api';

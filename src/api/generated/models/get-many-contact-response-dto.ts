@@ -23,29 +23,29 @@ export interface GetManyContactResponseDto {
    * @type {Array<object>}
    * @memberof GetManyContactResponseDto
    */
-  data: Array<object>
+  data: Array<object>;
   /**
    *
    * @type {number}
    * @memberof GetManyContactResponseDto
    */
-  count: number
+  count: number;
   /**
    *
    * @type {number}
    * @memberof GetManyContactResponseDto
    */
-  total: number
+  total: number;
   /**
    *
    * @type {number}
    * @memberof GetManyContactResponseDto
    */
-  page: number
+  page: number;
   /**
    *
    * @type {number}
    * @memberof GetManyContactResponseDto
    */
-  pageCount: number
+  pageCount: number;
 }

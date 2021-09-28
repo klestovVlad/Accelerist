@@ -1,10 +1,9 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
-
-import { Container, Label, Span } from './styles'
+import { Container, Label, Span } from './styles';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface BurgerButtonProps {
-  state: boolean
-  setState: Dispatch<SetStateAction<boolean>>
+  state: boolean;
+  setState: Dispatch<SetStateAction<boolean>>;
 }
 
 export const BurgerButton: FC<BurgerButtonProps> = ({ state, setState }) => (
@@ -13,4 +12,4 @@ export const BurgerButton: FC<BurgerButtonProps> = ({ state, setState }) => (
       <Span checked={state} />
     </Label>
   </Container>
-)
+);

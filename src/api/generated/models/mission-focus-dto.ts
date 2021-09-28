@@ -23,11 +23,11 @@ export interface MissionFocusDto {
    * @type {string}
    * @memberof MissionFocusDto
    */
-  label: string
+  label: string;
   /**
    *
    * @type {string}
    * @memberof MissionFocusDto
    */
-  value: string
+  value: string;
 }

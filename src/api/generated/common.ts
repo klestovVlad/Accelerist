@@ -1,5 +1,7 @@
 /* tslint:disable */
+
 /* eslint-disable */
+
 /**
  * Accelerist
  * The accelerist API description
@@ -11,16 +13,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import { Configuration } from './configuration'
-import { RequiredError, RequestArgs } from './base'
-import { AxiosInstance } from 'axios'
+import { RequiredError, RequestArgs } from './base';
+import { Configuration } from './configuration';
+import { AxiosInstance } from 'axios';
 
 /**
  *
  * @export
  */
-export const DUMMY_BASE_URL = 'https://example.com'
+export const DUMMY_BASE_URL = 'https://example.com';
 
 /**
  *
@@ -36,9 +37,9 @@ export const assertParamExists = function (
     throw new RequiredError(
       paramName,
       `Required parameter ${paramName} was null or undefined when calling ${functionName}.`
-    )
+    );
   }
-}
+};
 
 /**
  *
@@ -53,10 +54,10 @@ export const setApiKeyToObject = async function (
     const localVarApiKeyValue =
       typeof configuration.apiKey === 'function'
         ? await configuration.apiKey(keyParamName)
-        : await configuration.apiKey
-    object[keyParamName] = localVarApiKeyValue
+        : await configuration.apiKey;
+    object[keyParamName] = localVarApiKeyValue;
   }
-}
+};
 
 /**
  *
@@ -70,9 +71,9 @@ export const setBasicAuthToObject = function (
     object['auth'] = {
       username: configuration.username,
       password: configuration.password,
-    }
+    };
   }
-}
+};
 
 /**
  *
@@ -86,10 +87,10 @@ export const setBearerAuthToObject = async function (
     const accessToken =
       typeof configuration.accessToken === 'function'
         ? await configuration.accessToken()
-        : await configuration.accessToken
-    object['Authorization'] = 'Bearer ' + accessToken
+        : await configuration.accessToken;
+    object['Authorization'] = 'Bearer ' + accessToken;
   }
-}
+};
 
 /**
  *
@@ -105,31 +106,31 @@ export const setOAuthToObject = async function (
     const localVarAccessTokenValue =
       typeof configuration.accessToken === 'function'
         ? await configuration.accessToken(name, scopes)
-        : await configuration.accessToken
-    object['Authorization'] = 'Bearer ' + localVarAccessTokenValue
+        : await configuration.accessToken;
+    object['Authorization'] = 'Bearer ' + localVarAccessTokenValue;
   }
-}
+};
 
 /**
  *
  * @export
  */
 export const setSearchParams = function (url: URL, ...objects: any[]) {
-  const searchParams = new URLSearchParams(url.search)
+  const searchParams = new URLSearchParams(url.search);
   for (const object of objects) {
     for (const key in object) {
       if (Array.isArray(object[key])) {
-        searchParams.delete(key)
+        searchParams.delete(key);
         for (const item of object[key]) {
-          searchParams.append(key, item)
+          searchParams.append(key, item);
         }
       } else {
-        searchParams.set(key, object[key])
+        searchParams.set(key, object[key]);
       }
     }
   }
-  url.search = searchParams.toString()
-}
+  url.search = searchParams.toString();
+};
 
 /**
  *
@@ -140,23 +141,23 @@ export const serializeDataIfNeeded = function (
   requestOptions: any,
   configuration?: Configuration
 ) {
-  const nonString = typeof value !== 'string'
+  const nonString = typeof value !== 'string';
   const needsSerialization =
     nonString && configuration && configuration.isJsonMime
       ? configuration.isJsonMime(requestOptions.headers['Content-Type'])
-      : nonString
+      : nonString;
   return needsSerialization
     ? JSON.stringify(value !== undefined ? value : {})
-    : value || ''
-}
+    : value || '';
+};
 
 /**
  *
  * @export
  */
 export const toPathString = function (url: URL) {
-  return url.pathname + url.search + url.hash
-}
+  return url.pathname + url.search + url.hash;
+};
 
 /**
  *
@@ -172,7 +173,7 @@ export const createRequestFunction = function (
     const axiosRequestArgs = {
       ...axiosArgs.options,
       url: (configuration?.basePath || basePath) + axiosArgs.url,
-    }
-    return axios.request(axiosRequestArgs)
-  }
-}
+    };
+    return axios.request(axiosRequestArgs);
+  };
+};

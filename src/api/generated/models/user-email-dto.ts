@@ -23,5 +23,5 @@ export interface UserEmailDto {
    * @type {string}
    * @memberof UserEmailDto
    */
-  email: string
+  email: string;
 }

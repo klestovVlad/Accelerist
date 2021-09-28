@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.header`
   background-color: ${(props) => props.theme.colors.black};
@@ -8,7 +8,7 @@ export const Container = styled.header`
   justify-content: center;
   align-items: center;
   width: 100%;
-`
+`;
 
 export const H2 = styled.h2`
   color: ${(props) => props.theme.colors.white};
@@ -20,11 +20,11 @@ export const H2 = styled.h2`
   letter-spacing: 0.2em;
   text-align: left;
   margin-left: 16px;
-`
+`;
 
 export const Link = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-`
+`;

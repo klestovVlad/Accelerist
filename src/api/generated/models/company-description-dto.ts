@@ -23,5 +23,5 @@ export interface CompanyDescriptionDto {
    * @type {string}
    * @memberof CompanyDescriptionDto
    */
-  description: string
+  description: string;
 }

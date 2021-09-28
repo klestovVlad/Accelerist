@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const StyledLabel = styled.label`
   position: relative;
@@ -6,13 +6,13 @@ export const StyledLabel = styled.label`
   font-size: 12px;
   line-height: 20px;
   color: ${(props) => props.theme.colors.black};
-`
+`;
 
 export const StyledCheckbox = styled.input`
   appearance: none;
   margin: 0;
   position: absolute;
-`
+`;
 
 export const Indicator = styled.span`
   margin-left: -30px;
@@ -44,4 +44,4 @@ export const Indicator = styled.span`
     width: 20px;
     height: 18px;
   }
-`
+`;

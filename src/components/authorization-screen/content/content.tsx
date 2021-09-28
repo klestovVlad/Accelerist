@@ -1,21 +1,21 @@
-import React, { FC, useState } from 'react'
-import { Route, Switch } from 'react-router'
-
-import { Tabs } from '../../../ui/tabs/tabs'
-import { Authorization } from './authorization/authorization'
-import { NewPassword } from './new-password/new-password'
-import { ResetPassword } from './reset-password/reset-password'
-import { Container, H1 } from './styles'
+import { routes } from '../../../routes/routes';
+import { Tabs } from '../../../ui/tabs/tabs';
+import { Authorization } from './authorization/authorization';
+import { NewPassword } from './new-password/new-password';
+import { ResetPassword } from './reset-password/reset-password';
+import { Container, H1 } from './styles';
+import React, { FC, useState } from 'react';
+import { Route, Switch } from 'react-router';
 
 export const Content: FC = () => {
-  const [tabNum, setTabNum] = useState(1)
+  const [tabNum, setTabNum] = useState(1);
   return (
     <Container>
       <Switch>
-        <Route path="/reset">
+        <Route path={routes.public.resetPassword}>
           <ResetPassword />
         </Route>
-        <Route path="/new_password">
+        <Route path={routes.public.newPassword}>
           <NewPassword />
         </Route>
         <Route path="/">
@@ -29,5 +29,5 @@ export const Content: FC = () => {
         </Route>
       </Switch>
     </Container>
-  )
-}
+  );
+};

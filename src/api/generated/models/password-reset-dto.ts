@@ -23,5 +23,5 @@ export interface PasswordResetDto {
    * @type {string}
    * @memberof PasswordResetDto
    */
-  email: string
+  email: string;
 }

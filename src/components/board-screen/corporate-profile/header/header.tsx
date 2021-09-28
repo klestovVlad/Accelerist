@@ -1,5 +1,4 @@
-import React, { FC } from 'react'
-
+import { ReactComponent as CompanyLogo } from '../../../../ui/icons/svg/company-large.svg';
 import {
   Content,
   CompanyIcon,
@@ -7,13 +6,12 @@ import {
   CompanyHeaderRow,
   CompanyName,
   CompanyCaption,
-} from './styles'
-
-import { ReactComponent as CompanyLogo } from '../../../../ui/icons/svg/company-large.svg'
+} from './styles';
+import React, { FC } from 'react';
 
 interface HeaderProps {
-  name: string
-  caption: string | null
+  name: string;
+  caption: string | null;
 }
 
 export const Header: FC<HeaderProps> = ({ name, caption }) => (
@@ -28,4 +26,4 @@ export const Header: FC<HeaderProps> = ({ name, caption }) => (
       <CompanyCaption>{caption ? caption : 'No information'}</CompanyCaption>
     </CompanyInformation>
   </Content>
-)
+);

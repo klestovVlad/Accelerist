@@ -23,29 +23,29 @@ export interface UpdateSubscriptionTeamsDto {
    * @type {string}
    * @memberof UpdateSubscriptionTeamsDto
    */
-  name?: string
+  name?: string;
   /**
    *
    * @type {boolean}
    * @memberof UpdateSubscriptionTeamsDto
    */
-  isProspecting?: boolean
+  isProspecting?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof UpdateSubscriptionTeamsDto
    */
-  isAudience?: boolean
+  isAudience?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof UpdateSubscriptionTeamsDto
    */
-  isRoi?: boolean
+  isRoi?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof UpdateSubscriptionTeamsDto
    */
-  isPrices?: boolean
+  isPrices?: boolean;
 }

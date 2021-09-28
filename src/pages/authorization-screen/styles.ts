@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-
-import img from '../../img/homedark.jpg'
+import img from '../../img/homedark.jpg';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   background-image: url(${img});
@@ -11,4 +10,4 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;

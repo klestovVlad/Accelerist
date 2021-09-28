@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -10,10 +10,10 @@ export const Container = styled.div`
   border-radius: 6px;
   position: relative;
   padding: 2px;
-`
+`;
 interface SelectionProps {
-  arrLength: number
-  selectedNum: number
+  arrLength: number;
+  selectedNum: number;
 }
 
 export const Selection = styled.div<SelectionProps>`
@@ -28,11 +28,11 @@ export const Selection = styled.div<SelectionProps>`
   transition: all 0.5s;
   border-radius: 6px;
   margin-left: 3.5px;
-`
+`;
 
 interface TabProps {
-  arrLength: number
-  isSelected: boolean
+  arrLength: number;
+  isSelected: boolean;
 }
 
 export const Tab = styled.div<TabProps>`
@@ -52,4 +52,4 @@ export const Tab = styled.div<TabProps>`
   color: ${(props) =>
     props.isSelected ? props.theme.colors.black : props.theme.colors.gray};
   cursor: ${(props) => (props.isSelected ? 'default' : 'pointer')};
-`
+`;

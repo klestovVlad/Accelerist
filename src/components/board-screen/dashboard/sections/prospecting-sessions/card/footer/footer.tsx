@@ -1,5 +1,4 @@
-import React, { FC } from 'react'
-
+import { ReturnFormattedDate } from '../../../../../../../functions/return-formatted-date';
 import {
   AuthorContainer,
   AuthorImage,
@@ -10,39 +9,38 @@ import {
   LastActivityHeader,
   LastActivityTime,
   UserIcon,
-} from './styles'
-
-import { ReturnFormattedDate } from '../../../../../../../functions/return-formatted-date'
+} from './styles';
+import React, { FC } from 'react';
 
 interface FooterProps {
   lastAuthor: {
-    id: string
-    email: string | null
-    firstName: string | null
-    lastName: string | null
-    isAuthorized: boolean
-    imported: boolean
-    teamId: string | null
-    role: string | null
-    linkedinLink: string | null
-    isReceivingNotifications: boolean
-    avatarKey: string | null
-    loggedInAt: string
-    createdAt: string
-    updatedAt: string
-    deletedAt: string | null
-  }
+    id: string;
+    email: string | null;
+    firstName: string | null;
+    lastName: string | null;
+    isAuthorized: boolean;
+    imported: boolean;
+    teamId: string | null;
+    role: string | null;
+    linkedinLink: string | null;
+    isReceivingNotifications: boolean;
+    avatarKey: string | null;
+    loggedInAt: string;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string | null;
+  };
 }
 
 export const Footer: FC<FooterProps> = ({ lastAuthor }) => {
   const ReturnAuthorName = () => {
-    const firstName = lastAuthor.firstName === null ? '' : lastAuthor.firstName
-    const lastName = lastAuthor.lastName === null ? '' : lastAuthor.lastName
+    const firstName = lastAuthor.firstName === null ? '' : lastAuthor.firstName;
+    const lastName = lastAuthor.lastName === null ? '' : lastAuthor.lastName;
     if (firstName.length + lastName.length === 0) {
-      return 'No Name'
+      return 'No Name';
     }
-    return `${firstName} ${lastName}`
-  }
+    return `${firstName} ${lastName}`;
+  };
 
   return (
     <Content>
@@ -60,5 +58,5 @@ export const Footer: FC<FooterProps> = ({ lastAuthor }) => {
         </LastActivityTime>
       </LastActivityContainer>
     </Content>
-  )
-}
+  );
+};

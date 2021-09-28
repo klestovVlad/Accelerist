@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { Card, CardText, CardTitle, Column, Content, Header } from './styles'
+import { Card, CardText, CardTitle, Column, Content, Header } from './styles';
+import React, { FC } from 'react';
 
 export const HeaderInfo: FC = () => (
   <Content>
@@ -20,4 +19,4 @@ export const HeaderInfo: FC = () => (
       </Card>
     </Column>
   </Content>
-)
+);

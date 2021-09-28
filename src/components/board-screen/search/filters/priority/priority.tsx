@@ -1,7 +1,6 @@
-import React, { FC } from 'react'
-
-import { PriorityRadioButtons } from '../../../../../ui/priority-radio-buttons/priority-radio-buttons'
-import { Content, Header, P } from './styles'
+import { PriorityRadioButtons } from '../../../../../ui/priority-radio-buttons/priority-radio-buttons';
+import { Content, Header, P } from './styles';
+import React, { FC } from 'react';
 
 export const Priority: FC = () => (
   <Content>
@@ -22,4 +21,4 @@ export const Priority: FC = () => (
       ]}
     />
   </Content>
-)
+);

@@ -1,5 +1,3 @@
-import React, { FC } from 'react'
-
 import {
   Content,
   DateOfVisit,
@@ -9,7 +7,8 @@ import {
   UserImage,
   UserName,
   UserRow,
-} from './styled'
+} from './styled';
+import React, { FC } from 'react';
 
 export const LastLogin: FC = () => (
   <Content>
@@ -44,4 +43,4 @@ export const LastLogin: FC = () => (
       </UserDataContainer>
     </UserRow>
   </Content>
-)
+);

@@ -1,26 +1,30 @@
-import React, { FC } from 'react'
-import { Redirect, Route, Switch } from 'react-router'
-import { useHistory } from 'react-router-dom'
-
-import { SignIn } from './sign-in/sign-in'
-import { SignUp } from './sign-up/sign-up'
+import { routes } from '../../../../routes/routes';
+import { SignIn } from './sign-in/sign-in';
+import { SignUp } from './sign-up/sign-up';
+import React, { FC } from 'react';
+import { Redirect, Route, Switch } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 interface AuthorizationProps {
-  tabNum: number
+  tabNum: number;
 }
 
 export const Authorization: FC<AuthorizationProps> = ({ tabNum }) => {
-  const history = useHistory()
+  const history = useHistory();
   if (tabNum === 0) {
-    history.push('/signup')
+    history.push(routes.public.signUp);
   } else {
-    history.push('/login')
+    history.push(routes.public.signIn);
   }
   return (
     <Switch>
-      <Route exact path="/" render={() => <Redirect to="/login" />} />
-      <Route path="/signup" component={SignUp} />
-      <Route path="/login" component={SignIn} />
+      <Route
+        exact
+        path="/"
+        render={() => <Redirect to={routes.public.signIn} />}
+      />
+      <Route path={routes.public.signUp} component={SignUp} />
+      <Route path={routes.public.signIn} component={SignIn} />
     </Switch>
-  )
-}
+  );
+};
