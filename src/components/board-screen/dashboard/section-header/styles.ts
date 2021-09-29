@@ -16,7 +16,7 @@ export const Header = styled.h2`
   color: ${(props) => props.theme.colors.black};
 `;
 
-export const DetailButton = styled.button`
+export const DetailButton = styled.a`
   font-family: 'Rubik';
   font-style: normal;
   font-weight: normal;

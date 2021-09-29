@@ -9,10 +9,11 @@ const favoriteListSlice = createSlice({
       state.isLoading = payload;
     },
     setFavoritesData(state, { payload }: PayloadAction<FavoriteListData>) {
-      return payload;
+      return { ...payload, errors: [], isError: false };
     },
-    setFavoritesError(state, { payload }: PayloadAction<unknown>) {
-      console.log(payload);
+    setFavoritesError(state, { payload }: PayloadAction<string>) {
+      state.errors.push(payload);
+      state.isError = true;
     },
   },
 });

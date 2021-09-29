@@ -14,7 +14,6 @@ export const Reports: FC = () => {
     dispatch(getTeamAction());
   }, [dispatch]);
   const teamData = useSelector(TeamSelector.selectData);
-  console.log('TeamData', teamData);
   return (
     <Content>
       <SectionHeader text="Report" isButtonShow={false} />

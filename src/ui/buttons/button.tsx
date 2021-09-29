@@ -9,7 +9,7 @@ import React, { FC } from 'react';
 interface ButtonProps {
   label: string | undefined;
   onClick(): void;
-  colorScheme: 'blue' | 'darkTransparent' | 'white';
+  colorScheme: 'blue' | 'darkTransparent' | 'white' | 'white2';
   type: 'button' | 'submit' | 'reset' | undefined;
   isLoading: boolean;
   validate: boolean;

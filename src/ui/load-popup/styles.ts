@@ -1,4 +1,4 @@
-import { ReactComponent as LoadSvg } from '../../../../ui/icons/svg/load-icon-big.svg';
+import { ReactComponent as LoadSvg } from '../icons/svg/load-icon-big.svg';
 import styled from 'styled-components';
 
 export const Content = styled.div`
@@ -7,7 +7,7 @@ export const Content = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 export const LoadIconContainer = styled.div``;

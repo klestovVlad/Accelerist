@@ -1,3 +1,4 @@
+import { routes } from '../../../../../routes/routes';
 import { getFavoritesAction } from '../../../../../store/companies/index';
 import { FavoriteListSelector } from '../../../../../store/companies/index';
 import { SectionHeader } from '../../section-header/section-header';
@@ -9,13 +10,16 @@ import { useDispatch, useSelector } from 'react-redux';
 export const Favorites: FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getFavoritesAction({ limit: 6 }));
+    dispatch(getFavoritesAction({ page: 1, limit: 6 }));
   }, [dispatch]);
   const FavoriteListItems = useSelector(FavoriteListSelector.selectItems);
-  console.log(FavoriteListItems);
   return (
     <Content>
-      <SectionHeader text="Favorites" isButtonShow />
+      <SectionHeader
+        text="Favorites"
+        isButtonShow
+        href={routes.private.companyFavorites}
+      />
       <SectionContainer>
         {FavoriteListItems.map((item) => (
           <Card key={item.id} cardData={item} />

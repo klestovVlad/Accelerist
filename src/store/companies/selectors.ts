@@ -19,7 +19,6 @@ export const getCompanyById = (id: string) =>
     data.items.forEach((item) => {
       console.log(item.id, id, item.id === id);
       if (item.id === id) {
-        console.log('return', item);
         company = item;
       }
     });

@@ -1,6 +1,6 @@
 import { SavedListAction, SavedListSelector } from '../../../store/saved-list';
+import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { Topic } from '../topic/topic';
-import { LoadPopup } from './load-popup/load-popup';
 import { Favorites } from './sections/favorites/favorites';
 import { ProspectNavigator } from './sections/prospect-navigator/prospect-navigator';
 import { ProspectingSession } from './sections/prospecting-sessions/prospecting-session';

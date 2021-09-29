@@ -36,7 +36,6 @@ export const LastLogin: FC = () => {
     return `${firstNameResult} ${lastNameResult}`;
   };
 
-  console.log('lastLogins', lastLogins);
   return (
     <Content>
       <Header>Last Login</Header>

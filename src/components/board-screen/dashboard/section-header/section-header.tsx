@@ -4,14 +4,16 @@ import React, { FC } from 'react';
 interface SectionHeaderProps {
   text: string;
   isButtonShow: boolean;
+  href?: string;
 }
 
 export const SectionHeader: FC<SectionHeaderProps> = ({
   text,
   isButtonShow,
+  href,
 }) => (
   <Content>
     <Header>{text}</Header>
-    {isButtonShow ? <DetailButton>see more</DetailButton> : null}
+    {isButtonShow ? <DetailButton href={href}>see more</DetailButton> : null}
   </Content>
 );

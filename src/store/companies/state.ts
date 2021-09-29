@@ -74,6 +74,8 @@ export const initialState: FavoriteListData = {
     currentPage: '',
   },
   isLoading: false,
+  isError: false,
+  errors: [],
 };
 
 export interface FavoriteListDataItems {
@@ -152,8 +154,11 @@ export interface FavoriteListData {
     currentPage: string;
   };
   isLoading: boolean;
+  isError: boolean;
+  errors: string[];
 }
 
 export interface FavoritesRequest {
+  page: number;
   limit: number;
 }

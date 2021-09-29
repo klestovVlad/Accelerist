@@ -3,5 +3,5 @@ import { ApiMap } from '../../api';
 
 const { CompaniesApi } = ApiMap;
 
-export const favoritesListQuery = (limit: number) =>
-  CompaniesApi.companiesControllerGetFavorites({ page: 1, limit: limit });
+export const favoritesListQuery = (page: number, limit: number) =>
+  CompaniesApi.companiesControllerGetFavorites({ page: page, limit: limit });

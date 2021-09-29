@@ -3,6 +3,7 @@ export const routes = {
     dashboard: '/dashboard',
     search: '/search',
     company: '/company',
+    companyFavorites: '/company-favorites',
   },
   public: {
     resetPassword: '/reset',

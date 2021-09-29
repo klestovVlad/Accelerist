@@ -10,7 +10,11 @@ export function* getFavoritesList({
 }: PayloadAction<FavoritesRequest>) {
   try {
     yield put(FavoriteListAction.setFavoritesLoading(true));
-    const { data } = yield call(favoritesListQuery, payload.limit);
+    const { data } = yield call(
+      favoritesListQuery,
+      payload.page,
+      payload.limit
+    );
     yield put(FavoriteListAction.setFavoritesData(data));
   } catch (e) {
     if (e instanceof Error) {

@@ -16,7 +16,6 @@ import { useLocation } from 'react-router-dom';
 export const CorporateProfile: FC = () => {
   const companyId = useLocation().pathname.replace('/company/', '');
   const company = useSelector(getCompanyById(companyId));
-  console.log('company', company);
   return (
     <Content>
       <Topic header="Corporate Profile" showBackButton />
