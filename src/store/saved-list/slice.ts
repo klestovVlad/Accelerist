@@ -5,11 +5,15 @@ const savedListSlice = createSlice({
   name: 'SavedListSlice',
   initialState,
   reducers: {
-    savedListRequest(state) {
-      state.isLoading = true;
+    setFavoritesLoading(state, { payload }: PayloadAction<boolean>) {
+      state.isLoading = payload;
     },
     getSavedList(state, { payload }: PayloadAction<SavedListData>) {
       return { ...payload, isLoading: false };
+    },
+    setSavedListError(state, { payload }: PayloadAction<string>) {
+      state.errors.push(payload);
+      state.isError = true;
     },
   },
 });

@@ -37,6 +37,8 @@ export interface SavedListData {
     currentPage: string;
   };
   isLoading: boolean;
+  errors: string[];
+  isError: boolean;
 }
 
 export const initialState: SavedListData = {
@@ -78,4 +80,12 @@ export const initialState: SavedListData = {
     currentPage: '0',
   },
   isLoading: true,
+  errors: [],
+  isError: false,
 };
+
+export interface SavedListRequest {
+  page: number;
+  limit: number;
+  sort?: 'alphabet' | 'last-activity' | 'available';
+}

@@ -1,7 +1,8 @@
-import { CompanyFavorites } from '../../components/board-screen/company-favirites/company-favirites';
+import { CompanyFavorites } from '../../components/board-screen/company-favorites/company-favorites';
 import { CorporateProfile } from '../../components/board-screen/corporate-profile/corporate-profile';
 import { Dashboard } from '../../components/board-screen/dashboard/dashboard';
 import { Header } from '../../components/board-screen/header/header';
+import { Prospects } from '../../components/board-screen/prospects/prospects';
 import { Search } from '../../components/board-screen/search/search';
 import { routes } from '../../routes/routes';
 import { Container } from './styled';
@@ -19,6 +20,7 @@ export const BoardScreen: FC = () => (
         path={routes.private.companyFavorites}
         component={CompanyFavorites}
       />
+      <Route path={routes.private.prospects} component={Prospects} />
       <Redirect to={routes.private.dashboard} />
     </Switch>
   </Container>

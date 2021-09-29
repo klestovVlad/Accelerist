@@ -1,7 +1,14 @@
-// eslint-disable-next-line import/no-cycle
 import { ApiMap } from '../../api';
 
 const { SavedListApi } = ApiMap;
 
-export const savedListQuery = () =>
-  SavedListApi.savedListControllerProspects({ page: 1, limit: 2 });
+export const savedListQuery = (
+  page: number,
+  limit: number,
+  sort?: 'alphabet' | 'last-activity' | 'available'
+) =>
+  SavedListApi.savedListControllerProspects({
+    page: page,
+    limit: limit,
+    sort: sort,
+  });

@@ -4,6 +4,7 @@ export const routes = {
     search: '/search',
     company: '/company',
     companyFavorites: '/company-favorites',
+    prospects: '/prospects',
   },
   public: {
     resetPassword: '/reset',

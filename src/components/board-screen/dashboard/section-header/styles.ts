@@ -23,4 +23,8 @@ export const DetailButton = styled.a`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.blue};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
