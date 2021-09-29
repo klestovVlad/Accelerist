@@ -1,24 +1,22 @@
-import { initialState, SignRequest, UserData } from './state';
+import { initialState, UserData } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const UserSlice = createSlice({
   name: 'UserSlice',
   initialState,
   reducers: {
-    signInRequest(state, { payload }: PayloadAction<SignRequest>) {
-      state.isLoading = true;
+    setSignLoading(state, { payload }: PayloadAction<boolean>) {
+      state.isLoading = payload;
     },
     signIn(state, { payload }: PayloadAction<UserData>) {
-      return { ...payload, isLoading: false };
+      return { ...payload, isLoading: false, errors: [], isError: false };
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    signError(state, { payload }: PayloadAction<any>) {
-      state.isLoading = false;
-      if (payload.toString().includes('status code 401')) {
-        alert('The username or password that you have entered is invalid.');
-      } else {
-        alert('Unknown error');
-      }
+    signUp(state, { payload }: PayloadAction<UserData>) {
+      return { ...payload, isLoading: false, errors: [], isError: false };
+    },
+    setSignError(state, { payload }: PayloadAction<string>) {
+      state.errors.push(payload);
+      state.isError = true;
     },
     logout(state) {
       state.accessToken = '';

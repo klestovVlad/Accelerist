@@ -18,6 +18,8 @@ export interface UserData {
     deletedAt: string;
   };
   isLoading: boolean;
+  errors: string[];
+  isError: boolean;
 }
 
 export const initialState: UserData = {
@@ -40,6 +42,8 @@ export const initialState: UserData = {
     deletedAt: '',
   },
   isLoading: false,
+  errors: [],
+  isError: false,
 };
 
 export interface SignRequest {

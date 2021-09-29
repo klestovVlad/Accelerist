@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.button`
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+export const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   position: relative;
@@ -38,6 +44,10 @@ export const OptionPopup = styled.div`
   border-radius: 6px;
   padding: 24px;
   z-index: 9;
+  @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
+    top: 0;
+    left: -100%;
+  }
 `;
 
 export const LogoutButton = styled.button`

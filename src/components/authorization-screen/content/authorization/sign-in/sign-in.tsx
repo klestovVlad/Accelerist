@@ -2,7 +2,8 @@ import {
   validateEmail,
   validateInput,
 } from '../../../../../functions/validation';
-import { UserAction, UserSelector } from '../../../../../store/user/index';
+import { postSignInAction } from '../../../../../store/user/actions';
+import { UserSelector } from '../../../../../store/user/index';
 import { Button } from '../../../../../ui/buttons/button';
 import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn';
 import { InputField } from '../../../../../ui/form/input-field';
@@ -17,7 +18,7 @@ export const SignIn: FC = () => {
   const loadState = useSelector(UserSelector.selectLoadState);
   const onSubmitForm = (values: FormProps) => {
     dispatch(
-      UserAction.signInRequest({
+      postSignInAction({
         email: values.email,
         password: values.password,
       })

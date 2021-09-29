@@ -5,6 +5,7 @@ import {
   OptionPopup,
   UserIcon,
   UserName,
+  ButtonContainer,
 } from './styles';
 import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -19,9 +20,12 @@ export const AuthorizedUser: FC<AuthorizedUserProps> = ({
   const [showUserOption, setShowUserOption] = useState(false);
   const dispatch = useDispatch();
   return (
-    <Container onClick={() => setShowUserOption(!showUserOption)}>
-      <UserIcon />
-      <UserName sidebarLocation={sidebarLocation}>No name</UserName>
+    <Container>
+      <ButtonContainer onClick={() => setShowUserOption(!showUserOption)}>
+        <UserIcon />
+        <UserName sidebarLocation={sidebarLocation}>No name</UserName>
+      </ButtonContainer>
+
       {showUserOption && (
         <OptionPopup>
           <LogoutButton onClick={() => dispatch(UserAction.logout())}>
