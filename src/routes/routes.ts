@@ -10,6 +10,6 @@ export const routes = {
     resetPassword: '/reset',
     newPassword: '/new_password',
     signIn: '/login',
-    signUp: 'signup',
+    signUp: '/signup',
   },
 };
