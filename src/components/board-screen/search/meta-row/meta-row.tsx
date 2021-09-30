@@ -7,8 +7,6 @@ import {
   PreviousPageButton,
   NextPageButton,
   SortTitle,
-  SortList,
-  SortListItem,
 } from './styles';
 import React, { Dispatch, FC, SetStateAction } from 'react';
 
@@ -20,26 +18,12 @@ interface MetaRowProps {
     totalPages: number;
   };
   setPage: Dispatch<SetStateAction<number>>;
-  setSortNum: Dispatch<SetStateAction<number>>;
-  sortNum: number;
 }
 
-export const MetaRow: FC<MetaRowProps> = ({
-  meta,
-  setPage,
-  setSortNum,
-  sortNum,
-}) => (
+export const MetaRow: FC<MetaRowProps> = ({ meta, setPage }) => (
   <Content>
     <SortSelect>
       <SortTitle>Sort by</SortTitle>
-      <SortList activeNum={sortNum}>
-        <SortListItem onClick={() => setSortNum(1)}>Alphabet</SortListItem>
-        <SortListItem onClick={() => setSortNum(2)}>
-          Prospects Available
-        </SortListItem>
-        <SortListItem onClick={() => setSortNum(3)}>Last Activity</SortListItem>
-      </SortList>
     </SortSelect>
     <PageControlContainer>
       {+meta.currentPage !== 1 && (

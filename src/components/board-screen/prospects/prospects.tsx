@@ -2,6 +2,7 @@ import {
   getSavedListAction,
   SavedListSelector,
 } from '../../../store/saved-list';
+import { ReactComponent as CompanyIcon } from '../../../ui/icons/svg/company-large.svg';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { Card } from '../dashboard/sections/prospecting-sessions/card/card';
 import { Topic } from '../topic/topic';
@@ -11,6 +12,8 @@ import {
   Container,
   BackgroundContainer,
   CardContainer,
+  EmptyListItem,
+  EmptyListCaption,
 } from './styles';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -32,7 +35,7 @@ export const Prospects: FC = () => {
   const loadState = useSelector(SavedListSelector.selectLoadState);
   const meta = useSelector(SavedListSelector.selectMeta);
   const SavedListItems = useSelector(SavedListSelector.selectItems);
-
+  console.log(meta);
   return (
     <Content>
       <Topic header="Prospects" showBackButton />
@@ -46,6 +49,12 @@ export const Prospects: FC = () => {
               sortNum={sortNum}
               setSortNum={setSortNum}
             />
+            {SavedListItems.length === 0 && (
+              <EmptyListItem>
+                <CompanyIcon />
+                <EmptyListCaption>No lists</EmptyListCaption>
+              </EmptyListItem>
+            )}
             <CardContainer>
               {SavedListItems.map((item) => (
                 <Card key={item.id} data={item} />

@@ -1,5 +1,7 @@
 export { FavoriteListAction } from './slice';
 
-export { FavoriteListSelector } from './selectors';
+export { CompaniesSelector } from './selectors';
 
 export { getFavoritesAction } from './actions';
+
+export { getCompaniesAction } from './actions';

@@ -1,3 +1,4 @@
 export enum CompaniesActionTypes {
   GET_FAVORITES = 'COMPANIES/GET_FAVORITES',
+  GET_COMPANIES = 'COMPANIES/GET_COMPANIES',
 }

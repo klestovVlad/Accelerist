@@ -5,13 +5,13 @@ const favoriteListSlice = createSlice({
   name: 'FavoriteListSlice',
   initialState,
   reducers: {
-    setFavoritesLoading(state, { payload }: PayloadAction<boolean>) {
+    setCompaniesLoading(state, { payload }: PayloadAction<boolean>) {
       state.isLoading = payload;
     },
-    setFavoritesData(state, { payload }: PayloadAction<FavoriteListData>) {
+    setCompaniesData(state, { payload }: PayloadAction<FavoriteListData>) {
       return { ...payload, errors: [], isError: false };
     },
-    setFavoritesError(state, { payload }: PayloadAction<string>) {
+    setCompaniesError(state, { payload }: PayloadAction<string>) {
       state.errors.push(payload);
       state.isError = true;
     },

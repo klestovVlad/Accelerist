@@ -1,5 +1,5 @@
 import {
-  FavoriteListSelector,
+  CompaniesSelector,
   getFavoritesAction,
 } from '../../../store/companies/index';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
@@ -16,9 +16,9 @@ export const CompanyFavorites: FC = () => {
   useEffect(() => {
     dispatch(getFavoritesAction({ page: page, limit: 12 }));
   }, [dispatch, page]);
-  const favoriteListItems = useSelector(FavoriteListSelector.selectItems);
-  const meta = useSelector(FavoriteListSelector.selectMeta);
-  const loadState = useSelector(FavoriteListSelector.selectLoadState);
+  const favoriteListItems = useSelector(CompaniesSelector.selectItems);
+  const meta = useSelector(CompaniesSelector.selectMeta);
+  const loadState = useSelector(CompaniesSelector.selectLoadState);
   return (
     <Content>
       <Topic header="Favorites" />
@@ -46,6 +46,7 @@ export const CompanyFavorites: FC = () => {
                 zipCode={item.zipCode}
                 revenue={item.revenue}
                 id={item.id}
+                like={item.like}
               />
             ))}
           </CardContainer>
