@@ -1,34 +1,32 @@
 export interface SavedListData {
-  items: [
-    {
+  items: {
+    id: string;
+    name: string;
+    filters: {
+      q: string;
+      gender: string;
+    };
+    prospectsAvailable: number;
+    createdAt: string;
+    updatedAt: string;
+    lastAuthor: {
       id: string;
-      name: string;
-      filters: {
-        q: string;
-        gender: string;
-      };
-      prospectsAvailable: number;
+      email: string | null;
+      firstName: string | null;
+      lastName: string | null;
+      isAuthorized: boolean;
+      imported: boolean;
+      teamId: string | null;
+      role: string | null;
+      linkedinLink: string | null;
+      isReceivingNotifications: boolean;
+      avatarKey: string | null;
+      loggedInAt: string;
       createdAt: string;
       updatedAt: string;
-      lastAuthor: {
-        id: string;
-        email: string | null;
-        firstName: string | null;
-        lastName: string | null;
-        isAuthorized: boolean;
-        imported: boolean;
-        teamId: string | null;
-        role: string | null;
-        linkedinLink: string | null;
-        isReceivingNotifications: boolean;
-        avatarKey: string | null;
-        loggedInAt: string;
-        createdAt: string;
-        updatedAt: string;
-        deletedAt: string | null;
-      };
-    }
-  ];
+      deletedAt: string | null;
+    };
+  }[];
   meta: {
     totalItems: number;
     itemCount: number;
