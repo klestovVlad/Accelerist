@@ -21,7 +21,7 @@ export const Search: FC = () => {
   const Companies = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
-  console.log(Companies);
+  console.log(meta);
   return (
     <Content>
       <Topic

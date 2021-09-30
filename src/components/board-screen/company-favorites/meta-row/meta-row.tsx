@@ -33,7 +33,8 @@ export const MetaRow: FC<MetaRowProps> = ({
         </PreviousPageButton>
       )}
       <PageCounter>
-        {+itemsPerPage * (+currentPage - 1) + 1} - {totalItems} of {totalItems}
+        {+itemsPerPage * (+currentPage - 1) + 1} -{' '}
+        {+itemsPerPage * +currentPage} of {totalItems}
       </PageCounter>
       {+currentPage < totalPages && (
         <NextPageButton onClick={() => setPage(+currentPage + 1)}>

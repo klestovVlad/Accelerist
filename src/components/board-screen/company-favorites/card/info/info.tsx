@@ -1,3 +1,4 @@
+import { deleteFromFavoritesAction } from '../../../../../store/companies';
 import { Button } from '../../../../../ui/buttons/button';
 import { Like } from '../../../../../ui/buttons/like/like';
 import {
@@ -13,6 +14,7 @@ import {
   ButtonContainer,
 } from './styles';
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
 interface InfoProps {
@@ -41,6 +43,7 @@ export const Info: FC<InfoProps> = ({
   like,
 }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
   return (
     <Content>
       <Header href={`/company/${id}`}>{name}</Header>
@@ -66,7 +69,10 @@ export const Info: FC<InfoProps> = ({
       </Table>
 
       <ButtonRow>
-        <Like isActive={like} onClicK={() => null} />
+        <Like
+          isActive={like}
+          onClicK={() => dispatch(deleteFromFavoritesAction(id))}
+        />
         <ButtonContainer>
           <Button
             label="Profile"

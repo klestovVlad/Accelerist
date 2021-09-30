@@ -1,4 +1,4 @@
-export const initialState: FavoriteListData = {
+export const initialState: CompaniesData = {
   items: [
     {
       id: '',
@@ -78,7 +78,7 @@ export const initialState: FavoriteListData = {
   errors: [],
 };
 
-export interface FavoriteListDataItems {
+export interface CompaniesDataItems {
   id: string;
   zoomInfoId: string | null;
   name: string;
@@ -144,8 +144,8 @@ export interface FavoriteListDataItems {
   crsFocus: string[];
 }
 
-export interface FavoriteListData {
-  items: FavoriteListDataItems[];
+export interface CompaniesData {
+  items: CompaniesDataItems[];
   meta: {
     totalItems: number;
     itemCount: number;
@@ -161,4 +161,9 @@ export interface FavoriteListData {
 export interface FavoritesRequest {
   page: number;
   limit: number;
+}
+
+export interface LikeCompanyRequest {
+  id: string;
+  like: boolean;
 }

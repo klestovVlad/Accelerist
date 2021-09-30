@@ -1,4 +1,4 @@
-import { FavoriteListDataItems } from '../../../../../../store/companies/state';
+import { CompaniesDataItems } from '../../../../../../store/companies/state';
 import { ReactComponent as CompanyIcon } from '../../../../../../ui/icons/svg/company-small.svg';
 import {
   CompanyContainer,
@@ -15,7 +15,7 @@ import React, { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
 interface CardProps {
-  cardData: FavoriteListDataItems;
+  cardData: CompaniesDataItems;
 }
 
 export const Card: FC<CardProps> = ({ cardData }) => {

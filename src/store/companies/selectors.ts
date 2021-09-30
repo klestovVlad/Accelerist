@@ -1,5 +1,5 @@
 import { RootState } from '../root-reducer';
-import { FavoriteListDataItems, initialState } from './state';
+import { CompaniesDataItems, initialState } from './state';
 import { createSelector } from 'reselect';
 
 const selectCompanies = (state: RootState) => state.favoriteListSlice;
@@ -15,7 +15,7 @@ const selectLoadState = createSelector(
 
 export const getCompanyById = (id: string) =>
   createSelector(selectCompanies, (data) => {
-    let company: FavoriteListDataItems = initialState.items[0];
+    let company: CompaniesDataItems = initialState.items[0];
     data.items.forEach((item) => {
       console.log(item.id, id, item.id === id);
       if (item.id === id) {

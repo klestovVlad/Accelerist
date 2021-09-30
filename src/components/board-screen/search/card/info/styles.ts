@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Content = styled.div`
   margin-left: 16px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
 
 export const Header = styled.a`
