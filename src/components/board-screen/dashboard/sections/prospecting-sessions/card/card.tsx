@@ -1,3 +1,4 @@
+import { Filters } from '../../../../../../store/saved-list';
 import { FilterRow } from './filter-row/filter-row';
 import { Footer } from './footer/footer';
 import { PeculiaritiesRow } from './peculiarities-row/peculiarities-row';
@@ -8,10 +9,7 @@ interface CardProps {
   data: {
     id: string;
     name: string;
-    filters: {
-      q: string;
-      gender: string;
-    };
+    filters: Filters;
     prospectsAvailable: number;
     createdAt: string;
     updatedAt: string;
@@ -37,7 +35,7 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({ data }) => (
   <Container>
-    <Header>{data.name}</Header>
+    <Header href={`/prospects/${data.id}`}>{data.name}</Header>
     <Underline />
     <FilterRow filters={data.filters} id={data.id} />
     <PeculiaritiesRow prospectsAvailable={data.prospectsAvailable} />

@@ -17,7 +17,6 @@ export const getCompanyById = (id: string) =>
   createSelector(selectCompanies, (data) => {
     let company: CompaniesDataItems = initialState.items[0];
     data.items.forEach((item) => {
-      console.log(item.id, id, item.id === id);
       if (item.id === id) {
         company = item;
       }

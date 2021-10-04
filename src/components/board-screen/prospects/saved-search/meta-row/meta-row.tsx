@@ -1,5 +1,5 @@
-import { ReactComponent as BackLogo } from '../../../../ui/icons/svg/go-back.svg';
-import { ReactComponent as SaveIcon } from '../../../../ui/icons/svg/save-folder.svg';
+import { ReactComponent as BackLogo } from '../../../../../ui/icons/svg/go-back.svg';
+import { ReactComponent as SaveIcon } from '../../../../../ui/icons/svg/save-folder.svg';
 import {
   Content,
   SaveButton,

@@ -12,7 +12,6 @@ interface InputFormProps {
 export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
   const onSubmitForm = (values: FormProps) => {
     setSeconds(40);
-    console.log(values);
   };
   return (
     <Form

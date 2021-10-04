@@ -77,7 +77,7 @@ export const Info: FC<InfoProps> = ({
           <Button
             label="Profile"
             onClick={() => history.push(`/company/${id}`)}
-            colorScheme="white2"
+            colorScheme="blueLine"
             type="button"
             isLoading={false}
             validate

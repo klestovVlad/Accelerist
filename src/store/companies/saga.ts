@@ -33,7 +33,23 @@ export function* getFavoritesList({
 export function* getCompanies({ payload }: PayloadAction<FavoritesRequest>) {
   try {
     yield put(CompaniesAction.setCompaniesLoading(true));
-    const { data } = yield call(companiesQuery, payload.page, payload.limit);
+    const { data } = yield call(
+      companiesQuery,
+      payload.page,
+      payload.limit,
+      payload.income,
+      payload.ageRanges,
+      payload.gender,
+      payload.q,
+      payload.industry,
+      payload.deleteIds,
+      payload.csrFocusIds,
+      payload.affinities,
+      payload.location,
+      payload.totalAnnualContributors,
+      payload.revenueMin,
+      payload.revenueMax
+    );
     yield put(CompaniesAction.setCompaniesData(data));
   } catch (e) {
     if (e instanceof Error) {
@@ -61,11 +77,9 @@ export function* likeCompany({ payload }: PayloadAction<LikeCompanyRequest>) {
 }
 
 export function* deleteFromFavorites({ payload }: PayloadAction<string>) {
-  console.log(payload);
   try {
     yield put(CompaniesAction.setCompaniesLoading(true));
-    const { data } = yield call(dislikeCompanyQuery, payload);
-    console.log(data);
+    yield call(dislikeCompanyQuery, payload);
     yield put(CompaniesAction.deleteFromFavorites(payload));
   } catch (e) {
     if (e instanceof Error) {

@@ -13,7 +13,7 @@ import {
   ListRow,
 } from './styles';
 import React, { FC, useState } from 'react';
-import { Field, FieldRenderProps, Form } from 'react-final-form';
+import { Field, FieldRenderProps } from 'react-final-form';
 
 interface InputProps extends FieldRenderProps<string> {
   label: string;
@@ -33,12 +33,6 @@ export const Input: FC<InputProps> = ({
   const [showList, setShowList] = useState(false);
 
   const ClearInput = () => form.mutators.setValue(label, '');
-
-  const addListItemsToInput = (values: { [key: string]: string }) => {
-    const arr: string[] = [];
-    Object.keys(values).map((item) => (values[item] ? arr.push(item) : null));
-    Array.from(new Set(arr));
-  };
 
   const paramList = predefinedList === undefined ? [''] : predefinedList;
 
@@ -63,24 +57,14 @@ export const Input: FC<InputProps> = ({
         )}
       </ButtonsRow>
       {predefined && showList && (
-        <Form
-          onSubmit={(values) => addListItemsToInput(values)}
-          render={({ values }) => (
-            <ListContent>
-              {paramList.map((item, index) => (
-                <ListRow key={item + index.toString}>
-                  <ListItemName>{item}</ListItemName>
-                  <Field
-                    name={item}
-                    type="checkbox"
-                    component={Checkbox}
-                    onChange={addListItemsToInput(values)}
-                  />
-                </ListRow>
-              ))}
-            </ListContent>
-          )}
-        />
+        <ListContent>
+          {paramList.map((item, index) => (
+            <ListRow key={item + index.toString()}>
+              <ListItemName>{item}</ListItemName>
+              <Field name={item} type="checkbox" component={Checkbox} />
+            </ListRow>
+          ))}
+        </ListContent>
       )}
     </Content>
   );

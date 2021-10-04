@@ -24,7 +24,7 @@ export const Company: FC<CompanyProps> = ({
         component={Input}
         form={form}
       />
-      <Field name="CSR Focus" label="CSR Focus" component={Input} />
+      <Field name="CSR Focus" label="CSR Focus" component={Input} form={form} />
       <Field
         name="Total Annual Contributions"
         label="Total Annual Contributions"

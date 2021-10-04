@@ -1,4 +1,4 @@
-import { ReactComponent as BackLogo } from '../../../../ui/icons/svg/go-back.svg';
+import { ReactComponent as BackLogo } from '../../../../../ui/icons/svg/go-back.svg';
 import {
   Content,
   SortSelect,
@@ -18,6 +18,7 @@ interface MetaRowProps {
     itemsPerPage: string;
     currentPage: string;
     totalPages: number;
+    itemCount: number;
   };
   setPage: Dispatch<SetStateAction<number>>;
   setSortNum: Dispatch<SetStateAction<number>>;
@@ -41,21 +42,24 @@ export const MetaRow: FC<MetaRowProps> = ({
         <SortListItem onClick={() => setSortNum(3)}>Last Activity</SortListItem>
       </SortList>
     </SortSelect>
-    <PageControlContainer>
-      {+meta.currentPage !== 1 && (
-        <PreviousPageButton onClick={() => setPage(+meta.currentPage - 1)}>
-          <BackLogo />
-        </PreviousPageButton>
-      )}
-      <PageCounter>
-        {+meta.itemsPerPage * (+meta.currentPage - 1) + 1} -{' '}
-        {+meta.itemsPerPage * +meta.currentPage} of {meta.totalItems}
-      </PageCounter>
-      {+meta.currentPage < meta.totalPages && (
-        <NextPageButton onClick={() => setPage(+meta.currentPage + 1)}>
-          <BackLogo />
-        </NextPageButton>
-      )}
-    </PageControlContainer>
+    {meta.totalItems !== 0 && (
+      <PageControlContainer>
+        {+meta.currentPage !== 1 && (
+          <PreviousPageButton onClick={() => setPage(+meta.currentPage - 1)}>
+            <BackLogo />
+          </PreviousPageButton>
+        )}
+        <PageCounter>
+          {+meta.itemsPerPage * (+meta.currentPage - 1) + 1} -{' '}
+          {+meta.itemsPerPage * (+meta.currentPage - 1) + meta.itemCount} of{' '}
+          {meta.totalItems}
+        </PageCounter>
+        {+meta.currentPage < meta.totalPages && (
+          <NextPageButton onClick={() => setPage(+meta.currentPage + 1)}>
+            <BackLogo />
+          </NextPageButton>
+        )}
+      </PageControlContainer>
+    )}
   </Content>
 );

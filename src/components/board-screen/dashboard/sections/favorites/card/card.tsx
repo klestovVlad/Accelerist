@@ -36,7 +36,7 @@ export const Card: FC<CardProps> = ({ cardData }) => {
       <CRSHeader>CSR Focus</CRSHeader>
       <CRSContainer>
         {cardData.crsFocus.map((item, index) => (
-          <CRSItems key={index.toString + item}>{item}</CRSItems>
+          <CRSItems key={index.toString() + item}>{item}</CRSItems>
         ))}
         {cardData.crsFocus.length === 0 && <CRSItems>No information</CRSItems>}
       </CRSContainer>

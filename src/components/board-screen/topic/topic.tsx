@@ -1,4 +1,7 @@
+import { updateSavedList } from '../../../store/saved-list';
+import { Button } from '../../../ui/buttons/button';
 import { ReactComponent as BackIcon } from '../../../ui/icons/svg/back.svg';
+import { ReactComponent as EditIcon } from '../../../ui/icons/svg/edit.svg';
 import { ReactComponent as SearchIcon } from '../../../ui/icons/svg/search-icon.svg';
 import { ReactComponent as SettingIcon } from '../../../ui/icons/svg/sliders.svg';
 import {
@@ -10,8 +13,12 @@ import {
   Input,
   InputContainer,
   BackButton,
+  EditButtonsContainer,
+  Body,
+  NameInput,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
+import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 interface TopicProps {
@@ -20,6 +27,8 @@ interface TopicProps {
   settingState?: boolean;
   showBackButton?: boolean;
   onSettingClick?: Dispatch<SetStateAction<boolean>>;
+  editable?: boolean;
+  listId?: string;
 }
 
 export const Topic: FC<TopicProps> = ({
@@ -28,31 +37,107 @@ export const Topic: FC<TopicProps> = ({
   settingState,
   showSearch,
   showBackButton,
+  editable,
+  listId,
 }) => {
+  const [edit, setEdit] = useState(false);
   const history = useHistory();
+  const [name, setName] = useState(header);
+  const dispatch = useDispatch();
+
+  const EditListName = () => {
+    const id = listId ? listId : 'none';
+    dispatch(updateSavedList({ id: id, name: name }));
+    setEdit(false);
+  };
+
   return (
     <BackgroundContent>
-      <Content>
-        {showBackButton && (
-          <BackButton onClick={history.goBack}>
-            <BackIcon />
-          </BackButton>
-        )}
-        <Header>{header}</Header>
-        {showSearch && (
-          <InputContainer>
-            <Input />
-            <IconsContainer>
-              <ButtonContainer onClick={() => onSettingClick?.(!settingState)}>
-                <SettingIcon />
-              </ButtonContainer>
-              <ButtonContainer>
-                <SearchIcon />
-              </ButtonContainer>
-            </IconsContainer>
-          </InputContainer>
-        )}
-      </Content>
+      <Body>
+        <Content>
+          {showBackButton && (
+            <BackButton onClick={history.goBack}>
+              <BackIcon />
+            </BackButton>
+          )}
+          {!edit && <Header>{header}</Header>}
+          {edit && (
+            <NameInput
+              autoFocus
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          )}
+          {showSearch && (
+            <InputContainer>
+              <Input />
+              <IconsContainer>
+                <ButtonContainer
+                  onClick={() => onSettingClick?.(!settingState)}
+                >
+                  <SettingIcon />
+                </ButtonContainer>
+                <ButtonContainer>
+                  <SearchIcon />
+                </ButtonContainer>
+              </IconsContainer>
+            </InputContainer>
+          )}
+          {editable && (
+            <>
+              {!edit && (
+                <EditButtonsContainer>
+                  <ButtonContainer>
+                    <Button
+                      label="Edit"
+                      onClick={() => setEdit(true)}
+                      colorScheme="blueLine"
+                      type="button"
+                      isLoading={false}
+                      validate={true}
+                      Icon={EditIcon}
+                    />
+                  </ButtonContainer>
+                  <ButtonContainer>
+                    <Button
+                      label="Delete"
+                      onClick={() => null}
+                      colorScheme="redText"
+                      type="button"
+                      isLoading={false}
+                      validate={true}
+                    />
+                  </ButtonContainer>
+                </EditButtonsContainer>
+              )}
+              {edit && (
+                <EditButtonsContainer>
+                  <ButtonContainer>
+                    <Button
+                      label="Save"
+                      onClick={() => EditListName()}
+                      colorScheme="blueLine"
+                      type="button"
+                      isLoading={false}
+                      validate={true}
+                    />
+                  </ButtonContainer>
+                  <ButtonContainer>
+                    <Button
+                      label="Cancel"
+                      onClick={() => setEdit(false)}
+                      colorScheme="redText"
+                      type="button"
+                      isLoading={false}
+                      validate={true}
+                    />
+                  </ButtonContainer>
+                </EditButtonsContainer>
+              )}
+            </>
+          )}
+        </Content>
+      </Body>
     </BackgroundContent>
   );
 };

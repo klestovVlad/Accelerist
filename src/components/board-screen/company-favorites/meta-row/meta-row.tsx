@@ -15,6 +15,7 @@ interface MetaRowProps {
   currentPage: string;
   setPage: Dispatch<SetStateAction<number>>;
   totalPages: number;
+  itemCount: number;
 }
 
 export const MetaRow: FC<MetaRowProps> = ({
@@ -23,6 +24,7 @@ export const MetaRow: FC<MetaRowProps> = ({
   currentPage,
   setPage,
   totalPages,
+  itemCount,
 }) => (
   <Content>
     <CompanyCounter>{totalItems} Companies</CompanyCounter>
@@ -34,7 +36,7 @@ export const MetaRow: FC<MetaRowProps> = ({
       )}
       <PageCounter>
         {+itemsPerPage * (+currentPage - 1) + 1} -{' '}
-        {+itemsPerPage * +currentPage} of {totalItems}
+        {+itemsPerPage * (+currentPage - 1) + itemCount} of {totalItems}
       </PageCounter>
       {+currentPage < totalPages && (
         <NextPageButton onClick={() => setPage(+currentPage + 1)}>

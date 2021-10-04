@@ -1,4 +1,4 @@
-import { initialState, SavedListData } from './state';
+import { initialState, SavedListData, ItemData } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const savedListSlice = createSlice({
@@ -9,7 +9,15 @@ const savedListSlice = createSlice({
       state.isLoading = payload;
     },
     getSavedList(state, { payload }: PayloadAction<SavedListData>) {
-      return { ...payload, isLoading: false };
+      return { ...payload, isLoading: false, errors: [], isError: false };
+    },
+    updateSavedList(state, { payload }: PayloadAction<ItemData>) {
+      state.items.map((item, index) => {
+        if (item.id === payload.id) {
+          state.items[index] = payload;
+        }
+        return state;
+      });
     },
     setSavedListError(state, { payload }: PayloadAction<string>) {
       state.errors.push(payload);

@@ -58,7 +58,7 @@ export const ListContent = styled.div`
   border-top-color: transparent;
   box-sizing: border-box;
   border-radius: 0px 0px 8px 8px;
-  padding: 0 18px 10px 16px;
+  padding: 0 0 10px 0;
   max-height: 150px;
   overflow-y: scroll;
   z-index: 99;
@@ -68,8 +68,13 @@ export const ListRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 21px;
   align-items: center;
+  padding: 10px 18px 10px 16px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba(43, 174, 224, 0.1);
+  }
 `;
 
 export const ListItemName = styled.p`

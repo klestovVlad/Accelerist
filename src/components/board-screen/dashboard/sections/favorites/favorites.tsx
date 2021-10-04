@@ -42,7 +42,7 @@ export const Favorites: FC = () => {
             <Button
               label="Search"
               onClick={() => history.push('/search')}
-              colorScheme="white2"
+              colorScheme="blueLine"
               isLoading={false}
               validate
               type="button"

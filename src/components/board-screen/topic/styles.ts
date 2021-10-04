@@ -6,12 +6,21 @@ export const BackgroundContent = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 24px 60px;
-  max-width: 1440px;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
+  max-width: 1096px;
+  width: 100%;
+`;
+
+export const Body = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0px auto;
+  padding: 0 20px 0 20px;
+  height: 96px;
 `;
 
 export const Header = styled.h1`
@@ -60,11 +69,33 @@ export const IconsContainer = styled.div`
   display: flex;
   flex-direction: row;
 `;
-
-export const ButtonContainer = styled.button`
-  margin-left: 12px;
+export const EditButtonsContainer = styled.div`
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const BackButton = styled.button`
   margin-right: 17px;
+`;
+
+export const ButtonContainer = styled.div`
+  margin-left: 12px;
+  display: flex;
+  cursor: pointer;
+`;
+
+export const NameInput = styled.input`
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 150%;
+  color: ${(props) => [props.theme.colors.black]};
+  display: block;
+  background-color: ${(props) => props.theme.colors.white};
+  width: 800px;
+  border: none;
+  outline: 0;
+  outline-offset: 0;
 `;

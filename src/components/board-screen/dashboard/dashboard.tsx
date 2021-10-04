@@ -1,5 +1,5 @@
 import { SavedListSelector } from '../../../store/saved-list';
-import { getSavedListAction } from '../../../store/saved-list/index';
+import { getSavedListAction } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { Topic } from '../topic/topic';
 import { Favorites } from './sections/favorites/favorites';
@@ -14,6 +14,7 @@ export const Dashboard: FC = () => {
   useEffect(() => {
     dispatch(getSavedListAction({ page: 1, limit: 2 }));
   }, [dispatch]);
+
   const loadSavedList = useSelector(SavedListSelector.selectLoadState);
   const loadState = loadSavedList;
   return (

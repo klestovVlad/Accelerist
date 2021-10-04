@@ -16,9 +16,11 @@ export const CompanyFavorites: FC = () => {
   useEffect(() => {
     dispatch(getFavoritesAction({ page: page, limit: 12 }));
   }, [dispatch, page]);
+
   const favoriteListItems = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
+  
   return (
     <Content>
       <Topic header="Favorites" />
@@ -32,6 +34,7 @@ export const CompanyFavorites: FC = () => {
             currentPage={meta.currentPage}
             setPage={setPage}
             totalPages={meta.totalPages}
+            itemCount={meta.itemCount}
           />
           <CardContainer>
             {favoriteListItems.map((item) => (
