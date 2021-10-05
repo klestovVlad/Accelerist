@@ -25,7 +25,6 @@ export function* getSavedList({ payload }: PayloadAction<SavedListRequest>) {
 }
 
 export function* updateSavedList({ payload }: PayloadAction<UpdateSavedList>) {
-  console.log('updateSavedList2', payload);
   try {
     yield put(SavedListAction.setFavoritesLoading(true));
     const { data } = yield call(

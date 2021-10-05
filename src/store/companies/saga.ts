@@ -6,13 +6,11 @@ import {
   dislikeCompanyQuery,
 } from './axios';
 import { CompaniesAction } from './slice';
-import { FavoritesRequest, LikeCompanyRequest } from './state';
+import { FilterRequest, LikeCompanyRequest } from './state';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-export function* getFavoritesList({
-  payload,
-}: PayloadAction<FavoritesRequest>) {
+export function* getFavoritesList({ payload }: PayloadAction<FilterRequest>) {
   try {
     yield put(CompaniesAction.setCompaniesLoading(true));
     const { data } = yield call(
@@ -30,7 +28,7 @@ export function* getFavoritesList({
   }
 }
 
-export function* getCompanies({ payload }: PayloadAction<FavoritesRequest>) {
+export function* getCompanies({ payload }: PayloadAction<FilterRequest>) {
   try {
     yield put(CompaniesAction.setCompaniesLoading(true));
     const { data } = yield call(

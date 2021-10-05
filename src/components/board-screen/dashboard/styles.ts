@@ -9,6 +9,7 @@ export const Row = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 `;
 
 export const Content = styled.div`

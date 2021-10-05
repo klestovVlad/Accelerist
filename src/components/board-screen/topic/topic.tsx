@@ -29,6 +29,8 @@ interface TopicProps {
   onSettingClick?: Dispatch<SetStateAction<boolean>>;
   editable?: boolean;
   listId?: string;
+  searchField?: string;
+  setSearchField?: Dispatch<SetStateAction<string>>;
 }
 
 export const Topic: FC<TopicProps> = ({
@@ -39,6 +41,8 @@ export const Topic: FC<TopicProps> = ({
   showBackButton,
   editable,
   listId,
+  searchField,
+  setSearchField,
 }) => {
   const [edit, setEdit] = useState(false);
   const history = useHistory();
@@ -70,7 +74,12 @@ export const Topic: FC<TopicProps> = ({
           )}
           {showSearch && (
             <InputContainer>
-              <Input />
+              <Input
+                value={searchField}
+                onChange={(e) =>
+                  setSearchField ? setSearchField(e.target.value) : null
+                }
+              />
               <IconsContainer>
                 <ButtonContainer
                   onClick={() => onSettingClick?.(!settingState)}

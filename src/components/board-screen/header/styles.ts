@@ -10,12 +10,14 @@ export const Container = styled.div`
   flex-direction: row;
   height: 80px;
   align-items: center;
-  padding: 0 66px 0 60px;
   justify-content: space-between;
   position: relative;
   z-index: 9999;
-  max-width: 1440px;
-  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0px auto;
+  padding: 0 20px 0 20px;
 `;
 
 export const RightSide = styled.div`

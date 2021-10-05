@@ -1,12 +1,12 @@
 import { CompaniesActionTypes } from './action-types';
-import { FavoritesRequest, LikeCompanyRequest } from './state';
+import { FilterRequest, LikeCompanyRequest } from './state';
 import { createAction } from '@reduxjs/toolkit';
 
-export const getFavoritesAction = createAction<FavoritesRequest>(
+export const getFavoritesAction = createAction<FilterRequest>(
   CompaniesActionTypes.GET_FAVORITES
 );
 
-export const getCompaniesAction = createAction<FavoritesRequest>(
+export const getCompaniesAction = createAction<FilterRequest>(
   CompaniesActionTypes.GET_COMPANIES
 );
 

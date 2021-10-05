@@ -2,6 +2,7 @@ import {
   CompaniesSelector,
   getCompaniesAction,
 } from '../../../store/companies';
+import { FilterRequest } from '../../../store/companies/state';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { Topic } from '../topic/topic';
 import { Card } from './card/card';
@@ -15,12 +16,32 @@ export const Search: FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+  const [filterQuery, setFilterQuery] = useState<FilterRequest>({
+    page: 1,
+    limit: 12,
+    income: undefined,
+    ageRanges: undefined,
+    gender: 'both',
+    q: undefined,
+    industry: undefined,
+    deleteIds: undefined,
+    csrFocusIds: undefined,
+    affinities: undefined,
+    location: undefined,
+    totalAnnualContributors: undefined,
+    revenueMin: undefined,
+    revenueMax: undefined,
+  });
+  const [searchField, setSearchField] = useState('');
+
   useEffect(() => {
-    dispatch(getCompaniesAction({ page: page, limit: 12 }));
-  }, [dispatch, page]);
+    dispatch(getCompaniesAction({ ...filterQuery, page: page }));
+  }, [dispatch, filterQuery, page]);
+
   const Companies = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
+
   return (
     <Content>
       <Topic
@@ -28,11 +49,19 @@ export const Search: FC = () => {
         showSearch
         settingState={showFilter}
         onSettingClick={setShowFilter}
+        searchField={searchField}
+        setSearchField={setSearchField}
       />
       {loadState && <LoadPopup />}
       {!loadState && (
         <Body>
-          {showFilter && <Filters setShowFilter={setShowFilter} />}
+          {showFilter && (
+            <Filters
+              setShowFilter={setShowFilter}
+              searchField={searchField}
+              setFilterQuery={setFilterQuery}
+            />
+          )}
           <MetaRow meta={meta} setPage={setPage} />
           <CardContainer>
             {Companies.map((item) => (

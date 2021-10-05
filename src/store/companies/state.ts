@@ -158,7 +158,7 @@ export interface CompaniesData {
   errors: string[];
 }
 
-export interface FavoritesRequest {
+export interface FilterRequest {
   page: number;
   limit: number;
   income?:

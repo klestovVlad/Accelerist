@@ -1,3 +1,4 @@
+import { FilterRequest } from '../../../../store/companies/state';
 import { Tabs } from '../../../../ui/tabs/tabs';
 import { ButtonRow } from './buttons-row/button-row';
 import { Company } from './company/company';
@@ -9,14 +10,67 @@ import { Form } from 'react-final-form';
 
 interface FilterProps {
   setShowFilter: Dispatch<SetStateAction<boolean>>;
+  searchField: string;
+  setFilterQuery: Dispatch<SetStateAction<FilterRequest>>;
 }
 
-export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
+export const Filters: FC<FilterProps> = ({
+  setShowFilter,
+  searchField,
+  setFilterQuery,
+}) => {
   const [tabNum, setTabNum] = useState(0);
   const [rangeValue, setRangeValue] = useState<Array<number>>([0, 50]);
+  const [gender, setGender] = useState(2);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmitForm = (values: any) => {
-    console.log(values, 'range', rangeValue);
+    console.log(values);
+    const demographicData: {
+      'Household Income': string[];
+      Ethnicity: string[];
+      Age: string[];
+    } = {
+      'Household Income': [],
+      Ethnicity: [],
+      Age: [],
+    };
+
+    Object.keys(values).map((key) => {
+      if (key.includes('Household Income_') && values) {
+        demographicData['Household Income'].push(
+          key.replace('Household Income_', '')
+        );
+      }
+
+      if (key.includes('Ethnicity_') && values) {
+        demographicData.Ethnicity.push(key.replace('Ethnicity__', ''));
+      }
+
+      if (key.includes('Ethnicity_') && values) {
+        demographicData.Age.push(key.replace('Age_', ''));
+      }
+
+      return key;
+    });
+
+    const genderList = ['male', 'female', 'both'] as const;
+    setFilterQuery({
+      page: 1,
+      limit: 12,
+      income: values.Income,
+      ageRanges: undefined,
+      gender: genderList[gender],
+      q: searchField,
+      industry: [values.Industry],
+      deleteIds: undefined,
+      csrFocusIds: [values['CSR Focus']],
+      affinities: [values['SDG Goals']],
+      location: [values['Geographic Location']],
+      totalAnnualContributors: values['Total Annual Contribution'],
+      revenueMin: rangeValue[0] * 1000,
+      revenueMax: rangeValue[1] * 1000,
+    });
   };
   return (
     <Content>
@@ -44,7 +98,12 @@ export const Filters: FC<FilterProps> = ({ setShowFilter }) => {
               setRangeValue={setRangeValue}
               form={form}
             />
-            <Demographics onSubmit={onSubmitForm} form={form} />
+            <Demographics
+              onSubmit={onSubmitForm}
+              form={form}
+              gender={gender}
+              setGender={setGender}
+            />
             <ButtonRow
               handleSubmit={handleSubmit}
               setShowFilter={setShowFilter}

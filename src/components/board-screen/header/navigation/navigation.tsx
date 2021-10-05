@@ -11,16 +11,10 @@ export const Navigation: FC = () => (
         <Link to="/search">Search</Link>
       </ListItem>
       <ListItem>
-        <Link to="/">Pricing</Link>
+        <Link to="/company-favorites">Favorites</Link>
       </ListItem>
       <ListItem>
-        <Link to="/">Prospecting</Link>
-      </ListItem>
-      <ListItem>
-        <Link to="/">ROI</Link>
-      </ListItem>
-      <ListItem>
-        <Link to="/">Upgrade Membership</Link>
+        <Link to="/prospects">Prospecting</Link>
       </ListItem>
     </List>
   </Container>

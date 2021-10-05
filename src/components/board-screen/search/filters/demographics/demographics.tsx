@@ -7,11 +7,19 @@ import {
   TabContainer,
   TabHeader,
 } from './styles';
-import React, { FC, useState } from 'react';
+import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { Field, FormProps } from 'react-final-form';
 
-export const Demographics: FC<FormProps> = ({ form }) => {
-  const [gender, setGender] = useState(2);
+interface DemographicsProps extends FormProps {
+  gender: number;
+  setGender: Dispatch<SetStateAction<number>>;
+}
+
+export const Demographics: FC<DemographicsProps> = ({
+  form,
+  gender,
+  setGender,
+}) => {
   const [relations, setRelations] = useState(0);
   return (
     <Content>
@@ -39,7 +47,16 @@ export const Demographics: FC<FormProps> = ({ form }) => {
           form={form}
           predefined
           component={Input}
-          predefinedList={['a', 'b', 'c']}
+          predefinedList={[
+            'Less than $20k',
+            '$20k - $29k',
+            '$30k - $39k',
+            '$40k - $49k',
+            '$50k - $74k',
+            '$75k - $99k',
+            '$100k - $124k',
+            '$125k or More',
+          ]}
         />
         <Field
           name="Ethnicity"
@@ -47,7 +64,7 @@ export const Demographics: FC<FormProps> = ({ form }) => {
           form={form}
           predefined
           component={Input}
-          predefinedList={['a', 'b', 'c', 'd']}
+          predefinedList={['African American', 'Asian', 'Hispanic', 'White']}
         />
         <Field
           name="Age"

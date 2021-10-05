@@ -1,7 +1,6 @@
+import { Content, Label, StyledSlider } from './styles';
 import React, { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
 import { FieldRenderProps } from 'react-final-form';
-
-import { Content, Label, StyledSlider } from './styles';
 
 interface InputRangeProps extends FieldRenderProps<Array<number>> {
   label: string;
@@ -35,7 +34,7 @@ export const RangeSlider: FC<InputRangeProps> = ({
         valueLabelDisplay="auto"
         onChange={handleChange}
         aria-labelledby="range-slider"
-        valueLabelFormat={(str: number) => `$${str}M`}
+        valueLabelFormat={(str: number) => `$${str}K`}
       />
     </Content>
   );
