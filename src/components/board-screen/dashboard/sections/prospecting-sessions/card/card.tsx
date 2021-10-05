@@ -33,12 +33,15 @@ interface CardProps {
   };
 }
 
-export const Card: FC<CardProps> = ({ data }) => (
-  <Container>
-    <Header href={`/prospects/${data.id}`}>{data.name}</Header>
-    <Underline />
-    <FilterRow filters={data.filters} id={data.id} />
-    <PeculiaritiesRow prospectsAvailable={data.prospectsAvailable} />
-    <Footer lastAuthor={data.lastAuthor} />
-  </Container>
-);
+export const Card: FC<CardProps> = ({ data }) => {
+  const cardName = data.name ? data.name : 'No Name';
+  return (
+    <Container>
+      <Header href={`/prospects/${data.id}`}>{cardName}</Header>
+      <Underline />
+      <FilterRow filters={data.filters} id={data.id} />
+      <PeculiaritiesRow prospectsAvailable={data.prospectsAvailable} />
+      <Footer lastAuthor={data.lastAuthor} />
+    </Container>
+  );
+};

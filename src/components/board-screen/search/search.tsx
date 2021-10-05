@@ -34,6 +34,12 @@ export const Search: FC = () => {
   });
   const [searchField, setSearchField] = useState('');
 
+  const startSearch = () => {
+    dispatch(
+      getCompaniesAction({ ...filterQuery, page: page, q: searchField })
+    );
+  };
+
   useEffect(() => {
     dispatch(getCompaniesAction({ ...filterQuery, page: page }));
   }, [dispatch, filterQuery, page]);
@@ -51,6 +57,7 @@ export const Search: FC = () => {
         onSettingClick={setShowFilter}
         searchField={searchField}
         setSearchField={setSearchField}
+        onSearchClick={startSearch}
       />
       {loadState && <LoadPopup />}
       {!loadState && (

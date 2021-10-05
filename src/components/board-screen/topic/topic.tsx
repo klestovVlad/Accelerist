@@ -28,6 +28,7 @@ interface TopicProps {
   settingState?: boolean;
   showBackButton?: boolean;
   onSettingClick?: Dispatch<SetStateAction<boolean>>;
+  onSearchClick?(): void;
   editable?: boolean;
   listId?: string;
   searchField?: string;
@@ -44,10 +45,12 @@ export const Topic: FC<TopicProps> = ({
   listId,
   searchField,
   setSearchField,
+  onSearchClick,
 }) => {
-  const [edit, setEdit] = useState(false);
   const history = useHistory();
-  const [name, setName] = useState(header);
+  const initialInput = header === null ? '' : header;
+  const [name, setName] = useState(initialInput);
+  const [edit, setEdit] = useState(initialInput.length === 0);
   const dispatch = useDispatch();
 
   const editListName = () => {
@@ -76,6 +79,7 @@ export const Topic: FC<TopicProps> = ({
             <NameInput
               autoFocus
               value={name}
+              placeholder="No name"
               onChange={(e) => setName(e.target.value)}
             />
           )}
@@ -93,7 +97,7 @@ export const Topic: FC<TopicProps> = ({
                 >
                   <SettingIcon />
                 </ButtonContainer>
-                <ButtonContainer>
+                <ButtonContainer onClick={onSearchClick}>
                   <SearchIcon />
                 </ButtonContainer>
               </IconsContainer>
@@ -141,11 +145,11 @@ export const Topic: FC<TopicProps> = ({
                   <ButtonContainer>
                     <Button
                       label="Cancel"
-                      onClick={() => setEdit(false)}
+                      onClick={() => editListName()}
                       colorScheme="redText"
                       type="button"
                       isLoading={false}
-                      validate={true}
+                      validate={name.length > 0}
                     />
                   </ButtonContainer>
                 </EditButtonsContainer>
