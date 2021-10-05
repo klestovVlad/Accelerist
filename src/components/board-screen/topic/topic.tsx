@@ -1,4 +1,5 @@
-import { updateSavedList } from '../../../store/saved-list';
+import { routes } from '../../../routes/routes';
+import { deleteSavedList, updateSavedList } from '../../../store/saved-list';
 import { Button } from '../../../ui/buttons/button';
 import { ReactComponent as BackIcon } from '../../../ui/icons/svg/back.svg';
 import { ReactComponent as EditIcon } from '../../../ui/icons/svg/edit.svg';
@@ -49,10 +50,16 @@ export const Topic: FC<TopicProps> = ({
   const [name, setName] = useState(header);
   const dispatch = useDispatch();
 
-  const EditListName = () => {
+  const editListName = () => {
     const id = listId ? listId : 'none';
     dispatch(updateSavedList({ id: id, name: name }));
     setEdit(false);
+  };
+
+  const deleteList = () => {
+    const id = listId ? listId : 'none';
+    dispatch(deleteSavedList(id));
+    history.push(routes.private.prospects);
   };
 
   return (
@@ -110,7 +117,7 @@ export const Topic: FC<TopicProps> = ({
                   <ButtonContainer>
                     <Button
                       label="Delete"
-                      onClick={() => null}
+                      onClick={() => deleteList()}
                       colorScheme="redText"
                       type="button"
                       isLoading={false}
@@ -124,7 +131,7 @@ export const Topic: FC<TopicProps> = ({
                   <ButtonContainer>
                     <Button
                       label="Save"
-                      onClick={() => EditListName()}
+                      onClick={() => editListName()}
                       colorScheme="blueLine"
                       type="button"
                       isLoading={false}

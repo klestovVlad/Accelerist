@@ -6,6 +6,7 @@ export {
   getSavedListAction,
   getOneSavedListAction,
   updateSavedList,
+  deleteSavedList,
 } from './actions';
 
 export type { Filters } from './state';

@@ -1,5 +1,9 @@
 import { SavedListActionTypes } from './action-types';
-import { savedListQuery, updateSavedListQuery } from './axios';
+import {
+  savedListQuery,
+  updateSavedListQuery,
+  deleteSavedListQuery,
+} from './axios';
 import { SavedListAction } from './slice';
 import { SavedListRequest, UpdateSavedList } from './state';
 import { PayloadAction } from '@reduxjs/toolkit';
@@ -54,7 +58,23 @@ export function* updateSavedList({ payload }: PayloadAction<UpdateSavedList>) {
   }
 }
 
+export function* deleteSavedList({ payload }: PayloadAction<string>) {
+  try {
+    console.log(payload);
+    yield put(SavedListAction.setFavoritesLoading(true));
+    yield call(deleteSavedListQuery, payload);
+    yield put(SavedListAction.deleteSavedList(payload));
+  } catch (e) {
+    if (e instanceof Error) {
+      yield put(SavedListAction.setSavedListError(e.message));
+    }
+  } finally {
+    yield put(SavedListAction.setFavoritesLoading(false));
+  }
+}
+
 export function* savedListWatcher() {
   yield takeLatest(SavedListActionTypes.GET_SAVED_LIST, getSavedList);
   yield takeLatest(SavedListActionTypes.UPDATE_SAVED_LIST, updateSavedList);
+  yield takeLatest(SavedListActionTypes.DELETE_SAVED_LIST, deleteSavedList);
 }

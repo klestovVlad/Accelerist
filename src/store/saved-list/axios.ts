@@ -77,3 +77,6 @@ export const updateSavedListQuery = (
       name: name,
     },
   });
+
+export const deleteSavedListQuery = (id: string) =>
+  SavedListApi.savedListControllerDeleteProspect({ id: id });

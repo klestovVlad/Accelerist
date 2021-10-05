@@ -12,3 +12,6 @@ export const signInQuery = (UserData: AuthenticationData) =>
 
 export const signUpQuery = (UserData: AuthenticationData) =>
   AuthorizationApi.authControllerSignUp({ signUpDto: UserData });
+
+export const sendChangePasswordEmailQuery = (email: string) =>
+  AuthorizationApi.authControllerResetPassword({ passwordResetDto: { email } });

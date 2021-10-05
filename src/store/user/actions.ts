@@ -9,3 +9,7 @@ export const postSignInAction = createAction<SignRequest>(
 export const postSignUpAction = createAction<SignRequest>(
   UserActionTypes.SIGN_UP
 );
+
+export const sendChangePasswordEmail = createAction<string>(
+  UserActionTypes.SEND_CHANGE_PASSWORD_EMAIL
+);

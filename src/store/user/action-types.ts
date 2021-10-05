@@ -1,4 +1,5 @@
 export enum UserActionTypes {
   SIGN_IN = 'USER/SIGN_IN',
   SIGN_UP = 'USER/SIGN_UP',
+  SEND_CHANGE_PASSWORD_EMAIL = 'SEND_CHANGE_PASSWORD_EMAIL',
 }

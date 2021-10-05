@@ -19,6 +19,16 @@ const savedListSlice = createSlice({
         return state;
       });
     },
+    deleteSavedList(state, { payload }: PayloadAction<string>) {
+      let deleteIndex = -1;
+      state.items.map((item, index) => {
+        if (item.id === payload) {
+          deleteIndex = index;
+        }
+        return state;
+      });
+      state.items.splice(deleteIndex, 1);
+    },
     setSavedListError(state, { payload }: PayloadAction<string>) {
       state.errors.push(payload);
       state.isError = true;

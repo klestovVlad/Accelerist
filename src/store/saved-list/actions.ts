@@ -13,3 +13,7 @@ export const getOneSavedListAction = createAction<string>(
 export const updateSavedList = createAction<UpdateSavedList>(
   SavedListActionTypes.UPDATE_SAVED_LIST
 );
+
+export const deleteSavedList = createAction<string>(
+  SavedListActionTypes.DELETE_SAVED_LIST
+);

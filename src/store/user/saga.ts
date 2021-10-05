@@ -33,7 +33,23 @@ export function* signUp({ payload }: PayloadAction<SignRequest>) {
   }
 }
 
+export function* sendChangePasswordEmail({ payload }: PayloadAction<string>) {
+  try {
+    yield put(UserAction.setSignLoading(true));
+  } catch (e) {
+    if (e instanceof Error) {
+      yield put(UserAction.setSignError(e.message));
+    }
+  } finally {
+    yield put(UserAction.setSignLoading(false));
+  }
+}
+
 export function* userWatcher() {
   yield takeLatest(UserActionTypes.SIGN_IN, signIn);
   yield takeLatest(UserActionTypes.SIGN_UP, signUp);
+  yield takeLatest(
+    UserActionTypes.SEND_CHANGE_PASSWORD_EMAIL,
+    sendChangePasswordEmail
+  );
 }
