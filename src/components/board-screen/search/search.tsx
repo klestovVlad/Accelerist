@@ -12,6 +12,7 @@ import { MetaRow } from './meta-row/meta-row';
 import { Body, Content, CardContainer } from './styles';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router';
 
 export const Search: FC = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -33,7 +34,9 @@ export const Search: FC = () => {
     revenueMin: undefined,
     revenueMax: undefined,
   });
-  const [searchField, setSearchField] = useState('');
+
+  const initialQuery = useLocation().search.replace('?q=', '');
+  const [searchField, setSearchField] = useState(initialQuery);
 
   const startSearch = () => {
     dispatch(
@@ -42,8 +45,10 @@ export const Search: FC = () => {
   };
 
   useEffect(() => {
-    dispatch(getCompaniesAction({ ...filterQuery, page: page }));
-  }, [dispatch, filterQuery, page]);
+    dispatch(
+      getCompaniesAction({ ...filterQuery, page: page, q: searchField })
+    );
+  }, [dispatch, filterQuery, page, searchField]);
 
   const Companies = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);

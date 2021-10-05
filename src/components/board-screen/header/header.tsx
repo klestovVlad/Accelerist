@@ -11,19 +11,20 @@ import {
   RightSide,
 } from './styles';
 import React, { FC, useState } from 'react';
+import { useLocation } from 'react-router';
 
 export const Header: FC = () => {
   const [state, setState] = useState(false);
+  const isSearchPage = useLocation().pathname.includes('/search');
   return (
     <BackgroundContainer>
       <Container>
         <Logo />
-
         <NavShadow checked={state} />
         <AdaptiveContainer checked={state}>
           <Navigation />
           <RightSide>
-            <Search />
+            {!isSearchPage && <Search />}
             <AuthorizedUser sidebarLocation={state} />
           </RightSide>
         </AdaptiveContainer>
