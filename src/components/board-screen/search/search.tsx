@@ -1,3 +1,4 @@
+import { isObjectsEqual } from '../../../functions/is-objects-equal';
 import {
   CompaniesSelector,
   getCompaniesAction,
@@ -18,7 +19,7 @@ export const Search: FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [filterQuery, setFilterQuery] = useState<FilterRequest>({
+  const initialFilterState: FilterRequest = {
     page: 1,
     limit: 12,
     income: undefined,
@@ -33,14 +34,24 @@ export const Search: FC = () => {
     totalAnnualContributors: undefined,
     revenueMin: undefined,
     revenueMax: undefined,
-  });
+  };
+  const [filterQuery, setFilterQuery] =
+    useState<FilterRequest>(initialFilterState);
 
   const initialQuery = useLocation().search.replace('?q=', '');
   const [searchField, setSearchField] = useState(initialQuery);
 
+  const [permissionToSave, setPermissionToSave] = useState(false);
+
   const startSearch = () => {
     dispatch(
       getCompaniesAction({ ...filterQuery, page: page, q: searchField })
+    );
+    setPermissionToSave(
+      !isObjectsEqual(
+        { ...filterQuery, page: page, q: searchField },
+        { ...initialFilterState, page: page, q: '' }
+      )
     );
   };
 
@@ -48,7 +59,15 @@ export const Search: FC = () => {
     dispatch(
       getCompaniesAction({ ...filterQuery, page: page, q: searchField })
     );
-  }, [dispatch, filterQuery, page, searchField]);
+    setPermissionToSave(
+      !isObjectsEqual(
+        { ...filterQuery, page: page, q: searchField },
+        { ...initialFilterState, page: page, q: '' }
+      )
+    );
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, filterQuery, page]);
 
   const Companies = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
@@ -79,7 +98,12 @@ export const Search: FC = () => {
               setFilterQuery={setFilterQuery}
             />
           )}
-          <MetaRow meta={meta} setPage={setPage} saveList={SaveList} />
+          <MetaRow
+            meta={meta}
+            setPage={setPage}
+            saveList={SaveList}
+            permissionToSave={permissionToSave}
+          />
           <CardContainer>
             {Companies.map((item) => (
               <Card
