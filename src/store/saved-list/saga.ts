@@ -3,9 +3,10 @@ import {
   savedListQuery,
   updateSavedListQuery,
   deleteSavedListQuery,
+  createSavedListQuery,
 } from './axios';
 import { SavedListAction } from './slice';
-import { SavedListRequest, UpdateSavedList } from './state';
+import { CreateSavedList, SavedListRequest, UpdateSavedList } from './state';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
@@ -73,8 +74,38 @@ export function* deleteSavedList({ payload }: PayloadAction<string>) {
   }
 }
 
+export function* createSavedList({ payload }: PayloadAction<CreateSavedList>) {
+  console.log('create!');
+  try {
+    yield put(SavedListAction.setFavoritesLoading(true));
+    const { data } = yield call(
+      createSavedListQuery,
+      payload.income,
+      payload.ageRanges,
+      payload.gender,
+      payload.q,
+      payload.industry,
+      payload.deleteIds,
+      payload.csrFocusIds,
+      payload.affinities,
+      payload.location,
+      payload.totalAnnualContributors,
+      payload.revenueMin,
+      payload.revenueMax
+    );
+    yield put(SavedListAction.createSavedList(data));
+  } catch (e) {
+    if (e instanceof Error) {
+      yield put(SavedListAction.setSavedListError(e.message));
+    }
+  } finally {
+    yield put(SavedListAction.setFavoritesLoading(false));
+  }
+}
+
 export function* savedListWatcher() {
   yield takeLatest(SavedListActionTypes.GET_SAVED_LIST, getSavedList);
   yield takeLatest(SavedListActionTypes.UPDATE_SAVED_LIST, updateSavedList);
   yield takeLatest(SavedListActionTypes.DELETE_SAVED_LIST, deleteSavedList);
+  yield takeLatest(SavedListActionTypes.CREATE_SAVED_LIST, createSavedList);
 }

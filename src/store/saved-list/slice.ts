@@ -19,6 +19,11 @@ const savedListSlice = createSlice({
         return state;
       });
     },
+    createSavedList(state, { payload }: PayloadAction<ItemData>) {
+      console.log('createSavedList', payload);
+      state.items.push(payload);
+      document.location.href = `/prospects/${payload.id}`;
+    },
     deleteSavedList(state, { payload }: PayloadAction<string>) {
       let deleteIndex = -1;
       state.items.map((item, index) => {

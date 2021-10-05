@@ -21,13 +21,14 @@ interface MetaRowProps {
     totalPages: number;
   };
   setPage: Dispatch<SetStateAction<number>>;
+  saveList?(): void;
 }
 
-export const MetaRow: FC<MetaRowProps> = ({ meta, setPage }) => (
+export const MetaRow: FC<MetaRowProps> = ({ meta, setPage, saveList }) => (
   <Content>
     <CompanyCounter>Found {meta.totalItems} companies</CompanyCounter>
     <SelectContainer>
-      <SaveButton>
+      <SaveButton onClick={() => (saveList ? saveList() : null)}>
         <SaveIcon />
         <SaveTitle>Save List</SaveTitle>
       </SaveButton>

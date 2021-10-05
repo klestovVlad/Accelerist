@@ -1,5 +1,6 @@
 import { routes } from '../../../routes/routes';
 import { deleteSavedList, updateSavedList } from '../../../store/saved-list';
+import { CreateSavedList } from '../../../store/saved-list/state';
 import { Button } from '../../../ui/buttons/button';
 import { ReactComponent as BackIcon } from '../../../ui/icons/svg/back.svg';
 import { ReactComponent as EditIcon } from '../../../ui/icons/svg/edit.svg';
@@ -33,6 +34,7 @@ interface TopicProps {
   listId?: string;
   searchField?: string;
   setSearchField?: Dispatch<SetStateAction<string>>;
+  filters?: CreateSavedList;
 }
 
 export const Topic: FC<TopicProps> = ({
@@ -46,6 +48,7 @@ export const Topic: FC<TopicProps> = ({
   searchField,
   setSearchField,
   onSearchClick,
+  filters,
 }) => {
   const history = useHistory();
   const initialInput = header === null ? '' : header;
@@ -55,7 +58,7 @@ export const Topic: FC<TopicProps> = ({
 
   const editListName = () => {
     const id = listId ? listId : 'none';
-    dispatch(updateSavedList({ id: id, name: name }));
+    dispatch(updateSavedList({ ...filters, id: id, name: name }));
     setEdit(false);
   };
 

@@ -1,5 +1,5 @@
 import { SavedListActionTypes } from './action-types';
-import { SavedListRequest, UpdateSavedList } from './state';
+import { CreateSavedList, SavedListRequest, UpdateSavedList } from './state';
 import { createAction } from '@reduxjs/toolkit';
 
 export const getSavedListAction = createAction<SavedListRequest>(
@@ -16,4 +16,8 @@ export const updateSavedList = createAction<UpdateSavedList>(
 
 export const deleteSavedList = createAction<string>(
   SavedListActionTypes.DELETE_SAVED_LIST
+);
+
+export const createSavedList = createAction<CreateSavedList>(
+  SavedListActionTypes.CREATE_SAVED_LIST
 );

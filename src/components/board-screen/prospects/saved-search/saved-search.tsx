@@ -19,7 +19,9 @@ export const SavedSearch: FC<SavedSearchProps> = ({ id }) => {
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
+  console.log('data', useSelector(SavedListSelector.selectItems));
   const Listitem = useSelector(SavedListSelector.getItemById(id));
+  console.log(Listitem);
 
   useEffect(() => {
     dispatch(
@@ -63,11 +65,16 @@ export const SavedSearch: FC<SavedSearchProps> = ({ id }) => {
 
   return (
     <Content>
-      <Topic header={Listitem.name} editable listId={id} />
+      <Topic
+        header={Listitem.name}
+        editable
+        listId={id}
+        filters={Listitem.filters}
+      />
       {loadState && <LoadPopup />}
       {!loadState && (
         <Body>
-          <MetaRow meta={meta} setPage={setPage} />
+          <MetaRow meta={meta} setPage={setPage} filters={Listitem.filters} />
           <BackgroundContainer>
             <CardContainer>
               {companies.map((item) => (

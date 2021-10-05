@@ -3,6 +3,7 @@ import {
   getCompaniesAction,
 } from '../../../store/companies';
 import { FilterRequest } from '../../../store/companies/state';
+import { createSavedList } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { Topic } from '../topic/topic';
 import { Card } from './card/card';
@@ -48,6 +49,10 @@ export const Search: FC = () => {
   const meta = useSelector(CompaniesSelector.selectMeta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
 
+  const SaveList = () => {
+    dispatch(createSavedList({ ...filterQuery, q: searchField }));
+  };
+
   return (
     <Content>
       <Topic
@@ -69,7 +74,7 @@ export const Search: FC = () => {
               setFilterQuery={setFilterQuery}
             />
           )}
-          <MetaRow meta={meta} setPage={setPage} />
+          <MetaRow meta={meta} setPage={setPage} saveList={SaveList} />
           <CardContainer>
             {Companies.map((item) => (
               <Card

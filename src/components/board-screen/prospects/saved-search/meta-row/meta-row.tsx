@@ -1,13 +1,12 @@
+import { Filters } from '../../../../../store/saved-list';
 import { ReactComponent as BackLogo } from '../../../../../ui/icons/svg/go-back.svg';
-import { ReactComponent as SaveIcon } from '../../../../../ui/icons/svg/save-folder.svg';
+import { FilterRow } from './filter-row/filter-row';
 import {
   Content,
-  SaveButton,
   PageControlContainer,
   PageCounter,
   PreviousPageButton,
   NextPageButton,
-  SaveTitle,
   CompanyCounter,
   SelectContainer,
 } from './styles';
@@ -19,18 +18,17 @@ interface MetaRowProps {
     itemsPerPage: string;
     currentPage: string;
     totalPages: number;
+    itemCount: number;
   };
   setPage: Dispatch<SetStateAction<number>>;
+  filters: Filters;
 }
 
-export const MetaRow: FC<MetaRowProps> = ({ meta, setPage }) => (
+export const MetaRow: FC<MetaRowProps> = ({ meta, setPage, filters }) => (
   <Content>
-    <CompanyCounter>Found {meta.totalItems} companies</CompanyCounter>
+    <CompanyCounter>{meta.totalItems} companies</CompanyCounter>
     <SelectContainer>
-      <SaveButton>
-        <SaveIcon />
-        <SaveTitle>Save List</SaveTitle>
-      </SaveButton>
+      <FilterRow filters={filters} id="17" />
       {meta.totalItems !== 0 && (
         <PageControlContainer>
           {+meta.currentPage !== 1 && (
@@ -40,7 +38,8 @@ export const MetaRow: FC<MetaRowProps> = ({ meta, setPage }) => (
           )}
           <PageCounter>
             {+meta.itemsPerPage * (+meta.currentPage - 1) + 1} -{' '}
-            {+meta.itemsPerPage * +meta.currentPage} of {meta.totalItems}
+            {+meta.itemsPerPage * (+meta.currentPage - 1) + +meta.itemCount} of{' '}
+            {meta.totalItems}
           </PageCounter>
           {+meta.currentPage < meta.totalPages && (
             <NextPageButton onClick={() => setPage(+meta.currentPage + 1)}>
