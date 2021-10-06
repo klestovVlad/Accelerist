@@ -6,7 +6,7 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 export const ResetPassword: FC = () => {
-  const [seconds, setSeconds] = useState(-1);
+  const [seconds, setSeconds] = useState(0);
   const history = useHistory();
   const intervalRef = useRef<number | null>(null);
 
@@ -21,7 +21,7 @@ export const ResetPassword: FC = () => {
         intervalRef.current = null;
       }
     };
-  }, []);
+  }, [seconds]);
 
   useEffect(() => {
     if (seconds <= 0 && intervalRef.current) {
@@ -33,8 +33,9 @@ export const ResetPassword: FC = () => {
   return (
     <Content>
       <H1>Password Reset</H1>
-      {seconds === -1 && <InputForm setSeconds={setSeconds} />}
-      {seconds !== -1 && (
+      {seconds <= 0 ? (
+        <InputForm setSeconds={setSeconds} />
+      ) : (
         <ResentForm seconds={seconds} setSeconds={setSeconds} />
       )}
       <ButtonContainer>
