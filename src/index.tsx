@@ -1,7 +1,10 @@
+import '../src/style/style-sheets/fonts/GothamRnd-Medium/style.css';
+import '../src/style/style-sheets/fonts/SFPro/style.css';
+import '../src/style/style-sheets/fonts/rubik-v14-latin/style.css';
+import '../src/style/style-sheets/reset.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './store/root-reducer';
-import './style/style-sheets/common.scss';
 import { theme } from './style/theme/theme';
 import React from 'react';
 import ReactDOM from 'react-dom';
