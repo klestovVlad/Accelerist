@@ -1,9 +1,11 @@
+import { routes } from '../../../../../../routes/routes';
 import { Filters } from '../../../../../../store/saved-list';
 import { FilterRow } from './filter-row/filter-row';
 import { Footer } from './footer/footer';
 import { PeculiaritiesRow } from './peculiarities-row/peculiarities-row';
 import { Container, Header, Underline } from './styles';
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 interface CardProps {
   data: {
@@ -37,7 +39,10 @@ export const Card: FC<CardProps> = ({ data }) => {
   const cardName = data.name ? data.name : 'No Name';
   return (
     <Container>
-      <Header href={`/prospects/${data.id}`}>{cardName}</Header>
+      <Link to={`${routes.private.prospects}/${data.id}`}>
+        <Header>{cardName}</Header>
+      </Link>
+
       <Underline />
       <FilterRow filters={data.filters} id={data.id} />
       <PeculiaritiesRow prospectsAvailable={data.prospectsAvailable} />

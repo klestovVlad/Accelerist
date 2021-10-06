@@ -22,7 +22,7 @@ export const CheckboxLabel = styled.div`
   color: ${(props) => props.theme.colors.black};
 `;
 
-export const A = styled.a`
+export const LinkStyle = styled.span`
   font-family: 'Rubik';
   font-style: normal;
   font-weight: normal;

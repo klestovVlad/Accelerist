@@ -8,7 +8,7 @@ export const Container = styled.section`
   width: 536px;
 `;
 
-export const Header = styled.a`
+export const Header = styled.span`
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 500;

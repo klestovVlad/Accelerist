@@ -1,11 +1,18 @@
-import { A, Bold, Container, P } from './styles';
+import { LinkStyle, Bold, Container, P } from './styles';
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 export const TermsOfServices: FC = () => (
   <Container>
     <P>
       I agree that by clicking <Bold>“Registration”</Bold> I accept the{' '}
-      <A href="/">Terms Of Service</A> and <A href="/">Privacy Policy</A>
+      <Link to="/">
+        <LinkStyle>Terms Of Service</LinkStyle>
+      </Link>
+      and{' '}
+      <Link to="/">
+        <LinkStyle>Privacy Policy</LinkStyle>
+      </Link>
     </P>
   </Container>
 );

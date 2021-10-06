@@ -1,7 +1,14 @@
+import { routes } from '../../../../../../routes/routes';
 import { Checkbox } from '../../../../../../ui/check-box/check-box';
-import { A, CheckboxContainer, CheckboxLabel, Container } from './styles';
+import {
+  CheckboxContainer,
+  CheckboxLabel,
+  Container,
+  LinkStyle,
+} from './styles';
 import React, { FC } from 'react';
 import { Field } from 'react-final-form';
+import { Link } from 'react-router-dom';
 
 export const PasswordOptions: FC = () => (
   <Container>
@@ -10,6 +17,8 @@ export const PasswordOptions: FC = () => (
       <CheckboxLabel>Remember</CheckboxLabel>
     </CheckboxContainer>
 
-    <A href="/reset">Forgot Password?</A>
+    <Link to={routes.public.resetPassword}>
+      <LinkStyle>Reset password</LinkStyle>
+    </Link>
   </Container>
 );

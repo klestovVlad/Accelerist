@@ -22,7 +22,7 @@ export const H2 = styled.h2`
   margin-left: 16px;
 `;
 
-export const Link = styled.a`
+export const LinkStyle = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;

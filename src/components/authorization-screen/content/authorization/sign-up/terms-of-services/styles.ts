@@ -17,7 +17,7 @@ export const P = styled.p`
   color: ${(props) => props.theme.colors.dark_gray};
 `;
 
-export const A = styled.a`
+export const LinkStyle = styled.span`
   cursor: pointer;
   color: ${(props) => props.theme.colors.black};
   text-decoration: none;

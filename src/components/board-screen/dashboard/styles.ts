@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const BackgroundContainer = styled.div`
   width: 100%;
+  max-width: 1320px;
+  margin: 0px auto;
+  padding: 32px 20px 20px;
 `;
 
 export const Row = styled.div`
@@ -23,13 +26,11 @@ export const Content = styled.div`
 `;
 
 export const SectionsContainer = styled.div`
-  padding: 0px 284px 25px 60px;
-  margin: 0 auto;
-  width: 1440px;
+  max-width: 1096px;
+  width: 100%;
 
   @media (max-width: ${(props) => props.theme.mediaQuery.large}) {
     min-width: 100%;
-    padding: 0px 60px 25px 60px;
     width: auto;
   }
 `;

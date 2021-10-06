@@ -4,7 +4,7 @@ export const Content = styled.div`
   margin-left: 16px;
 `;
 
-export const Header = styled.a`
+export const Header = styled.p`
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;

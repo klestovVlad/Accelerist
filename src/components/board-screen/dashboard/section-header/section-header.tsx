@@ -1,5 +1,6 @@
 import { Content, DetailButton, Header } from './styles';
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 interface SectionHeaderProps {
   text: string;
@@ -14,6 +15,10 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
 }) => (
   <Content>
     <Header>{text}</Header>
-    {isButtonShow ? <DetailButton href={href}>see more</DetailButton> : null}
+    {isButtonShow ? (
+      <Link to={href ? href : '/'}>
+        <DetailButton>see more</DetailButton>
+      </Link>
+    ) : null}
   </Content>
 );

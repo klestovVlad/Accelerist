@@ -1,12 +1,15 @@
 import { Logo } from '../../../ui/icons/logo';
-import { Container, H2, Link } from './styles';
+import { Container, H2, LinkStyle } from './styles';
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header: FC = () => (
   <Container>
-    <Link href="/">
-      <Logo />
-      <H2>ACCELERIST</H2>
+    <Link to={'/'}>
+      <LinkStyle>
+        <Logo />
+        <H2>ACCELERIST</H2>
+      </LinkStyle>
     </Link>
   </Container>
 );

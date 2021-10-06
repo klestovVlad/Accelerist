@@ -1,3 +1,4 @@
+import { routes } from '../../../../../routes/routes';
 import { likeCompanyAction } from '../../../../../store/companies';
 import { Button } from '../../../../../ui/buttons/button';
 import { Like } from '../../../../../ui/buttons/like/like';
@@ -16,6 +17,7 @@ import {
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 interface InfoProps {
   name: string;
@@ -46,7 +48,10 @@ export const Info: FC<InfoProps> = ({
   const dispatch = useDispatch();
   return (
     <Content>
-      <Header href={`/company/${id}`}>{name}</Header>
+      <Link to={`${routes.private.company}/${id}`}>
+        <Header>{name}</Header>
+      </Link>
+
       <AddressInfo>
         {street} {city} {state} {country} {zipCode}
       </AddressInfo>
@@ -67,7 +72,6 @@ export const Info: FC<InfoProps> = ({
           </CellInfo>
         </TableCell>
       </Table>
-
       <ButtonRow>
         <Like
           isActive={like}

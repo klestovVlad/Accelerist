@@ -16,7 +16,7 @@ export const Container = styled.div`
   margin-top: 32px;
 `;
 
-export const SvgContainer = styled.a`
+export const SvgContainer = styled.div`
   cursor: pointer;
   margin-top: 24px;
 `;

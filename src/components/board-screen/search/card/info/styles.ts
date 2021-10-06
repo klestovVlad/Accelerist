@@ -8,7 +8,7 @@ export const Content = styled.div`
   justify-content: space-around;
 `;
 
-export const Header = styled.a`
+export const Header = styled.p`
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;

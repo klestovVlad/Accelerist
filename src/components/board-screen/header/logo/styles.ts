@@ -1,7 +1,7 @@
 import { ReactComponent as Logo } from '../../../../ui/icons/svg/logo-board.svg';
 import styled from 'styled-components';
 
-export const Container = styled.a`
+export const Container = styled.div`
   display: flex;
   height: 80px;
   background-color: ${(props) => props.theme.colors.secondary_blue2};
