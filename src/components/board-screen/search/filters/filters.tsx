@@ -20,7 +20,7 @@ export const Filters: FC<FilterProps> = ({
   setFilterQuery,
 }) => {
   const [tabNum, setTabNum] = useState(0);
-  const [rangeValue, setRangeValue] = useState<Array<number>>([0, 50]);
+  const [rangeValue, setRangeValue] = useState<Array<number>>([0, 999]);
   const [gender, setGender] = useState(2);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

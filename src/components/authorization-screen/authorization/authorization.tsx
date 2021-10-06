@@ -1,6 +1,6 @@
 import { routes } from '../../../routes/routes';
-import { SignIn } from './sign-in/sign-in';
-import { SignUp } from './sign-up/sign-up';
+import { SignIn } from '../../../pages/public/sign-in/sign-in';
+import { SignUp } from '../../../pages/public/sign-up/sign-up';
 import React, { FC } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
