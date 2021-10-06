@@ -1,7 +1,7 @@
 import { getCompanyById } from '../../../store/companies/selectors';
-import { Topic } from '../topic/topic';
-import { CompanyMainContent } from './company-main-content/company-main-content';
-import { Header } from './header/header';
+import { Topic } from '../../../components/board-screen/topic/topic';
+import { CompanyMainContent } from '../../../components/board-screen/corporate-profile/company-main-content/company-main-content';
+import { Header } from '../../../components/board-screen/corporate-profile/header/header';
 import {
   Content,
   Container,

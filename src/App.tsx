@@ -1,6 +1,6 @@
 import './App.css';
-import { AuthorizationScreen } from './pages/authorization-screen/authorization-screen';
-import { BoardScreen } from './pages/board-screen/board-screen';
+import { AuthorizationScreen } from './layout/authorization-screen/authorization-screen';
+import { BoardScreen } from './layout/board-screen/board-screen';
 import { UserSelector } from './store/user/index';
 import React from 'react';
 import { useSelector } from 'react-redux';

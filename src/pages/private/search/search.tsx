@@ -1,3 +1,7 @@
+import { Card } from '../../../components/board-screen/search/card/card';
+import { Filters } from '../../../components/board-screen/search/filters/filters';
+import { MetaRow } from '../../../components/board-screen/search/meta-row/meta-row';
+import { Topic } from '../../../components/board-screen/topic/topic';
 import { isObjectsEqual } from '../../../functions/is-objects-equal';
 import {
   CompaniesSelector,
@@ -6,10 +10,6 @@ import {
 import { FilterRequest } from '../../../store/companies/state';
 import { createSavedList } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
-import { Topic } from '../topic/topic';
-import { Card } from './card/card';
-import { Filters } from './filters/filters';
-import { MetaRow } from './meta-row/meta-row';
 import { Body, Content, CardContainer } from './styles';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -88,8 +88,9 @@ export const Search: FC = () => {
         setSearchField={setSearchField}
         onSearchClick={startSearch}
       />
-      {loadState && <LoadPopup />}
-      {!loadState && (
+      {loadState ? (
+        <LoadPopup />
+      ) : (
         <Body>
           {showFilter && (
             <Filters

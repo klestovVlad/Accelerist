@@ -1,5 +1,5 @@
 import { ReactComponent as Loading } from '../icons/svg/loading-button.svg';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface StyledButtonProps {
   colorScheme: 'blue' | 'darkTransparent' | 'white' | 'blueLine' | 'redText';
@@ -19,9 +19,9 @@ export enum BUTTON_COLOR_SCHEME {
 const BACKGROUND_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<StyledButtonProps>`
     background-color: ${(props) =>
-      props.validate
-        ? props.theme.colors.blue
-        : props.theme.colors.light_blue2};
+      !props.validate
+        ? props.theme.colors.light_blue2
+        : props.theme.colors.blue};
     padding: 12px 24px;
     font-size: 16px;
   `,
@@ -87,16 +87,18 @@ export const LoadingIconContainer = styled.div`
   height: 22px;
 `;
 
-export const LoadingIcon = styled(Loading)`
-  @keyframes rotate-center {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
   }
-  animation: rotate-center 0.6s linear infinite both;
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const LoadingIcon = styled(Loading)`
+  animation: ${rotate} 0.6s linear infinite both;
 `;
 
 interface ButtonTextProps {

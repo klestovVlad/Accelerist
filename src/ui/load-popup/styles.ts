@@ -1,5 +1,5 @@
 import { ReactComponent as LoadSvg } from '../icons/svg/load-icon-big.svg';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Content = styled.div`
   display: flex;
@@ -12,14 +12,16 @@ export const Content = styled.div`
 
 export const LoadIconContainer = styled.div``;
 
-export const LoadIcon = styled(LoadSvg)`
-  @keyframes rotate-center {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
   }
-  animation: rotate-center 0.6s linear infinite both;
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const LoadIcon = styled(LoadSvg)`
+  animation: ${rotate} 0.6s linear infinite both;
 `;

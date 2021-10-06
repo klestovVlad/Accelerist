@@ -32,7 +32,7 @@ export const Link = styled(NavLink)`
   color: ${(props) => props.theme.colors.black};
   text-decoration: none;
   margin-left: 28px;
-  &::active {
+  &:active {
     text-decoration: underline;
   }
 

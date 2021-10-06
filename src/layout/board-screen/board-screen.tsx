@@ -1,9 +1,9 @@
-import { CompanyFavorites } from '../../components/board-screen/company-favorites/company-favorites';
-import { CorporateProfile } from '../../components/board-screen/corporate-profile/corporate-profile';
-import { Dashboard } from '../../components/board-screen/dashboard/dashboard';
+import { CompanyFavorites } from '../../pages/private/company-favorites/company-favorites';
+import { CorporateProfile } from '../../pages/private/company/company';
+import { Dashboard } from '../../pages/private/dashboard/dashboard';
 import { Header } from '../../components/board-screen/header/header';
-import { Prospects } from '../../components/board-screen/prospects/prospects';
-import { Search } from '../../components/board-screen/search/search';
+import { Prospects } from '../../pages/private/prospects/prospects';
+import { Search } from '../../pages/private/search/search';
 import { routes } from '../../routes/routes';
 import { Container } from './styled';
 import React, { FC } from 'react';

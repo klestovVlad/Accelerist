@@ -1,5 +1,5 @@
-import { routes } from '../../../../../../routes/routes';
-import { Checkbox } from '../../../../../../ui/check-box/check-box';
+import { routes } from '../../../../../routes/routes';
+import { Checkbox } from '../../../../../ui/check-box/check-box';
 import {
   CheckboxContainer,
   CheckboxLabel,

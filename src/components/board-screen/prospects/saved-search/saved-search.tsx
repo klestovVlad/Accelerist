@@ -71,30 +71,33 @@ export const SavedSearch: FC<SavedSearchProps> = ({ id }) => {
         listId={id}
         filters={Listitem.filters}
       />
-      {loadState && <LoadPopup />}
-      {!loadState && (
-        <Body>
-          <MetaRow meta={meta} setPage={setPage} filters={Listitem.filters} />
-          <BackgroundContainer>
-            <CardContainer>
-              {companies.map((item) => (
-                <Card
-                  key={item.id}
-                  name={item.name}
-                  phone={item.phone}
-                  street={item.street}
-                  city={item.city}
-                  state={item.state}
-                  country={item.country}
-                  zipCode={item.zipCode}
-                  revenue={item.revenue}
-                  id={item.id}
-                  like={item.like}
-                />
-              ))}
-            </CardContainer>
-          </BackgroundContainer>
-        </Body>
+      {loadState ? (
+        <LoadPopup />
+      ) : (
+        !loadState && (
+          <Body>
+            <MetaRow meta={meta} setPage={setPage} filters={Listitem.filters} />
+            <BackgroundContainer>
+              <CardContainer>
+                {companies.map((item) => (
+                  <Card
+                    key={item.id}
+                    name={item.name}
+                    phone={item.phone}
+                    street={item.street}
+                    city={item.city}
+                    state={item.state}
+                    country={item.country}
+                    zipCode={item.zipCode}
+                    revenue={item.revenue}
+                    id={item.id}
+                    like={item.like}
+                  />
+                ))}
+              </CardContainer>
+            </BackgroundContainer>
+          </Body>
+        )
       )}
     </Content>
   );

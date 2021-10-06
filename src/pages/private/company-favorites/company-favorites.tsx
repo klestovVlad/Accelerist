@@ -1,11 +1,11 @@
+import { Card } from '../../../components/board-screen/company-favorites/card/card';
+import { MetaRow } from '../../../components/board-screen/company-favorites/meta-row/meta-row';
+import { Topic } from '../../../components/board-screen/topic/topic';
 import {
   CompaniesSelector,
   getFavoritesAction,
 } from '../../../store/companies/index';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
-import { Topic } from '../topic/topic';
-import { Card } from './card/card';
-import { MetaRow } from './meta-row/meta-row';
 import { Content, Body, CardContainer } from './styles';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,13 +20,14 @@ export const CompanyFavorites: FC = () => {
   const favoriteListItems = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
-  
+
   return (
     <Content>
       <Topic header="Favorites" />
 
-      {loadState && <LoadPopup />}
-      {!loadState && (
+      {loadState ? (
+        <LoadPopup />
+      ) : (
         <Body>
           <MetaRow
             totalItems={meta.totalItems}

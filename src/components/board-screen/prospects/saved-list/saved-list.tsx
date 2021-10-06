@@ -37,8 +37,9 @@ export const SavedList: FC = () => {
   const SavedListItems = useSelector(SavedListSelector.selectItems);
   return (
     <Content>
-      {loadState && <LoadPopup />}
-      {!loadState && (
+      {loadState ? (
+        <LoadPopup />
+      ) : (
         <Container>
           <BackgroundContainer>
             <MetaRow

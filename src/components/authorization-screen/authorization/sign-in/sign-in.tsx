@@ -1,12 +1,10 @@
-import {
-  validateEmail,
-  validateInput,
-} from '../../../../../functions/validation';
-import { postSignInAction } from '../../../../../store/user/actions';
-import { UserSelector } from '../../../../../store/user/index';
-import { Button } from '../../../../../ui/buttons/button';
-import { LinkedIn } from '../../../../../ui/buttons/linkedIn/linkedIn';
-import { InputField } from '../../../../../ui/form/input-field';
+import { validateEmail, validateInput } from '../../../../functions/validation';
+import { postSignInAction } from '../../../../store/user/actions';
+import { UserSelector } from '../../../../store/user/index';
+import { Button } from '../../../../ui/buttons/button';
+import { LinkedIn } from '../../../../ui/buttons/linkedIn/linkedIn';
+import { InputField } from '../../../../ui/form/input-field';
+import { Tabs } from '../tabs/tabs';
 import { PasswordOptions } from './password-options/password-options';
 import { Container } from './styles';
 import React, { FC } from 'react';
@@ -27,8 +25,9 @@ export const SignIn: FC = () => {
   return (
     <Form
       onSubmit={onSubmitForm}
-      render={({ values, handleSubmit }) => (
+      render={({ form, values, handleSubmit }) => (
         <Container>
+          <Tabs activeTub={2} />
           <Field
             name="email"
             label="Email"
@@ -56,10 +55,7 @@ export const SignIn: FC = () => {
             onClick={handleSubmit}
             colorScheme="blue"
             isLoading={loadState}
-            validate={
-              validateEmail(values.email) === undefined &&
-              validateInput(values.password) === undefined
-            }
+            validate={!form.getState().invalid}
           />
           <LinkedIn />
         </Container>

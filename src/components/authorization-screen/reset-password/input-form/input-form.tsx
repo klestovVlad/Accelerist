@@ -1,7 +1,7 @@
-import { validateEmail } from '../../../../../functions/validation';
-import { sendChangePasswordEmail } from '../../../../../store/user/';
-import { Button } from '../../../../../ui/buttons/button';
-import { InputField } from '../../../../../ui/form/input-field';
+import { validateEmail } from '../../../../functions/validation';
+import { sendChangePasswordEmail } from '../../../../store/user/';
+import { Button } from '../../../../ui/buttons/button';
+import { InputField } from '../../../../ui/form/input-field';
 import { ButtonContainer, Container, P } from './styles';
 import React, { Dispatch, FC, SetStateAction } from 'react';
 import { Field, Form, FormProps } from 'react-final-form';
@@ -20,7 +20,7 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
   return (
     <Form
       onSubmit={onSubmitForm}
-      render={({ values, handleSubmit }) => (
+      render={({ form, values, handleSubmit }) => (
         <Container>
           <P>
             Enter your email to receive instructions on how to reset your
@@ -42,7 +42,7 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
               onClick={handleSubmit}
               colorScheme="blue"
               isLoading={false}
-              validate={validateEmail(values.email) === undefined}
+              validate={!form.getState().invalid}
             />
           </ButtonContainer>
         </Container>

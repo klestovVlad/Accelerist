@@ -1,5 +1,5 @@
-import { SavedList } from './saved-list/saved-list';
-import { SavedSearch } from './saved-search/saved-search';
+import { SavedList } from '../../../components/board-screen/prospects/saved-list/saved-list';
+import { SavedSearch } from '../../../components/board-screen/prospects/saved-search/saved-search';
 import React, { FC } from 'react';
 import { useLocation } from 'react-router';
 

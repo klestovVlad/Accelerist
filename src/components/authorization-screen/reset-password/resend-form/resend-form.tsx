@@ -1,4 +1,4 @@
-import { Button } from '../../../../../ui/buttons/button';
+import { Button } from '../../../../ui/buttons/button';
 import { ButtonContainer, Content, P } from './styles';
 import React, { Dispatch, FC, SetStateAction } from 'react';
 
