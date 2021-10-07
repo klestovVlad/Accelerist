@@ -1,3 +1,4 @@
+import { CheckIfNameIsEmpty } from '../../../../../../functions/check-if-name-is-empty';
 import { ReturnFormattedDate } from '../../../../../../functions/return-formatted-date';
 import {
   getLastLoginsAction,
@@ -24,18 +25,6 @@ export const LastLogin: FC = () => {
 
   const lastLogins = useSelector(LastLoginsSelector.selectData);
 
-  const ReturnAuthorName = (
-    firstName: string | null,
-    lastName: string | null
-  ) => {
-    const firstNameResult = firstName === null ? '' : firstName;
-    const lastNameResult = lastName === null ? '' : lastName;
-    if (firstNameResult.length + lastNameResult.length === 0) {
-      return 'No Name';
-    }
-    return `${firstNameResult} ${lastNameResult}`;
-  };
-
   return (
     <Content>
       <Header>Last Login</Header>
@@ -46,7 +35,7 @@ export const LastLogin: FC = () => {
           </UserImage>
           <UserDataContainer>
             <UserName>
-              {ReturnAuthorName(item.user.firstName, item.user.lastName)}
+              {CheckIfNameIsEmpty(item.user.firstName, item.user.lastName)}
             </UserName>
             <DateOfVisit>
               {ReturnFormattedDate(item.loggedInAt ? item.loggedInAt : '')}

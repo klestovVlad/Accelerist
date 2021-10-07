@@ -1,3 +1,4 @@
+import { CheckIfNameIsEmpty } from '../../../../../../../functions/check-if-name-is-empty';
 import { ReturnFormattedDate } from '../../../../../../../functions/return-formatted-date';
 import {
   AuthorContainer,
@@ -33,22 +34,15 @@ interface FooterProps {
 }
 
 export const Footer: FC<FooterProps> = ({ lastAuthor }) => {
-  const ReturnAuthorName = () => {
-    const firstName = lastAuthor.firstName === null ? '' : lastAuthor.firstName;
-    const lastName = lastAuthor.lastName === null ? '' : lastAuthor.lastName;
-    if (firstName.length + lastName.length === 0) {
-      return 'No Name';
-    }
-    return `${firstName} ${lastName}`;
-  };
-
   return (
     <Content>
       <AuthorImage>
         <UserIcon />
       </AuthorImage>
       <AuthorContainer>
-        <AuthorName>{ReturnAuthorName()}</AuthorName>
+        <AuthorName>
+          {CheckIfNameIsEmpty(lastAuthor.firstName, lastAuthor.lastName)}
+        </AuthorName>
         <AuthorPosition>{lastAuthor.role}</AuthorPosition>
       </AuthorContainer>
       <LastActivityContainer>
