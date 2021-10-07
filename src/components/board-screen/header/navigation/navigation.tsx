@@ -1,7 +1,7 @@
 import { Container, Link, List, ListItem } from './styles';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-export const Navigation: FC = () => (
+export const Navigation: FC = memo(() => (
   <Container>
     <List>
       <ListItem>
@@ -18,4 +18,4 @@ export const Navigation: FC = () => (
       </ListItem>
     </List>
   </Container>
-);
+));

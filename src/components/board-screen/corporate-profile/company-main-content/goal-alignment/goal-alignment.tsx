@@ -1,7 +1,7 @@
 import { Content, Header, CardContainer, Card, NoDataText } from './styles';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-export const GoalAlignment: FC = () => (
+export const GoalAlignment: FC = memo(() => (
   <Content>
     <Header>SDG Goal Alignment</Header>
     <CardContainer>
@@ -10,4 +10,4 @@ export const GoalAlignment: FC = () => (
       </Card>
     </CardContainer>
   </Content>
-);
+));

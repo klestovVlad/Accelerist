@@ -6,9 +6,9 @@ import {
   PriorityCaption,
   PriorityInfo,
 } from './styles';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-export const Logo: FC = () => (
+export const Logo: FC = memo(() => (
   <Content>
     <LogoContainer>
       <CompanyLogo />
@@ -18,4 +18,4 @@ export const Logo: FC = () => (
       <PriorityInfo>4</PriorityInfo>
     </PriorityContainer>
   </Content>
-);
+));

@@ -7,9 +7,9 @@ import {
   Card,
   CardInfo,
 } from './styles';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-export const SocialImpact: FC = () => (
+export const SocialImpact: FC = memo(() => (
   <Content>
     <Header>Social Impact</Header>
     <Columns>
@@ -27,4 +27,4 @@ export const SocialImpact: FC = () => (
       </CardContainer>
     </Columns>
   </Content>
-);
+));

@@ -6,9 +6,9 @@ import {
   Content,
   Header,
 } from './styled';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-export const TopMatched: FC = () => (
+export const TopMatched: FC = memo(() => (
   <Content>
     <Header>Prospect Navigator</Header>
     <CompanyLogoContainer>
@@ -18,4 +18,4 @@ export const TopMatched: FC = () => (
       </LinkContainer>
     </CompanyLogoContainer>
   </Content>
-);
+));

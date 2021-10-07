@@ -1,8 +1,8 @@
 import { PriorityRadioButtons } from '../../../../../ui/priority-radio-buttons/priority-radio-buttons';
 import { Content, Header, P } from './styles';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-export const Priority: FC = () => (
+export const Priority: FC = memo(() => (
   <Content>
     <Header>Priority</Header>
     <P>
@@ -21,4 +21,4 @@ export const Priority: FC = () => (
       ]}
     />
   </Content>
-);
+));
