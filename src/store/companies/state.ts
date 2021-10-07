@@ -161,6 +161,7 @@ export interface CompaniesData {
 export interface FilterRequest {
   page: number;
   limit: number;
+  ethnicities?: string[];
   income?:
     | (
         | '$100K - $124K'

@@ -57,7 +57,8 @@ export const Filters: FC<FilterProps> = ({
     setFilterQuery({
       page: 1,
       limit: 12,
-      income: values.Income,
+      ethnicities: undefined,
+      income: undefined,
       ageRanges: undefined,
       gender: genderList[gender],
       q: searchField,

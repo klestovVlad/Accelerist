@@ -20,6 +20,7 @@ interface MetaRowProps {
     itemsPerPage: string;
     currentPage: string;
     totalPages: number;
+    itemCount: number;
   };
   setPage: Dispatch<SetStateAction<number>>;
   saveList?(): void;
@@ -40,6 +41,7 @@ export const MetaRow: FC<MetaRowProps> = ({
         : null
       : setShowModal(true);
   };
+
   return (
     <Content>
       {showModal && <ModalWindow setShowModal={setShowModal} />}
@@ -60,7 +62,8 @@ export const MetaRow: FC<MetaRowProps> = ({
             )}
             <PageCounter>
               {+meta.itemsPerPage * (+meta.currentPage - 1) + 1} -{' '}
-              {+meta.itemsPerPage * +meta.currentPage} of {meta.totalItems}
+              {+meta.itemsPerPage * (+meta.currentPage - 1) + meta.itemCount} of{' '}
+              {meta.totalItems}
             </PageCounter>
             {+meta.currentPage < meta.totalPages && (
               <NextPageButton onClick={() => setPage(+meta.currentPage + 1)}>

@@ -20,7 +20,6 @@ export const CompanyFavorites: FC = () => {
   const favoriteListItems = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
-
   return (
     <Content>
       <Topic header="Favorites" />

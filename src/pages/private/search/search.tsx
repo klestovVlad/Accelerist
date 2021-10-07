@@ -56,7 +56,7 @@ export const Search: FC = () => {
       )
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, filterQuery, page, searchField]);
+  }, [dispatch, filterQuery, page]);
 
   useEffect(() => {
     startSearch();
