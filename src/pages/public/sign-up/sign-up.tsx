@@ -26,7 +26,7 @@ export const SignUp: FC = () => {
   return (
     <Form
       onSubmit={onSubmitForm}
-      render={({ form, values, handleSubmit }) => (
+      render={({ valid, values, handleSubmit }) => (
         <Container>
           <Tabs activeTub={1} />
           <Field
@@ -56,7 +56,7 @@ export const SignUp: FC = () => {
             onClick={handleSubmit}
             colorScheme="blue"
             isLoading={loadState}
-            validate={!form.getState().invalid}
+            validate={valid}
           >
             apply
           </Button>

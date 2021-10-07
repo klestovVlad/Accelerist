@@ -20,7 +20,7 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
   return (
     <Form
       onSubmit={onSubmitForm}
-      render={({ form, values, handleSubmit }) => (
+      render={({ valid, values, handleSubmit }) => (
         <Container>
           <P>
             Enter your email to receive instructions on how to reset your
@@ -42,7 +42,7 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
               onClick={handleSubmit}
               colorScheme="blue"
               isLoading={false}
-              validate={!form.getState().invalid}
+              validate={valid}
             />
           </ButtonContainer>
         </Container>

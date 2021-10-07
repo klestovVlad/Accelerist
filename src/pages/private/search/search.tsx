@@ -2,7 +2,6 @@ import { Card } from '../../../components/board-screen/search/card/card';
 import { Filters } from '../../../components/board-screen/search/filters/filters';
 import { MetaRow } from '../../../components/board-screen/search/meta-row/meta-row';
 import { Topic } from '../../../components/board-screen/topic/topic';
-import { isObjectsEqual } from '../../../functions/is-objects-equal';
 import {
   CompaniesSelector,
   getCompaniesAction,
@@ -44,12 +43,14 @@ export const Search: FC = () => {
 
   const [permissionToSave, setPermissionToSave] = useState(false);
 
+  const equal = require('fast-deep-equal');
+
   const startSearch = useCallback(() => {
     dispatch(
       getCompaniesAction({ ...filterQuery, page: page, q: searchField })
     );
     setPermissionToSave(
-      !isObjectsEqual(
+      !equal(
         { ...filterQuery, page: page, q: searchField },
         { ...initialFilterState, page: page, q: '' }
       )
