@@ -4,24 +4,22 @@ import {
 } from '../../../../store/companies';
 import { SavedListSelector } from '../../../../store/saved-list';
 import { LoadPopup } from '../../../../ui/load-popup/load-popup';
-import { Card } from '../../search/card/card';
-import { Topic } from '../../topic/topic';
-import { MetaRow } from './meta-row/meta-row';
+import { Card } from '../../../../components/board-screen/search/card/card';
+import { Topic } from '../../../../components/board-screen/topic/topic';
+import { MetaRow } from '../../../../components/board-screen/prospects/saved-search/meta-row/meta-row';
 import { Content, Body, BackgroundContainer, CardContainer } from './styles';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router';
 
-interface SavedSearchProps {
-  id: string;
-}
-
-export const SavedSearch: FC<SavedSearchProps> = ({ id }) => {
+export const SavedSearch: FC = () => {
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
-  console.log('data', useSelector(SavedListSelector.selectItems));
+
+  const id = useLocation().pathname.replace('/prospects/', '');
+
   const Listitem = useSelector(SavedListSelector.getItemById(id));
-  console.log(Listitem);
 
   useEffect(() => {
     dispatch(

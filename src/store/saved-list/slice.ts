@@ -20,7 +20,6 @@ const savedListSlice = createSlice({
       });
     },
     createSavedList(state, { payload }: PayloadAction<ItemData>) {
-      console.log('createSavedList', payload);
       state.items.push(payload);
       document.location.href = `/prospects/${payload.id}`;
     },

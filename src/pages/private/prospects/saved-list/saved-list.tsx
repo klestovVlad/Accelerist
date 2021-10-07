@@ -4,8 +4,8 @@ import {
 } from '../../../../store/saved-list';
 import { ReactComponent as CompanyIcon } from '../../../../ui/icons/svg/company-large.svg';
 import { LoadPopup } from '../../../../ui/load-popup/load-popup';
-import { Card } from '../../dashboard/sections/prospecting-sessions/card/card';
-import { MetaRow } from './meta-row/meta-row';
+import { Card } from '../../../../components/board-screen/dashboard/sections/prospecting-sessions/card/card';
+import { MetaRow } from '../../../../components/board-screen/prospects/saved-list/meta-row/meta-row';
 import {
   Content,
   Container,

@@ -11,7 +11,7 @@ import { FilterRequest } from '../../../store/companies/state';
 import { createSavedList } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { Body, Content, CardContainer } from './styles';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 
@@ -19,6 +19,7 @@ export const Search: FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+
   const initialFilterState: FilterRequest = {
     page: 1,
     limit: 12,
@@ -43,7 +44,7 @@ export const Search: FC = () => {
 
   const [permissionToSave, setPermissionToSave] = useState(false);
 
-  const startSearch = () => {
+  const startSearch = useCallback(() => {
     dispatch(
       getCompaniesAction({ ...filterQuery, page: page, q: searchField })
     );
@@ -53,21 +54,12 @@ export const Search: FC = () => {
         { ...initialFilterState, page: page, q: '' }
       )
     );
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, filterQuery, page, searchField]);
 
   useEffect(() => {
-    dispatch(
-      getCompaniesAction({ ...filterQuery, page: page, q: searchField })
-    );
-    setPermissionToSave(
-      !isObjectsEqual(
-        { ...filterQuery, page: page, q: searchField },
-        { ...initialFilterState, page: page, q: '' }
-      )
-    );
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, filterQuery, page]);
+    startSearch();
+  }, [startSearch]);
 
   const Companies = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);

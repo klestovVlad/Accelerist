@@ -61,7 +61,6 @@ export function* updateSavedList({ payload }: PayloadAction<UpdateSavedList>) {
 
 export function* deleteSavedList({ payload }: PayloadAction<string>) {
   try {
-    console.log(payload);
     yield put(SavedListAction.setFavoritesLoading(true));
     yield call(deleteSavedListQuery, payload);
     yield put(SavedListAction.deleteSavedList(payload));
@@ -75,7 +74,6 @@ export function* deleteSavedList({ payload }: PayloadAction<string>) {
 }
 
 export function* createSavedList({ payload }: PayloadAction<CreateSavedList>) {
-  console.log('create!');
   try {
     yield put(SavedListAction.setFavoritesLoading(true));
     const { data } = yield call(

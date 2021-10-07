@@ -25,7 +25,6 @@ export const Filters: FC<FilterProps> = ({
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmitForm = (values: any) => {
-    console.log(values);
     const demographicData: {
       'Household Income': string[];
       Ethnicity: string[];

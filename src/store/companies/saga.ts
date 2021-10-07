@@ -59,7 +59,6 @@ export function* getCompanies({ payload }: PayloadAction<FilterRequest>) {
 }
 
 export function* likeCompany({ payload }: PayloadAction<LikeCompanyRequest>) {
-  console.log(payload);
   try {
     if (payload.like) {
       yield call(dislikeCompanyQuery, payload.id);
