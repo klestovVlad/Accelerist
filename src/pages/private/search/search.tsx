@@ -56,11 +56,12 @@ export const Search: FC = () => {
       )
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, filterQuery, page]);
+  }, [dispatch, filterQuery, page, searchField]);
 
   useEffect(() => {
     startSearch();
-  }, [startSearch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, filterQuery, page]);
 
   const Companies = useSelector(CompaniesSelector.selectItems);
   const meta = useSelector(CompaniesSelector.selectMeta);
