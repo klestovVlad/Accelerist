@@ -1,18 +1,17 @@
+import equal from 'fast-deep-equal';
+import { FC, useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router';
+
 import { Card } from '../../../components/board-screen/search/card/card';
 import { Filters } from '../../../components/board-screen/search/filters/filters';
 import { MetaRow } from '../../../components/board-screen/search/meta-row/meta-row';
 import { Topic } from '../../../components/board-screen/topic/topic';
-import {
-  CompaniesSelector,
-  getCompaniesAction,
-} from '../../../store/companies';
+import { CompaniesSelector, getCompaniesAction } from '../../../store/companies';
 import { FilterRequest } from '../../../store/companies/state';
 import { createSavedList } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
-import { Body, Content, CardContainer } from './styles';
-import React, { FC, useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
+import { Body, CardContainer, Content } from './styles';
 
 export const Search: FC = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -35,25 +34,20 @@ export const Search: FC = () => {
     revenueMin: undefined,
     revenueMax: undefined,
   };
-  const [filterQuery, setFilterQuery] =
-    useState<FilterRequest>(initialFilterState);
+  const [filterQuery, setFilterQuery] = useState<FilterRequest>(initialFilterState);
 
   const initialQuery = useLocation().search.replace('?q=', '');
   const [searchField, setSearchField] = useState(initialQuery);
 
   const [permissionToSave, setPermissionToSave] = useState(false);
 
-  const equal = require('fast-deep-equal');
-
   const startSearch = useCallback(() => {
-    dispatch(
-      getCompaniesAction({ ...filterQuery, page: page, q: searchField })
-    );
+    dispatch(getCompaniesAction({ ...filterQuery, page: page, q: searchField }));
     setPermissionToSave(
       !equal(
         { ...filterQuery, page: page, q: searchField },
-        { ...initialFilterState, page: page, q: '' }
-      )
+        { ...initialFilterState, page: page, q: '' },
+      ),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, filterQuery, page, searchField]);

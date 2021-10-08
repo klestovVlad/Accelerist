@@ -1,14 +1,12 @@
+import { FC, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Card } from '../../../components/board-screen/company-favorites/card/card';
 import { MetaRow } from '../../../components/board-screen/company-favorites/meta-row/meta-row';
 import { Topic } from '../../../components/board-screen/topic/topic';
-import {
-  CompaniesSelector,
-  getFavoritesAction,
-} from '../../../store/companies/index';
+import { CompaniesSelector, getFavoritesAction } from '../../../store/companies/index';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
-import { Content, Body, CardContainer } from './styles';
-import React, { FC, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { Body, CardContainer, Content } from './styles';
 
 export const CompanyFavorites: FC = () => {
   const dispatch = useDispatch();

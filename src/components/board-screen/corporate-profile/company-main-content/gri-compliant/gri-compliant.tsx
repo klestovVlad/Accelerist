@@ -1,5 +1,6 @@
+import { FC, memo } from 'react';
+
 import { Content, Header, Text } from './styles';
-import React, { FC, memo } from 'react';
 
 export const GriCompliant: FC = memo(() => (
   <Content>

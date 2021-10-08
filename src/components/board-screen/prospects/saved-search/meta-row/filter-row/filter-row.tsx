@@ -1,6 +1,7 @@
+import { FC } from 'react';
+
 import { Filters } from '../../../../../../store/saved-list';
 import { Content, FilterItem, FilterItemsContainer, Header } from './styles';
-import React, { FC } from 'react';
 
 interface FilterRowProps {
   filters: Filters;

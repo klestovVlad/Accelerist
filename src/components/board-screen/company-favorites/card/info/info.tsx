@@ -1,23 +1,24 @@
+import { FC } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
+
 import { routes } from '../../../../../routes/routes';
 import { deleteFromFavoritesAction } from '../../../../../store/companies';
 import { Button } from '../../../../../ui/buttons/button';
 import { Like } from '../../../../../ui/buttons/like/like';
 import {
+  AddressInfo,
+  ButtonContainer,
+  ButtonRow,
+  CellInfo,
+  CellTitle,
   Content,
   Header,
-  AddressInfo,
   PhoneInfo,
   Table,
   TableCell,
-  CellTitle,
-  CellInfo,
-  ButtonRow,
-  ButtonContainer,
 } from './styles';
-import React, { FC } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
 
 interface InfoProps {
   name: string;
@@ -73,10 +74,7 @@ export const Info: FC<InfoProps> = ({
       </Table>
 
       <ButtonRow>
-        <Like
-          isActive={like}
-          onClicK={() => dispatch(deleteFromFavoritesAction(id))}
-        />
+        <Like isActive={like} onClicK={() => dispatch(deleteFromFavoritesAction(id))} />
         <ButtonContainer>
           <Button
             label="Profile"

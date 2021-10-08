@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import { SectionHeader } from '../../section-header/section-header';
 import {
   Card,
@@ -8,7 +10,6 @@ import {
   Content,
   Image,
 } from './styled';
-import React, { FC } from 'react';
 
 export const ProspectNavigator: FC = () => (
   <Content>
@@ -18,8 +19,7 @@ export const ProspectNavigator: FC = () => (
         <Image />
         <CardHeader>The Decline of Clothing Retail</CardHeader>
         <CardText>
-          The apparel industry’s appeal has been dwindling for a while: “In
-          1977, clothing{' '}
+          The apparel industry’s appeal has been dwindling for a while: “In 1977, clothing{' '}
         </CardText>
         <CardDate>2 Sep 2020, 13:23</CardDate>
       </Card>
@@ -28,8 +28,7 @@ export const ProspectNavigator: FC = () => (
         <Image />
         <CardHeader>The Decline of Clothing Retail</CardHeader>
         <CardText>
-          The apparel industry’s appeal has been dwindling for a while: “In
-          1977, clothing{' '}
+          The apparel industry’s appeal has been dwindling for a while: “In 1977, clothing{' '}
         </CardText>
         <CardDate>2 Sep 2020, 13:23</CardDate>
       </Card>
@@ -38,8 +37,7 @@ export const ProspectNavigator: FC = () => (
         <Image />
         <CardHeader>The Decline of Clothing Retail</CardHeader>
         <CardText>
-          The apparel industry’s appeal has been dwindling for a while: “In
-          1977, clothing{' '}
+          The apparel industry’s appeal has been dwindling for a while: “In 1977, clothing{' '}
         </CardText>
         <CardDate>2 Sep 2020, 13:23</CardDate>
       </Card>
@@ -48,8 +46,7 @@ export const ProspectNavigator: FC = () => (
         <Image />
         <CardHeader>The Decline of Clothing Retail</CardHeader>
         <CardText>
-          The apparel industry’s appeal has been dwindling for a while: “In
-          1977, clothing{' '}
+          The apparel industry’s appeal has been dwindling for a while: “In 1977, clothing{' '}
         </CardText>
         <CardDate>2 Sep 2020, 13:23</CardDate>
       </Card>

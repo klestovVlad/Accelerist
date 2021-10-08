@@ -20,9 +20,7 @@ export const Selection = styled.div<SelectionProps>`
   position: absolute;
   display: block;
   width: calc(100% / ${(props) => props.arrLength} - 7px);
-  left: calc(
-    100% * (${(props) => props.selectedNum}) / ${(props) => props.arrLength}
-  );
+  left: calc(100% * (${(props) => props.selectedNum}) / ${(props) => props.arrLength});
   height: calc(100% - 4px);
   background-color: ${(props) => props.theme.colors.secondary_blue};
   transition: all 0.5s;

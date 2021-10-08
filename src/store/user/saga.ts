@@ -1,9 +1,10 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { UserActionTypes } from './action-types';
 import { signInQuery, signUpQuery } from './axios';
 import { UserAction } from './slice';
 import { SignRequest } from './state';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { call, put, takeLatest } from 'redux-saga/effects';
 
 export function* signIn({ payload }: PayloadAction<SignRequest>) {
   try {
@@ -33,7 +34,7 @@ export function* signUp({ payload }: PayloadAction<SignRequest>) {
   }
 }
 
-export function* sendChangePasswordEmail({ payload }: PayloadAction<string>) {
+export function* sendChangePasswordEmail() {
   try {
     yield put(UserAction.setSignLoading(true));
   } catch (e) {
@@ -48,8 +49,5 @@ export function* sendChangePasswordEmail({ payload }: PayloadAction<string>) {
 export function* userWatcher() {
   yield takeLatest(UserActionTypes.SIGN_IN, signIn);
   yield takeLatest(UserActionTypes.SIGN_UP, signUp);
-  yield takeLatest(
-    UserActionTypes.SEND_CHANGE_PASSWORD_EMAIL,
-    sendChangePasswordEmail
-  );
+  yield takeLatest(UserActionTypes.SEND_CHANGE_PASSWORD_EMAIL, sendChangePasswordEmail);
 }

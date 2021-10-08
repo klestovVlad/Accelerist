@@ -1,5 +1,6 @@
+import { FC } from 'react';
+
 import { Path } from './styles';
-import React, { FC } from 'react';
 
 interface VerticalChevronProp {
   inverted: boolean;

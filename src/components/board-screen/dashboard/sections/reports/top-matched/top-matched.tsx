@@ -1,12 +1,7 @@
+import { FC, memo } from 'react';
+
 import { ReactComponent as LinkIcon } from '../../../../../../ui/icons/svg/go-forward.svg';
-import {
-  LinkContainer,
-  LinkText,
-  CompanyLogoContainer,
-  Content,
-  Header,
-} from './styled';
-import React, { FC, memo } from 'react';
+import { CompanyLogoContainer, Content, Header, LinkContainer, LinkText } from './styled';
 
 export const TopMatched: FC = memo(() => (
   <Content>

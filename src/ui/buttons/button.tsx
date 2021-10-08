@@ -1,12 +1,13 @@
+import { FC, SVGProps } from 'react';
+
 import {
+  ButtonContent,
   ButtonText,
+  IconContainer,
   LoadingIcon,
   LoadingIconContainer,
   StyledButton,
-  ButtonContent,
-  IconContainer,
 } from './styles';
-import React, { FC, SVGProps } from 'react';
 
 interface ButtonProps {
   label: string | undefined;

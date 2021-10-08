@@ -1,5 +1,6 @@
+import { FC, memo } from 'react';
+
 import { Container, Link, List, ListItem } from './styles';
-import React, { FC, memo } from 'react';
 
 export const Navigation: FC = memo(() => (
   <Container>

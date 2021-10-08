@@ -1,14 +1,15 @@
+import { FC, memo } from 'react';
+
 import { PriorityRadioButtons } from '../../../../../ui/priority-radio-buttons/priority-radio-buttons';
 import { Content, Header, P } from './styles';
-import React, { FC, memo } from 'react';
 
 export const Priority: FC = memo(() => (
   <Content>
     <Header>Priority</Header>
     <P>
-      Customize how important each of the following indicators are to your
-      organization, and generate your own custom lead score. On a scale 1 (
-      least important) - 10 (most important), rank each attribute bellow
+      Customize how important each of the following indicators are to your organization,
+      and generate your own custom lead score. On a scale 1 ( least important) - 10 (most
+      important), rank each attribute bellow
     </P>
     <PriorityRadioButtons
       indicatorsList={[

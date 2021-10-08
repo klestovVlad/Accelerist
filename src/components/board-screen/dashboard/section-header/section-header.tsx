@@ -1,6 +1,7 @@
-import { Content, DetailButton, Header } from './styles';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Content, DetailButton, Header } from './styles';
 
 interface SectionHeaderProps {
   text: string;
@@ -8,11 +9,7 @@ interface SectionHeaderProps {
   href?: string;
 }
 
-export const SectionHeader: FC<SectionHeaderProps> = ({
-  text,
-  isButtonShow,
-  href,
-}) => (
+export const SectionHeader: FC<SectionHeaderProps> = ({ text, isButtonShow, href }) => (
   <Content>
     <Header>{text}</Header>
     {isButtonShow ? (

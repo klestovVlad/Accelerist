@@ -1,5 +1,6 @@
-import img from '../../img/homedark.jpg';
 import styled from 'styled-components';
+
+import img from '../../img/homedark.jpg';
 
 export const Container = styled.div`
   background-image: url(${img});

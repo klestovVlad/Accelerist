@@ -1,5 +1,6 @@
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import { Container, Label, Span } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface BurgerButtonProps {
   state: boolean;

@@ -1,3 +1,6 @@
+import { FC, useState } from 'react';
+import { Field, FieldRenderProps } from 'react-final-form';
+
 import { cutLongText } from '../../functions/cut-long-text';
 import { Checkbox } from '../check-box/check-box';
 import { VerticalChevron } from '../icons/vertical-chevron/vertical-chevron';
@@ -13,8 +16,6 @@ import {
   ListItemName,
   ListRow,
 } from './styles';
-import React, { FC, useState } from 'react';
-import { Field, FieldRenderProps } from 'react-final-form';
 
 interface InputProps extends FieldRenderProps<string> {
   label: string;
@@ -62,9 +63,7 @@ export const Input: FC<InputProps> = ({
       />
       {predefined && <CheckedParamList>{getListValues()}</CheckedParamList>}
       <ButtonsRow>
-        <Button onClick={ClearInput}>
-          {input.value.length > 0 && <CLoseIcon />}
-        </Button>
+        <Button onClick={ClearInput}>{input.value.length > 0 && <CLoseIcon />}</Button>
         {predefined && (
           <Button onClick={() => setShowList(!showList)}>
             <VerticalChevron inverted={showList} />
@@ -76,11 +75,7 @@ export const Input: FC<InputProps> = ({
           {paramList.map((item, index) => (
             <ListRow key={item + index.toString()}>
               <ListItemName>{item}</ListItemName>
-              <Field
-                name={label + '_' + item}
-                type="checkbox"
-                component={Checkbox}
-              />
+              <Field name={label + '_' + item} type="checkbox" component={Checkbox} />
             </ListRow>
           ))}
         </ListContent>

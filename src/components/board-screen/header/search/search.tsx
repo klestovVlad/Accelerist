@@ -1,6 +1,7 @@
-import { Container, Input, SearchButton, SearchIcon } from './styles';
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useHistory } from 'react-router';
+
+import { Container, Input, SearchButton, SearchIcon } from './styles';
 
 export const Search: FC = () => {
   const history = useHistory();

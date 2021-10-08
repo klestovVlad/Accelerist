@@ -1,3 +1,6 @@
+import { FC } from 'react';
+import { Field } from 'react-final-form';
+
 import {
   BackgroundLine,
   ButtonsContainer,
@@ -7,8 +10,6 @@ import {
   RadioContainer,
   RadioNumber,
 } from './styles';
-import React, { FC } from 'react';
-import { Field } from 'react-final-form';
 
 interface PriorityRadioButtonsProps {
   indicatorsList: Array<string>;

@@ -1,13 +1,14 @@
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import { ReactComponent as BackLogo } from '../../../../ui/icons/svg/go-back.svg';
 import {
-  Content,
   CompanyCounter,
+  Content,
+  NextPageButton,
   PageControlContainer,
   PageCounter,
   PreviousPageButton,
-  NextPageButton,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface MetaRowProps {
   totalItems: number;

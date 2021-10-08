@@ -1,3 +1,7 @@
+import { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+
 import { routes } from '../../../../../routes/routes';
 import { getFavoritesAction } from '../../../../../store/companies/index';
 import { CompaniesSelector } from '../../../../../store/companies/index';
@@ -6,16 +10,13 @@ import { ReactComponent as HeartIcon } from '../../../../../ui/icons/svg/big-hea
 import { SectionHeader } from '../../section-header/section-header';
 import { Card } from './card/card';
 import {
-  Content,
-  SectionContainer,
-  EmptyFavorites,
-  EmptyFavoritesHeader,
-  EmptyFavoritesCapture,
   ButtonContainer,
+  Content,
+  EmptyFavorites,
+  EmptyFavoritesCapture,
+  EmptyFavoritesHeader,
+  SectionContainer,
 } from './styles';
-import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
 
 export const Favorites: FC = () => {
   const dispatch = useDispatch();

@@ -1,15 +1,13 @@
+import { FC } from 'react';
+
 import { Card, CardText, CardTitle, Column, Content, Header } from './styles';
-import React, { FC } from 'react';
 
 interface HeaderInfoProps {
   searchCount: number;
   pitchCount: number;
 }
 
-export const HeaderInfo: FC<HeaderInfoProps> = ({
-  searchCount,
-  pitchCount,
-}) => (
+export const HeaderInfo: FC<HeaderInfoProps> = ({ searchCount, pitchCount }) => (
   <Content>
     <Column>
       <Header>Search Sessions</Header>

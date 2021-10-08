@@ -1,5 +1,6 @@
+import { FC } from 'react';
+
 import { Content, Path } from './styles';
-import React, { FC } from 'react';
 
 interface LikeProps {
   isActive: boolean;

@@ -1,3 +1,7 @@
+import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 import { routes } from '../../../routes/routes';
 import { deleteSavedList, updateSavedList } from '../../../store/saved-list';
 import { CreateSavedList } from '../../../store/saved-list/state';
@@ -7,21 +11,18 @@ import { ReactComponent as EditIcon } from '../../../ui/icons/svg/edit.svg';
 import { ReactComponent as SearchIcon } from '../../../ui/icons/svg/search-icon.svg';
 import { ReactComponent as SettingIcon } from '../../../ui/icons/svg/sliders.svg';
 import {
+  BackButton,
   BackgroundContent,
+  Body,
   ButtonContainer,
   Content,
+  EditButtonsContainer,
   Header,
   IconsContainer,
   Input,
   InputContainer,
-  BackButton,
-  EditButtonsContainer,
-  Body,
   NameInput,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 interface TopicProps {
   header: string;
@@ -90,14 +91,10 @@ export const Topic: FC<TopicProps> = ({
             <InputContainer>
               <Input
                 value={searchField}
-                onChange={(e) =>
-                  setSearchField ? setSearchField(e.target.value) : null
-                }
+                onChange={(e) => (setSearchField ? setSearchField(e.target.value) : null)}
               />
               <IconsContainer>
-                <ButtonContainer
-                  onClick={() => onSettingClick?.(!settingState)}
-                >
+                <ButtonContainer onClick={() => onSettingClick?.(!settingState)}>
                   <SettingIcon />
                 </ButtonContainer>
                 <ButtonContainer onClick={onSearchClick}>

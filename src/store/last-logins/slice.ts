@@ -1,5 +1,6 @@
-import { LastLoginInfo, initialState } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { initialState, LastLoginInfo } from './state';
 
 const lastLoginsSlice = createSlice({
   name: 'FavoriteListSlice',

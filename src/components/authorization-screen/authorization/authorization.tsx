@@ -1,8 +1,9 @@
-import { routes } from '../../../routes/routes';
+import { FC } from 'react';
+import { Redirect, Route, Switch } from 'react-router';
+
 import { SignIn } from '../../../pages/public/sign-in/sign-in';
 import { SignUp } from '../../../pages/public/sign-up/sign-up';
-import React, { FC } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
+import { routes } from '../../../routes/routes';
 
 export const Authorization: FC = () => {
   return (

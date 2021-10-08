@@ -1,12 +1,13 @@
+import { FC, memo } from 'react';
+
 import { ReactComponent as CompanyLogo } from '../../../../../ui/icons/svg/company-large.svg';
 import {
   Content,
   LogoContainer,
-  PriorityContainer,
   PriorityCaption,
+  PriorityContainer,
   PriorityInfo,
 } from './styles';
-import React, { FC, memo } from 'react';
 
 export const Logo: FC = memo(() => (
   <Content>

@@ -44,9 +44,7 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
  * CompaniesApi - axios parameter creator
  * @export
  */
-export const CompaniesApiAxiosParamCreator = function (
-  configuration?: Configuration
-) {
+export const CompaniesApiAxiosParamCreator = function (configuration?: Configuration) {
   return {
     /**
      *
@@ -57,13 +55,13 @@ export const CompaniesApiAxiosParamCreator = function (
      */
     companiesControllerContacts: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerContacts', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/contacts`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -107,13 +105,13 @@ export const CompaniesApiAxiosParamCreator = function (
      */
     companiesControllerDislike: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerDislike', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/dislike`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -157,13 +155,13 @@ export const CompaniesApiAxiosParamCreator = function (
      */
     companiesControllerFindById: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerFindById', 'id', id);
       const localVarPath = `/api/v1/companies/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -260,7 +258,7 @@ export const CompaniesApiAxiosParamCreator = function (
       totalAnnualContributors?: any,
       revenueMin?: any,
       revenueMax?: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
       assertParamExists('companiesControllerGetCompanies', 'page', page);
@@ -339,8 +337,7 @@ export const CompaniesApiAxiosParamCreator = function (
       }
 
       if (totalAnnualContributors !== undefined) {
-        localVarQueryParameter['totalAnnualContributors'] =
-          totalAnnualContributors;
+        localVarQueryParameter['totalAnnualContributors'] = totalAnnualContributors;
       }
 
       if (revenueMin !== undefined) {
@@ -427,7 +424,7 @@ export const CompaniesApiAxiosParamCreator = function (
       totalAnnualContributors?: any,
       revenueMin?: any,
       revenueMax?: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
       assertParamExists('companiesControllerGetExcel', 'page', page);
@@ -506,8 +503,7 @@ export const CompaniesApiAxiosParamCreator = function (
       }
 
       if (totalAnnualContributors !== undefined) {
-        localVarQueryParameter['totalAnnualContributors'] =
-          totalAnnualContributors;
+        localVarQueryParameter['totalAnnualContributors'] = totalAnnualContributors;
       }
 
       if (revenueMin !== undefined) {
@@ -543,7 +539,7 @@ export const CompaniesApiAxiosParamCreator = function (
     companiesControllerGetFavorites: async (
       page: any,
       limit: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
       assertParamExists('companiesControllerGetFavorites', 'page', page);
@@ -600,7 +596,7 @@ export const CompaniesApiAxiosParamCreator = function (
      */
     companiesControllerGetSuggested: async (
       q?: string,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/companies/suggested`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -647,15 +643,12 @@ export const CompaniesApiAxiosParamCreator = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerLike: async (
-      id: any,
-      options: any = {}
-    ): Promise<RequestArgs> => {
+    companiesControllerLike: async (id: any, options: any = {}): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerLike', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/like`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -697,15 +690,12 @@ export const CompaniesApiAxiosParamCreator = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerNews: async (
-      id: any,
-      options: any = {}
-    ): Promise<RequestArgs> => {
+    companiesControllerNews: async (id: any, options: any = {}): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerNews', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/news`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -749,13 +739,13 @@ export const CompaniesApiAxiosParamCreator = function (
      */
     companiesControllerScoops: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('companiesControllerScoops', 'id', id);
       const localVarPath = `/api/v1/companies/{id}/scoops`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -798,8 +788,7 @@ export const CompaniesApiAxiosParamCreator = function (
  * @export
  */
 export const CompaniesApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator =
-    CompaniesApiAxiosParamCreator(configuration);
+  const localVarAxiosParamCreator = CompaniesApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -810,20 +799,15 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerContacts(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerContacts(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.companiesControllerContacts(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -835,17 +819,15 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerDislike(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.companiesControllerDislike(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -857,20 +839,15 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerFindById(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerFindById(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.companiesControllerFindById(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -935,10 +912,8 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       totalAnnualContributors?: any,
       revenueMin?: any,
       revenueMax?: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.companiesControllerGetCompanies(
           page,
@@ -957,13 +932,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
           totalAnnualContributors,
           revenueMin,
           revenueMax,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -1028,10 +1003,8 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
       totalAnnualContributors?: any,
       revenueMin?: any,
       revenueMax?: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.companiesControllerGetExcel(
           page,
@@ -1050,13 +1023,13 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
           totalAnnualContributors,
           revenueMin,
           revenueMax,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -1070,21 +1043,19 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
     async companiesControllerGetFavorites(
       page: any,
       limit: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.companiesControllerGetFavorites(
           page,
           limit,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -1096,20 +1067,15 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerGetSuggested(
       q?: string,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerGetSuggested(
-          q,
-          options
-        );
+        await localVarAxiosParamCreator.companiesControllerGetSuggested(q, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -1121,17 +1087,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerLike(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerLike(id, options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerLike(
+        id,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -1143,17 +1109,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerNews(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerNews(id, options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerNews(
+        id,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -1165,17 +1131,17 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
      */
     async companiesControllerScoops(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.companiesControllerScoops(id, options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.companiesControllerScoops(
+        id,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
   };
@@ -1188,7 +1154,7 @@ export const CompaniesApiFp = function (configuration?: Configuration) {
 export const CompaniesApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
-  axios?: AxiosInstance
+  axios?: AxiosInstance,
 ) {
   const localVarFp = CompaniesApiFp(configuration);
   return {
@@ -1290,7 +1256,7 @@ export const CompaniesApiFactory = function (
       totalAnnualContributors?: any,
       revenueMin?: any,
       revenueMax?: any,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetCompanies(
@@ -1310,7 +1276,7 @@ export const CompaniesApiFactory = function (
           totalAnnualContributors,
           revenueMin,
           revenueMax,
-          options
+          options,
         )
         .then((request) => request(axios, basePath));
     },
@@ -1376,7 +1342,7 @@ export const CompaniesApiFactory = function (
       totalAnnualContributors?: any,
       revenueMin?: any,
       revenueMax?: any,
-      options?: any
+      options?: any,
     ): AxiosPromise<GetExcelDto> {
       return localVarFp
         .companiesControllerGetExcel(
@@ -1396,7 +1362,7 @@ export const CompaniesApiFactory = function (
           totalAnnualContributors,
           revenueMin,
           revenueMax,
-          options
+          options,
         )
         .then((request) => request(axios, basePath));
     },
@@ -1411,7 +1377,7 @@ export const CompaniesApiFactory = function (
     companiesControllerGetFavorites(
       page: any,
       limit: any,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetFavorites(page, limit, options)
@@ -1424,10 +1390,7 @@ export const CompaniesApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    companiesControllerGetSuggested(
-      q?: string,
-      options?: any
-    ): AxiosPromise<void> {
+    companiesControllerGetSuggested(q?: string, options?: any): AxiosPromise<void> {
       return localVarFp
         .companiesControllerGetSuggested(q, options)
         .then((request) => request(axios, basePath));
@@ -1891,7 +1854,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerContacts(
     requestParameters: CompaniesApiCompaniesControllerContactsRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerContacts(requestParameters.id, options)
@@ -1908,7 +1871,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerDislike(
     requestParameters: CompaniesApiCompaniesControllerDislikeRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerDislike(requestParameters.id, options)
@@ -1925,7 +1888,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerFindById(
     requestParameters: CompaniesApiCompaniesControllerFindByIdRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerFindById(requestParameters.id, options)
@@ -1942,7 +1905,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerGetCompanies(
     requestParameters: CompaniesApiCompaniesControllerGetCompaniesRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerGetCompanies(
@@ -1962,7 +1925,7 @@ export class CompaniesApi extends BaseAPI {
         requestParameters.totalAnnualContributors,
         requestParameters.revenueMin,
         requestParameters.revenueMax,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -1977,7 +1940,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerGetExcel(
     requestParameters: CompaniesApiCompaniesControllerGetExcelRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerGetExcel(
@@ -1997,7 +1960,7 @@ export class CompaniesApi extends BaseAPI {
         requestParameters.totalAnnualContributors,
         requestParameters.revenueMin,
         requestParameters.revenueMax,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -2012,13 +1975,13 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerGetFavorites(
     requestParameters: CompaniesApiCompaniesControllerGetFavoritesRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerGetFavorites(
         requestParameters.page,
         requestParameters.limit,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -2033,7 +1996,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerGetSuggested(
     requestParameters: CompaniesApiCompaniesControllerGetSuggestedRequest = {},
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerGetSuggested(requestParameters.q, options)
@@ -2050,7 +2013,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerLike(
     requestParameters: CompaniesApiCompaniesControllerLikeRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerLike(requestParameters.id, options)
@@ -2067,7 +2030,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerNews(
     requestParameters: CompaniesApiCompaniesControllerNewsRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerNews(requestParameters.id, options)
@@ -2084,7 +2047,7 @@ export class CompaniesApi extends BaseAPI {
    */
   public companiesControllerScoops(
     requestParameters: CompaniesApiCompaniesControllerScoopsRequest,
-    options?: any
+    options?: any,
   ) {
     return CompaniesApiFp(this.configuration)
       .companiesControllerScoops(requestParameters.id, options)

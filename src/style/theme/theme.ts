@@ -1,6 +1,7 @@
+import { DefaultTheme } from 'styled-components';
+
 import { colors } from './colors';
 import { mediaQuery } from './media-query';
-import { DefaultTheme } from 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {

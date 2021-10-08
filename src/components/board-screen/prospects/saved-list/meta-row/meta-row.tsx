@@ -1,16 +1,17 @@
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import { ReactComponent as BackLogo } from '../../../../../ui/icons/svg/go-back.svg';
 import {
   Content,
-  SortSelect,
+  NextPageButton,
   PageControlContainer,
   PageCounter,
   PreviousPageButton,
-  NextPageButton,
-  SortTitle,
   SortList,
   SortListItem,
+  SortSelect,
+  SortTitle,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface MetaRowProps {
   meta: {
@@ -25,20 +26,13 @@ interface MetaRowProps {
   sortNum: number;
 }
 
-export const MetaRow: FC<MetaRowProps> = ({
-  meta,
-  setPage,
-  setSortNum,
-  sortNum,
-}) => (
+export const MetaRow: FC<MetaRowProps> = ({ meta, setPage, setSortNum, sortNum }) => (
   <Content>
     <SortSelect>
       <SortTitle>Sort by</SortTitle>
       <SortList activeNum={sortNum}>
         <SortListItem onClick={() => setSortNum(1)}>Alphabet</SortListItem>
-        <SortListItem onClick={() => setSortNum(2)}>
-          Prospects Available
-        </SortListItem>
+        <SortListItem onClick={() => setSortNum(2)}>Prospects Available</SortListItem>
         <SortListItem onClick={() => setSortNum(3)}>Last Activity</SortListItem>
       </SortList>
     </SortSelect>

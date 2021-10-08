@@ -1,3 +1,6 @@
+import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { Form } from 'react-final-form';
+
 import { FilterRequest } from '../../../../store/companies/state';
 import { Tabs } from '../../../../ui/tabs/tabs';
 import { ButtonRow } from './buttons-row/button-row';
@@ -5,8 +8,6 @@ import { Company } from './company/company';
 import { Demographics } from './demographics/demographics';
 import { Priority } from './priority/priority';
 import { Container, Content, Header } from './styles';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
-import { Form } from 'react-final-form';
 
 interface FilterProps {
   setShowFilter: Dispatch<SetStateAction<boolean>>;
@@ -37,9 +38,7 @@ export const Filters: FC<FilterProps> = ({
 
     Object.keys(values).map((key) => {
       if (key.includes('Household Income_') && values) {
-        demographicData['Household Income'].push(
-          key.replace('Household Income_', '')
-        );
+        demographicData['Household Income'].push(key.replace('Household Income_', ''));
       }
 
       if (key.includes('Ethnicity_') && values) {
@@ -75,11 +74,7 @@ export const Filters: FC<FilterProps> = ({
   return (
     <Content>
       <Header>Filters</Header>
-      <Tabs
-        tabNum={tabNum}
-        setTabNum={setTabNum}
-        TabList={['Advanced', 'Customize']}
-      />
+      <Tabs tabNum={tabNum} setTabNum={setTabNum} TabList={['Advanced', 'Customize']} />
 
       <Form
         onSubmit={onSubmitForm}
@@ -104,10 +99,7 @@ export const Filters: FC<FilterProps> = ({
               gender={gender}
               setGender={setGender}
             />
-            <ButtonRow
-              handleSubmit={handleSubmit}
-              setShowFilter={setShowFilter}
-            />
+            <ButtonRow handleSubmit={handleSubmit} setShowFilter={setShowFilter} />
           </Container>
         )}
       />

@@ -1,16 +1,14 @@
-import {
-  CompaniesSelector,
-  getCompaniesAction,
-} from '../../../../store/companies';
-import { SavedListSelector } from '../../../../store/saved-list';
-import { LoadPopup } from '../../../../ui/load-popup/load-popup';
-import { Card } from '../../../../components/board-screen/search/card/card';
-import { Topic } from '../../../../components/board-screen/topic/topic';
-import { MetaRow } from '../../../../components/board-screen/prospects/saved-search/meta-row/meta-row';
-import { Content, Body, BackgroundContainer, CardContainer } from './styles';
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
+
+import { MetaRow } from '../../../../components/board-screen/prospects/saved-search/meta-row/meta-row';
+import { Card } from '../../../../components/board-screen/search/card/card';
+import { Topic } from '../../../../components/board-screen/topic/topic';
+import { CompaniesSelector, getCompaniesAction } from '../../../../store/companies';
+import { SavedListSelector } from '../../../../store/saved-list';
+import { LoadPopup } from '../../../../ui/load-popup/load-popup';
+import { BackgroundContainer, Body, CardContainer, Content } from './styles';
 
 export const SavedSearch: FC = () => {
   const dispatch = useDispatch();
@@ -38,7 +36,7 @@ export const SavedSearch: FC = () => {
         totalAnnualContributors: Listitem.filters.totalAnnualContributors,
         revenueMin: Listitem.filters.revenueMin,
         revenueMax: Listitem.filters.revenueMax,
-      })
+      }),
     );
   }, [
     Listitem.filters.affinities,
@@ -63,12 +61,7 @@ export const SavedSearch: FC = () => {
 
   return (
     <Content>
-      <Topic
-        header={Listitem.name}
-        editable
-        listId={id}
-        filters={Listitem.filters}
-      />
+      <Topic header={Listitem.name} editable listId={id} filters={Listitem.filters} />
       {loadState ? (
         <LoadPopup />
       ) : (

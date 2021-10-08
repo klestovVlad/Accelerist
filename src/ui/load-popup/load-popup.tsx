@@ -1,5 +1,6 @@
+import { FC } from 'react';
+
 import { Content, LoadIcon, LoadIconContainer } from './styles';
-import React, { FC } from 'react';
 
 export const LoadPopup: FC = () => (
   <Content>

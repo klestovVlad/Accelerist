@@ -1,23 +1,20 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { CompaniesActionTypes } from './action-types';
 import {
-  favoritesListQuery,
   companiesQuery,
-  likeCompanyQuery,
   dislikeCompanyQuery,
+  favoritesListQuery,
+  likeCompanyQuery,
 } from './axios';
 import { CompaniesAction } from './slice';
 import { FilterRequest, LikeCompanyRequest } from './state';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { call, put, takeLatest } from 'redux-saga/effects';
 
 export function* getFavoritesList({ payload }: PayloadAction<FilterRequest>) {
   try {
     yield put(CompaniesAction.setCompaniesLoading(true));
-    const { data } = yield call(
-      favoritesListQuery,
-      payload.page,
-      payload.limit
-    );
+    const { data } = yield call(favoritesListQuery, payload.page, payload.limit);
     yield put(CompaniesAction.setCompaniesData(data));
   } catch (e) {
     if (e instanceof Error) {
@@ -46,7 +43,7 @@ export function* getCompanies({ payload }: PayloadAction<FilterRequest>) {
       payload.location,
       payload.totalAnnualContributors,
       payload.revenueMin,
-      payload.revenueMax
+      payload.revenueMax,
     );
     yield put(CompaniesAction.setCompaniesData(data));
   } catch (e) {
@@ -91,8 +88,5 @@ export function* favoriteListWatcher() {
   yield takeLatest(CompaniesActionTypes.GET_FAVORITES, getFavoritesList);
   yield takeLatest(CompaniesActionTypes.GET_COMPANIES, getCompanies);
   yield takeLatest(CompaniesActionTypes.LIKE_COMPANY, likeCompany);
-  yield takeLatest(
-    CompaniesActionTypes.DELETE_FROM_FAVORITES,
-    deleteFromFavorites
-  );
+  yield takeLatest(CompaniesActionTypes.DELETE_FROM_FAVORITES, deleteFromFavorites);
 }

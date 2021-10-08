@@ -1,5 +1,6 @@
-import { CompaniesData, initialState } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { CompaniesData, initialState } from './state';
 
 const CompaniesSlice = createSlice({
   name: 'FavoriteListSlice',

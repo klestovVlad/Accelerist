@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import {
   Content,
   Header,
@@ -6,7 +8,6 @@ import {
   TableCellCaption,
   TableCellInfo,
 } from './styles';
-import React, { FC } from 'react';
 
 interface ReportedProps {
   revenue: string;

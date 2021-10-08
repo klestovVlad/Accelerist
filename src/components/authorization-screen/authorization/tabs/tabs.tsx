@@ -1,7 +1,8 @@
-import { routes } from '../../../../routes/routes';
-import { TabsContainer, Tab } from './styles';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+
+import { routes } from '../../../../routes/routes';
+import { Tab, TabsContainer } from './styles';
 
 interface TubsProps {
   activeTub: number;

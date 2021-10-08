@@ -1,7 +1,8 @@
+import { FC } from 'react';
+
 import { Info } from './info/info';
 import { Logo } from './logo/logo';
 import { Content } from './styles';
-import React, { FC } from 'react';
 
 interface CardProps {
   name: string;

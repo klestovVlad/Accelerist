@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import store from '../store/root-reducer';
 import axios, { AxiosInstance } from 'axios';
+
+import store from '../store/root-reducer';
 
 export const baseUrl = 'https://accelerist.herokuapp.com';
 

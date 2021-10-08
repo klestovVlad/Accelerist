@@ -1,6 +1,7 @@
-import { RootState } from '../root-reducer';
-import { ItemData, initialState } from './state';
 import { createSelector } from 'reselect';
+
+import { RootState } from '../root-reducer';
+import { initialState, ItemData } from './state';
 
 const selectSavedList = (state: RootState) => state.savedListReducer;
 
@@ -8,10 +9,7 @@ const selectItems = createSelector(selectSavedList, (data) => data.items);
 
 const selectMeta = createSelector(selectSavedList, (data) => data.meta);
 
-const selectLoadState = createSelector(
-  selectSavedList,
-  (data) => data.isLoading
-);
+const selectLoadState = createSelector(selectSavedList, (data) => data.isLoading);
 
 export const getItemById = (id: string) =>
   createSelector(selectSavedList, (data) => {

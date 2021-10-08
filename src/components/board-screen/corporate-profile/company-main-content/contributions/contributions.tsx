@@ -1,13 +1,14 @@
+import { FC } from 'react';
+
 import {
   Content,
   Header,
   Table,
-  TableRow,
   TableCell,
   TableCellCaption,
   TableCellInfo,
+  TableRow,
 } from './styles';
-import React, { FC } from 'react';
 
 interface ContributionProps {
   cashContributions: string | null;
@@ -28,9 +29,7 @@ export const Contributions: FC<ContributionProps> = ({
       <TableRow>
         <TableCell>
           <TableCellCaption>Cash Contributions</TableCellCaption>
-          <TableCellInfo>
-            {cashContributions ? cashContributions : '-'}
-          </TableCellInfo>
+          <TableCellInfo>{cashContributions ? cashContributions : '-'}</TableCellInfo>
         </TableCell>
 
         <TableCell>
@@ -44,16 +43,12 @@ export const Contributions: FC<ContributionProps> = ({
       <TableRow>
         <TableCell>
           <TableCellCaption>Total Social Contributions</TableCellCaption>
-          <TableCellInfo>
-            {annualContributions ? annualContributions : '-'}
-          </TableCellInfo>
+          <TableCellInfo>{annualContributions ? annualContributions : '-'}</TableCellInfo>
         </TableCell>
 
         <TableCell>
           <TableCellCaption>In-Kind Contributions</TableCellCaption>
-          <TableCellInfo>
-            {inKindContributions ? inKindContributions : '-'}
-          </TableCellInfo>
+          <TableCellInfo>{inKindContributions ? inKindContributions : '-'}</TableCellInfo>
         </TableCell>
       </TableRow>
     </Table>

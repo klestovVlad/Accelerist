@@ -5,7 +5,7 @@ const { SavedListApi } = ApiMap;
 export const savedListQuery = (
   page: number,
   limit: number,
-  sort?: 'alphabet' | 'last-activity' | 'available'
+  sort?: 'alphabet' | 'last-activity' | 'available',
 ) =>
   SavedListApi.savedListControllerProspects({
     page: page,
@@ -54,7 +54,7 @@ export const updateSavedListQuery = (
   location?: string[],
   totalAnnualContributors?: string,
   revenueMin?: number,
-  revenueMax?: number
+  revenueMax?: number,
 ) =>
   SavedListApi.savedListControllerUpdateProspect({
     id: id,
@@ -117,7 +117,7 @@ export const createSavedListQuery = (
   location?: string[],
   totalAnnualContributors?: string,
   revenueMin?: number,
-  revenueMax?: number
+  revenueMax?: number,
 ) =>
   SavedListApi.savedListControllerCreateProspect({
     createSavedListDto: {

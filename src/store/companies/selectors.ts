@@ -1,6 +1,7 @@
+import { createSelector } from 'reselect';
+
 import { RootState } from '../root-reducer';
 import { CompaniesDataItems, initialState } from './state';
-import { createSelector } from 'reselect';
 
 const selectCompanies = (state: RootState) => state.favoriteListSlice;
 
@@ -8,10 +9,7 @@ const selectItems = createSelector(selectCompanies, (data) => data.items);
 
 const selectMeta = createSelector(selectCompanies, (data) => data.meta);
 
-const selectLoadState = createSelector(
-  selectCompanies,
-  (data) => data.isLoading
-);
+const selectLoadState = createSelector(selectCompanies, (data) => data.isLoading);
 
 export const getCompanyById = (id: string) =>
   createSelector(selectCompanies, (data) => {

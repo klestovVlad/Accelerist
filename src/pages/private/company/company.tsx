@@ -1,17 +1,18 @@
-import { getCompanyById } from '../../../store/companies/selectors';
-import { Topic } from '../../../components/board-screen/topic/topic';
-import { CompanyMainContent } from '../../../components/board-screen/corporate-profile/company-main-content/company-main-content';
-import { Header } from '../../../components/board-screen/corporate-profile/header/header';
-import {
-  Content,
-  Container,
-  ContentSection,
-  CompanyNews,
-  BackgroundContainer,
-} from './styles';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+
+import { CompanyMainContent } from '../../../components/board-screen/corporate-profile/company-main-content/company-main-content';
+import { Header } from '../../../components/board-screen/corporate-profile/header/header';
+import { Topic } from '../../../components/board-screen/topic/topic';
+import { getCompanyById } from '../../../store/companies/selectors';
+import {
+  BackgroundContainer,
+  CompanyNews,
+  Container,
+  Content,
+  ContentSection,
+} from './styles';
 
 export const CorporateProfile: FC = () => {
   const companyId = useLocation().pathname.replace('/company/', '');

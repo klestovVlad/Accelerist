@@ -1,5 +1,6 @@
-import { initialState, UserData } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { initialState, UserData } from './state';
 
 const UserSlice = createSlice({
   name: 'UserSlice',

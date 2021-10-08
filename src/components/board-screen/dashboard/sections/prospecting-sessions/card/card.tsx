@@ -1,11 +1,12 @@
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+
 import { routes } from '../../../../../../routes/routes';
 import { Filters } from '../../../../../../store/saved-list';
 import { FilterRow } from './filter-row/filter-row';
 import { Footer } from './footer/footer';
 import { PeculiaritiesRow } from './peculiarities-row/peculiarities-row';
 import { Container, Header, Underline } from './styles';
-import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 interface CardProps {
   data: {

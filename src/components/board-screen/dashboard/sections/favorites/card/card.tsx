@@ -1,3 +1,6 @@
+import { FC } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { CompaniesDataItems } from '../../../../../../store/companies/state';
 import { ReactComponent as CompanyIcon } from '../../../../../../ui/icons/svg/company-small.svg';
 import {
@@ -11,8 +14,6 @@ import {
   Logo,
   PriorityRanking,
 } from './style';
-import React, { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 
 interface CardProps {
   cardData: CompaniesDataItems;

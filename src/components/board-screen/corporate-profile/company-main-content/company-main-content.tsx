@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import { CompanyContacts } from './company-contacts/company-contacts';
 import { CompanyTicker } from './company-ticker/company-ticker';
 import { Contributions } from './contributions/contributions';
@@ -5,8 +7,7 @@ import { GoalAlignment } from './goal-alignment/goal-alignment';
 import { GriCompliant } from './gri-compliant/gri-compliant';
 import { Reported } from './reported/reported';
 import { SocialImpact } from './social-impact/social-impact';
-import { Content, Header, DescriptionHeader, Description } from './styles';
-import React, { FC } from 'react';
+import { Content, Description, DescriptionHeader, Header } from './styles';
 
 interface CompanyMainContentProps {
   description: string;

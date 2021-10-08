@@ -1,3 +1,6 @@
+import { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { CheckIfNameIsEmpty } from '../../../../../../functions/check-if-name-is-empty';
 import { ReturnFormattedDate } from '../../../../../../functions/return-formatted-date';
 import {
@@ -14,8 +17,6 @@ import {
   UserName,
   UserRow,
 } from './styled';
-import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const LastLogin: FC = () => {
   const dispatch = useDispatch();

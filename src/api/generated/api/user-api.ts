@@ -44,9 +44,7 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
  * UserApi - axios parameter creator
  * @export
  */
-export const UserApiAxiosParamCreator = function (
-  configuration?: Configuration
-) {
+export const UserApiAxiosParamCreator = function (configuration?: Configuration) {
   return {
     /**
      *
@@ -57,7 +55,7 @@ export const UserApiAxiosParamCreator = function (
      */
     usersControllerAvatarUpload: async (
       file: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'file' is not null or undefined
       assertParamExists('usersControllerAvatarUpload', 'file', file);
@@ -76,8 +74,7 @@ export const UserApiAxiosParamCreator = function (
       };
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
-      const localVarFormParams = new ((configuration &&
-        configuration.formDataCtor) ||
+      const localVarFormParams = new ((configuration && configuration.formDataCtor) ||
         FormData)();
 
       // authentication bearer required
@@ -111,9 +108,7 @@ export const UserApiAxiosParamCreator = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    usersControllerFindById: async (
-      options: any = {}
-    ): Promise<RequestArgs> => {
+    usersControllerFindById: async (options: any = {}): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/user`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -157,14 +152,10 @@ export const UserApiAxiosParamCreator = function (
      */
     usersControllerUpdateProfile: async (
       updateUserDto: UpdateUserDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'updateUserDto' is not null or undefined
-      assertParamExists(
-        'usersControllerUpdateProfile',
-        'updateUserDto',
-        updateUserDto
-      );
+      assertParamExists('usersControllerUpdateProfile', 'updateUserDto', updateUserDto);
       const localVarPath = `/api/v1/user`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -198,7 +189,7 @@ export const UserApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateUserDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -225,20 +216,15 @@ export const UserApiFp = function (configuration?: Configuration) {
      */
     async usersControllerAvatarUpload(
       file: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.usersControllerAvatarUpload(
-          file,
-          options
-        );
+        await localVarAxiosParamCreator.usersControllerAvatarUpload(file, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -248,17 +234,16 @@ export const UserApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async usersControllerFindById(
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.usersControllerFindById(options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerFindById(
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -270,20 +255,18 @@ export const UserApiFp = function (configuration?: Configuration) {
      */
     async usersControllerUpdateProfile(
       updateUserDto: UpdateUserDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.usersControllerUpdateProfile(
           updateUserDto,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
   };
@@ -296,7 +279,7 @@ export const UserApiFp = function (configuration?: Configuration) {
 export const UserApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
-  axios?: AxiosInstance
+  axios?: AxiosInstance,
 ) {
   const localVarFp = UserApiFp(configuration);
   return {
@@ -332,7 +315,7 @@ export const UserApiFactory = function (
      */
     usersControllerUpdateProfile(
       updateUserDto: UpdateUserDto,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .usersControllerUpdateProfile(updateUserDto, options)
@@ -386,7 +369,7 @@ export class UserApi extends BaseAPI {
    */
   public usersControllerAvatarUpload(
     requestParameters: UserApiUsersControllerAvatarUploadRequest,
-    options?: any
+    options?: any,
   ) {
     return UserApiFp(this.configuration)
       .usersControllerAvatarUpload(requestParameters.file, options)
@@ -416,7 +399,7 @@ export class UserApi extends BaseAPI {
    */
   public usersControllerUpdateProfile(
     requestParameters: UserApiUsersControllerUpdateProfileRequest,
-    options?: any
+    options?: any,
   ) {
     return UserApiFp(this.configuration)
       .usersControllerUpdateProfile(requestParameters.updateUserDto, options)

@@ -1,9 +1,10 @@
+import { FC, useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { InputForm } from '../../../components/authorization-screen/reset-password/input-form/input-form';
 import { ResentForm } from '../../../components/authorization-screen/reset-password/resend-form/resend-form';
 import { Button } from '../../../ui/buttons/button';
 import { ButtonContainer, Content, H1 } from './styles';
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 export const ResetPassword: FC = () => {
   const [seconds, setSeconds] = useState(0);

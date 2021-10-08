@@ -1,5 +1,6 @@
-import { ReactComponent as Logo } from '../../../../ui/icons/svg/logo-board.svg';
 import styled from 'styled-components';
+
+import { ReactComponent as Logo } from '../../../../ui/icons/svg/logo-board.svg';
 
 export const Container = styled.div`
   display: flex;

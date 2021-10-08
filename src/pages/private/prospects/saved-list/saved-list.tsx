@@ -1,21 +1,19 @@
-import {
-  getSavedListAction,
-  SavedListSelector,
-} from '../../../../store/saved-list';
-import { ReactComponent as CompanyIcon } from '../../../../ui/icons/svg/company-large.svg';
-import { LoadPopup } from '../../../../ui/load-popup/load-popup';
+import { FC, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Card } from '../../../../components/board-screen/dashboard/sections/prospecting-sessions/card/card';
 import { MetaRow } from '../../../../components/board-screen/prospects/saved-list/meta-row/meta-row';
+import { getSavedListAction, SavedListSelector } from '../../../../store/saved-list';
+import { ReactComponent as CompanyIcon } from '../../../../ui/icons/svg/company-large.svg';
+import { LoadPopup } from '../../../../ui/load-popup/load-popup';
 import {
-  Content,
-  Container,
   BackgroundContainer,
   CardContainer,
-  EmptyListItem,
+  Container,
+  Content,
   EmptyListCaption,
+  EmptyListItem,
 } from './styles';
-import React, { FC, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const SavedList: FC = () => {
   const [page, setPage] = useState(1);
@@ -28,7 +26,7 @@ export const SavedList: FC = () => {
         page: page,
         limit: 12,
         sort: sortTypes[sortNum - 1],
-      })
+      }),
     );
   }, [dispatch, page, sortNum]);
 

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import { ApiMap } from '../../api';
 
 const { CompaniesApi } = ApiMap;
@@ -44,7 +43,7 @@ export const companiesQuery = (
   location?: string[],
   totalAnnualContributors?: string,
   revenueMin?: number,
-  revenueMax?: number
+  revenueMax?: number,
 ) =>
   CompaniesApi.companiesControllerGetCompanies({
     page: page,

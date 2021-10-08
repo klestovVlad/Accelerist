@@ -1,3 +1,7 @@
+import { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+
 import { routes } from '../../../../../routes/routes';
 import { SavedListSelector } from '../../../../../store/saved-list/index';
 import { Button } from '../../../../../ui/buttons/button';
@@ -5,16 +9,13 @@ import { ReactComponent as FolderIcon } from '../../../../../ui/icons/svg/big-fo
 import { SectionHeader } from '../../section-header/section-header';
 import { Card } from './card/card';
 import {
-  Content,
-  SectionContainer,
-  EmptyListSaved,
-  EmptyListHeader,
-  EmptyListCapture,
   ButtonContainer,
+  Content,
+  EmptyListCapture,
+  EmptyListHeader,
+  EmptyListSaved,
+  SectionContainer,
 } from './styles';
-import React, { FC } from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
 
 export const ProspectingSession: FC = () => {
   const history = useHistory();
@@ -31,9 +32,7 @@ export const ProspectingSession: FC = () => {
           <EmptyListSaved>
             <FolderIcon />
             <EmptyListHeader>No lists saved</EmptyListHeader>
-            <EmptyListCapture>
-              Go to search page and add to saved list
-            </EmptyListCapture>
+            <EmptyListCapture>Go to search page and add to saved list</EmptyListCapture>
             <ButtonContainer>
               <Button
                 label="Search"

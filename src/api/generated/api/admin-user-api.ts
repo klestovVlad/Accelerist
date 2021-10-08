@@ -46,9 +46,7 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
  * AdminUserApi - axios parameter creator
  * @export
  */
-export const AdminUserApiAxiosParamCreator = function (
-  configuration?: Configuration
-) {
+export const AdminUserApiAxiosParamCreator = function (configuration?: Configuration) {
   return {
     /**
      *
@@ -59,7 +57,7 @@ export const AdminUserApiAxiosParamCreator = function (
      */
     createOneBaseUsersCrudControllerUser: async (
       body: object,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'body' is not null or undefined
       assertParamExists('createOneBaseUsersCrudControllerUser', 'body', body);
@@ -96,7 +94,7 @@ export const AdminUserApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         body,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -131,7 +129,7 @@ export const AdminUserApiAxiosParamCreator = function (
       offset?: number,
       page?: number,
       cache?: number,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/admin/users`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -222,13 +220,13 @@ export const AdminUserApiAxiosParamCreator = function (
       fields?: Array<string>,
       join?: Array<string>,
       cache?: number,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('getOneBaseUsersCrudControllerUser', 'id', id);
       const localVarPath = `/api/v1/admin/users/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -286,7 +284,7 @@ export const AdminUserApiAxiosParamCreator = function (
     updateOneBaseUsersCrudControllerUser: async (
       id: string,
       body: object,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('updateOneBaseUsersCrudControllerUser', 'id', id);
@@ -294,7 +292,7 @@ export const AdminUserApiAxiosParamCreator = function (
       assertParamExists('updateOneBaseUsersCrudControllerUser', 'body', body);
       const localVarPath = `/api/v1/admin/users/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -328,7 +326,7 @@ export const AdminUserApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         body,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -347,7 +345,7 @@ export const AdminUserApiAxiosParamCreator = function (
     usersCrudControllerChangePassword: async (
       id: any,
       passwordChangeDto: PasswordChangeDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('usersCrudControllerChangePassword', 'id', id);
@@ -355,11 +353,11 @@ export const AdminUserApiAxiosParamCreator = function (
       assertParamExists(
         'usersCrudControllerChangePassword',
         'passwordChangeDto',
-        passwordChangeDto
+        passwordChangeDto,
       );
       const localVarPath = `/api/v1/admin/users/{id}/change_password`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -393,7 +391,7 @@ export const AdminUserApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         passwordChangeDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -414,7 +412,7 @@ export const AdminUserApiAxiosParamCreator = function (
       page: any,
       limit: any,
       q?: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
       assertParamExists('usersCrudControllerGetSuggested', 'page', page);
@@ -474,8 +472,7 @@ export const AdminUserApiAxiosParamCreator = function (
  * @export
  */
 export const AdminUserApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator =
-    AdminUserApiAxiosParamCreator(configuration);
+  const localVarAxiosParamCreator = AdminUserApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -486,20 +483,18 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
      */
     async createOneBaseUsersCrudControllerUser(
       body: object,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.createOneBaseUsersCrudControllerUser(
           body,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -529,11 +524,11 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       offset?: number,
       page?: number,
       cache?: number,
-      options?: any
+      options?: any,
     ): Promise<
       (
         axios?: AxiosInstance,
-        basePath?: string
+        basePath?: string,
       ) => AxiosPromise<GetManyUserResponseDto | Array<object>>
     > {
       const localVarAxiosArgs =
@@ -548,13 +543,13 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
           offset,
           page,
           cache,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -572,23 +567,21 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       fields?: Array<string>,
       join?: Array<string>,
       cache?: number,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.getOneBaseUsersCrudControllerUser(
           id,
           fields,
           join,
           cache,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -602,21 +595,19 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
     async updateOneBaseUsersCrudControllerUser(
       id: string,
       body: object,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.updateOneBaseUsersCrudControllerUser(
           id,
           body,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -630,21 +621,19 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
     async usersCrudControllerChangePassword(
       id: any,
       passwordChangeDto: PasswordChangeDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.usersCrudControllerChangePassword(
           id,
           passwordChangeDto,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -660,22 +649,20 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
       page: any,
       limit: any,
       q?: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.usersCrudControllerGetSuggested(
           page,
           limit,
           q,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
   };
@@ -688,7 +675,7 @@ export const AdminUserApiFp = function (configuration?: Configuration) {
 export const AdminUserApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
-  axios?: AxiosInstance
+  axios?: AxiosInstance,
 ) {
   const localVarFp = AdminUserApiFp(configuration);
   return {
@@ -701,7 +688,7 @@ export const AdminUserApiFactory = function (
      */
     createOneBaseUsersCrudControllerUser(
       body: object,
-      options?: any
+      options?: any,
     ): AxiosPromise<object> {
       return localVarFp
         .createOneBaseUsersCrudControllerUser(body, options)
@@ -734,7 +721,7 @@ export const AdminUserApiFactory = function (
       offset?: number,
       page?: number,
       cache?: number,
-      options?: any
+      options?: any,
     ): AxiosPromise<GetManyUserResponseDto | Array<object>> {
       return localVarFp
         .getManyBaseUsersCrudControllerUser(
@@ -748,7 +735,7 @@ export const AdminUserApiFactory = function (
           offset,
           page,
           cache,
-          options
+          options,
         )
         .then((request) => request(axios, basePath));
     },
@@ -767,7 +754,7 @@ export const AdminUserApiFactory = function (
       fields?: Array<string>,
       join?: Array<string>,
       cache?: number,
-      options?: any
+      options?: any,
     ): AxiosPromise<object> {
       return localVarFp
         .getOneBaseUsersCrudControllerUser(id, fields, join, cache, options)
@@ -784,7 +771,7 @@ export const AdminUserApiFactory = function (
     updateOneBaseUsersCrudControllerUser(
       id: string,
       body: object,
-      options?: any
+      options?: any,
     ): AxiosPromise<object> {
       return localVarFp
         .updateOneBaseUsersCrudControllerUser(id, body, options)
@@ -801,7 +788,7 @@ export const AdminUserApiFactory = function (
     usersCrudControllerChangePassword(
       id: any,
       passwordChangeDto: PasswordChangeDto,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .usersCrudControllerChangePassword(id, passwordChangeDto, options)
@@ -820,7 +807,7 @@ export const AdminUserApiFactory = function (
       page: any,
       limit: any,
       q?: any,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .usersCrudControllerGetSuggested(page, limit, q, options)
@@ -1042,7 +1029,7 @@ export class AdminUserApi extends BaseAPI {
    */
   public createOneBaseUsersCrudControllerUser(
     requestParameters: AdminUserApiCreateOneBaseUsersCrudControllerUserRequest,
-    options?: any
+    options?: any,
   ) {
     return AdminUserApiFp(this.configuration)
       .createOneBaseUsersCrudControllerUser(requestParameters.body, options)
@@ -1059,7 +1046,7 @@ export class AdminUserApi extends BaseAPI {
    */
   public getManyBaseUsersCrudControllerUser(
     requestParameters: AdminUserApiGetManyBaseUsersCrudControllerUserRequest = {},
-    options?: any
+    options?: any,
   ) {
     return AdminUserApiFp(this.configuration)
       .getManyBaseUsersCrudControllerUser(
@@ -1073,7 +1060,7 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.offset,
         requestParameters.page,
         requestParameters.cache,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -1088,7 +1075,7 @@ export class AdminUserApi extends BaseAPI {
    */
   public getOneBaseUsersCrudControllerUser(
     requestParameters: AdminUserApiGetOneBaseUsersCrudControllerUserRequest,
-    options?: any
+    options?: any,
   ) {
     return AdminUserApiFp(this.configuration)
       .getOneBaseUsersCrudControllerUser(
@@ -1096,7 +1083,7 @@ export class AdminUserApi extends BaseAPI {
         requestParameters.fields,
         requestParameters.join,
         requestParameters.cache,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -1111,13 +1098,13 @@ export class AdminUserApi extends BaseAPI {
    */
   public updateOneBaseUsersCrudControllerUser(
     requestParameters: AdminUserApiUpdateOneBaseUsersCrudControllerUserRequest,
-    options?: any
+    options?: any,
   ) {
     return AdminUserApiFp(this.configuration)
       .updateOneBaseUsersCrudControllerUser(
         requestParameters.id,
         requestParameters.body,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -1132,13 +1119,13 @@ export class AdminUserApi extends BaseAPI {
    */
   public usersCrudControllerChangePassword(
     requestParameters: AdminUserApiUsersCrudControllerChangePasswordRequest,
-    options?: any
+    options?: any,
   ) {
     return AdminUserApiFp(this.configuration)
       .usersCrudControllerChangePassword(
         requestParameters.id,
         requestParameters.passwordChangeDto,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -1153,14 +1140,14 @@ export class AdminUserApi extends BaseAPI {
    */
   public usersCrudControllerGetSuggested(
     requestParameters: AdminUserApiUsersCrudControllerGetSuggestedRequest,
-    options?: any
+    options?: any,
   ) {
     return AdminUserApiFp(this.configuration)
       .usersCrudControllerGetSuggested(
         requestParameters.page,
         requestParameters.limit,
         requestParameters.q,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }

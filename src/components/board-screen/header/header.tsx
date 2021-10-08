@@ -1,3 +1,6 @@
+import { FC, useState } from 'react';
+import { useLocation } from 'react-router';
+
 import { BurgerButton } from '../../../ui/burger-button/burger-button';
 import { AuthorizedUser } from './authorized-user/authorized-user';
 import { Logo } from './logo/logo';
@@ -10,8 +13,6 @@ import {
   NavShadow,
   RightSide,
 } from './styles';
-import React, { FC, useState } from 'react';
-import { useLocation } from 'react-router';
 
 export const Header: FC = () => {
   const [state, setState] = useState(false);

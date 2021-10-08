@@ -1,13 +1,14 @@
+import { FC } from 'react';
+
 import { ReactComponent as CompanyLogo } from '../../../../ui/icons/svg/company-large.svg';
 import {
-  Content,
+  CompanyCaption,
+  CompanyHeaderRow,
   CompanyIcon,
   CompanyInformation,
-  CompanyHeaderRow,
   CompanyName,
-  CompanyCaption,
+  Content,
 } from './styles';
-import React, { FC } from 'react';
 
 interface HeaderProps {
   name: string;

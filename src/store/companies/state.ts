@@ -137,7 +137,7 @@ export interface CompaniesDataItems {
       id: string;
       companyId: string;
       userId: string;
-    }
+    },
   ];
   score: string | null;
   like: boolean;

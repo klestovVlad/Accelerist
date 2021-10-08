@@ -1,7 +1,8 @@
+import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { LastLoginsActionTypes } from './action-types';
 import { lastLoginsQuery } from './axios';
 import { LastLoginsAction } from './slice';
-import { call, put, takeLatest } from 'redux-saga/effects';
 
 export function* getLastLogin() {
   try {

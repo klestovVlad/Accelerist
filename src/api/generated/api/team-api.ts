@@ -50,9 +50,7 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
  * TeamApi - axios parameter creator
  * @export
  */
-export const TeamApiAxiosParamCreator = function (
-  configuration?: Configuration
-) {
+export const TeamApiAxiosParamCreator = function (configuration?: Configuration) {
   return {
     /**
      *
@@ -63,13 +61,13 @@ export const TeamApiAxiosParamCreator = function (
      */
     inviteControllerAcceptInvite: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('inviteControllerAcceptInvite', 'id', id);
       const localVarPath = `/api/v1/team/{id}/invites/accept`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -113,14 +111,10 @@ export const TeamApiAxiosParamCreator = function (
      */
     teamsControllerAddMembers: async (
       userEmailDto: UserEmailDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'userEmailDto' is not null or undefined
-      assertParamExists(
-        'teamsControllerAddMembers',
-        'userEmailDto',
-        userEmailDto
-      );
+      assertParamExists('teamsControllerAddMembers', 'userEmailDto', userEmailDto);
       const localVarPath = `/api/v1/team/members`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -154,7 +148,7 @@ export const TeamApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         userEmailDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -171,13 +165,13 @@ export const TeamApiAxiosParamCreator = function (
      */
     teamsControllerDeleteMembers: async (
       id: string,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('teamsControllerDeleteMembers', 'id', id);
       const localVarPath = `/api/v1/team/members/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -218,9 +212,7 @@ export const TeamApiAxiosParamCreator = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerGetLastLogins: async (
-      options: any = {}
-    ): Promise<RequestArgs> => {
+    teamsControllerGetLastLogins: async (options: any = {}): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/last_logins`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -266,7 +258,7 @@ export const TeamApiAxiosParamCreator = function (
     teamsControllerGetMembers: async (
       orderingDirection?: 'ASC' | 'DESC',
       orderingKey?: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/members`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -317,7 +309,7 @@ export const TeamApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     teamsControllerGetSubscriptionTeam: async (
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/subscription`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -400,9 +392,7 @@ export const TeamApiAxiosParamCreator = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerInviteLink: async (
-      options: any = {}
-    ): Promise<RequestArgs> => {
+    teamsControllerInviteLink: async (options: any = {}): Promise<RequestArgs> => {
       const localVarPath = `/api/v1/team/invite_link`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -446,7 +436,7 @@ export const TeamApiAxiosParamCreator = function (
      */
     teamsControllerLogoUpload: async (
       file: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'file' is not null or undefined
       assertParamExists('teamsControllerLogoUpload', 'file', file);
@@ -465,8 +455,7 @@ export const TeamApiAxiosParamCreator = function (
       };
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
-      const localVarFormParams = new ((configuration &&
-        configuration.formDataCtor) ||
+      const localVarFormParams = new ((configuration && configuration.formDataCtor) ||
         FormData)();
 
       // authentication bearer required
@@ -503,14 +492,10 @@ export const TeamApiAxiosParamCreator = function (
      */
     teamsControllerUpdateTeam: async (
       updateTeamDto: UpdateTeamDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'updateTeamDto' is not null or undefined
-      assertParamExists(
-        'teamsControllerUpdateTeam',
-        'updateTeamDto',
-        updateTeamDto
-      );
+      assertParamExists('teamsControllerUpdateTeam', 'updateTeamDto', updateTeamDto);
       const localVarPath = `/api/v1/team`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -544,7 +529,7 @@ export const TeamApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateTeamDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -571,20 +556,15 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async inviteControllerAcceptInvite(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.inviteControllerAcceptInvite(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.inviteControllerAcceptInvite(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -596,20 +576,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerAddMembers(
       userEmailDto: UserEmailDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerAddMembers(
-          userEmailDto,
-          options
-        );
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerAddMembers(
+        userEmailDto,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -621,20 +598,15 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerDeleteMembers(
       id: string,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerDeleteMembers(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.teamsControllerDeleteMembers(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -644,12 +616,9 @@ export const TeamApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async teamsControllerGetLastLogins(
-      options?: any
+      options?: any,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string
-      ) => AxiosPromise<Array<LoginHistoryDto>>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<LoginHistoryDto>>
     > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.teamsControllerGetLastLogins(options);
@@ -657,7 +626,7 @@ export const TeamApiFp = function (configuration?: Configuration) {
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -671,21 +640,18 @@ export const TeamApiFp = function (configuration?: Configuration) {
     async teamsControllerGetMembers(
       orderingDirection?: 'ASC' | 'DESC',
       orderingKey?: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerGetMembers(
-          orderingDirection,
-          orderingKey,
-          options
-        );
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerGetMembers(
+        orderingDirection,
+        orderingKey,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -695,22 +661,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async teamsControllerGetSubscriptionTeam(
-      options?: any
+      options?: any,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string
-      ) => AxiosPromise<GetSubscriptionTeamDto>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionTeamDto>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerGetSubscriptionTeam(
-          options
-        );
+        await localVarAxiosParamCreator.teamsControllerGetSubscriptionTeam(options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -720,17 +681,16 @@ export const TeamApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async teamsControllerGetTeam(
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerGetTeam(options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerGetTeam(
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -740,17 +700,16 @@ export const TeamApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async teamsControllerInviteLink(
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerInviteLink(options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerInviteLink(
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -762,20 +721,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerLogoUpload(
       file: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerLogoUpload(
-          file,
-          options
-        );
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerLogoUpload(
+        file,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -787,20 +743,17 @@ export const TeamApiFp = function (configuration?: Configuration) {
      */
     async teamsControllerUpdateTeam(
       updateTeamDto: UpdateTeamDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.teamsControllerUpdateTeam(
-          updateTeamDto,
-          options
-        );
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.teamsControllerUpdateTeam(
+        updateTeamDto,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
   };
@@ -813,7 +766,7 @@ export const TeamApiFp = function (configuration?: Configuration) {
 export const TeamApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
-  axios?: AxiosInstance
+  axios?: AxiosInstance,
 ) {
   const localVarFp = TeamApiFp(configuration);
   return {
@@ -838,7 +791,7 @@ export const TeamApiFactory = function (
      */
     teamsControllerAddMembers(
       userEmailDto: UserEmailDto,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .teamsControllerAddMembers(userEmailDto, options)
@@ -851,10 +804,7 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerDeleteMembers(
-      id: string,
-      options?: any
-    ): AxiosPromise<void> {
+    teamsControllerDeleteMembers(id: string, options?: any): AxiosPromise<void> {
       return localVarFp
         .teamsControllerDeleteMembers(id, options)
         .then((request) => request(axios, basePath));
@@ -865,9 +815,7 @@ export const TeamApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    teamsControllerGetLastLogins(
-      options?: any
-    ): AxiosPromise<Array<LoginHistoryDto>> {
+    teamsControllerGetLastLogins(options?: any): AxiosPromise<Array<LoginHistoryDto>> {
       return localVarFp
         .teamsControllerGetLastLogins(options)
         .then((request) => request(axios, basePath));
@@ -883,7 +831,7 @@ export const TeamApiFactory = function (
     teamsControllerGetMembers(
       orderingDirection?: 'ASC' | 'DESC',
       orderingKey?: any,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .teamsControllerGetMembers(orderingDirection, orderingKey, options)
@@ -896,7 +844,7 @@ export const TeamApiFactory = function (
      * @throws {RequiredError}
      */
     teamsControllerGetSubscriptionTeam(
-      options?: any
+      options?: any,
     ): AxiosPromise<GetSubscriptionTeamDto> {
       return localVarFp
         .teamsControllerGetSubscriptionTeam(options)
@@ -945,7 +893,7 @@ export const TeamApiFactory = function (
      */
     teamsControllerUpdateTeam(
       updateTeamDto: UpdateTeamDto,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .teamsControllerUpdateTeam(updateTeamDto, options)
@@ -1062,7 +1010,7 @@ export class TeamApi extends BaseAPI {
    */
   public inviteControllerAcceptInvite(
     requestParameters: TeamApiInviteControllerAcceptInviteRequest,
-    options?: any
+    options?: any,
   ) {
     return TeamApiFp(this.configuration)
       .inviteControllerAcceptInvite(requestParameters.id, options)
@@ -1079,7 +1027,7 @@ export class TeamApi extends BaseAPI {
    */
   public teamsControllerAddMembers(
     requestParameters: TeamApiTeamsControllerAddMembersRequest,
-    options?: any
+    options?: any,
   ) {
     return TeamApiFp(this.configuration)
       .teamsControllerAddMembers(requestParameters.userEmailDto, options)
@@ -1096,7 +1044,7 @@ export class TeamApi extends BaseAPI {
    */
   public teamsControllerDeleteMembers(
     requestParameters: TeamApiTeamsControllerDeleteMembersRequest,
-    options?: any
+    options?: any,
   ) {
     return TeamApiFp(this.configuration)
       .teamsControllerDeleteMembers(requestParameters.id, options)
@@ -1126,13 +1074,13 @@ export class TeamApi extends BaseAPI {
    */
   public teamsControllerGetMembers(
     requestParameters: TeamApiTeamsControllerGetMembersRequest = {},
-    options?: any
+    options?: any,
   ) {
     return TeamApiFp(this.configuration)
       .teamsControllerGetMembers(
         requestParameters.orderingDirection,
         requestParameters.orderingKey,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -1186,7 +1134,7 @@ export class TeamApi extends BaseAPI {
    */
   public teamsControllerLogoUpload(
     requestParameters: TeamApiTeamsControllerLogoUploadRequest,
-    options?: any
+    options?: any,
   ) {
     return TeamApiFp(this.configuration)
       .teamsControllerLogoUpload(requestParameters.file, options)
@@ -1203,7 +1151,7 @@ export class TeamApi extends BaseAPI {
    */
   public teamsControllerUpdateTeam(
     requestParameters: TeamApiTeamsControllerUpdateTeamRequest,
-    options?: any
+    options?: any,
   ) {
     return TeamApiFp(this.configuration)
       .teamsControllerUpdateTeam(requestParameters.updateTeamDto, options)

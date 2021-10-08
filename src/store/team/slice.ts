@@ -1,5 +1,6 @@
-import { TeamData, initialState } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { initialState, TeamData } from './state';
 
 const teamSlice = createSlice({
   name: 'FavoriteListSlice',

@@ -1,18 +1,19 @@
+import { Dispatch, FC, SetStateAction, useState } from 'react';
+
 import { ReactComponent as BackLogo } from '../../../../ui/icons/svg/go-back.svg';
 import { ReactComponent as SaveIcon } from '../../../../ui/icons/svg/save-folder.svg';
 import { ModalWindow } from '../modal-window/modal-window';
 import {
+  CompanyCounter,
   Content,
-  SaveButton,
+  NextPageButton,
   PageControlContainer,
   PageCounter,
   PreviousPageButton,
-  NextPageButton,
+  SaveButton,
   SaveTitle,
-  CompanyCounter,
   SelectContainer,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 
 interface MetaRowProps {
   meta: {
@@ -35,11 +36,7 @@ export const MetaRow: FC<MetaRowProps> = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
   const onSaveClick = () => {
-    return permissionToSave
-      ? saveList
-        ? saveList()
-        : null
-      : setShowModal(true);
+    return permissionToSave ? (saveList ? saveList() : null) : setShowModal(true);
   };
 
   return (
@@ -54,9 +51,7 @@ export const MetaRow: FC<MetaRowProps> = ({
         {meta.totalItems !== 0 && (
           <PageControlContainer>
             {+meta.currentPage !== 1 && (
-              <PreviousPageButton
-                onClick={() => setPage(+meta.currentPage - 1)}
-              >
+              <PreviousPageButton onClick={() => setPage(+meta.currentPage - 1)}>
                 <BackLogo />
               </PreviousPageButton>
             )}

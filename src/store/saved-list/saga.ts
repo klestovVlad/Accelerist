@@ -1,14 +1,15 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { SavedListActionTypes } from './action-types';
 import {
+  createSavedListQuery,
+  deleteSavedListQuery,
   savedListQuery,
   updateSavedListQuery,
-  deleteSavedListQuery,
-  createSavedListQuery,
 } from './axios';
 import { SavedListAction } from './slice';
 import { CreateSavedList, SavedListRequest, UpdateSavedList } from './state';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { call, put, takeLatest } from 'redux-saga/effects';
 
 export function* getSavedList({ payload }: PayloadAction<SavedListRequest>) {
   try {
@@ -17,7 +18,7 @@ export function* getSavedList({ payload }: PayloadAction<SavedListRequest>) {
       savedListQuery,
       payload.page,
       payload.limit,
-      payload.sort
+      payload.sort,
     );
     yield put(SavedListAction.getSavedList(data));
   } catch (e) {
@@ -47,7 +48,7 @@ export function* updateSavedList({ payload }: PayloadAction<UpdateSavedList>) {
       payload.location,
       payload.totalAnnualContributors,
       payload.revenueMin,
-      payload.revenueMax
+      payload.revenueMax,
     );
     yield put(SavedListAction.updateSavedList(data));
   } catch (e) {
@@ -89,7 +90,7 @@ export function* createSavedList({ payload }: PayloadAction<CreateSavedList>) {
       payload.location,
       payload.totalAnnualContributors,
       payload.revenueMin,
-      payload.revenueMax
+      payload.revenueMax,
     );
     yield put(SavedListAction.createSavedList(data));
   } catch (e) {

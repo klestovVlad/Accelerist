@@ -1,14 +1,9 @@
+import { FC } from 'react';
+
 import { ReactComponent as GlobeIcon } from '../../../../../ui/icons/svg/globe.svg';
 import { ReactComponent as PlaceIcon } from '../../../../../ui/icons/svg/map-pin.svg';
 import { ReactComponent as PhoneIcon } from '../../../../../ui/icons/svg/phone.svg';
-import {
-  Content,
-  Header,
-  ContactsContainer,
-  Contact,
-  ContactInfo,
-} from './styles';
-import React, { FC } from 'react';
+import { Contact, ContactInfo, ContactsContainer, Content, Header } from './styles';
 
 interface CompanyContactsProps {
   website: string | null;

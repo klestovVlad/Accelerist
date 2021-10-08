@@ -1,5 +1,6 @@
-import { RootState } from '../root-reducer';
 import { createSelector } from 'reselect';
+
+import { RootState } from '../root-reducer';
 
 const selectTeamData = (state: RootState) => state.teamSlice;
 

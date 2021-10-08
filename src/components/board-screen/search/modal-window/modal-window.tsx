@@ -1,15 +1,16 @@
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import { Button } from '../../../../ui/buttons/button';
 import { ReactComponent as SettingIcon } from '../../../../ui/icons/svg/setting-big.svg';
 import {
-  ModalContainer,
   BackgroundShadow,
-  ImageRow,
-  TextRow,
-  Message,
-  Capture,
   ButtonContainer,
+  Capture,
+  ImageRow,
+  Message,
+  ModalContainer,
+  TextRow,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface ModalWindowProps {
   setShowModal: Dispatch<SetStateAction<boolean>>;

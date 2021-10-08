@@ -1,5 +1,6 @@
-import { ReactComponent as CLoseSvg } from '../icons/svg/close-icon.svg';
 import styled from 'styled-components';
+
+import { ReactComponent as CLoseSvg } from '../icons/svg/close-icon.svg';
 
 export const Content = styled.div`
   position: relative;

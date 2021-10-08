@@ -1,5 +1,6 @@
-import { Content, Header, CardContainer, Card, NoDataText } from './styles';
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
+
+import { Card, CardContainer, Content, Header, NoDataText } from './styles';
 
 export const GoalAlignment: FC = memo(() => (
   <Content>

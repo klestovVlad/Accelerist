@@ -1,5 +1,6 @@
-import { ReactComponent as LoadSvg } from '../icons/svg/load-icon-big.svg';
 import styled, { keyframes } from 'styled-components';
+
+import { ReactComponent as LoadSvg } from '../icons/svg/load-icon-big.svg';
 
 export const Content = styled.div`
   display: flex;

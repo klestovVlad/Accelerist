@@ -50,9 +50,7 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
  * SavedListApi - axios parameter creator
  * @export
  */
-export const SavedListApiAxiosParamCreator = function (
-  configuration?: Configuration
-) {
+export const SavedListApiAxiosParamCreator = function (configuration?: Configuration) {
   return {
     /**
      *
@@ -63,13 +61,13 @@ export const SavedListApiAxiosParamCreator = function (
      */
     savedListControllerCreateProspect: async (
       createSavedListDto: CreateSavedListDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'createSavedListDto' is not null or undefined
       assertParamExists(
         'savedListControllerCreateProspect',
         'createSavedListDto',
-        createSavedListDto
+        createSavedListDto,
       );
       const localVarPath = `/api/v1/saved-list`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -104,7 +102,7 @@ export const SavedListApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         createSavedListDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -121,13 +119,13 @@ export const SavedListApiAxiosParamCreator = function (
      */
     savedListControllerDeleteProspect: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerDeleteProspect', 'id', id);
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -171,13 +169,13 @@ export const SavedListApiAxiosParamCreator = function (
      */
     savedListControllerGetExcel: async (
       id: string,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerGetExcel', 'id', id);
       const localVarPath = `/api/v1/saved-list/{id}/excel`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -221,13 +219,13 @@ export const SavedListApiAxiosParamCreator = function (
      */
     savedListControllerProspect: async (
       id: any,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerProspect', 'id', id);
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -275,7 +273,7 @@ export const SavedListApiAxiosParamCreator = function (
       page: any,
       limit: any,
       sort?: 'alphabet' | 'last-activity' | 'available',
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'page' is not null or undefined
       assertParamExists('savedListControllerProspects', 'page', page);
@@ -338,7 +336,7 @@ export const SavedListApiAxiosParamCreator = function (
     savedListControllerUpdateProspect: async (
       id: any,
       updateSavedListDto: UpdateSavedListDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('savedListControllerUpdateProspect', 'id', id);
@@ -346,11 +344,11 @@ export const SavedListApiAxiosParamCreator = function (
       assertParamExists(
         'savedListControllerUpdateProspect',
         'updateSavedListDto',
-        updateSavedListDto
+        updateSavedListDto,
       );
       const localVarPath = `/api/v1/saved-list/{id}`.replace(
         `{${'id'}}`,
-        encodeURIComponent(String(id))
+        encodeURIComponent(String(id)),
       );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -384,7 +382,7 @@ export const SavedListApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         updateSavedListDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -400,8 +398,7 @@ export const SavedListApiAxiosParamCreator = function (
  * @export
  */
 export const SavedListApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator =
-    SavedListApiAxiosParamCreator(configuration);
+  const localVarAxiosParamCreator = SavedListApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -412,20 +409,18 @@ export const SavedListApiFp = function (configuration?: Configuration) {
      */
     async savedListControllerCreateProspect(
       createSavedListDto: CreateSavedListDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.savedListControllerCreateProspect(
           createSavedListDto,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -437,20 +432,15 @@ export const SavedListApiFp = function (configuration?: Configuration) {
      */
     async savedListControllerDeleteProspect(
       id: any,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.savedListControllerDeleteProspect(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.savedListControllerDeleteProspect(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -462,20 +452,15 @@ export const SavedListApiFp = function (configuration?: Configuration) {
      */
     async savedListControllerGetExcel(
       id: string,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExcelDto>> {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.savedListControllerGetExcel(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.savedListControllerGetExcel(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -487,23 +472,17 @@ export const SavedListApiFp = function (configuration?: Configuration) {
      */
     async savedListControllerProspect(
       id: any,
-      options?: any
+      options?: any,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string
-      ) => AxiosPromise<GetSavedListDto>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSavedListDto>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.savedListControllerProspect(
-          id,
-          options
-        );
+        await localVarAxiosParamCreator.savedListControllerProspect(id, options);
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -519,25 +498,22 @@ export const SavedListApiFp = function (configuration?: Configuration) {
       page: any,
       limit: any,
       sort?: 'alphabet' | 'last-activity' | 'available',
-      options?: any
+      options?: any,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string
-      ) => AxiosPromise<Array<GetSavedListDto>>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GetSavedListDto>>
     > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.savedListControllerProspects(
           page,
           limit,
           sort,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -551,21 +527,19 @@ export const SavedListApiFp = function (configuration?: Configuration) {
     async savedListControllerUpdateProspect(
       id: any,
       updateSavedListDto: UpdateSavedListDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.savedListControllerUpdateProspect(
           id,
           updateSavedListDto,
-          options
+          options,
         );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
   };
@@ -578,7 +552,7 @@ export const SavedListApiFp = function (configuration?: Configuration) {
 export const SavedListApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
-  axios?: AxiosInstance
+  axios?: AxiosInstance,
 ) {
   const localVarFp = SavedListApiFp(configuration);
   return {
@@ -591,7 +565,7 @@ export const SavedListApiFactory = function (
      */
     savedListControllerCreateProspect(
       createSavedListDto: CreateSavedListDto,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .savedListControllerCreateProspect(createSavedListDto, options)
@@ -604,10 +578,7 @@ export const SavedListApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerDeleteProspect(
-      id: any,
-      options?: any
-    ): AxiosPromise<void> {
+    savedListControllerDeleteProspect(id: any, options?: any): AxiosPromise<void> {
       return localVarFp
         .savedListControllerDeleteProspect(id, options)
         .then((request) => request(axios, basePath));
@@ -619,10 +590,7 @@ export const SavedListApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerGetExcel(
-      id: string,
-      options?: any
-    ): AxiosPromise<GetExcelDto> {
+    savedListControllerGetExcel(id: string, options?: any): AxiosPromise<GetExcelDto> {
       return localVarFp
         .savedListControllerGetExcel(id, options)
         .then((request) => request(axios, basePath));
@@ -634,10 +602,7 @@ export const SavedListApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savedListControllerProspect(
-      id: any,
-      options?: any
-    ): AxiosPromise<GetSavedListDto> {
+    savedListControllerProspect(id: any, options?: any): AxiosPromise<GetSavedListDto> {
       return localVarFp
         .savedListControllerProspect(id, options)
         .then((request) => request(axios, basePath));
@@ -655,7 +620,7 @@ export const SavedListApiFactory = function (
       page: any,
       limit: any,
       sort?: 'alphabet' | 'last-activity' | 'available',
-      options?: any
+      options?: any,
     ): AxiosPromise<Array<GetSavedListDto>> {
       return localVarFp
         .savedListControllerProspects(page, limit, sort, options)
@@ -672,7 +637,7 @@ export const SavedListApiFactory = function (
     savedListControllerUpdateProspect(
       id: any,
       updateSavedListDto: UpdateSavedListDto,
-      options?: any
+      options?: any,
     ): AxiosPromise<void> {
       return localVarFp
         .savedListControllerUpdateProspect(id, updateSavedListDto, options)
@@ -803,13 +768,10 @@ export class SavedListApi extends BaseAPI {
    */
   public savedListControllerCreateProspect(
     requestParameters: SavedListApiSavedListControllerCreateProspectRequest,
-    options?: any
+    options?: any,
   ) {
     return SavedListApiFp(this.configuration)
-      .savedListControllerCreateProspect(
-        requestParameters.createSavedListDto,
-        options
-      )
+      .savedListControllerCreateProspect(requestParameters.createSavedListDto, options)
       .then((request) => request(this.axios, this.basePath));
   }
 
@@ -823,7 +785,7 @@ export class SavedListApi extends BaseAPI {
    */
   public savedListControllerDeleteProspect(
     requestParameters: SavedListApiSavedListControllerDeleteProspectRequest,
-    options?: any
+    options?: any,
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerDeleteProspect(requestParameters.id, options)
@@ -840,7 +802,7 @@ export class SavedListApi extends BaseAPI {
    */
   public savedListControllerGetExcel(
     requestParameters: SavedListApiSavedListControllerGetExcelRequest,
-    options?: any
+    options?: any,
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerGetExcel(requestParameters.id, options)
@@ -857,7 +819,7 @@ export class SavedListApi extends BaseAPI {
    */
   public savedListControllerProspect(
     requestParameters: SavedListApiSavedListControllerProspectRequest,
-    options?: any
+    options?: any,
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerProspect(requestParameters.id, options)
@@ -874,14 +836,14 @@ export class SavedListApi extends BaseAPI {
    */
   public savedListControllerProspects(
     requestParameters: SavedListApiSavedListControllerProspectsRequest,
-    options?: any
+    options?: any,
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerProspects(
         requestParameters.page,
         requestParameters.limit,
         requestParameters.sort,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }
@@ -896,13 +858,13 @@ export class SavedListApi extends BaseAPI {
    */
   public savedListControllerUpdateProspect(
     requestParameters: SavedListApiSavedListControllerUpdateProspectRequest,
-    options?: any
+    options?: any,
   ) {
     return SavedListApiFp(this.configuration)
       .savedListControllerUpdateProspect(
         requestParameters.id,
         requestParameters.updateSavedListDto,
-        options
+        options,
       )
       .then((request) => request(this.axios, this.basePath));
   }

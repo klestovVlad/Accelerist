@@ -1,25 +1,16 @@
+import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { Field, FormProps } from 'react-final-form';
+
 import { Input } from '../../../../../ui/input/input';
 import { Tabs } from '../../../../../ui/tabs/tabs';
-import {
-  Content,
-  Header,
-  InputContainer,
-  TabContainer,
-  TabHeader,
-} from './styles';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
-import { Field, FormProps } from 'react-final-form';
+import { Content, Header, InputContainer, TabContainer, TabHeader } from './styles';
 
 interface DemographicsProps extends FormProps {
   gender: number;
   setGender: Dispatch<SetStateAction<number>>;
 }
 
-export const Demographics: FC<DemographicsProps> = ({
-  form,
-  gender,
-  setGender,
-}) => {
+export const Demographics: FC<DemographicsProps> = ({ form, gender, setGender }) => {
   const [relations, setRelations] = useState(0);
   return (
     <Content>

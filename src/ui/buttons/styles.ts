@@ -1,5 +1,6 @@
-import { ReactComponent as Loading } from '../icons/svg/loading-button.svg';
 import styled, { css, keyframes } from 'styled-components';
+
+import { ReactComponent as Loading } from '../icons/svg/loading-button.svg';
 
 interface StyledButtonProps {
   colorScheme: 'blue' | 'darkTransparent' | 'white' | 'blueLine' | 'redText';
@@ -19,9 +20,7 @@ export enum BUTTON_COLOR_SCHEME {
 const BACKGROUND_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<StyledButtonProps>`
     background-color: ${(props) =>
-      !props.validate
-        ? props.theme.colors.light_blue2
-        : props.theme.colors.blue};
+      !props.validate ? props.theme.colors.light_blue2 : props.theme.colors.blue};
     padding: 12px 24px;
     font-size: 16px;
   `,
@@ -73,8 +72,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   text-align: center;
   border-radius: 6px;
   position: relative;
-  cursor: ${(props) =>
-    props.isLoading || props.validate ? 'pointer' : 'not-allowed'};
+  cursor: ${(props) => (props.isLoading || props.validate ? 'pointer' : 'not-allowed')};
   transition: all 0.3s;
 `;
 

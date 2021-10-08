@@ -1,12 +1,6 @@
-import {
-  Content,
-  Header,
-  CardContainer,
-  Card,
-  CardName,
-  CardCaption,
-} from './styled';
-import React, { FC } from 'react';
+import { FC } from 'react';
+
+import { Card, CardCaption, CardContainer, CardName, Content, Header } from './styled';
 
 interface CompanyTickerProps {
   ticker: string | null;

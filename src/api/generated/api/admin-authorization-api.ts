@@ -45,7 +45,7 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
  * @export
  */
 export const AdminAuthorizationApiAxiosParamCreator = function (
-  configuration?: Configuration
+  configuration?: Configuration,
 ) {
   return {
     /**
@@ -98,7 +98,7 @@ export const AdminAuthorizationApiAxiosParamCreator = function (
      */
     authControllerSignIn: async (
       signInDto: SignInDto,
-      options: any = {}
+      options: any = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'signInDto' is not null or undefined
       assertParamExists('authControllerSignIn', 'signInDto', signInDto);
@@ -131,7 +131,7 @@ export const AdminAuthorizationApiAxiosParamCreator = function (
       localVarRequestOptions.data = serializeDataIfNeeded(
         signInDto,
         localVarRequestOptions,
-        configuration
+        configuration,
       );
 
       return {
@@ -146,11 +146,8 @@ export const AdminAuthorizationApiAxiosParamCreator = function (
  * AdminAuthorizationApi - functional programming interface
  * @export
  */
-export const AdminAuthorizationApiFp = function (
-  configuration?: Configuration
-) {
-  const localVarAxiosParamCreator =
-    AdminAuthorizationApiAxiosParamCreator(configuration);
+export const AdminAuthorizationApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator = AdminAuthorizationApiAxiosParamCreator(configuration);
   return {
     /**
      *
@@ -159,17 +156,16 @@ export const AdminAuthorizationApiFp = function (
      * @throws {RequiredError}
      */
     async authControllerFindById(
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.authControllerFindById(options);
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerFindById(
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
     /**
@@ -181,20 +177,17 @@ export const AdminAuthorizationApiFp = function (
      */
     async authControllerSignIn(
       signInDto: SignInDto,
-      options?: any
-    ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
-    > {
-      const localVarAxiosArgs =
-        await localVarAxiosParamCreator.authControllerSignIn(
-          signInDto,
-          options
-        );
+      options?: any,
+    ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerSignIn(
+        signInDto,
+        options,
+      );
       return createRequestFunction(
         localVarAxiosArgs,
         globalAxios,
         BASE_PATH,
-        configuration
+        configuration,
       );
     },
   };
@@ -207,7 +200,7 @@ export const AdminAuthorizationApiFp = function (
 export const AdminAuthorizationApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
-  axios?: AxiosInstance
+  axios?: AxiosInstance,
 ) {
   const localVarFp = AdminAuthorizationApiFp(configuration);
   return {
@@ -229,10 +222,7 @@ export const AdminAuthorizationApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    authControllerSignIn(
-      signInDto: SignInDto,
-      options?: any
-    ): AxiosPromise<void> {
+    authControllerSignIn(signInDto: SignInDto, options?: any): AxiosPromise<void> {
       return localVarFp
         .authControllerSignIn(signInDto, options)
         .then((request) => request(axios, basePath));
@@ -284,7 +274,7 @@ export class AdminAuthorizationApi extends BaseAPI {
    */
   public authControllerSignIn(
     requestParameters: AdminAuthorizationApiAuthControllerSignInRequest,
-    options?: any
+    options?: any,
   ) {
     return AdminAuthorizationApiFp(this.configuration)
       .authControllerSignIn(requestParameters.signInDto, options)

@@ -1,3 +1,7 @@
+import { FC } from 'react';
+import { Field, Form, FormProps } from 'react-final-form';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { TermsOfServices } from '../../../components/authorization-screen/authorization/sign-up/terms-of-services/terms_of_services';
 import { Tabs } from '../../../components/authorization-screen/authorization/tabs/tabs';
 import { validateEmail, validateInput } from '../../../functions/validation';
@@ -7,9 +11,6 @@ import { Button } from '../../../ui/buttons/button';
 import { LinkedIn } from '../../../ui/buttons/linkedIn/linkedIn';
 import { InputField } from '../../../ui/form/input-field';
 import { Container } from './styles';
-import React, { FC } from 'react';
-import { Field, Form, FormProps } from 'react-final-form';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const SignUp: FC = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export const SignUp: FC = () => {
       postSignUpAction({
         email: values.email,
         password: values.password,
-      })
+      }),
     );
   };
 

@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import { CheckIfNameIsEmpty } from '../../../../../../../functions/check-if-name-is-empty';
 import { ReturnFormattedDate } from '../../../../../../../functions/return-formatted-date';
 import {
@@ -11,7 +13,6 @@ import {
   LastActivityTime,
   UserIcon,
 } from './styles';
-import React, { FC } from 'react';
 
 interface FooterProps {
   lastAuthor: {
@@ -47,9 +48,7 @@ export const Footer: FC<FooterProps> = ({ lastAuthor }) => {
       </AuthorContainer>
       <LastActivityContainer>
         <LastActivityHeader>Last Activity</LastActivityHeader>
-        <LastActivityTime>
-          {ReturnFormattedDate(lastAuthor.updatedAt)}
-        </LastActivityTime>
+        <LastActivityTime>{ReturnFormattedDate(lastAuthor.updatedAt)}</LastActivityTime>
       </LastActivityContainer>
     </Content>
   );

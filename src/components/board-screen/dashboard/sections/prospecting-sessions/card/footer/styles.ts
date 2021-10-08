@@ -1,5 +1,6 @@
-import { ReactComponent as UserSvg } from '../../../../../../../ui/icons/svg/user.svg';
 import styled from 'styled-components';
+
+import { ReactComponent as UserSvg } from '../../../../../../../ui/icons/svg/user.svg';
 
 export const Content = styled.div`
   margin-top: 24px;

@@ -1,5 +1,6 @@
-import { initialState, SavedListData, ItemData } from './state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { initialState, ItemData, SavedListData } from './state';
 
 const savedListSlice = createSlice({
   name: 'SavedListSlice',

@@ -1,16 +1,17 @@
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import { Filters } from '../../../../../store/saved-list';
 import { ReactComponent as BackLogo } from '../../../../../ui/icons/svg/go-back.svg';
 import { FilterRow } from './filter-row/filter-row';
 import {
+  CompanyCounter,
   Content,
+  NextPageButton,
   PageControlContainer,
   PageCounter,
   PreviousPageButton,
-  NextPageButton,
-  CompanyCounter,
   SelectContainer,
 } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface MetaRowProps {
   meta: {

@@ -112,12 +112,11 @@ export class Configuration {
   public isJsonMime(mime: string): boolean {
     const jsonMime: RegExp = new RegExp(
       '^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$',
-      'i'
+      'i',
     );
     return (
       mime !== null &&
-      (jsonMime.test(mime) ||
-        mime.toLowerCase() === 'application/json-patch+json')
+      (jsonMime.test(mime) || mime.toLowerCase() === 'application/json-patch+json')
     );
   }
 }

@@ -1,13 +1,14 @@
+import { FC, memo } from 'react';
+
 import {
-  Content,
-  Header,
-  Columns,
+  Card,
   CardContainer,
   CardHeader,
-  Card,
   CardInfo,
+  Columns,
+  Content,
+  Header,
 } from './styles';
-import React, { FC, memo } from 'react';
 
 export const SocialImpact: FC = memo(() => (
   <Content>

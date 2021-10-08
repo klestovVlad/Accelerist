@@ -1,7 +1,8 @@
+import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { TeamActionTypes } from './action-types';
 import { teamQuery } from './axios';
 import { TeamAction } from './slice';
-import { call, put, takeLatest } from 'redux-saga/effects';
 
 export function* getTeam() {
   try {

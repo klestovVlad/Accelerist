@@ -1,7 +1,4 @@
 export const composeValidators =
   (...validators: any[]) =>
   (value: unknown) =>
-    validators.reduce(
-      (error, validator) => error || validator(value),
-      undefined
-    );
+    validators.reduce((error, validator) => error || validator(value), undefined);

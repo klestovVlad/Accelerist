@@ -1,5 +1,6 @@
-import { RootState } from '../root-reducer';
 import { createSelector } from 'reselect';
+
+import { RootState } from '../root-reducer';
 
 const selectUser = (state: RootState) => state.userReducer;
 

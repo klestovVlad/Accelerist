@@ -1,3 +1,6 @@
+import { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Favorites } from '../../../components/board-screen/dashboard/sections/favorites/favorites';
 import { ProspectingSession } from '../../../components/board-screen/dashboard/sections/prospecting-sessions/prospecting-session';
 import { Reports } from '../../../components/board-screen/dashboard/sections/reports/reports';
@@ -6,8 +9,6 @@ import { SavedListSelector } from '../../../store/saved-list';
 import { getSavedListAction } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
 import { BackgroundContainer, Content, Row, SectionsContainer } from './styles';
-import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const Dashboard: FC = () => {
   const dispatch = useDispatch();

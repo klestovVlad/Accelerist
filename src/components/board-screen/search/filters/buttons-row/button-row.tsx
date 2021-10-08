@@ -1,16 +1,14 @@
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import { Button } from '../../../../../ui/buttons/button';
 import { ButtonContainer, Content } from './styles';
-import React, { Dispatch, FC, SetStateAction } from 'react';
 
 interface ButtonRowProps {
   handleSubmit(): void;
   setShowFilter: Dispatch<SetStateAction<boolean>>;
 }
 
-export const ButtonRow: FC<ButtonRowProps> = ({
-  handleSubmit,
-  setShowFilter,
-}) => (
+export const ButtonRow: FC<ButtonRowProps> = ({ handleSubmit, setShowFilter }) => (
   <Content>
     <ButtonContainer>
       <Button

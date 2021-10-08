@@ -1,5 +1,6 @@
-import checked from '../icons/svg/checked.svg';
 import styled from 'styled-components';
+
+import checked from '../icons/svg/checked.svg';
 
 export const StyledLabel = styled.label`
   position: relative;
