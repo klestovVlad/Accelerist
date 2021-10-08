@@ -1,7 +1,6 @@
-import '../src/style/style-sheets/fonts/GothamRnd-Medium/style.css';
-import '../src/style/style-sheets/fonts/SFPro/style.css';
-import '../src/style/style-sheets/fonts/rubik-v14-latin/style.css';
-import '../src/style/style-sheets/reset.css';
+import '../src/style/fonts/GothamRnd-Medium/style.css';
+import '../src/style/fonts/SFPro/style.css';
+import '../src/style/fonts/rubik-v14-latin/style.css';
 
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
@@ -13,6 +12,7 @@ import { ThemeProvider } from 'styled-components';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './store/root-reducer';
+import GlobalStyle from './style/global-styles/global-styles';
 import { theme } from './style/theme/theme';
 
 ReactDOM.render(
@@ -21,6 +21,7 @@ ReactDOM.render(
       <PersistGate loading={null} persistor={state.persist}>
         <BrowserRouter>
           <StrictMode>
+            <GlobalStyle />
             <App />
           </StrictMode>
         </BrowserRouter>

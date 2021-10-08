@@ -22,3 +22,10 @@ export const InputContainer = styled.div`
   grid-column-gap: 23px;
   grid-row-gap: 46px;
 `;
+
+export const SlideContainer = styled.div`
+  width: 87%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+`;

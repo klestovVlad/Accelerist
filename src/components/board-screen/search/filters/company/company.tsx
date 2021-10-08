@@ -2,8 +2,8 @@ import { Dispatch, FC, SetStateAction } from 'react';
 import { Field, FormProps } from 'react-final-form';
 
 import { Input } from '../../../../../ui/input/input';
-import { RangeSlider } from '../../../../../ui/range-slider/range-slider';
-import { Content, Header, InputContainer } from './styles';
+import LabeledMergeCustom from '../../../../../ui/range-slide/range-slide';
+import { Content, Header, InputContainer, SlideContainer } from './styles';
 
 interface CompanyProps extends FormProps {
   rangeValue: number[];
@@ -29,17 +29,9 @@ export const Company: FC<CompanyProps> = ({ rangeValue, setRangeValue, form }) =
         form={form}
       />
       <Field name="SDG Goals" label="SDG Goals" component={Input} form={form} />
-      <Field
-        form={form}
-        name="123"
-        type="range"
-        min={0}
-        max={999}
-        rangeValue={rangeValue}
-        setRangeValue={setRangeValue}
-        component={RangeSlider}
-        label="Revenue"
-      />
+      <SlideContainer>
+        <LabeledMergeCustom rtl={false} values={rangeValue} setValues={setRangeValue} />
+      </SlideContainer>
     </InputContainer>
   </Content>
 );

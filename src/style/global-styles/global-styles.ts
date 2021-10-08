@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -104,7 +107,6 @@ video {
   vertical-align: baseline;
   text-decoration: none;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -162,3 +164,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
+`;
+
+export default GlobalStyle;

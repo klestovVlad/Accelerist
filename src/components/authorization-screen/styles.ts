@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,4 +26,8 @@ export const H1 = styled.h1`
   text-align: center;
   color: ${(props) => props.theme.colors.black};
   margin-bottom: 25px;
+`;
+
+export const ButtonContainer = styled.div`
+  margin: 0px auto 28px;
 `;

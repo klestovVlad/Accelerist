@@ -1,14 +1,11 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { InputForm } from '../../../components/authorization-screen/reset-password/input-form/input-form';
 import { ResentForm } from '../../../components/authorization-screen/reset-password/resend-form/resend-form';
-import { Button } from '../../../ui/buttons/button';
-import { ButtonContainer, Content, H1 } from './styles';
+import { Content, H1 } from './styles';
 
 export const ResetPassword: FC = () => {
   const [seconds, setSeconds] = useState(0);
-  const history = useHistory();
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -39,16 +36,6 @@ export const ResetPassword: FC = () => {
       ) : (
         <ResentForm seconds={seconds} setSeconds={setSeconds} />
       )}
-      <ButtonContainer>
-        <Button
-          label="Return to Login"
-          onClick={() => history.push('/login')}
-          colorScheme="darkTransparent"
-          type="button"
-          isLoading={false}
-          validate
-        />
-      </ButtonContainer>
     </Content>
   );
 };
