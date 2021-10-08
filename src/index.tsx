@@ -1,6 +1,4 @@
-import '../src/style/fonts/GothamRnd-Medium/style.css';
-import '../src/style/fonts/SFPro/style.css';
-import '../src/style/fonts/rubik-v14-latin/style.css';
+import '../src/style/fonts/fonts.css';
 
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
