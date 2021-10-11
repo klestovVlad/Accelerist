@@ -15,7 +15,18 @@ import { Container } from './styles';
 export const SignUp: FC = () => {
   const dispatch = useDispatch();
   const loadState = useSelector(UserSelector.selectLoadState);
-  const onSubmitForm = (values: FormProps) => {
+
+  interface SignUpForm {
+    email: string;
+    password: string;
+  }
+
+  const signUpFormInitialValues: SignUpForm = {
+    email: '',
+    password: '',
+  };
+
+  const onSubmitForm = (values: FormProps<SignUpForm>) => {
     dispatch(
       postSignUpAction({
         email: values.email,
@@ -27,6 +38,7 @@ export const SignUp: FC = () => {
   return (
     <Form
       onSubmit={onSubmitForm}
+      initialValues={signUpFormInitialValues}
       render={({ valid, values, handleSubmit }) => (
         <Container>
           <Tabs activeTub={1} />

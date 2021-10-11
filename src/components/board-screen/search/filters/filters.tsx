@@ -1,7 +1,8 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 import { Form } from 'react-final-form';
 
-import { FilterRequest } from '../../../../store/companies/state';
+import { FilterRequest, PreFilter } from '../../../../store/companies/state';
+import { AgeRange, Income } from '../../../../store/companies/state';
 import { Tabs } from '../../../../ui/tabs/tabs';
 import { ButtonRow } from './buttons-row/button-row';
 import { Company } from './company/company';
@@ -24,12 +25,20 @@ export const Filters: FC<FilterProps> = ({
   const [rangeValue, setRangeValue] = useState<Array<number>>([0, 999]);
   const [gender, setGender] = useState(2);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmitForm = (values: any) => {
+  const FilterFormInitialValues: PreFilter = {
+    'CSR Focus': '',
+    'Geographic Location': '',
+    Industry: '',
+    'SDG Goals': '',
+    'Total Annual Contributions': '',
+  };
+
+  const onSubmitForm = (values: PreFilter) => {
+    console.log(values);
     const demographicData: {
-      'Household Income': string[];
+      'Household Income': Income[];
       Ethnicity: string[];
-      Age: string[];
+      Age: AgeRange[];
     } = {
       'Household Income': [],
       Ethnicity: [],
@@ -38,15 +47,17 @@ export const Filters: FC<FilterProps> = ({
 
     Object.keys(values).map((key) => {
       if (key.includes('Household Income_') && values) {
-        demographicData['Household Income'].push(key.replace('Household Income_', ''));
+        demographicData['Household Income'].push(
+          key.replace('Household Income_', '') as Income,
+        );
       }
 
       if (key.includes('Ethnicity_') && values) {
         demographicData.Ethnicity.push(key.replace('Ethnicity__', ''));
       }
 
-      if (key.includes('Ethnicity_') && values) {
-        demographicData.Age.push(key.replace('Age_', ''));
+      if (key.includes('Age_') && values) {
+        demographicData.Age.push(key.replace('Age_', '') as AgeRange);
       }
 
       return key;
@@ -56,17 +67,19 @@ export const Filters: FC<FilterProps> = ({
     setFilterQuery({
       page: 1,
       limit: 12,
-      ethnicities: undefined,
-      income: undefined,
-      ageRanges: undefined,
+      ethnicities: demographicData.Ethnicity,
+      income: demographicData['Household Income'],
+      ageRanges: demographicData.Age,
       gender: genderList[gender],
       q: searchField,
-      industry: [values.Industry],
+      industry: values.Industry ? [values.Industry] : undefined,
       deleteIds: undefined,
-      csrFocusIds: [values['CSR Focus']],
-      affinities: [values['SDG Goals']],
-      location: [values['Geographic Location']],
-      totalAnnualContributors: values['Total Annual Contribution'],
+      csrFocusIds: values['CSR Focus'] ? [values['CSR Focus']] : undefined,
+      affinities: values['SDG Goals'] ? [values['SDG Goals']] : undefined,
+      location: values['Geographic Location']
+        ? [values['Geographic Location']]
+        : undefined,
+      totalAnnualContributors: values['Total Annual Contributions'],
       revenueMin: rangeValue[0] * 1000,
       revenueMax: rangeValue[1] * 1000,
     });
@@ -78,6 +91,7 @@ export const Filters: FC<FilterProps> = ({
 
       <Form
         onSubmit={onSubmitForm}
+        initialValues={FilterFormInitialValues}
         mutators={{
           setValue: ([field, value], state, { changeValue }) => {
             changeValue(state, field, () => value);

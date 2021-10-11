@@ -14,13 +14,23 @@ interface InputFormProps {
 
 export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
   const dispatch = useDispatch();
-  const onSubmitForm = (values: FormProps) => {
+
+  interface ResetPasswordForm {
+    email: string;
+  }
+
+  const signUpFormInitialValues: ResetPasswordForm = {
+    email: '',
+  };
+
+  const onSubmitForm = (values: FormProps<ResetPasswordForm>) => {
     setSeconds(40);
     dispatch(sendChangePasswordEmail(values.email));
   };
   return (
     <Form
       onSubmit={onSubmitForm}
+      initialValues={signUpFormInitialValues}
       render={({ valid, values, handleSubmit }) => (
         <Container>
           <P>Enter your email to receive instructions on how to reset your password.</P>
