@@ -38,7 +38,7 @@ export const SignIn: FC = () => {
     <Form
       onSubmit={onSubmitForm}
       initialValues={signUpFormInitialValues}
-      render={({ valid, values, handleSubmit }) => (
+      render={({ handleSubmit, values, valid, submitting }) => (
         <Container>
           <Tabs activeTub={2} />
           <Field
@@ -68,7 +68,7 @@ export const SignIn: FC = () => {
             onClick={handleSubmit}
             colorScheme="blue"
             isLoading={loadState}
-            validate={valid}
+            validate={!submitting && valid}
           />
           <LinkedIn />
         </Container>

@@ -25,13 +25,7 @@ export const Filters: FC<FilterProps> = ({
   const [rangeValue, setRangeValue] = useState<Array<number>>([0, 999]);
   const [gender, setGender] = useState(2);
 
-  const FilterFormInitialValues: PreFilter = {
-    'CSR Focus': '',
-    'Geographic Location': '',
-    Industry: '',
-    'SDG Goals': '',
-    'Total Annual Contributions': '',
-  };
+  const FilterFormInitialValues: PreFilter = {};
 
   const onSubmitForm = (values: PreFilter) => {
     console.log(values);
