@@ -1,8 +1,10 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
+import createFile from '../../functions/save-excel';
 import { CompaniesActionTypes } from './action-types';
 import {
+  companiesExcelQuery,
   companiesQuery,
   dislikeCompanyQuery,
   favoritesListQuery,
@@ -55,6 +57,38 @@ export function* getCompanies({ payload }: PayloadAction<FilterRequest>) {
   }
 }
 
+export function* getCompaniesExcel({ payload }: PayloadAction<FilterRequest>) {
+  console.log('getCompaniesExcel saga');
+  try {
+    yield put(CompaniesAction.setCompaniesLoading(true));
+    console.log(payload);
+    const { data } = yield call(
+      companiesExcelQuery,
+      payload.page,
+      payload.limit,
+      payload.income,
+      payload.ageRanges,
+      payload.gender,
+      payload.q,
+      payload.industry,
+      payload.deleteIds,
+      payload.csrFocusIds,
+      payload.affinities,
+      payload.location,
+      payload.totalAnnualContributors,
+      payload.revenueMin,
+      payload.revenueMax,
+    );
+    yield createFile(data);
+  } catch (e) {
+    if (e instanceof Error) {
+      yield put(CompaniesAction.setCompaniesError(e.message));
+    }
+  } finally {
+    yield put(CompaniesAction.setCompaniesLoading(false));
+  }
+}
+
 export function* likeCompany({ payload }: PayloadAction<LikeCompanyRequest>) {
   try {
     if (payload.like) {
@@ -89,4 +123,5 @@ export function* favoriteListWatcher() {
   yield takeLatest(CompaniesActionTypes.GET_COMPANIES, getCompanies);
   yield takeLatest(CompaniesActionTypes.LIKE_COMPANY, likeCompany);
   yield takeLatest(CompaniesActionTypes.DELETE_FROM_FAVORITES, deleteFromFavorites);
+  yield takeLatest(CompaniesActionTypes.GET_COMPANIES_EXCEL, getCompaniesExcel);
 }

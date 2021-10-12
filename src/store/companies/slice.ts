@@ -12,6 +12,9 @@ const CompaniesSlice = createSlice({
     setCompaniesData(state, { payload }: PayloadAction<CompaniesData>) {
       return { ...payload, errors: [], isError: false };
     },
+    getCompaniesExcel(state, { payload }: PayloadAction<CompaniesData>) {
+      console.log('getCompaniesExcel', payload);
+    },
     setLikeCompany(state, { payload }: PayloadAction<string>) {
       state.items.map((item) => {
         if (item.id === payload) {

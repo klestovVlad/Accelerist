@@ -7,7 +7,11 @@ import { Card } from '../../../components/board-screen/search/card/card';
 import { Filters } from '../../../components/board-screen/search/filters/filters';
 import { MetaRow } from '../../../components/board-screen/search/meta-row/meta-row';
 import { Topic } from '../../../components/board-screen/topic/topic';
-import { CompaniesSelector, getCompaniesAction } from '../../../store/companies';
+import {
+  CompaniesSelector,
+  getCompaniesAction,
+  getCompaniesExcelAction,
+} from '../../../store/companies';
 import { FilterRequest } from '../../../store/companies/state';
 import { createSavedList } from '../../../store/saved-list';
 import { LoadPopup } from '../../../ui/load-popup/load-popup';
@@ -65,6 +69,10 @@ export const Search: FC = () => {
     dispatch(createSavedList({ ...filterQuery, q: searchField }));
   };
 
+  const SaveExcelList = () => {
+    dispatch(getCompaniesExcelAction({ ...filterQuery, q: searchField }));
+  };
+
   return (
     <Content>
       <Topic
@@ -91,6 +99,7 @@ export const Search: FC = () => {
             meta={meta}
             setPage={setPage}
             saveList={SaveList}
+            saveExcel={SaveExcelList}
             permissionToSave={permissionToSave}
           />
           <CardContainer>

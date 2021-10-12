@@ -13,6 +13,12 @@ export const SelectContainer = styled.div`
   margin-top: 24px;
 `;
 
+export const SaveButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const SaveButton = styled.button`
   display: flex;
   flex-direction: row;
@@ -26,7 +32,8 @@ export const SaveTitle = styled.p`
   font-size: 12px;
   line-height: 150%;
   color: ${(props) => props.theme.colors.dark_gray};
-  margin-left: 8px;
+  margin-left: 18px;
+  margin-right: 40px;
 `;
 
 export const PageControlContainer = styled.div`

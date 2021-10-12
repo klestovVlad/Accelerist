@@ -6,6 +6,8 @@ export { getFavoritesAction } from './actions';
 
 export { getCompaniesAction } from './actions';
 
+export { getCompaniesExcelAction } from './actions';
+
 export { likeCompanyAction } from './actions';
 
 export { deleteFromFavoritesAction } from './actions';

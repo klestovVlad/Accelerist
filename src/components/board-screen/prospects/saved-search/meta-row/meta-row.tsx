@@ -29,7 +29,7 @@ export const MetaRow: FC<MetaRowProps> = ({ meta, setPage, filters }) => (
   <Content>
     <CompanyCounter>{meta.totalItems} companies</CompanyCounter>
     <SelectContainer>
-      <FilterRow filters={filters} id="17" />
+      <FilterRow filters={filters} id="" />
       {meta.totalItems !== 0 && (
         <PageControlContainer>
           {+meta.currentPage !== 1 && (

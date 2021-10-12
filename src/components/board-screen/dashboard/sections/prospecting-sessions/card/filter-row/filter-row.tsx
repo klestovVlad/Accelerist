@@ -12,7 +12,7 @@ export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
   <Content>
     <Header>Filters</Header>
     <FilterItemsContainer>
-      {Object.entries(filters)
+      {Object.entries(filters || {})
         .slice(0, 4)
         .map((item, index) => (
           <FilterItem key={id + index.toString() + item}>

@@ -1,5 +1,6 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
+import { ReactComponent as SaveExcelIcon } from '../../../../ui/icons/svg/export-excel.svg';
 import { ReactComponent as BackLogo } from '../../../../ui/icons/svg/go-back.svg';
 import { ReactComponent as SaveIcon } from '../../../../ui/icons/svg/save-folder.svg';
 import { ModalWindow } from '../modal-window/modal-window';
@@ -11,6 +12,7 @@ import {
   PageCounter,
   PreviousPageButton,
   SaveButton,
+  SaveButtonContainer,
   SaveTitle,
   SelectContainer,
 } from './styles';
@@ -25,6 +27,7 @@ interface MetaRowProps {
   };
   setPage: Dispatch<SetStateAction<number>>;
   saveList?(): void;
+  saveExcel?(): void;
   permissionToSave?: boolean;
 }
 
@@ -32,6 +35,7 @@ export const MetaRow: FC<MetaRowProps> = ({
   meta,
   setPage,
   saveList,
+  saveExcel,
   permissionToSave,
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -39,15 +43,25 @@ export const MetaRow: FC<MetaRowProps> = ({
     return permissionToSave ? (saveList ? saveList() : null) : setShowModal(true);
   };
 
+  const onSaveExcelClick = () => {
+    return permissionToSave ? (saveExcel ? saveExcel() : null) : setShowModal(true);
+  };
+
   return (
     <Content>
       {showModal && <ModalWindow setShowModal={setShowModal} />}
       <CompanyCounter>Found {meta.totalItems} companies</CompanyCounter>
       <SelectContainer>
-        <SaveButton onClick={() => onSaveClick()}>
-          <SaveIcon />
-          <SaveTitle>Save List</SaveTitle>
-        </SaveButton>
+        <SaveButtonContainer>
+          <SaveButton onClick={() => onSaveClick()}>
+            <SaveIcon />
+            <SaveTitle>Save List</SaveTitle>
+          </SaveButton>
+          <SaveButton onClick={() => onSaveExcelClick()}>
+            <SaveExcelIcon />
+            <SaveTitle>Export to Excel</SaveTitle>
+          </SaveButton>
+        </SaveButtonContainer>
         {meta.totalItems !== 0 && (
           <PageControlContainer>
             {+meta.currentPage !== 1 && (
