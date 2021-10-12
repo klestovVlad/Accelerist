@@ -28,7 +28,7 @@ export const ProspectingSession: FC = () => {
         href={routes.private.prospects}
       />
       <SectionContainer>
-        {SavedListItems.length === 0 && (
+        {SavedListItems.length === 0 ? (
           <EmptyListSaved>
             <FolderIcon />
             <EmptyListHeader>No lists saved</EmptyListHeader>
@@ -44,10 +44,9 @@ export const ProspectingSession: FC = () => {
               />
             </ButtonContainer>
           </EmptyListSaved>
+        ) : (
+          SavedListItems.map((item) => <Card key={item.id} data={item} />)
         )}
-        {SavedListItems.map((item) => (
-          <Card key={item.id} data={item} />
-        ))}
       </SectionContainer>
     </Content>
   );

@@ -7,8 +7,9 @@ import { BoardScreen } from './layout/board-screen/board-screen';
 import { UserSelector } from './store/user/index';
 
 function App() {
-  const Token = useSelector(UserSelector.selectToken);
-  return Token ? <BoardScreen /> : <AuthorizationScreen />;
+  const token = useSelector(UserSelector.selectToken);
+  console.log('Token: ', token);
+  return token ? <BoardScreen /> : <AuthorizationScreen />;
 }
 
 export default App;
