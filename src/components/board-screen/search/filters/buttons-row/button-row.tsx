@@ -17,7 +17,6 @@ export const ButtonRow: FC<ButtonRowProps> = ({ handleSubmit, setShowFilter }) =
         type="button"
         colorScheme="white"
         isLoading={false}
-        validate
       />
     </ButtonContainer>
     <ButtonContainer>
@@ -27,7 +26,6 @@ export const ButtonRow: FC<ButtonRowProps> = ({ handleSubmit, setShowFilter }) =
         type="button"
         colorScheme="blue"
         isLoading={false}
-        validate
       />
     </ButtonContainer>
   </Content>

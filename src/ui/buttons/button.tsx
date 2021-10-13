@@ -15,7 +15,7 @@ interface ButtonProps {
   colorScheme: 'blue' | 'darkTransparent' | 'white' | 'blueLine' | 'redText';
   type: 'button' | 'submit' | 'reset' | undefined;
   isLoading: boolean;
-  validate: boolean;
+  disable?: boolean;
   Icon?: FC<SVGProps<SVGSVGElement>>;
 }
 
@@ -25,15 +25,15 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   type,
   isLoading,
-  validate,
+  disable,
   Icon,
 }) => (
   <StyledButton
     colorScheme={colorScheme}
     type={type}
-    onClick={() => (!isLoading && validate ? onClick() : null)}
+    onClick={() => (!isLoading && !disable ? onClick() : null)}
     isLoading={isLoading}
-    validate={validate}
+    disable={disable}
   >
     {isLoading ? (
       <>
@@ -50,7 +50,7 @@ export const Button: FC<ButtonProps> = ({
           </IconContainer>
         )}
 
-        <ButtonText validate={validate} colorScheme={colorScheme}>
+        <ButtonText disable={disable} colorScheme={colorScheme}>
           {label}
         </ButtonText>
       </ButtonContent>

@@ -50,7 +50,7 @@ export const InputForm: FC<InputFormProps> = ({ setSeconds }) => {
               onClick={handleSubmit}
               colorScheme="blue"
               isLoading={false}
-              validate={valid}
+              disable={!valid}
             />
           </ButtonContainer>
         </Container>

@@ -28,7 +28,6 @@ export const Filters: FC<FilterProps> = ({
   const FilterFormInitialValues: PreFilter = {};
 
   const onSubmitForm = (values: PreFilter) => {
-    console.log(values);
     const demographicData: {
       'Household Income': Income[];
       Ethnicity: string[];

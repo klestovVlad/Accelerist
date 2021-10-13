@@ -68,7 +68,7 @@ export const SignIn: FC = () => {
             onClick={handleSubmit}
             colorScheme="blue"
             isLoading={loadState}
-            validate={!submitting && valid}
+            disable={!submitting && !valid}
           />
           <LinkedIn />
         </Container>

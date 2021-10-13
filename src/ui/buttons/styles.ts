@@ -5,7 +5,7 @@ import { ReactComponent as Loading } from '../icons/svg/loading-button.svg';
 interface StyledButtonProps {
   colorScheme: 'blue' | 'darkTransparent' | 'white' | 'blueLine' | 'redText';
   isLoading: boolean;
-  validate: boolean;
+  disable?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -20,7 +20,7 @@ export enum BUTTON_COLOR_SCHEME {
 const BACKGROUND_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<StyledButtonProps>`
     background-color: ${(props) =>
-      !props.validate ? props.theme.colors.light_blue2 : props.theme.colors.blue};
+      props.disable ? props.theme.colors.light_blue2 : props.theme.colors.blue};
     padding: 12px 24px;
     font-size: 16px;
   `,
@@ -72,7 +72,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   text-align: center;
   border-radius: 6px;
   position: relative;
-  cursor: ${(props) => (props.isLoading || props.validate ? 'pointer' : 'not-allowed')};
+  cursor: ${(props) => (props.isLoading || !props.disable ? 'pointer' : 'not-allowed')};
   transition: all 0.3s;
 `;
 
@@ -100,39 +100,39 @@ export const LoadingIcon = styled(Loading)`
 `;
 
 interface ButtonTextProps {
-  validate: boolean;
+  disable?: boolean;
   colorScheme: 'blue' | 'darkTransparent' | 'white' | 'blueLine' | 'redText';
 }
 
 const BUTTON_TEXT_COLOR = {
   [BUTTON_COLOR_SCHEME.blue]: css<ButtonTextProps>`
     color: ${(props) =>
-      props.validate ? props.theme.colors.white : props.theme.colors.blue};
+      !props.disable ? props.theme.colors.white : props.theme.colors.blue};
   `,
   [BUTTON_COLOR_SCHEME.darkTransparent]: css<ButtonTextProps>`
     color: ${(props) =>
-      props.validate ? props.theme.colors.white : props.theme.colors.blue};
+      !props.disable ? props.theme.colors.white : props.theme.colors.blue};
   `,
 
   [BUTTON_COLOR_SCHEME.white]: css<ButtonTextProps>`
     color: ${(props) =>
-      props.validate ? props.theme.colors.black : props.theme.colors.dark_grey};
+      !props.disable ? props.theme.colors.black : props.theme.colors.dark_grey};
   `,
 
   [BUTTON_COLOR_SCHEME.blueLine]: css<ButtonTextProps>`
     color: ${(props) =>
-      props.validate ? props.theme.colors.black : props.theme.colors.dark_grey};
+      !props.disable ? props.theme.colors.black : props.theme.colors.dark_grey};
   `,
 
   [BUTTON_COLOR_SCHEME.redText]: css<ButtonTextProps>`
     color: ${(props) =>
-      props.validate ? props.theme.colors.red : props.theme.colors.dark_grey};
+      !props.disable ? props.theme.colors.red : props.theme.colors.dark_grey};
   `,
 };
 
 export const ButtonText = styled.span<ButtonTextProps>`
   ${({ colorScheme }) => BUTTON_TEXT_COLOR[colorScheme]};
-  opacity: ${(props) => (props.validate ? 1 : 0.3)};
+  opacity: ${(props) => (props.disable ? 0.3 : 1)};
   transition: all 0.3s;
 `;
 

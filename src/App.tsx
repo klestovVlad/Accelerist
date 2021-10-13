@@ -8,7 +8,6 @@ import { UserSelector } from './store/user/index';
 
 function App() {
   const token = useSelector(UserSelector.selectToken);
-  console.log('Token: ', token);
   return token ? <BoardScreen /> : <AuthorizationScreen />;
 }
 

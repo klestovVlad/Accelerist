@@ -13,14 +13,14 @@ export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
     <Header>Filters</Header>
     <FilterItemsContainer>
       {Object.entries(filters)
-        .slice(0, 4)
         .map((item, index) => {
-          return item[1].length > 0 ? (
+          return item[1].toString().length > 0 ? (
             <FilterItem key={id + index.toString() + item}>
               {item[0] === 'q' ? '' : `${item[0]}: `} {item[1]}
             </FilterItem>
           ) : null;
-        })}
+        })
+        .slice(0, 6)}
     </FilterItemsContainer>
   </Content>
 );

@@ -58,10 +58,8 @@ export function* getCompanies({ payload }: PayloadAction<FilterRequest>) {
 }
 
 export function* getCompaniesExcel({ payload }: PayloadAction<FilterRequest>) {
-  console.log('getCompaniesExcel saga');
   try {
     yield put(CompaniesAction.setCompaniesLoading(true));
-    console.log(payload);
     const { data } = yield call(
       companiesExcelQuery,
       payload.page,

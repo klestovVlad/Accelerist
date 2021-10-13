@@ -114,7 +114,6 @@ export const Topic: FC<TopicProps> = ({
                       colorScheme="blueLine"
                       type="button"
                       isLoading={false}
-                      validate={true}
                       Icon={EditIcon}
                     />
                   </ButtonContainer>
@@ -125,7 +124,6 @@ export const Topic: FC<TopicProps> = ({
                       colorScheme="redText"
                       type="button"
                       isLoading={false}
-                      validate={true}
                     />
                   </ButtonContainer>
                 </EditButtonsContainer>
@@ -139,7 +137,6 @@ export const Topic: FC<TopicProps> = ({
                       colorScheme="blueLine"
                       type="button"
                       isLoading={false}
-                      validate={true}
                     />
                   </ButtonContainer>
                   <ButtonContainer>
@@ -149,7 +146,7 @@ export const Topic: FC<TopicProps> = ({
                       colorScheme="redText"
                       type="button"
                       isLoading={false}
-                      validate={name.length > 0}
+                      disable={name.length <= 0}
                     />
                   </ButtonContainer>
                 </EditButtonsContainer>

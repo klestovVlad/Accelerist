@@ -23,7 +23,7 @@ export const ResentForm: FC<ResentFormProps> = ({ seconds, setSeconds }) => {
           colorScheme="blue"
           type="button"
           isLoading={false}
-          validate={seconds === 0}
+          disable={seconds !== 0}
         />
       </ButtonContainer>
     </Content>

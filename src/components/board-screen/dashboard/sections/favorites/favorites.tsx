@@ -45,7 +45,6 @@ export const Favorites: FC = () => {
               onClick={() => history.push('/search')}
               colorScheme="blueLine"
               isLoading={false}
-              validate
               type="button"
             />
           </ButtonContainer>

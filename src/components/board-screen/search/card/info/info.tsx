@@ -82,7 +82,6 @@ export const Info: FC<InfoProps> = ({
             colorScheme="blueLine"
             type="button"
             isLoading={false}
-            validate
           />
         </ButtonContainer>
       </ButtonRow>

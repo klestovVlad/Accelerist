@@ -34,7 +34,6 @@ export const Content: FC = () => {
             colorScheme="darkTransparent"
             type="button"
             isLoading={false}
-            validate
           />
         </ButtonContainer>
       )}

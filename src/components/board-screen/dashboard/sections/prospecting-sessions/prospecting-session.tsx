@@ -20,6 +20,7 @@ import {
 export const ProspectingSession: FC = () => {
   const history = useHistory();
   const SavedListItems = useSelector(SavedListSelector.selectItems);
+  console.log(SavedListItems);
   return (
     <Content>
       <SectionHeader
@@ -39,7 +40,6 @@ export const ProspectingSession: FC = () => {
                 onClick={() => history.push('/search')}
                 colorScheme="blueLine"
                 isLoading={false}
-                validate
                 type="button"
               />
             </ButtonContainer>

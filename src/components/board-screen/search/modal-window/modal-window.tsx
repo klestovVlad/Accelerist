@@ -32,7 +32,6 @@ export const ModalWindow: FC<ModalWindowProps> = ({ setShowModal }) => (
             colorScheme={'blueLine'}
             type="button"
             isLoading={false}
-            validate={true}
           />
         </ButtonContainer>
       </TextRow>
