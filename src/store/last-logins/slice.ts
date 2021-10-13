@@ -6,11 +6,15 @@ const lastLoginsSlice = createSlice({
   name: 'FavoriteListSlice',
   initialState,
   reducers: {
-    setLastLoginData(state, { payload }: PayloadAction<LastLoginInfo[]>) {
-      return payload;
+    setLastLoginDataLoading(state, { payload }: PayloadAction<boolean>) {
+      state.isLoading = payload;
     },
-    setLastLoginError(state, { payload }: PayloadAction<unknown>) {
-      console.log(payload);
+    setLastLoginData(state, { payload }: PayloadAction<LastLoginInfo[]>) {
+      return { data: payload, isLoading: false, isError: false, errors: [] };
+    },
+    setLastLoginError(state, { payload }: PayloadAction<string>) {
+      state.isError = true;
+      state.errors.push(payload);
     },
   },
 });

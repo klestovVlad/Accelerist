@@ -6,12 +6,15 @@ import { LastLoginsAction } from './slice';
 
 export function* getLastLogin() {
   try {
+    yield put(LastLoginsAction.setLastLoginDataLoading(true));
     const { data } = yield call(lastLoginsQuery);
     yield put(LastLoginsAction.setLastLoginData(data));
   } catch (e) {
     if (e instanceof Error) {
       yield put(LastLoginsAction.setLastLoginError(e.message));
     }
+  } finally {
+    yield put(LastLoginsAction.setLastLoginDataLoading(false));
   }
 }
 

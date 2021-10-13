@@ -24,4 +24,4 @@ yarn-error.log*
 
 
 # api generated
-/src/api/generated
+/src/api/generated/
