@@ -10,13 +10,16 @@ import { Body, CardContainer, Content } from './styles';
 
 export const CompanyFavorites: FC = () => {
   const dispatch = useDispatch();
+
   const [page, setPage] = useState(1);
   useEffect(() => {
     dispatch(getFavoritesAction({ page: page, limit: 12 }));
   }, [dispatch, page]);
 
   const favoriteListItems = useSelector(CompaniesSelector.selectItems);
+
   const meta = useSelector(CompaniesSelector.selectMeta);
+  console.log(meta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
   return (
     <Content>
