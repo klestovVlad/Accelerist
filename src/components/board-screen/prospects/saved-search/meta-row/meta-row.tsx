@@ -1,8 +1,8 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 
+import { FilterRow } from '../../../../../components/board-screen/dashboard/sections/prospecting-sessions/card/filter-row/filter-row';
 import { Filters } from '../../../../../store/saved-list';
 import { ReactComponent as BackLogo } from '../../../../../ui/icons/svg/go-back.svg';
-import { FilterRow } from './filter-row/filter-row';
 import {
   CompanyCounter,
   Content,

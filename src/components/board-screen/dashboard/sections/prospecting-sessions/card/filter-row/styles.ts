@@ -32,6 +32,7 @@ export const FilterItem = styled.div`
   margin-top: 8px;
   flex-wrap: wrap;
   text-transform: capitalize;
+  background-color: ${(props) => props.theme.colors.white};
 
   &:first-child {
     margin-left: 4.5px;
