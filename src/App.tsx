@@ -1,5 +1,3 @@
-import './App.css';
-
 import { useSelector } from 'react-redux';
 
 import { AuthorizationScreen } from './layout/authorization-screen/authorization-screen';
