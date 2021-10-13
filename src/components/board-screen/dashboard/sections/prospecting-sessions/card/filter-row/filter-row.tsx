@@ -16,7 +16,12 @@ export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
       <FilterItemsContainer>
         {Object.entries(filters)
           .map((item, index) => {
-            if (item[1] && item[0] !== 'deleteIds') {
+            if (
+              typeof item[1] != 'undefined' &&
+              item[1] != null &&
+              item[1].length > 0 &&
+              item[0] !== 'deleteIds'
+            ) {
               return (
                 <FilterItem key={id + index.toString() + item}>
                   {item[0] === 'q' ? '' : `${item[0]}:`}{' '}
