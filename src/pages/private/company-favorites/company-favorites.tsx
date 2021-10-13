@@ -19,7 +19,6 @@ export const CompanyFavorites: FC = () => {
   const favoriteListItems = useSelector(CompaniesSelector.selectItems);
 
   const meta = useSelector(CompaniesSelector.selectMeta);
-  console.log(meta);
   const loadState = useSelector(CompaniesSelector.selectLoadState);
   return (
     <Content>

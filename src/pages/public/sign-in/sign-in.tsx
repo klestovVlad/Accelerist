@@ -37,42 +37,45 @@ export const SignIn: FC = () => {
   return (
     <Form
       onSubmit={onSubmitForm}
+      keepDirtyOnReinitialize={true}
       initialValues={signUpFormInitialValues}
-      render={({ handleSubmit, values, valid, submitting }) => (
-        <Container>
-          <Tabs activeTub={2} />
-          <Field
-            name="email"
-            label="Email"
-            placeholder="Write your email..."
-            inputType="text"
-            value={values.email}
-            component={InputField}
-            validate={validateEmail}
-          />
-          <Field
-            name="password"
-            label="Password"
-            inputType="password"
-            placeholder="Write your password..."
-            value={values.password}
-            component={InputField}
-            validate={validateInput}
-            secureTextEntry
-            validateOnBlur
-          />
-          <PasswordOptions />
-          <Button
-            label="Login"
-            type="submit"
-            onClick={handleSubmit}
-            colorScheme="blue"
-            isLoading={loadState}
-            disable={!submitting && !valid}
-          />
-          <LinkedIn />
-        </Container>
-      )}
+      render={({ handleSubmit, values, pristine, valid, submitting }) => {
+        return (
+          <Container>
+            <Tabs activeTub={2} />
+            <Field
+              name="email"
+              label="Email"
+              placeholder="Write your email..."
+              inputType="text"
+              value={values.email}
+              component={InputField}
+              validate={validateEmail}
+            />
+            <Field
+              name="password"
+              label="Password"
+              inputType="password"
+              placeholder="Write your password..."
+              value={values.password}
+              component={InputField}
+              validate={validateInput}
+              secureTextEntry
+              validateOnBlur
+            />
+            <PasswordOptions />
+            <Button
+              label="Login"
+              type="submit"
+              onClick={handleSubmit}
+              colorScheme="blue"
+              isLoading={loadState}
+              disable={!valid || pristine || submitting}
+            />
+            <LinkedIn />
+          </Container>
+        );
+      }}
     />
   );
 };

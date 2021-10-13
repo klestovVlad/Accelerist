@@ -18,7 +18,6 @@ export const SavedSearch: FC = () => {
   const id = useLocation().pathname.replace('/prospects/', '');
 
   const Listitem = useSelector(SavedListSelector.getItemById(id));
-  console.log(Listitem);
 
   useEffect(() => {
     if (Listitem.filters) {
