@@ -11,14 +11,16 @@ interface FilterRowProps {
 export const FilterRow: FC<FilterRowProps> = ({ filters, id }) => (
   <Content>
     <Header>Filters</Header>
-    <FilterItemsContainer>
-      {Object.entries(filters)
-        .slice(0, 4)
-        .map((item, index) => (
-          <FilterItem key={id + index.toString() + item}>
-            {item[0] === 'q' ? '' : `${item[0]}: `} {item[1]}
-          </FilterItem>
-        ))}
-    </FilterItemsContainer>
+    {filters !== null && (
+      <FilterItemsContainer>
+        {Object.entries(filters)
+          .slice(0, 4)
+          .map((item, index) => (
+            <FilterItem key={id + index.toString() + item}>
+              {item[0] === 'q' ? '' : `${item[0]}: `} {item[1]}
+            </FilterItem>
+          ))}
+      </FilterItemsContainer>
+    )}
   </Content>
 );

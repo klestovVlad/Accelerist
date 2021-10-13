@@ -18,42 +18,40 @@ export const SavedSearch: FC = () => {
   const id = useLocation().pathname.replace('/prospects/', '');
 
   const Listitem = useSelector(SavedListSelector.getItemById(id));
+  console.log(Listitem);
 
   useEffect(() => {
-    dispatch(
-      getCompaniesAction({
-        page: page,
-        limit: 12,
-        income: Listitem.filters.income,
-        ageRanges: Listitem.filters.ageRanges,
-        gender: Listitem.filters.gender,
-        q: Listitem.filters.q,
-        industry: Listitem.filters.industry,
-        deleteIds: Listitem.filters.deleteIds,
-        csrFocusIds: Listitem.filters.csrFocusIds,
-        affinities: Listitem.filters.affinities,
-        location: Listitem.filters.location,
-        totalAnnualContributors: Listitem.filters.totalAnnualContributors,
-        revenueMin: Listitem.filters.revenueMin,
-        revenueMax: Listitem.filters.revenueMax,
-      }),
-    );
-  }, [
-    Listitem.filters.affinities,
-    Listitem.filters.ageRanges,
-    Listitem.filters.csrFocusIds,
-    Listitem.filters.deleteIds,
-    Listitem.filters.gender,
-    Listitem.filters.income,
-    Listitem.filters.industry,
-    Listitem.filters.location,
-    Listitem.filters.q,
-    Listitem.filters.revenueMax,
-    Listitem.filters.revenueMin,
-    Listitem.filters.totalAnnualContributors,
-    dispatch,
-    page,
-  ]);
+    if (Listitem.filters) {
+      dispatch(
+        getCompaniesAction({
+          page: page,
+          limit: 12,
+          income: Listitem.filters.income ? Listitem.filters.income : undefined,
+          ageRanges: Listitem.filters.ageRanges ? Listitem.filters.ageRanges : undefined,
+          gender: Listitem.filters.gender ? Listitem.filters.gender : undefined,
+          q: Listitem.filters.q ? Listitem.filters.q : undefined,
+          industry: Listitem.filters.industry ? Listitem.filters.industry : undefined,
+          deleteIds: Listitem.filters.deleteIds ? Listitem.filters.deleteIds : undefined,
+          csrFocusIds: Listitem.filters.csrFocusIds
+            ? Listitem.filters.csrFocusIds
+            : undefined,
+          affinities: Listitem.filters.affinities
+            ? Listitem.filters.affinities
+            : undefined,
+          location: Listitem.filters.location ? Listitem.filters.location : undefined,
+          totalAnnualContributors: Listitem.filters.totalAnnualContributors
+            ? Listitem.filters.totalAnnualContributors
+            : undefined,
+          revenueMin: Listitem.filters.revenueMin
+            ? Listitem.filters.revenueMin
+            : undefined,
+          revenueMax: Listitem.filters.revenueMax
+            ? Listitem.filters.revenueMax
+            : undefined,
+        }),
+      );
+    }
+  }, [Listitem.filters, dispatch, page]);
 
   const loadState = useSelector(CompaniesSelector.selectLoadState);
   const companies = useSelector(CompaniesSelector.selectItems);
