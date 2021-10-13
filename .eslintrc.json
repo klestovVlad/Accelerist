@@ -46,12 +46,12 @@
     "@typescript-eslint/camelcase": "off",
     "prettier/prettier": "error",
     "simple-import-sort/imports": "error",
-    "import/first": "off"
-    // "no-console": [
-    //   2,
-    //   {
-    //     "allow": ["warn", "error"]
-    //   }
-    // ]
+    "import/first": "off",
+    "no-console": [
+      2,
+      {
+        "allow": ["warn", "error"]
+      }
+    ]
   }
 }
