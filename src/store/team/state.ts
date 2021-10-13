@@ -75,6 +75,8 @@ export const initialState: TeamData = {
   ],
   charitablePartners: [],
   isLoading: false,
+  isError: false,
+  errors: [],
 };
 
 export interface MemberInfo {
@@ -138,4 +140,6 @@ export interface TeamData {
   members: MemberInfo[];
   charitablePartners: string[];
   isLoading: boolean;
+  isError: boolean;
+  errors: string[];
 }

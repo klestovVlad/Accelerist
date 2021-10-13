@@ -10,10 +10,11 @@ const teamSlice = createSlice({
       state.isLoading = payload;
     },
     setTeamData(state, { payload }: PayloadAction<TeamData>) {
-      return payload;
+      return { ...payload, errors: [], isError: false };
     },
-    setTeamError(state, { payload }: PayloadAction<unknown>) {
-      console.log(payload);
+    setTeamError(state, { payload }: PayloadAction<string>) {
+      state.isError = true;
+      state.errors.push(payload);
     },
   },
 });
